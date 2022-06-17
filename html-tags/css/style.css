@@ -1,0 +1,95 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: 'font', sans-serif;
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 60px 0;
+  width: 100%;
+  max-width: 1170px;
+}
+
+.attention {
+  font-size: 15px;
+  color: #d63384;;
+  font-weight: 600;
+}
+
+.title {
+  width: 100%;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgb(226, 226, 226);
+  border-radius: 5px;
+  font-size: 17px;
+}
+
+.list {
+  list-style: circle;
+}
+
+.list_item:not(:last-child) {
+  padding-bottom: 5px;
+}
+
+.b3_table {
+  border: 1px solid #000;
+}
+
+.code_view {
+  line-height: 25px;
+  margin: 10px 0 0 50px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0 10px;
+  border: 1px solid rgb(226, 226, 226);
+}
+
+.code_realisation {
+  margin: 10px 0 0 50px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgb(226, 226, 226);
+}
+
+.different {
+  margin-bottom: 10px;
+}
+
+.symbol {
+  font-weight: bold;
+  color: #2547c4;
+  font-size: 17px;
+}
+
+.header_logo {
+  width: 50px;
+}

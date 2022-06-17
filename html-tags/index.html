@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/Bell pepper.png" type="img/png" sizes="64x64">
+  <link rel="icon" href="img/Bell pepper.png" type="img/png" sizes="32x32">
+  <link rel="icon" href="img/Bell pepper.png" type="img/png" sizes="16x16">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Html collection tags</title>
+</head>
+
+<body>
+  <div class="content">
+    <p class="title">
+      <b>1.</b> Глобальный атрибут <code class="symbol">title</code>, отвечает за выведение подсказки при наведение на
+      область.
+    </p>
+    <p title="Всплывающая подсказка. Здесь можно указать дополнительную информацию">
+      Наведите курсор мыши на эту строку текста.
+    </p>
+    <p class="title">
+      <b>2.</b> Вложенность списков. Html позволяет вкладывать теги списков друг в друга практически до бесконечности,
+      при этом, с каждой новой вложенностью у списков меняется маркер.
+    </p>
+    <ul>
+      <li>Вложенность 1
+        <ul>
+          <li>Вложенность 2
+            <ul>
+              <li>Вложенность 3</li>
+              <li>Вложенность 3</li>
+            </ul>
+          </li>
+          <li>Вложенность 2</li>
+        </ul>
+      </li>
+      <li>Вложенность 1</li>
+    </ul>
+    <p class="title">
+      <b>3.</b> Табличные теги и их применение.
+    </p>
+    <ul class="list">
+      <li class="list_item"><code class="symbol">&lt;table&gt;</code> - область таблицы</li>
+      <li class="list_item"><code class="symbol">&lt;tr&gt;</code> - строка</li>
+      <li class="list_item"><code class="symbol">&lt;thead&gt;</code> - шапка таблицы</li>
+      <li class="list_item"><code class="symbol">&lt;caption&gt;</code> - Описание таблицы, в верстке идет сразу после
+        <code class="symbol">&lt;thead&gt;</code>
+      </li>
+      <li class="list_item"><code class="symbol">&lt;th&gt;</code> - ячейка шапки</li>
+      <li class="list_item"><code class="symbol">&lt;tbody&gt;</code> - тело таблицы</li>
+      <li class="list_item"><code class="symbol">&lt;td&gt;</code> - ячейка</li>
+      <li class="list_item"><code class="symbol">&lt;tfoot&gt;</code> - подвал таблицы</li>
+    </ul>
+    <p>
+      <i>Для объединения ячеек используются атрибуты:</i>
+    </p>
+    <ul class="list">
+      <li class="list_item"><b>colspan</b> - объединяет ячейки по горизонтали</li>
+      <li class="list_item"><b>rowspan</b> - объединяет ячейки по вертикали</li>
+    </ul>
+    <table class="b3_table">
+      <caption>Список закупок для офиса</caption>
+      <thead>
+        <tr>
+          <th>Наименование</th>
+          <th>Количество</th>
+          <th>Цена</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Скрепки</td>
+          <td>2 пачки</td>
+          <td>150р</td>
+        </tr>
+        <tr>
+          <td>Ручки</td>
+          <td>10 шт</td>
+          <td>500р</td>
+        </tr>
+        <tr>
+          <td>Бумага</td>
+          <td>2 упаковки</td>
+          <td>800р</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Итог:</td>
+          <td>1450р</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p class="title">
+      <b>4.</b> Мнемонические символы в Html.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Символ</th>
+          <th>Код</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>♣</td>
+          <td><code class="symbol">&amp;clubs;</code></td>
+        </tr>
+        <tr>
+          <td>♠</td>
+          <td><code class="symbol">&amp;spades;</code></td>
+        </tr>
+        <tr>
+          <td>♥</td>
+          <td><code class="symbol">&amp;hearts;</code></td>
+        </tr>
+        <tr>
+          <td>♦</td>
+          <td><code class="symbol">&amp;diams;</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Основными типографическими мнемониками в HTML являются:</p>
+    <ul class="list">
+      <li class="list_item">
+        <code class="symbol">&amp;nbsp;</code> — неразрывный пробел. Очень важная вещь, которая позволяет не переносить
+        строку с пробелом
+        там, где это может испортить логическую структуру текста
+      </li>
+      <li class="list_item">
+        <code class="symbol">&amp;laquo;</code> и <code class="symbol">&amp;raquo;</code> — традиционные
+        «кавычки-ёлочки». Повсеместно используются в типографике
+      </li>
+      <li class="list_item">
+        <code class="symbol">&amp;mdash;</code> — длинное тире
+      </li>
+      <li>
+        Мнемоники необходимы для показа тегов без их обработки браузером. В таком случае можно воспользоваться
+        мнемониками <code class="symbol">&amp;lt;</code> и <code class="symbol">&amp;gt;</code>, которые нужны для
+        обозначения <code class="symbol">&lt;&gt;</code>
+      </li>
+    </ul>
+    <p class="title">
+      <b>5.</b> Тег <code class="symbol">&lt;audio&gt;</code> - позволяет добавлять на страницу аудио-файлы.
+    </p>
+    <span class="attention">Сделайте звук потише!</span>
+    <p>
+      Для того чтобы добавить интерфейс аудио-плеера используется атрибут <code class="symbol">console</code>.
+    </p>
+    <p>
+      Для тега <code class="symbol">&lt;audio&gt;</code> используется два способа указания источника (Подробнее в Html файле).
+    </p>
+    <p>Когда источник один:</p>
+    <div>
+      <audio src="https://www.w3schools.com/html/horse.ogg" controls></audio>
+    </div>
+    <p>
+      Когда источников больше одного добавляется вложенный тег <code class="symbol">&lt;source&gt;</code>, при таком
+      указании источников, тег <code class="symbol">&lt;src&gt;</code> прописывать не нужно
+    </p>
+    <div>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3">
+      </audio>
+    </div>
+    <p class="title">
+      <b>6.</b> Тег <code class="symbol">&lt;video&gt;</code> - позволяет добавлять на страницу видео-файлы.
+    </p>
+    <p>Тег <code class="symbol">&lt;video&gt;</code> имеет несколько важных атрибутов:</p>
+    <ul class="list">
+      <li class="list_item"><code class="symbol">controls</code> — Добавляет элементы управления для видеоплеера</li>
+      <li class="list_item"><code class="symbol">autoplay</code> — Автоматическое воспроизведение после загрузки видео
+      </li>
+      <li class="list_item"><code class="symbol">width</code> — Ширина видеоплеера</li>
+      <li class="list_item"><code class="symbol">height</code> — Высота видеоплеера</li>
+    </ul>
+    <p>
+      Для тега <code class="symbol">&lt;video&gt;</code> используется два способа указания источника (Подробнее в Html
+      файле)
+    </p>
+    <p>Когда формат видео один:</p>
+    <video src="https://example.com/our-video.mp4" controls width="320" height="240"></video>
+    <p>
+      С помощью специальных тегов <code class="symbol">&lt;source&gt;</code> возможно добавлять несколько форматов. Это
+      нужно для того, чтобы любой браузер смог отобразить видео. Единственный формат который поддерживается всеми
+      браузерами - <b>mp4</b>
+    </p>
+    <video controls width="320" height="240">
+      <source src="https://example.com/our-video.mp4" type="video/mp4">
+      <source src="https://example.com/our-video.webm" type="video/webm">
+      <source src="https://example.com/our-video.ogg" type="video/ogg">
+    </video>
+    <p>
+      Наличие трёх форматов файлов гарантирует работоспособность видео на любых устройствах. Также обязательным является
+      наличие атрибута <code class="symbol">type</code>, который сообщит браузеру формат видео. Именно по этому атрибуту
+      браузер примет решение, какой файл необходимо загрузить.
+    </p>
+    <p class="title">
+      <b>7.</b> Тег <code class="symbol">&lt;link&gt;</code> с атрибутом <code class="symbol">rel="icon"</code> -
+      добавляет иконку на вкладку в браузере.
+    </p>
+    <p>
+      Для того чтобы установить иконку, к тегу <code class="symbol">&lt;link&gt;</code> добавляются атрибуты:
+    </p>
+    <ul class="list">
+      <li class="list_item"><code class="symbol">rel</code> - для указания контента</li>
+      <li class="list_item"><code class="symbol">href</code> - для указания ссылки на иконку</li>
+    </ul>
+    <p>
+      У тега <code class="symbol">&lt;link&gt;</code> возможно указать тип изображения и его размер. Делается это с
+      помощью атрибутов <code class="symbol">type</code> и <code class="symbol">sizes</code>.
+    </p>
+    <p>Укажем, что иконка формата png и размером 32x32 (Ширина х Высота в пикселях)</p>
+    <pre class="code_view different">
+<code>
+&lt;link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32"&gt;
+</code>
+</pre>
+    <p>
+      После этого, можно указать еще несколько тегов <code class="symbol">&lt;link&gt;</code> с разными размерами, для
+      того чтобы браузеры на разных устройствах подгружали ту, которая им подходит.
+    </p>
+    <p class="title">
+      <b>8.</b> Метатег <code class="symbol">&lt;meta name="viewport" content="width=device-width"&gt;</code> - этим
+      значением браузеру сообщается, что ширина страницы равна ширине устройства, с которого эта страница
+      просматривается.
+    </p>
+    <b>Основные параметры метатега <code class="symbol">vievport</code> которые указываются в атрибуте <code
+        class="symbol">content</code>:</b>
+    <ul class="list">
+      <li class="list_item"><code class="symbol">width</code> - ширина сайта. Указывается в пикселях. Возможно
+        использование значения <code class="symbol">device-width</code> для установки ширины страницы равной ширине
+        устройства.</li>
+      <li class="list_item"><code class="symbol">height</code> - высота сайта. Указывается в пикселях. Возможно
+        использование значения <code class="symbol">device-height</code> для установки высоты страницы равной высоте
+        устройства.</li>
+      <li class="list_item"><code class="symbol">initial-scale</code> - начальный коэффициент масштабирования. Может
+        принимать значение от 0.1 до 10. Значение единица масштабирует страницу по умолчанию.</li>
+      <li class="list_item"><code class="symbol">user-scalable</code> - указывает, может ли пользователь масштабировать
+        страницу, то есть приближать или отдалять её. Принимает значение yes и no.</li>
+    </ul>
+    <p class="title">
+      <b>9.</b> Формы в HTML - это кнопки, поля для ввода информации, чекбоксы, радиобаттоны и тд.
+    </p>
+    <p>
+      Любая форма начинается с главного, парного, тега <code class="symbol">&lt;form&gt;</code>, внутри которого и будут
+      располагаться поля для заполнения и кнопка действия.
+    </p>
+    <p>
+      Основным атрибутом у тега <code class="symbol">&lt;form&gt;</code> является <code class="symbol">action</code> -
+      путь к файлу, где располагается обработчик данных. Именно туда уйдут данные после отправки формы. Если данный
+      атрибут не указан, данные уйдут на ту же страницу, откуда была отправлена форма.
+    </p>
+    <pre class="code_view">
+<code>
+&lt;form action="/search"&gt;
+    // Данные, после заполнения, будут отправлены на страницу /search
+&lt;/form&gt;
+</code>
+</pre>
+    <p class="title">
+      <b>10.</b> Одиночный тег и его атрабут <code class="symbol">&lt;input type="text"&gt;</code> - позволяет создавать
+      поле для ввода текста.
+    </p>
+    <p>
+      Для того чтобы указать назначение поля, ипользуется парный тег <code class="symbol">&lt;lable&gt;</code>. Но
+      недостаточно просто указать тег, его необходимо связать с полем, для связи используется один из двух вариантов:
+    </p>
+    <ul class="list">
+      <li class="list_item">
+        Связь по атрибуту <code class="symbol">id</code>. Для этого у тега <code class="symbol">&lt;input&gt;</code>
+        указывается атрибут <code class="symbol">id</code> с произвольным именем, а у <code
+          class="symbol">&lt;label&gt;</code> добавляется атрибут <code class="symbol">for</code> с таким же именем, как
+        и значение <code class="symbol">id</code> у элемента <code class="symbol">&lt;input&gt;</code>.
+      </li>
+    </ul>
+    <pre class="code_view">
+<code>
+&lt;form&gt;
+    &lt;label for="name"&gt;Введите имя&lt;/label&gt;
+    &lt;input type="text" id="name"&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <div>
+      <form class="code_realisation">
+        <label for="name">Введите имя:</label>
+        <input type="text" id="name">
+      </form>
+    </div>
+    <ul class="list">
+      <li class="list_item">
+        Связь через вложенность. Так как <code class="symbol">&lt;label&gt;</code> - это парный тег, то для связи можно
+        вложить <code class="symbol">&lt;input&gt;</code> внутрь <code class="symbol">&lt;label&gt;</code>, тогда они
+        автоматически свяжутся друг с другом.
+      </li>
+    </ul>
+    <pre class="code_view">
+<code>
+&lt;form&gt;
+  &lt;label&gt;Введите имя
+    &lt;input type="text"&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <div>
+      <form class="code_realisation different">
+        <label>Введите имя:
+          <input type="text">
+        </label>
+      </form>
+    </div>
+    <p>
+      Атрибут <code class="symbol">placeholder</code> для тега <code class="symbol">&lt;input&gt;</code> - добавляет в
+      поле для ввода информации пример заполнения, например писать сначала имя а потом фамилию или наоборот.
+    </p>
+    <pre class="code_view">
+<code>
+&lt;form&gt;
+  &lt;label for="name"&gt;Введите Имя и Фамилию&lt;/label&gt;
+  &lt;input type="text" id="name" placeholder="Иван Иванов"&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <div>
+      <form class="code_realisation different">
+        <label for="name and firstname">Введите Имя и Фамилию</label>
+        <input type="text" id="name and firstname" placeholder="Иван Иванов">
+      </form>
+    </div>
+    <p>
+      Другие атрибуты для тега <code class="symbol">&lt;input type="атрибут"&gt;</code>:
+    </p>
+    <ul class="list">
+      <li class="list_item">
+        <code class="symbol">type="password"</code> - заменяет введенные символы на <code class="symbol">*</code>
+        <div>
+          <form class="code_realisation different">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" placeholder="Введите пароль">
+          </form>
+        </div>
+      </li>
+      <li class="list_item">
+        <code class="symbol">type="email"</code>
+      </li>
+      <li class="list_item">
+        <code class="symbol">type="number"</code>
+      </li>
+      <li class="list_item">
+        <code class="symbol">type="search"</code>
+      </li>
+      <li class="list_item">
+        <code class="symbol">type="tel"</code>
+      </li>
+      <li class="list_item">
+        <code class="symbol">type="url"</code>
+      </li>
+    </ul>
+    <p>
+      Их назначение в том, что значения автоматически проверяются браузером на корректность. Например, если ввести
+      значение <code class="symbol">email</code>, то браузер будет ожидать корректный шаблон для Email адреса. В
+      противном случае он сам укажет, что значение неверное при попытке отправить форму.
+    </p>
+    <p class="title">
+      <b>11.</b> Checkbox
+    </p>
+    <p>Для создания чекбокса используются два тега:</p>
+    <ul class="list">
+      <li class="list_item"><code class="symbol">&lt;input type="checkbox"&gt;</code> для того чтобы дать понять
+        браузеру что нам нужно создать чекбокс</li>
+      <li class="list_item"><code class="symbol">&lt;label&gt;</code>, в котором будет текст, связанный с нужным нам
+        чекбоксом</li>
+    </ul>
+    <p>
+      Связываются два тега точно так же как и в предыдущем блоке, по атрибуту <code class="symbol">id</code> или при
+      помощи вложенности тегов друг в друга.
+    </p>
+    <div>
+      <form class="code_realisation different">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox"><b>Вы даете свое согласие на обработку персональных данных</b></label>
+      </form>
+    </div>
+    <p>
+      Чтобы после отправки формы на сервер возможно было узнать, какие пункты были выбраны, используется атрибут <code
+        class="symbol">value</code>, внутри которого находится значение, позволяющее определить чекбокс.
+    </p>
+    <p>
+      Так как чекбоксов на странице может быть много, и они могут относиться к разным формам, для определения конкретной
+      группы чекбоксов используется атрибут <code class="symbol">name</code>. Для каждой группы чекбоксов указывается
+      своё имя, по которому, возможно отделить группы чекбоксов при обработке на сервере.
+    </p>
+    <pre class="code_view">
+<code>
+&lt;form&gt;
+  &lt;label&gt;
+    &lt;input type="checkbox" name="language" value="HTML"&gt;
+    Хочу изучать HTML
+  &lt;/label&gt;
+  &lt;br&gt;
+  &lt;label&gt;
+    &lt;input type="checkbox" name="language" value="CSS"&gt;
+    Хочу изучать CSS
+  &lt;/label&gt;
+  &lt;br&gt;
+  &lt;label&gt;
+    &lt;input type="checkbox" name="language" value="JS"&gt;
+    Хочу изучать JS
+  &lt;/label&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <p class="title">
+      <b>12.</b> Radiobutton
+    </p>
+    <p>
+      Для создания радиокнопки, так же, как и чекбокса, используются два тега:
+    </p>
+    <ul class="list">
+      <li class="list_item">
+        <code class="symbol">&lt;input type="radio"&gt;</code> c бязательным атрибутом <code class="symbol">name</code>,
+        значением которого является имя. <span class="attention">Данное имя должно быть одинаковым у всей группы
+          радиокнопок. Без этого атрибута будет возможно выбрать все значения сразу, так как браузер не будет видеть
+          связи между ними.</span>
+      </li>
+      <li class="list_item">
+        <code class="symbol">&lt;label&gt;</code>, в котором будет текст, связанный с нужной нам радиокнопкой
+      </li>
+    </ul>
+    <p>
+      Связываются два тега точно так же как и в предыдущем блоке, по атрибуту <code class="symbol">id</code> или при
+      помощи вложенности тегов друг в друга.
+    </p>
+    <div>
+      <form class="code_realisation different">
+        <label>
+          <input type="radio" name="radio" value="102.5 FM">
+          102.5 FM
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="radio" value="50.0 FM">
+          50.0 FM
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="radio" value="843.92 FM">
+          843.92 FM
+        </label>
+      </form>
+    </div>
+<pre class="code_view">
+<code>
+&lt;form&gt;
+  &lt;label&gt;
+    &lt;input type="radio" name="radio" value="102.5 FM"&gt;
+    102.5 FM
+  &lt;/label&gt;
+  &lt;br&gt;
+  &lt;label&gt;
+    &lt;input type="radio" name="radio" value="50.0 FM"&gt;
+    50.0 FM
+  &lt;/label&gt;
+  &lt;br&gt;
+  &lt;label&gt;
+    &lt;input type="radio" name="radio" value="843.92 FM"&gt;
+    843.92 FM
+  &lt;/label&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <p class="title">
+      <b>13.</b> Тег <code class="symbol">&lt;textarea&gt;</code> - создает форму для ввода большого количества текста,
+      например отзыва.
+    </p>
+    <p>
+      Для того, чтобы установить одинаковое значение ширины и высоты поля, используются атрибуты <code
+        class="symbol">rows</code> и <code class="symbol">cols</code>, означающие количество строк и столбцов
+      соответственно.
+    </p>
+    <div>
+      <form class="code_realisation different">
+        <label>Оставьте ваш отзыв</label>
+        <br>
+        <textarea cols="30" rows="5" placeholder="Нам очень важен ваш отзыв"></textarea>
+      </form>
+    </div>
+<pre class="code_view">
+<code>
+&lt;form&gt;
+  &lt;label&gt;Оставьте ваш отзыв&lt;/label&gt;
+  &lt;br&gt;
+  &lt;textarea cols="30" rows="5" placeholder="Нам очень важен ваш отзыв"&gt;&lt;/textarea&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <p class="title">
+      <b>14.</b> Выпадающий список
+    </p>
+    <p>
+      Для создания такого выпадающего списка используется тег <code class="symbol">&lt;select&gt;</code> с вложенными
+      внутри него тегами <code class="symbol">&lt;option&gt;</code>. Всё это похоже на создание обычных списков, где
+      вместо <code class="symbol">&lt;ul&gt;&lt;ol&gt;</code> используется <code class="symbol">&lt;select&gt;</code>, а
+      вместо <code class="symbol">&lt;li&gt;</code> используется <code class="symbol">&lt;option&gt;</code>.
+    </p>
+    <p>
+      Часто первый пункт списка используется для заголовка всего выпадающего списка. В таком случае для него используют атрибут <code class="symbol">disabled</code>, чтобы заблокировать его для выбора.
+    </p>
+    <form class="code_realisation">
+      <select>
+        <option disabled> Какой курс вы хотите пройти?</option>
+        <option>JS</option>
+        <option>PHP</option>
+        <option>Java</option>
+        <option>Racket</option>
+        <option>HTML</option>
+        <option>CSS</option>
+      </select>
+    </form>
+    <br>
+<pre class="code_view different">
+<code>
+&lt;form&gt;
+  &lt;select&gt;
+    &lt;option disabled&gt;Какой курс вы хотите пройти?&lt;/option&gt;
+    &lt;option&gt;JS&lt;/option&gt;
+    &lt;option&gt;PHP&lt;/option&gt;
+    &lt;option&gt;Java&lt;/option&gt;
+    &lt;option&gt;Racket&lt;/option&gt;
+    &lt;option&gt;HTML&lt;/option&gt;
+    &lt;option&gt;CSS&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt; 
+</code>
+</pre>
+    <p>
+      Для того, чтобы создать список с множественным выбором, чтобы по нажатию <code class="symbol">ctrl</code> можно было выбирать несколько вариантов, у тега <code class="symbol">&lt;select&gt;</code> добавляется атрибут <code class="symbol">multiple</code>.
+    </p>
+    <form class="code_realisation">
+      <label>Выберите курсы зажав ctrl+лкм:</label>
+      <br>
+      <select multiple>
+        <option disabled>Какие курсы вы хотите пройти?</option>
+        <option>JS</option>
+        <option>PHP</option>
+        <option>Java</option>
+        <option>Racket</option>
+        <option>HTML</option>
+        <option>CSS</option>
+      </select>
+    </form>
+    <br>
+<pre class="code_view">
+<code>
+&lt;form&gt;
+  &lt;label&gt;Выберите курсы зажав ctrl+лкм:&lt;/label&gt;
+  &lt;select multiple&gt;
+    &lt;option disabled&gt;Какие курсы вы хотите пройти?&lt;/option&gt;
+    &lt;option&gt;JS&lt;/option&gt;
+    &lt;option&gt;PHP&lt;/option&gt;
+    &lt;option&gt;Java&lt;/option&gt;
+    &lt;option&gt;Racket&lt;/option&gt;
+    &lt;option&gt;HTML&lt;/option&gt;
+    &lt;option&gt;CSS&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <p class="title">
+      <b>15.</b> Тег <code class="symbol">&lt;button&gt;</code> создающий кнопку - отвечает за отправку формы.
+    </p>
+    <form class="code_realisation">
+      <label>
+        Введите Ваш запрос:
+        <input type="search">
+      </label>
+      <select>
+        <option disabled>В каком разделе искать?</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JS</option>
+      </select>
+      <button>Поиск</button>
+    </form>
+    <br>
+<pre class="code_view different">
+<code>
+&lt;form&gt;
+  &lt;label&gt;
+    Введите Ваш запрос:
+    &lt;input type="search"&gt;
+  &lt;/label&gt;
+  &lt;select&gt;
+    &lt;option disabled&gt;В каком разделе искать?&lt;/option&gt;
+    &lt;option&gt;HTML&lt;/option&gt;
+    &lt;option&gt;CSS&lt;/option&gt;
+    &lt;option&gt;JS&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;button&gt;Поиск&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <p>
+      Если вы нажмёте на кнопку «Поиск», то страница перезагрузится и данные должны будут уйти в обработчик на эту же страницу. Так как обработчика нет, то никаких видимых результатов, кроме перезагрузки страницы, не произойдёт.
+    </p>
+    <p class="title">
+      <b>16.</b> Семантические элементы в HTML позволяют разметить разделы сайта для того чтобы их мог прочесть браузер, добавляя семантику в свой код, вы повышаете шансы оказаться на первых строчках поискового запроса и облегчаете читаемость кода.
+    </p>
+    <p><b>Примеры семантических элементов:</b></p>
+    <ul class="list">
+      <li class="list_item"><code class="symbol">&lt;article&gt;</code></li>
+      <li class="list_item"><code class="symbol">&lt;aside&gt;</code></li>
+      <li class="list_item"><code class="symbol">&lt;footer&gt;</code></li>
+      <li class="list_item"><code class="symbol">&lt;header&gt;</code></li>
+      <li class="list_item"><code class="symbol">&lt;main&gt;</code></li>
+      <li class="list_item"><code class="symbol">&lt;nav&gt;</code></li>
+      <li class="list_item"><code class="symbol">&lt;section&gt;</code></li>
+    </ul>
+    <p>
+      Большинство элементов интуитивно понятны и их можно сразу использовать в своих документах.
+    </p>
+    <p class="title">
+      <b>17.</b> Тег <code class="symbol">&lt;header&gt;</code> - шапка отдельного блока или сайта.
+    </p>
+    <p>
+      Шапкой на сайте принято называть верхнюю область, в которой находятся контактные данные, меню, логотип (Подробнее в Html файле).
+    </p>
+    <p>
+      При этом <code class="symbol">&lt;header&gt;</code> не является уникальным для страницы. Он может использоваться не только как шапка всей страницы, но и как шапка секции.
+    </p>
+    <header class="code_realisation">
+      <img class="header_logo" src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца">
+      <div id="menu">
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </header>
+    <br>
+<pre class="code_view">
+<code>
+&lt;header&gt;
+  &lt;img src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца"&gt;
+  &lt;div id="menu"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;О нас&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Контакты&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+</code>
+</pre>
+    <p class="title">
+      <b>18.</b> Парный тег <code class="symbol">&lt;nav&gt;</code> используется для разметки основного меню страницы.
+    </p>
+    <p>
+      Также различные устройства для чтения с экрана, которыми пользуются люди со слабым зрением, используют этот тег, чтобы определить, стоит ли отображать этот блок на странице.
+    </p>
+    <p>Заменим <code class="symbol">&lt;div id="menu"&gt;&lt;/div&gt;</code> из прошлого блока на изученный тег <code class="symbol">&lt;nav&gt;</code>:</p>
+    <header class="code_realisation">
+      <img class="header_logo" src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца">
+      <nav>
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+    <br>
+<pre class="code_view different">
+<code>
+&lt;header&gt;
+  &lt;img src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца"&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;О нас&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Контакты&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+</code>
+</pre>
+    <p>
+      Элемент <code class="symbol">&lt;nav&gt;</code>, как и <code class="symbol">&lt;header&gt;</code> не является уникальным для страницы. Его можно использовать для любого меню на странице, но есть несколько рекомендаций:
+    </p>
+    <ol>
+      <li class="list_item">
+        Нет необходимости оборачивать каждое меню в элемент <code class="symbol">&lt;nav&gt;</code>. В основном такой областью указываются только основные меню. Дополнительные, такие как меню в футере, не оборачивают в тег <code class="symbol">&lt;nav&gt;</code>, хотя это не запрещено.
+      </li>
+      <li class="list_item">
+        Хорошим примером дополнительного использования <code class="symbol">&lt;nav&gt;</code> - является навигация по текущей странице.
+      </li>
+      <li class="list_item">
+        <code class="symbol">&lt;nav&gt;</code> может содержать не только ссылки, но так же и текст, в котором есть ссылки. Если навигация является основной для страницы или всего сайта, то оберните её в тег <code class="symbol">&lt;nav&gt;</code>.
+      </li>
+    </ol>
+    <p class="title">
+      <b>19.</b> Парный тег <code class="symbol">&lt;main&gt;</code> - представляет из себя оболочку для уникального контента страницы.
+    </p>
+    <p>
+      Элемент <code class="symbol">&lt;main&gt;</code> является уникальным для одной страницы и указывается всего раз, размещать в нем необходимо текстовый/графический контент. При оборачивании контента в <code class="symbol">&lt;main&gt;</code> важно не включать в него неуникальные области:
+    </p>
+    <ul class="list">
+      <li class="list_item">Боковое меню</li>
+      <li class="list_item">Общую навигацию для сайта</li>
+      <li class="list_item">Общую шапку и футер сайта</li>
+      <li class="list_item">Логотип</li>
+    </ul>
+    <p>Добавим к нашей шапке область с уникальным контентом:</p>
+    <div class="code_realisation">
+      <header>
+        <img class="header_logo" src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца">
+        <nav>
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <p>Уникальный контент!</p>
+      </main>
+    </div>
+    <br>
+<pre class="code_view different">
+<code>
+&lt;header&gt;
+  &lt;img src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца"&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;О нас&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Контакты&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;p&gt;Уникальный контент!&lt;/p&gt;
+&lt;/main&gt;
+</code>
+</pre>
+    <p class="title">
+      <b>20.</b> Парный тег <code class="symbol">&lt;section&gt;</code> - представляет из себя элемент объединяющий по смыслу разные блоки внутри секции <code class="symbol">&lt;main&gt;</code>.
+    </p>
+    <p>
+      Представим что контентная область слишком большая и в ей содержится много глав которые связаны общим контентом но при этом являются самостоятельными единицами внутри него, например, разные этапы жизни писателя, контент об одном человеке, но при этом этапы жизни разные, именно они будут разделяться тегами <code class="symbol">&lt;section&gt;</code>.
+    </p>
+    <p>
+      В большинстве случаев все области <code class="symbol">&lt;section&gt;</code> имеют свой заголовок. Это хороший способ понять, когда нужно добавлять этот тег.
+    </p>
+    <p>Добавим в учебный пример форму заказа услуги:</p>
+    <div class="code_realisation">
+      <header>
+        <img class="header_logo" src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца">
+        <nav>
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <p>
+          Основной контент страницы. Это может быть статья, описание услуги, данные на странице контакты.
+        </p>
+        <section>
+          <h2>Оставить заявку</h2>
+          <form>
+            <p>Здесь форма заказа услуги</p>
+          </form>
+        </section>
+      </main>
+    </div>
+    <br>
+<pre class="code_view different">
+<code>
+&lt;header&gt;
+  &lt;img src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца"&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;О нас&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Контакты&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;p&gt;
+    Основной контент страницы. Это может быть статья, описание услуги, данные на странице контакты.
+  &lt;/p&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Оставить заявку&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;p&gt;Здесь форма заказа услуги&lt;/p&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+</code>
+</pre>
+    <p class="title">
+      <b>21.</b> Парный тег <code class="symbol">&lt;article&gt;</code> - самостоятельная секция располагающаяся внутри <code class="symbol">&lt;section&gt;</code>, которая относится к теме, но при этом может быть выдернута и существовать отдельно от страницы.
+    </p>
+    <p>
+      <code class="symbol">&lt;article&gt;</code> обязательно должен содержать внутри себя заголовок.
+    </p>
+    <p>
+      Добавим <code class="symbol">&lt;article&gt;</code> к нашей пробной странице (Подробнее в Html файле). 
+    </p>
+    <div class="code_realisation">
+      <header>
+        <img class="header_logo" src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца">
+        <nav>
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <main>
+        <p>
+          Основной контент страницы. Это может быть статья, описание услуги, данные на странице контакты.
+        </p>
+        
+        <section>
+          <h2>Оставить заявку</h2>
+          <form>
+            <p>Здесь форма заказа услуги</p>
+          </form>
+        </section>
+
+        <section>
+          <h2>Читайте так же</h2>
+          <article>
+            <h3>Услуга 2</h3>
+            <p>Описание новой услуги</p>
+            <a href="#">Ссылка на услугу</a>
+          </article>
+
+          <article>
+            <h3>Услуга 3</h3>
+            <p>Описание новой услуги</p>
+            <a href="#">Ссылка на услугу</a>
+          </article>
+
+          <article>
+            <h3>Услуга 4</h3>
+            <p>Описание новой услуги</p>
+            <a href="#">Ссылка на услугу</a>
+          </article>
+        </section>
+      </main>
+    </div>
+    <p class="title">
+      <b>22.</b> Парный тег <code class="symbol">&lt;aside&gt;</code> - представялет из себя боковую панель. Служит для отображения меню раздела, списка определений, виджетов и тд.
+    </p>
+    <p>
+      Боковое меню <code class="symbol">&lt;aside&gt;</code>, если оно не уникально для каждой страницы, содержится вне тега <code class="symbol">&lt;main&gt;</code>.
+    </p>
+    <p>
+      Добавим в пример из прошлого урока боковую панель с дополнительным меню (Подробнее в Html файле).
+    </p>
+    <div class="code_realisation">
+      <header>
+        <img class="header_logo" src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца">
+        <nav>
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="#">Услуга 1</a></li>
+            <li><a href="#">Услуга 2</a></li>
+            <li><a href="#">Услуга 3</a></li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <main>
+        <p>
+          Основной контент страницы. Это может быть статья, описание услуги, данные на странице контакты.
+        </p>
+        
+        <section>
+          <h2>Оставить заявку</h2>
+          <form>
+            <p>Здесь форма заказа услуги</p>
+          </form>
+        </section>
+
+        <section>
+          <h2>Читайте так же</h2>
+          
+          <article>
+            <h3>Услуга 2</h3>
+            <p>Описание новой услуги</p>
+            <a href="#">Ссылка на услугу</a>
+          </article>
+
+          <article>
+            <h3>Услуга 3</h3>
+            <p>Описание новой услуги</p>
+            <a href="#">Ссылка на услугу</a>
+          </article>
+
+          <article>
+            <h3>Услуга 4</h3>
+            <p>Описание новой услуги</p>
+            <a href="#">Ссылка на услугу</a>
+          </article>
+          
+        </section>
+      </main>
+    </div>
+    <p class="title">
+      <b>23.</b> Пример семантической разметки и тега <code class="symbol">&lt;footer&gt;</code> - подвал сайта или блока в статье.
+    </p>
+    <p>Пример использования семантической разметки (Подробнее в Html файле).</p>
+    <div class="code_realisation">
+      <main> <!-- Определение основной части статьи -->
+        <article> <!-- Определение статьи -->
+          <header> <!-- Заголовочная информация статьи -->
+            <h1>Название статьи</h1>
+            <img class="header_logo" src="img/Bell pepper.png" alt="Логотип, рисунок болгарского перца">
+          </header>
+          <p>Текст нашей статьи</p>
+          <footer> <!-- «Подвал статьи» с указанием автора и даты -->
+            <address> <!-- Информация об авторе статьи -->
+              <p>Автор: tertiomodo</p>
+              <p>Email: test@test.com</p>
+            </address>
+            <time datetime="11.06.2022">16 июня.</time> <!-- Дата написания статьи -->
+          </footer>
+        </article>
+      </main>
+    </div>
+    <p class="title">
+      <b>24.</b> Микроразметка - используется поисковыми роботами для анализа информации на странице. Возможна благодаря внедрению в HTML разметку словаря <a href="https://schema.org/">schema.org</a>. 
+    </p>
+    <p>
+      Правильная микроразметка помогает выводить не только описание, но и дополнительную информацию: 
+    </p>
+    <ul class="list">
+      <li class="list_item">Название организации</li>
+      <li class="list_item">Время работы</li>
+      <li class="list_item">Адрес</li>
+      <li class="list_item">Номер телефона</li>
+    </ul>
+    <p>
+      <b>Микроразметка</b> осуществляется благодаря добавлению элементов в HTML из словаря <i>Schema.org</i>
+    </p>
+    <p>Действия для создания микроразметки:</p>
+    <ul class="list">
+      <li class="list_item">
+        Выбор словаря. Узнать о поддержке тех или иных словарей поисковой системой можно с помощью документации. <a href="https://schema.org/">schema.org</a>
+      </li>
+      <li class="list_item">
+        Определение блока, который будет размечаться. Это может быть не только блок, а вся страница сайта
+      </li>
+      <li class="list_item">
+        Выделение информации. На примере разметки контактной информации это: название организации, телефон, email, адрес
+      </li>
+      <li class="list_item">
+        Указание атрибутов в зависимости от типа информации и словаря
+      </li>
+    </ul>
+    <p>
+      Для того чтобы подсказать поисковой системе, что данные размечены при помощи микроразметки, используются следующие атрибуты:
+    </p>
+    <ul class="list">
+      <li class="list_item">
+        <code class="symbol">itemscope</code> - указатель на то, что блок - единая сущностью, в котором данные связаны. Указывается только у главного блока и не имеет своего значения
+      </li>
+      <li class="list_item">
+        <code class="symbol">itemtype</code> - указывает на то, какой словарь будет использоваться. Например, для описания контактов выбран словарь Organization. Полный вид атрибута: <code class="symbol">itemtype="http://schema.org/Organization"</code>
+      </li>
+      <li class="list_item">
+        <code class="symbol">itemprop="name"</code> - используется для обозначения названия компании
+      </li>
+      <li class="list_item">
+        <code class="symbol">&lt;span itemprop="address"&gt;</code>Адрес<code class="symbol">&lt;/span&gt;</code> - используется для обозначения адреса компании
+      </li>
+      <li class="list_item">
+        <code class="symbol">&lt;span itemprop="telephone"&gt;</code>Телефон<code class="symbol">&lt;/span&gt;</code> - используется для обозначения телефона компании
+      </li>
+      <li class="list_item">
+        <code class="symbol">&lt;span itemprop="email"&gt;</code>Email<code class="symbol">&lt;/span&gt;</code> - используется для обозначения email'a компании
+      </li>
+    </ul>
+<pre class="code_view different">
+<code>
+&lt;section itemscope itemtype="http://schema.org/Organization"&gt;
+  &lt;h1 itemprop="name"&gt;Компания "Прауд"&lt;/h1&gt;
+  &lt;p&gt;&lt;span itemprop="address"&gt;Адрес: г.Мотино, улица Строителей, дом 6&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span itemprop="telephone"&gt;Телефон: 8 (8765) 333-00-00&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span itemprop="email"&gt;Email: info@proud-company.test&lt;/span&gt;&lt;/p&gt;
+&lt;/section&gt;
+</code>
+</pre>
+    <p>
+      Данные обязательно оборачиваются в <code class="symbol">&lt;span&gt;</code>, оставляя за бортом название полей. Обратите внимание, что для каждой строчки информации в микроразмерке есть свое значение атрибута <code class="symbol">&lt;itemprop&gt;</code>.
+    </p>
+  </div>
+</body>
+
+</html>
