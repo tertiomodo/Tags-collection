@@ -1,0 +1,1239 @@
+.list {
+  list-style: circle;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.code_view {
+  line-height: 25px;
+  margin: 10px 0 0 50px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0 10px;
+  border: 1px solid rgb(226, 226, 226);
+}
+
+.code_realisation {
+  margin: 10px 0 0 50px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgb(226, 226, 226);
+}
+
+/* Серый блок для заголовков */
+
+.title {
+  padding: 20px;
+  background-color: rgb(226, 226, 226);
+  border-radius: 5px;
+}
+
+/*Фиксированная шапка*/
+
+.header {
+  width: 100%;
+  padding: 15px 0;
+  background-color: rgb(226, 226, 226);
+  position: fixed;
+  border-radius: 50px;
+  z-index: 10;
+}
+
+/*Описание в шапке сайта*/
+
+.header-description {
+  text-align: center;
+}
+
+/*Блок в котором находится вся страница*/
+
+.content {
+  margin: 0 auto;
+  padding: 60px 0;
+  width: 100%;
+  max-width: 1170px;
+}
+
+/*В примере ниже селектор звездочка применяется ко всем тегам*/
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*Ниже пример того как можно указывать форматирование для классов через запятую*/
+
+h1, h2 {
+  color: red;
+}
+
+/*Ниже пример каскада в CSS, мы говорим "Найди класс cubes и примени эти стили для div в нем"*/
+
+.cubes div {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  background-color: red;
+}
+
+/*Ниже пример показывающий что атрибут id сильнее чем class*/
+
+#element1 a {
+  color: red;
+}
+
+.parent1 a {
+  color: blue;
+}
+
+/*Ниже пример повышения вложенности в элемент с применением id для изменения цвета (неправильный вариант)*/
+
+#element2 .parent2 a {
+  color: blue;
+}
+
+#element2 a{
+  color: red;
+}
+
+/*Ниже правильный вариант присваивания CSS стилей с использованием атрибута class*/
+
+.link1 {
+  color: red;
+}
+
+.link2 {
+  color: blue;
+}
+
+/*Ниже пример в котором мы, в проекте, не можем редактировать файл CSS по каким-либо причинам, но нам нужно поменять оформление текста*/
+
+.block5 {
+  color: red;
+}
+
+/*Ниже пример в котором мы, в проекте, не можем редактировать файл Html по каким-либо причинам, но нам нужно поменять оформление текста и в нашем распоряжении только файл CSS*/
+
+.text3 {
+  color: blue !important;
+}
+
+/*Ниже пример в котором мы, в проекте, не можем редактировать файл CSS по каким-либо причинам и в нем указан !important, но нам нужно поменять оформление текста*/
+
+.text4 {
+  color: red !important;
+}
+
+/*ниже пример использования flex*/
+
+.block8 {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.block8-1 {
+  min-height: 200px;
+  width: 333px;
+  background-color: red;
+  border: 2px solid #000;
+}
+
+/*Ниже пример использования единицы измерения em, применяется для того чтобы задавать определенный размер шрифта от родителя, в нашем случае размер шрифта родителя - div = 20px, а при помощи единицы измерения em, мы можем выставить 2em для тега p, что позволит нам увеличить размер шрифта в 2 раза (40px)*/
+
+.block9 {
+  font-size: 20px;
+}
+
+.block9 p {
+  font-size: 2em;
+}
+
+/*10. Отличие блочного элемента <div> от строчного <span>*/
+
+.block10 {
+  background-color: aqua;
+}
+
+.block10-1 {
+  background-color: aqua;
+  display: inline
+}
+
+.block10-2 {
+  background-color: aqua;
+  display: block
+}
+
+.block10-3 {
+  display: none;
+}
+
+/*11. Свойство inline-block*/
+
+.block11, .block11-1, .block11-2, .block11-3, .block11-4 {
+  background-color: aqua;
+}
+
+.block11 {
+  margin-bottom: 30px;
+}
+
+.block11-1 {
+  margin-bottom: 30px;
+}
+
+.block11-2 {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.block11-4 {
+  display: inline-block;
+}
+
+/*12. Виды записей свойства margin*/
+
+.block12 {
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  /*margin: 10px 20px 30px 40px;*/ /*Значения задаются слева направо, отступы отсчитываются по часовой стрелке, 10px-сверху, 20px-справа и тд.*/
+  /*margin: 10px 30px;*/ /*10px-отступы сверху и снизу, 30px-отступы слева и спарва*/
+  margin: 20px; /*При такой записи, браузер применяет отступ в 10px сразу со всех 4х сторон*/
+  /*margin: 0 10px 0;*/ /*Отступы задаются слева направо сверху-0, слева и справа-10px, снизу-0*/
+  /* margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px; */ /*Точечные отступы сверху, справа, снизу и слева*/
+}
+
+/*Схлопывание margin'ов*/
+
+.block12-1 {
+  margin-bottom: 50px;
+}
+
+.block12-2 {
+  margin-top: 20px;
+}
+
+/*Свойство padding, для него работают те же правила что и для margin*/
+
+.block13 {
+  display: inline-block;
+  background-color: crimson;
+  color: #fff;
+  /* padding: 10px 20px 30px 40px; */
+  /* padding: 0 30px; */
+  padding: 20px;
+  /* padding: 0 10px 0; */
+}
+
+/*Свойство border - отвечает за внешний вид бордера*/
+
+.block14 {
+  display: inline-block;
+  padding: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: red;
+}
+
+.block14-1 {
+  display: inline-block;
+  padding: 10px;
+  border-width: 3px;
+  border-style: dashed;
+  border-color: red;
+}
+
+.block14-2 {
+  display: inline-block;
+  padding: 10px;
+  border-width: 3px;
+  border-style: dotted;
+  border-color: red;
+}
+
+/*Запись свойства border в одну строчку*/
+
+.block14-3 {
+  display: inline-block;
+  padding: 10px;
+  border: 3px solid red;
+}
+
+/*Свойства для редактирования отдельных частей бордера*/
+
+.block14-4 {
+  display: inline-block;
+  padding: 10px;
+  border-top: 3px solid green;
+  border-right: 3px dashed blue;
+  border-bottom: 3px dotted red;
+  border-left: 3px dashed aqua;
+}
+
+/*Свойства width и height не подходят для того чтобы помещать текст внутрь блока, тк текст (если его больше) выходит за границы, так же, свойства width и height не работают со строчными элементами*/
+
+.block15 {
+  /*display: inline;*/ /*Расскомментировать для проверки*/
+  background-color: aqua;
+  width: 300px;
+  height: 100px;
+  margin-bottom: 130px;
+}
+
+/*Свойства min и max*/
+
+.block15-1 {
+  background-color: aqua;
+  max-width: 1000px; /*Свойство для ограничения максимального растяжения блока, даже для больших мониторов это будет 1000px*/
+  min-width: 320px; /*Свойство для ограничения максимального сжатия, например если пользователь зайдет на сайт со смартфона*/
+  /* max-height: 1000px; */ /*Присутствует тут для примера и для текста не используется!*/
+  min-height: 200px; /*Задается в соответствии с макетом, даже если текста мало*/
+}
+
+.block15-2 {
+  list-style: none; /*Cвойство для обнуления стилей таблиц (убирает маркеры)*/
+  padding: 0;
+}
+
+.block15-3:not(:last-child) { /*:not(:last-child) - Указывает "Примени свойство ко всем элементам кроме последнего"*/
+  margin-bottom: 10px;
+}
+
+/*Класс для выделения важных элементов текста*/
+
+.attention {
+  color: red;
+}
+
+/*Элемент border-box*/
+
+.block16 {
+  background-color: navy;
+  width: 400px;
+  padding: 20px;
+  border: 6px solid gray;
+  /* border-radius: 30px; */ /*Свойство для визуального скругления углов у блока*/
+  box-sizing: border-box;
+}
+
+/*Свойство display: block*/
+
+.block17 {
+  background-color: aqua;
+  display: block;
+  width: 500px;
+}
+
+/*18. Проблема невидимого символа при использовании inline-block*/
+
+.block18 {
+  box-sizing: border-box;
+  width: 1000px;
+  margin: 0 auto;
+  background-color: aqua;
+}
+
+.block18-1 {
+  outline: 1px solid #000;
+  display: inline-block;
+  width: 333px; /*Что в сумме 3х блоков должно дать 999px и по идее блоки должны встать в линию тк ширина родителя 1000px и у нас display: inline-block*/
+}
+
+/*Решение*/
+
+.block18-2 {
+  font-size: 0; /*1. Убираем размер шрифта у родителя тк этот символ физический*/
+  box-sizing: border-box;
+  width: 1000px;
+  margin: 0 auto;
+  background-color: aqua;
+}
+
+.block18-3 {
+  font-size: 15px; /*2. Выставляем размер шрифта у ребенка чтобы вернуть тексту прежний вид*/
+  outline: 1px solid #000;
+  display: inline-block;
+  width: 333px;
+}
+
+/*Усложненный пример с сетками*/
+
+.block18-4 {
+  font-size: 0;
+  box-sizing: border-box;
+  width: 1000px;
+  margin: 0 auto;
+  background-color: aqua;
+}
+
+.block18-5 {
+  font-size: 15px;
+  outline: 1px solid #000;
+  display: inline-block;
+  width: 320px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  vertical-align: top;
+  /*Для inline-block работает vertical-align и появляется возможность центрировать блоки вертикально, в нашем случае по верхнему краю, ниже центрирования по середине и к нижнему краю*/
+  /* vertical-align: middle; */
+  /* vertical-align: bottom; */
+}
+
+.block18-5:nth-child(3n) { /*:nth-child(3n) выполняет функцию применения стилей на каждый третий блок (В нашем случае)*/
+  margin-right: 0;
+}
+
+/*19. Свойство position: relative;*/
+
+.block19 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: crimson;
+}
+
+.block19-1 {
+  position: relative;
+  background-color: black;
+}
+
+.block19 {
+  left: 50px;
+  top: 5px;
+}
+
+/*19. Свойство position: absolute;*/
+
+.block19-2 { /*Черный куб со свойством position: relative;*/
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: crimson;
+  position: relative;
+}
+
+.block19-3 { /*Черный куб со свойством position: absolute;*/
+  display: inline-block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: black;
+  left: 30px;
+  top: -20px;
+}
+
+/*Карточка товара*/
+
+.block19-4 { /*Сама карточка товара*/
+  display: block; 
+  width: 150px;
+  height: 200px;
+  background-color: rgb(175, 238, 255);
+  position: relative;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.block19-5 { /*Стикер со скидкой 20%*/
+  display: inline-block;
+  padding: 8px 5px;
+  border-radius: 100%;
+  font-size: 10px;
+  background-color: crimson;
+  outline: 1px solid #000;
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/*20. Свойсвтва float: left/right/none;*/
+
+.block20-img {
+  width: 300px;
+  margin-right: 20px;
+  float: left;
+}
+
+/* 21. Локальный скролл */
+
+.block20 {
+  width: 400px;
+  height: 200px;
+  outline: 3px solid red;
+  /* visible свойство по умолчанию, когда текст игнорирует высоту блока */
+  /* overflow: visible; */
+  /* hidden обрезает все что выходит за пределы блока */
+  /* overflow: hidden; */
+  /* scroll Добавляет скроллы в контейнер, при этом они будут показываться даже если текста нет */
+  /* overflow: scroll; */
+  /* Самый оптимальный вариант для добавления скролла в блок, тк свойство добавляет скролл только пр инеобходимости */
+  overflow: auto;
+  /* overflow-x свойство позволяет управлять скроллом по оси X, те горизонтальной оси */
+  /* overflow-x: scroll; */
+  /* overflow-y: scroll; свойство позволяет управлять скроллом по оси X, те вертикальной оси */
+  /* overflow-y: scroll; */
+}
+
+/* 22. Свойство z-index */
+
+.block22-parent { 
+  position: relative; /*Чтобы блоки с position: absolute; не уехали вверх экрана, создали для них родителя*/
+  margin-bottom: 200px;
+}
+
+.b22-z-index-1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: inline-block;
+  z-index: 1; /* выдвигает красный блок на передний, первый план */
+  top: 30px;
+  left: 30px;
+}
+
+.b22-z-index-2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: navy;
+  display: inline-block;
+  top: 20px;
+  left: 20px;
+}
+
+/* 23. Различные способы задать тексту цвет и прозрачность */
+
+.block23 {
+ color: red;
+}
+
+.block23-1 {
+  color: #ff0 /*Чаще всего, в макетах применяется именно он, хекс*/
+}
+
+.block23-2 {
+  color: rgb(0, 255, 0);
+}
+
+.block23-3 {
+  color: rgba(0, 0, 255, 0.5); /*Последнее значение a - прозрачность, задается от 0 до 1, где 0 это полная прозрачность*/
+}
+
+/* Свойство прозрачности для всего блока opacity */
+
+.block23-4 {
+  width: 100px;
+  height: 100px;
+  background-color: crimson;
+  opacity: .3; /*Ноль писать не обязательно*/
+}
+
+/* Ключевые слова в свойстве color: inherit/initial; */
+
+.b23-parent {
+  color: rgba(0, 125, 0, 0.6)
+}
+
+.b23-child {
+  /* inherit наследованный цвет от ближайшего родителя */
+  color: inherit;
+  /* initial первозданное значение (черное) */
+  /* color: initial; */
+}
+
+/* 24. Свойство text-decoration: none/underline/line-through/overline */
+
+.b24 {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.b24-none {
+  text-decoration: none;
+}
+
+.b24-underline {
+  text-decoration: underline; /*Стандартный вид подчеркивания у ссылок*/
+}
+
+.b24-line-through {
+  text-decoration: line-through;
+}
+
+.b24-overline {
+  text-decoration: overline;
+}
+
+/* 25. Свойство text-align: left/center/right/justify */
+
+.b25 {
+  border: 1px solid black;
+  /* left значение по умолчанию */
+  /* text-align: left; */
+  text-align: center;
+  /* text-align: right; */
+  /* justify текст будет растягиваться и стремиться занять всю строку */
+  /* text-align: justify; */
+}
+
+/* 26. Свойство text-tranform: none/uppercase/capitalize/lowercase */
+
+.b26-none {
+  text-transform: none; /* none значение по умолчанию, браузер не вмешивается в регистр букв, как мы написали, так и будет */
+}
+
+.b26-uppercase {
+  text-transform: uppercase;
+}
+
+.b26-capitalize {
+  text-transform: capitalize; /*Делает первую букву каждого слова большой*/
+}
+
+.b26-lowercase {
+  text-transform: lowercase;
+}
+
+/* Свойство line-height высота строк */
+
+.b27 {
+  width: 300px;
+  font-size: 20px;
+  /* line-height: 16px; */
+  line-height: 130%; /*Можно использовать относительные величины, они удобны и более востребованны, тк величина указывающаяся в %, зависит от шрифта, и его можно менять не боясь потерять нужный line-height*/
+  /* line-height: 1.3; */ /*Можно использовать оыбчные числовые значения, при таком написании, font-size умножается на line-height*/
+}
+
+/* Свойство letter-spacing отвечает за отсутпы между буквами */
+
+.b28 {
+  width: 300px;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 10px;
+}
+
+/* 29. Свойство white-space: normal/nowrap/pre отвечает за то, как осуществяляется перенос слов */
+
+.b29 {
+  width: 300px;
+  border: 1px solid crimson;
+}
+
+.b29-normal{
+  white-space: normal;
+}
+
+.b29-nowrap {
+  white-space: nowrap;
+}
+
+.b29-pre {
+ white-space: pre;
+}
+
+/* Пример использования свойств для декорирования текста */
+
+.b29-3 {
+  width: 300px; /*Ширина блока*/
+  font-family: arial; /*Семейство шрифта*/
+  font-weight: bold; /*Начертание шрифта*/
+  text-transform: uppercase; /*Регистр букв*/
+  font-size: 18px; /*Размер шрифта*/
+  line-height: .8; /*Отступы между строчками*/
+  letter-spacing: -1px; /*Отступы между буквами*/
+  word-spacing: 10px; /*Отступы между словами*/
+  text-indent: 1em; /*Отступ с красной строки px, em, %*/
+  white-space: normal; /*Классический перенос слов*/
+}
+
+/* 30. Различные свойства шрифтов */
+
+.b30 {
+  width: 700px;
+   /* Семейство шрифтов установленное на устройстве, нужно указывать через запятую шрифты от более приоритетного, от того какой вы планируете, далее нужно указывать похожие шрифты которые точно будут установлены на компьютере пользователя, от самого желанного к компромиссному */
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 30px; /*Более точный и самый популярный способ указывать размер шрифта*/
+  /* font-size: 1rem; */ /*rem-100% от величины шрифта html документа*/
+  /* font-size: 1em; */ /*em-100% от величины шрифта текущего блока*/
+  /* font-size: 100%; */ /*Можно задавать в процентах но нельзя просто написать цифру*/
+  /* font-size: small; */  /*Маленький шрифт*/
+  /* font-size: smaller; */ /*Шрифт побольше*/
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Свойство font-style */
+
+.b30-font-style {
+  font-size: 20px;
+}
+
+.b30-italic {
+  font-style: italic;
+}
+
+.b30-normal {
+  font-style: normal;
+}
+
+.b30-oblique {
+  font-style: oblique;
+}
+
+/* Свойство font-weight */
+
+.b30-font-weight {
+  font-size: 20px;
+}
+
+.b30-normal {
+  font-weight: normal;
+}
+
+.b30-bold {
+  font-weight: bold;
+}
+
+.b30-number {
+  font-weight: 100;
+}
+
+.b30-one-line {
+  font: italic small-caps bold 24px/1.2 Arial, sans-serif; /* :font-style font-variant font-weight font-size/line-height font-family; */
+}
+
+/* 31. Свойство border */
+
+.b31-border-dashed {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  border: 3px dashed red;
+  border-radius: 50px;
+  border-top-left-radius: 0; /*Указывает на то чтобы у верхнего левого угла не было закругления*/
+  border-bottom-right-radius: 0; /*Указывает на то чтобы у нижнего правого угла не было закругления*/
+}
+
+.b31-border-solid {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  border: 5px solid rgb(149, 0, 255);
+  border-radius: 50px;
+  border-top-right-radius: 0; /*Указывает на то чтобы у верхнего левого угла не было закругления*/
+}
+
+.b31-border-dotted {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  border: 5px dotted rgb(15, 149, 102);
+  border-radius: 100%;
+}
+
+.b31-border-double {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  border: 5px double rgb(169, 187, 31);
+  border-radius: 100%;
+  border-top-left-radius: 0; /*Указывает на то чтобы у верхнего левого угла не было закругления*/
+  border-top-right-radius: 0; /*Указывает на то чтобы у верхнего левого угла не было закругления*/
+}
+
+/* Свойство outline */
+
+.b31-border {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  border: 5px solid rgb(15, 149, 102);
+}
+
+.b31-outline {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  outline: 5px solid rgb(152, 183, 24);
+}
+
+.b31-border-text {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40%;
+  font-style: italic;
+  font-size: 25px;
+}
+
+/* 32. Свойство box-shadow, тень от выпуклого объекта */
+
+.b32-box-shadow-text {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40%;
+  font-size: 12px;
+}
+
+.b32-box-shadow {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  box-shadow: 5px 3px rgb(152, 152, 152); /*5px-толщина по горизонтали, 3px-толщина по вертикали, rgb-цвет*/
+}
+
+/* Свойство box-shadow: inset, тень от впуклого объекта */
+
+.b32-box-shadow-inset {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  box-shadow: inset 5px 3px rgb(152, 152, 152); /*inset-вдавливает объект и тень изменяется, 5px-толщина по горизонтали, 3px-толщина по вертикали, rgb-цвет*/
+}
+
+/* Свойство box-shadow с размытием */
+
+.b32-box-shadow-blur {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  box-shadow: 5px 3px 10px rgb(152, 152, 152); /*5px-толщина, по горизонтали 3px-толщина по вертикали, 10px-размытие, rgb-цвет*/
+}
+
+/* Свойство text-shadow */
+
+.b32-text-shadow {
+  border: 1px solid crimson;
+  padding: 10px;
+  width: 300px;
+  height: 80px;
+  text-shadow: 5px 3px 3px #000;
+}
+
+/* Неоновое свечение при помощи свойства text-shadow */
+
+.b32-text-shadow-neon {
+  border: 1px solid crimson;
+  padding: 10px;
+  width: 300px;
+  height: 80px;
+  color: rgb(72, 72, 202);
+  text-shadow: 0 0 4px rgb(13, 85, 153);
+}
+
+/* 33. Свойство background-image позволяет вставлять картинки при помощи CSS. */
+
+.b33-list {
+  list-style: none;
+  padding: 0;
+}
+
+.b33-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.b33-background-image {
+  display: block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  /* background-image: none; */ /*Позволяет очищать блок background-iamge*/
+}
+
+/* 34. Свойство background-position и его функции */
+
+.b34-bp-text {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 40%;
+  font-size: 19px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+.b34-background-position-center {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  background-position: center center;
+}
+
+.b34-background-position-pixel {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  background-position: 0 500px;
+}
+
+.b34-background-position-procent {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  background-position: 100% 50%;
+}
+
+.b34-background-position-direction {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  background-position: right top;
+}
+
+/* 35. Свойство и его функция backgroung-repeat: no-repeat; */
+
+.b35-background-repeat-text {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 40%;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+  letter-spacing: 5px;
+}
+
+.b35-background-repeat {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  background-position: 23% 56px;
+  /* background-repeat: repeat; */ /*Функция repeat по умолчанию*/
+}
+
+.b35-background-no-repeat {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  background-position: 23% 56px;
+  background-repeat: no-repeat;
+}
+
+.b35-background-repeat-x {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  background-position: 100px 56%;
+  background-repeat: repeat-x;
+}
+
+.b35-background-repeat-y {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+  background-image: url("img/forest.jpg");
+  background-position: 50% 80px;
+  background-repeat: repeat-y;
+}
+
+/* 36. Свойство background-size */
+
+.b36-bgs-text {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 40%;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+  letter-spacing: 5px;
+}
+
+.b36-background-size-cover {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 300px;
+  height: 300px;
+  background-image: url("img/forest.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.b36-background-size-contein {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 300px;
+  height: 300px;
+  background-image: url("img/forest.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.b36-background-size-procent-and-px {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 300px;
+  height: 300px;
+  background-image: url("img/forest.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 80% 50%;
+  /* background-size: 50px 50px; */ /*Можно задавать значения в % и px*/
+}
+
+/* Короткая запись всех свойств отвечающих за background-iamge */
+
+.b36-list {
+  list-style: none;
+  padding: 0;
+}
+
+.b36-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.b36-background-short-text {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 40%;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+  letter-spacing: 5px;
+}
+
+.b36-background-short {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 300px;
+  height: 300px;
+  background: transparent url("img/forest.jpg") no-repeat center center / cover;
+}
+
+/* 37. Свойство background-color и варианты его использования */
+
+.b37-background-color-text {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 20%;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+  letter-spacing: 3px;
+}
+
+.b37-background-color-pic {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background: transparent url("img/forest.jpg") no-repeat center center / cover;
+}
+
+.b37-background-color-on {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background: #333 url("#") no-repeat center center / cover;
+}
+
+.b37-background-color-off {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background: transparent url("#") no-repeat center center / cover;
+}
+
+/* 38. Свойство outline */
+
+.b38-outline {
+  width: 300px;
+  outline: 2px solid crimson;
+}
+
+.b38-outline-bold {
+  margin: 60px 0; /*Указали margin'ы только для того чтобы было видно надпись сверху и не закрывать заголовок снизу*/
+  width: 300px;
+  outline: 50px solid crimson;
+}
+
+/* 39. Свойства opacity и visibility */
+
+.b39-border {
+  width: 110px;
+  height: 30px;
+  border: 1px solid crimson;
+}
+
+.b39-opacity {
+  opacity: 0;
+}
+
+.b39-visibility {
+  visibility: hidden;
+}
+
+/* 40. Псевдоклассы Hover, focus, visited */
+
+.b40-hover {
+  margin: 0;
+  display: inline-block;
+  width: 400px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.b40-hover:hover {
+  background-color: crimson;
+}
+
+/* 41. Свойство font-variant: small-caps / normal - капитель */
+
+.b41-normal {
+  font-variant: normal;
+}
+
+.b41-small-caps {
+ font-variant: small-caps;
+}
+
+/* 43. Медиазапросы, правило @media. */
+
+.b43-media-block {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(149, 0, 255);
+}
+
+.b43-media-text {
+  font: bold small-caps 17px Arial, sans-serif;
+  text-align: center;
+  padding-top: 35px;
+}
+/* Указываем, что если viewport достигает 700px или меньше, измени стили вот на эти */
+@media (max-width: 700px) {
+  .b43-media-text {
+    color: #fff;
+    text-shadow: 0 0 4px rgb(255 255 255);
+    font: bold small-caps 17px Arial, sans-serif;
+    text-align: center;
+    padding-top: 35px;
+  }
+
+  .b43-media-block {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+  }
+}
+
+/* 44. Анимации в CSS при помощи @keyframes. */
+/*Указываем @keyframes и название анимации*/
+@keyframes color_change {
+/*Указываем правила анимации, то, в какой промежуток времени будет изменяться цвет*/
+  0% {
+    background-color: blue;
+  }
+
+  50% {
+    background-color: red;
+  }
+
+  100% {
+    background-color: blue;
+  }
+}
+/* Создаем объект для анимации, это может быть любой объект на странице! */
+.b44_animation_block {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  animation: color_change 3s infinite;
+}
+
+/* 46. Создание 3D кнопки при помощи свойства position: relative; и :hover. */
+
+.b46-button {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  border: none;
+  margin-bottom: 30px;
+  top: 10px;
+  left: 50px;
+  font-weight: 700;
+  border-radius: 12px;
+  background-color: rgb(180, 210, 207);
+  box-shadow: 3px 3px #000000;
+  transition: 0.5s;
+}
+
+.b46-button:hover {
+  top: 13px;
+  left: 53px;
+  box-shadow: 0 0 #000000;
+}
+
+/* Обзор фотографий при наведении с использованием свойств position: relative; и transform: scale(1.2) */
+
+.b47-photo {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.b47-photo:hover {
+  z-index: 10;
+  transform: scale(1.2)
+}
+
+/* Создание градиентной границы */
+
+.b48-gradient {
+  border-radius: 10px;
+  background: linear-gradient(to top, #cfe7fa, #6393c1);
+  padding: 10px;
+}
+
+.b48-text {
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 10px;
+}
