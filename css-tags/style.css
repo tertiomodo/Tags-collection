@@ -15,6 +15,14 @@
   border: 1px solid rgb(226, 226, 226);
 }
 
+.code_realisation {
+  margin: 10px 0 0 50px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgb(226, 226, 226);
+}
+
 /* Серый блок для заголовков */
 
 .title {
@@ -1176,4 +1184,56 @@ h1, h2 {
   border-radius: 100%;
   box-shadow: 0 0 5px rgb(0, 0, 0);
   animation: color_change 3s infinite;
+}
+
+/* 46. Создание 3D кнопки при помощи свойства position: relative; и :hover. */
+
+.b46-button {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  border: none;
+  margin-bottom: 30px;
+  top: 10px;
+  left: 50px;
+  font-weight: 700;
+  border-radius: 12px;
+  background-color: rgb(180, 210, 207);
+  box-shadow: 3px 3px #000000;
+  transition: 0.5s;
+}
+
+.b46-button:hover {
+  top: 13px;
+  left: 53px;
+  box-shadow: 0 0 #000000;
+}
+
+/* Обзор фотографий при наведении с использованием свойств position: relative; и transform: scale(1.2) */
+
+.b47-photo {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.b47-photo:hover {
+  z-index: 10;
+  transform: scale(1.2)
+}
+
+/* Создание градиентной границы */
+
+.b48-gradient {
+  border-radius: 10px;
+  background: linear-gradient(to top, #cfe7fa, #6393c1);
+  padding: 10px;
+}
+
+.b48-text {
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 10px;
 }
