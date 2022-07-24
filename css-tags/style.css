@@ -1370,3 +1370,37 @@ h1, h2 {
 .b51-media-heading {
   margin: 0 0 10px;
 }
+
+/* 52. Свойство cursor и его основные атрибуты. */
+
+.b52-pointer {
+  cursor: pointer;
+}
+
+.b52-help {
+  cursor: help;
+}
+
+.b52-progress {
+  cursor: progress;
+}
+
+.b52-wait {
+  cursor: wait;
+}
+
+.b52-cell {
+  cursor: cell;
+}
+
+.b52-move {
+  cursor: move;
+}
+
+.b52-not-allowed {
+  cursor: not-allowed;
+}
+
+.b52-zoom-in {
+  cursor: zoom-in;
+}
