@@ -173,11 +173,14 @@
     </p>
     <p>Тег <code class="symbol">&lt;video&gt;</code> имеет несколько важных атрибутов:</p>
     <ul class="list">
+      <li class="list_item"><code class="symbol">src</code> — Ссылка на видео</li>
       <li class="list_item"><code class="symbol">controls</code> — Добавляет элементы управления для видеоплеера</li>
       <li class="list_item"><code class="symbol">autoplay</code> — Автоматическое воспроизведение после загрузки видео
       </li>
       <li class="list_item"><code class="symbol">width</code> — Ширина видеоплеера</li>
       <li class="list_item"><code class="symbol">height</code> — Высота видеоплеера</li>
+      <li class="list_item"><code class="symbol">poster="poster.jpg"</code> — Обложка видео</li>
+      <li class="list_item"><code class="symbol">loop</code> — Зацикливает видео</li>
     </ul>
     <p>
       Для тега <code class="symbol">&lt;video&gt;</code> используется два способа указания источника (Подробнее в Html
@@ -201,7 +204,35 @@
       браузер примет решение, какой файл необходимо загрузить.
     </p>
     <p class="title">
-      <b>7.</b> Тег <code class="symbol">&lt;link&gt;</code> с атрибутом <code class="symbol">rel="icon"</code> -
+      <b>7.</b> Тег <code class="symbol">&lt;iframe&gt;</code> - позволяет встраивать сайт внутрь вашего сайта.
+    </p>
+    <p>Тег <code class="symbol">&lt;iframe&gt;</code> имеет несколько важных атрибутов:</p>
+    <ul class="list">
+      <li class="list_item"><code class="symbol">src</code> — Ссылка на сайт</li>
+      <li class="list_item"><code class="symbol">width</code> — Ширина окна сайта</li>
+      <li class="list_item"><code class="symbol">height</code> — Высота окна сайта</li>
+      <li class="list_item"><code class="symbol">allowfullscreen</code> — Позволяет разворачивать видео на весь экран, если мы вставили YouTube плеер</li>
+      <li class="list_item"><code class="symbol">frameborder="0"</code> — Рамки для окна сайта</li>
+    </ul>
+    <p>
+      Пример с встаиванием YouTube плеером:
+    </p>
+    <iframe 
+    src="https://www.youtube.com/embed/OvZDVrCwX7o"
+    width="560"
+    height="315"
+    allowfullscreen
+    frameborder="0"></iframe>
+    <p>
+      Пример с встаиванием сайта Яндекс Практикума:
+    </p>
+    <iframe 
+    src="https://practicum.yandex.ru/"
+    width="560"
+    height="315"
+    frameborder="0"></iframe>
+    <p class="title">
+      <b>8.</b> Тег <code class="symbol">&lt;link&gt;</code> с атрибутом <code class="symbol">rel="icon"</code> -
       добавляет иконку на вкладку в браузере.
     </p>
     <p>
@@ -226,7 +257,7 @@
       того чтобы браузеры на разных устройствах подгружали ту, которая им подходит.
     </p>
     <p class="title">
-      <b>8.</b> Метатег <code class="symbol">&lt;meta name="viewport" content="width=device-width"&gt;</code> - этим
+      <b>9.</b> Метатег <code class="symbol">&lt;meta name="viewport" content="width=device-width"&gt;</code> - этим
       значением браузеру сообщается, что ширина страницы равна ширине устройства, с которого эта страница
       просматривается.
     </p>
@@ -245,30 +276,39 @@
         страницу, то есть приближать или отдалять её. Принимает значение yes и no.</li>
     </ul>
     <p class="title">
-      <b>9.</b> Формы в HTML - это кнопки, поля для ввода информации, чекбоксы, радиобаттоны и тд.
+      <b>10.</b> Формы в HTML - это кнопки, поля для ввода информации, чекбоксы, радиобаттоны и тд.
     </p>
     <p>
       Любая форма начинается с главного, парного, тега <code class="symbol">&lt;form&gt;</code>, внутри которого и будут
       располагаться поля для заполнения и кнопка действия.
     </p>
     <p>
-      Основным атрибутом у тега <code class="symbol">&lt;form&gt;</code> является <code class="symbol">action</code> -
-      путь к файлу, где располагается обработчик данных. Именно туда уйдут данные после отправки формы. Если данный
-      атрибут не указан, данные уйдут на ту же страницу, откуда была отправлена форма.
+      Основными атрибутомами тега <code class="symbol">&lt;form&gt;</code> являются:
+      <ul class="list">
+        <li class="list_item">
+          <code class="symbol">action="https://www.site.com"</code> - Путь к файлу, где располагается обработчик данных. Именно туда уйдут данные после отправки формы. Если данный атрибут не указан, данные уйдут на ту же страницу, откуда была отправлена форма.
+        </li>
+        <li class="list_item">
+          <code class="symbol">method=""</code> - Определяет метод отправки данных, методов два, <code class="symbol">get</code> - Используется по умолчанию и добавляет данные в URL браузера и <code class="symbol">POST</code> - Данные включаются в тело формы и отправляются на сервер, он используется если нужно отправить заявку на сервер или на почту.
+        </li>
+      </ul>
+    </p>
+    <p>
+      
     </p>
     <pre class="code_view">
 <code>
-&lt;form action="/search"&gt;
-    // Данные, после заполнения, будут отправлены на страницу /search
+&lt;form action="https://www.site.com" method="POST"&gt;
+    // Данные, после заполнения, будут отправлены на страницу https://www.site.com
 &lt;/form&gt;
 </code>
 </pre>
     <p class="title">
-      <b>10.</b> Одиночный тег и его атрабут <code class="symbol">&lt;input type="text"&gt;</code> - позволяет создавать
+      <b>11.</b> Одиночный тег и его атрабут <code class="symbol">&lt;input type="text"&gt;</code> - позволяет создавать
       поле для ввода текста.
     </p>
     <p>
-      Для того чтобы указать назначение поля, ипользуется парный тег <code class="symbol">&lt;lable&gt;</code>. Но
+      Для того чтобы указать назначение поля, ипользуется парный тег <code class="symbol">&lt;label&gt;</code>. Но
       недостаточно просто указать тег, его необходимо связать с полем, для связи используется один из двух вариантов:
     </p>
     <ul class="list">
@@ -335,32 +375,128 @@
       </form>
     </div>
     <p>
-      Другие атрибуты для тега <code class="symbol">&lt;input type="атрибут"&gt;</code>:
+      Оснвные атрибуты для тега <code class="symbol">&lt;input type="атрибут"&gt;</code>:
     </p>
     <ul class="list">
       <li class="list_item">
-        <code class="symbol">type="password"</code> - заменяет введенные символы на <code class="symbol">*</code>
+        <p>
+          <code class="symbol">type="text"</code> - Позволяет вводить текст в input.
+        </p>
+        <p>
+          <code class="symbol">maxlength="5"</code> - Ограничивает количество букв в <code class="symbol">&lt;input type="number"&gt;</code>, в нашем случае максимум букв 5.
+        </p>
         <div>
           <form class="code_realisation different">
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" placeholder="Введите пароль">
+            <label>Ваш текст:</label>
+              <input class="input__normalize" type="text" maxlength="5" placeholder="Введите текст">
+              <button type="submit">OK</button>
           </form>
         </div>
       </li>
       <li class="list_item">
-        <code class="symbol">type="email"</code>
+        <p>
+          <code class="symbol">type="password"</code> - Заменяет введенные символы на <code class="symbol">*</code>
+        </p>
+        <p>
+          <code class="symbol">required</code> - Указывает что данный input обязателен к заполнению
+        </p>
+        <div>
+          <form class="code_realisation different">
+            <label for="password">Пароль:</label>
+              <input class="input__normalize" type="password" id="password" placeholder="Введите пароль" required>
+              <button type="submit">OK</button>
+          </form>
+        </div>
       </li>
       <li class="list_item">
-        <code class="symbol">type="number"</code>
+        <p>
+          <code class="symbol">type="email"</code>
+        </p>
+        <div>
+          <form class="code_realisation different">
+            <label>Email:</label>
+            <input class="input__normalize" type="email" placeholder="Введите Email">
+            <button type="submit">OK</button>
+          </form>
+        </div>
       </li>
       <li class="list_item">
-        <code class="symbol">type="search"</code>
+        <p>
+          <code class="symbol">type="number"</code>
+        </p>
+        <p>
+          <code class="symbol">min="0"</code> <code class="symbol">max="10"</code> - Указывают диапазон возможных цифр, в нашем случае от 0 до 10 для <code class="symbol">&lt;input type="number"&gt;</code>.
+        </p>
+        <div>
+          <form class="code_realisation different">
+            <label>Число:</label>
+            <input class="input__normalize" type="number" placeholder="Введите число" min="0" max="10">
+            <button type="submit">OK</button>
+          </form>
+        </div>
       </li>
       <li class="list_item">
-        <code class="symbol">type="tel"</code>
+        <p>
+          <code class="symbol">type="search"</code>
+        </p>
+        <div>
+          <form class="code_realisation different">
+            <label>Что необходимо найти?</label>
+            <input class="input__normalize" type="search" placeholder="Найти">
+            <button type="submit">OK</button>
+          </form>
+        </div>
       </li>
       <li class="list_item">
-        <code class="symbol">type="url"</code>
+        <p>
+          <code class="symbol">type="tel"</code>
+        </p>
+        <div>
+          <form class="code_realisation different">
+            <label>Телефон:</label>
+            <input class="input__normalize" type="telephone" placeholder="Введите номер">
+            <button type="submit">OK</button>
+          </form>
+        </div>
+      </li>
+      <li class="list_item">
+        <p>
+          <code class="symbol">type="url"</code>
+        </p>
+        <div>
+          <form class="code_realisation different">
+            <label>URL:</label>
+            <input class="input__normalize" type="url" placeholder="Введите URL">
+            <button type="submit">OK</button>
+          </form>
+        </div>
+      </li>
+      <li class="list_item">
+        <p>
+          <code class="symbol">type="date"</code>
+        </p>
+        <div>
+          <form class="code_realisation different">
+            <label>Выберите дату:</label>
+            <input class="input__normalize" type="date">
+            <button type="submit">OK</button>
+          </form>
+        </div>
+      </li>
+      <li class="list_item">
+        <p>
+          <code class="symbol">type="file" accept="image/*"</code>
+        </p>
+        <p>
+          Атрибут <code class="symbol">accept="image/*"</code> - Указывает что <code class="symbol">&lt;input type="file"&gt;</code> будет искать только изображения, а остальные файлы будут недоступны для выбора.
+        </p>
+        <div>
+          <form class="code_realisation different">
+            <label>Ваше фото:</label>
+            <input class="input__normalize" type="file" accept="image/*">
+            <button type="submit">OK</button>
+          </form>
+        </div>
       </li>
     </ul>
     <p>
@@ -369,7 +505,7 @@
       противном случае он сам укажет, что значение неверное при попытке отправить форму.
     </p>
     <p class="title">
-      <b>11.</b> Checkbox
+      <b>12.</b> Checkbox
     </p>
     <p>Для создания чекбокса используются два тега:</p>
     <ul class="list">
@@ -380,12 +516,24 @@
     </ul>
     <p>
       Связываются два тега точно так же как и в предыдущем блоке, по атрибуту <code class="symbol">id</code> или при
-      помощи вложенности тегов друг в друга.
+      помощи вложенности тегов друг в друга. <span class="attention">Важный момент, связывание чекбокса и label дает нам возможность расширить действие чекбокса и на его текст, те нажимая на текст, мы активируем чекбокс</span>
+    </p>
+    <p>
+      Чекбокс со связкой:
     </p>
     <div>
       <form class="code_realisation different">
         <input type="checkbox" id="checkbox">
         <label for="checkbox"><b>Вы даете свое согласие на обработку персональных данных</b></label>
+      </form>
+    </div>
+    <p>
+      Чекбокс без связки:
+    </p>
+    <div>
+      <form class="code_realisation different">
+        <input type="checkbox">
+        <label><b>Вы даете свое согласие на обработку персональных данных</b></label>
       </form>
     </div>
     <p>
@@ -418,7 +566,7 @@
 </code>
 </pre>
     <p class="title">
-      <b>12.</b> Radiobutton
+      <b>13.</b> Radiobutton
     </p>
     <p>
       Для создания радиокнопки, так же, как и чекбокса, используются два тега:
@@ -477,7 +625,7 @@
 </code>
 </pre>
     <p class="title">
-      <b>13.</b> Тег <code class="symbol">&lt;textarea&gt;</code> - создает форму для ввода большого количества текста,
+      <b>14.</b> Тег <code class="symbol">&lt;textarea&gt;</code> - создает форму для ввода большого количества текста,
       например отзыва.
     </p>
     <p>
@@ -502,7 +650,7 @@
 </code>
 </pre>
     <p class="title">
-      <b>14.</b> Выпадающий список
+      <b>15.</b> Выпадающий список
     </p>
     <p>
       Для создания такого выпадающего списка используется тег <code class="symbol">&lt;select&gt;</code> с вложенными
@@ -574,7 +722,7 @@
 </code>
 </pre>
     <p class="title">
-      <b>15.</b> Тег <code class="symbol">&lt;button&gt;</code> создающий кнопку - отвечает за отправку формы.
+      <b>16.</b> Тег <code class="symbol">&lt;button&gt;</code> создающий кнопку - отвечает за отправку формы.
     </p>
     <form class="code_realisation">
       <label>
@@ -587,7 +735,7 @@
         <option>CSS</option>
         <option>JS</option>
       </select>
-      <button>Поиск</button>
+      <button type="search">Поиск</button>
     </form>
     <br>
 <pre class="code_view different">
@@ -603,7 +751,7 @@
     &lt;option&gt;CSS&lt;/option&gt;
     &lt;option&gt;JS&lt;/option&gt;
   &lt;/select&gt;
-  &lt;button&gt;Поиск&lt;/button&gt;
+  &lt;button type="search"&gt;Поиск&lt;/button&gt;
 &lt;/form&gt;
 </code>
 </pre>
@@ -611,7 +759,7 @@
       Если вы нажмёте на кнопку «Поиск», то страница перезагрузится и данные должны будут уйти в обработчик на эту же страницу. Так как обработчика нет, то никаких видимых результатов, кроме перезагрузки страницы, не произойдёт.
     </p>
     <p class="title">
-      <b>16.</b> Семантические элементы в HTML позволяют разметить разделы сайта для того чтобы их мог прочесть браузер, добавляя семантику в свой код, вы повышаете шансы оказаться на первых строчках поискового запроса и облегчаете читаемость кода.
+      <b>17.</b> Семантические элементы в HTML позволяют разметить разделы сайта для того чтобы их мог прочесть браузер, добавляя семантику в свой код, вы повышаете шансы оказаться на первых строчках поискового запроса и облегчаете читаемость кода.
     </p>
     <p><b>Примеры семантических элементов:</b></p>
     <ul class="list">
@@ -627,7 +775,7 @@
       Большинство элементов интуитивно понятны и их можно сразу использовать в своих документах.
     </p>
     <p class="title">
-      <b>17.</b> Тег <code class="symbol">&lt;header&gt;</code> - шапка отдельного блока или сайта.
+      <b>18.</b> Тег <code class="symbol">&lt;header&gt;</code> - шапка отдельного блока или сайта.
     </p>
     <p>
       Шапкой на сайте принято называть верхнюю область, в которой находятся контактные данные, меню, логотип (Подробнее в Html файле).
@@ -661,7 +809,7 @@
 </code>
 </pre>
     <p class="title">
-      <b>18.</b> Парный тег <code class="symbol">&lt;nav&gt;</code> используется для разметки основного меню страницы.
+      <b>19.</b> Парный тег <code class="symbol">&lt;nav&gt;</code> используется для разметки основного меню страницы.
     </p>
     <p>
       Также различные устройства для чтения с экрана, которыми пользуются люди со слабым зрением, используют этот тег, чтобы определить, стоит ли отображать этот блок на странице.
@@ -707,7 +855,7 @@
       </li>
     </ol>
     <p class="title">
-      <b>19.</b> Парный тег <code class="symbol">&lt;main&gt;</code> - представляет из себя оболочку для уникального контента страницы.
+      <b>20.</b> Парный тег <code class="symbol">&lt;main&gt;</code> - представляет из себя оболочку для уникального контента страницы.
     </p>
     <p>
       Элемент <code class="symbol">&lt;main&gt;</code> является уникальным для одной страницы и указывается всего раз, размещать в нем необходимо текстовый/графический контент. При оборачивании контента в <code class="symbol">&lt;main&gt;</code> важно не включать в него неуникальные области:
@@ -753,7 +901,7 @@
 </code>
 </pre>
     <p class="title">
-      <b>20.</b> Парный тег <code class="symbol">&lt;section&gt;</code> - представляет из себя элемент объединяющий по смыслу разные блоки внутри секции <code class="symbol">&lt;main&gt;</code>.
+      <b>21.</b> Парный тег <code class="symbol">&lt;section&gt;</code> - представляет из себя элемент объединяющий по смыслу разные блоки внутри секции <code class="symbol">&lt;main&gt;</code>.
     </p>
     <p>
       Представим что контентная область слишком большая и в ей содержится много глав которые связаны общим контентом но при этом являются самостоятельными единицами внутри него, например, разные этапы жизни писателя, контент об одном человеке, но при этом этапы жизни разные, именно они будут разделяться тегами <code class="symbol">&lt;section&gt;</code>.
@@ -812,7 +960,7 @@
 </code>
 </pre>
     <p class="title">
-      <b>21.</b> Парный тег <code class="symbol">&lt;article&gt;</code> - самостоятельная секция располагающаяся внутри <code class="symbol">&lt;section&gt;</code>, которая относится к теме, но при этом может быть выдернута и существовать отдельно от страницы.
+      <b>22.</b> Парный тег <code class="symbol">&lt;article&gt;</code> - самостоятельная секция располагающаяся внутри <code class="symbol">&lt;section&gt;</code>, которая относится к теме, но при этом может быть выдернута и существовать отдельно от страницы.
     </p>
     <p>
       <code class="symbol">&lt;article&gt;</code> обязательно должен содержать внутри себя заголовок.
@@ -867,7 +1015,7 @@
       </main>
     </div>
     <p class="title">
-      <b>22.</b> Парный тег <code class="symbol">&lt;aside&gt;</code> - представялет из себя боковую панель. Служит для отображения меню раздела, списка определений, виджетов и тд.
+      <b>23.</b> Парный тег <code class="symbol">&lt;aside&gt;</code> - представялет из себя боковую панель. Служит для отображения меню раздела, списка определений, виджетов и тд.
     </p>
     <p>
       Боковое меню <code class="symbol">&lt;aside&gt;</code>, если оно не уникально для каждой страницы, содержится вне тега <code class="symbol">&lt;main&gt;</code>.
@@ -934,7 +1082,7 @@
       </main>
     </div>
     <p class="title">
-      <b>23.</b> Пример семантической разметки и тега <code class="symbol">&lt;footer&gt;</code> - подвал сайта или блока в статье.
+      <b>24.</b> Пример семантической разметки и тега <code class="symbol">&lt;footer&gt;</code> - подвал сайта или блока в статье.
     </p>
     <p>Пример использования семантической разметки (Подробнее в Html файле).</p>
     <div class="code_realisation">
@@ -956,7 +1104,7 @@
       </main>
     </div>
     <p class="title">
-      <b>24.</b> Микроразметка - используется поисковыми роботами для анализа информации на странице. Возможна благодаря внедрению в HTML разметку словаря <a href="https://schema.org/">schema.org</a>. 
+      <b>25.</b> Микроразметка - используется поисковыми роботами для анализа информации на странице. Возможна благодаря внедрению в HTML разметку словаря <a href="https://schema.org/">schema.org</a>. 
     </p>
     <p>
       Правильная микроразметка помогает выводить не только описание, но и дополнительную информацию: 
@@ -1021,6 +1169,25 @@
     <p>
       Данные обязательно оборачиваются в <code class="symbol">&lt;span&gt;</code>, оставляя за бортом название полей. Обратите внимание, что для каждой строчки информации в микроразмерке есть свое значение атрибута <code class="symbol">&lt;itemprop&gt;</code>.
     </p>
+    <p class="title">
+      <b>26.</b> Тег <code class="symbol">&lt;picture&gt;</code> - Предоставляет возможность браузеру выбирать источник загрузки изображения. 
+    </p>
+    <p>В нутри тега <code class="symbol">&lt;picture&gt;</code> используются такие теги как:</p>
+    <ul class="list">
+      <li class="list_item"><code class="symbol">source srcset="1.webp" type="image/webp"</code> — Позволяет указать дополнительные источники для загрузки альтернативных форматов изображений</li>
+      <li class="list_item"><code class="symbol">img src="1.png" alt="One"</code> — Использует этот источник изображения если указанный в <code class="symbol">source</code> не поддерживается</li>
+    </ul>
+    <pre class="code_view different">
+      <code>
+      &lt;picture&gt;
+        &lt;source srcset="1.webp" type="image/webp"&gt;
+        &lt;img src="1.png" alt="One"&gt;
+      &lt;/picture&gt;
+      </code>
+      </pre>
+      <p class="title">
+        <b>27.</b> Тег <code class="symbol">&lt;base target="_blank"&gt;</code> - Указывается в части <code class="symbol">&lt;head&gt;</code> и позволяет присвоить для всех ссылок открытие на новой странице по умолчанию. 
+      </p>
   </div>
 </body>
 
