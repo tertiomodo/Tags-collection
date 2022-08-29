@@ -93,3 +93,7 @@ h1, h2, h3 {
 .header_logo {
   width: 50px;
 }
+
+.input__normalize {
+  min-width: 200px;
+}
