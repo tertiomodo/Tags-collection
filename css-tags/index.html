@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS tags collection</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/css.ico">
+  <title>CSS tags collection</title>
 </head>
 
 <body>
   <header class="header">
     <div class="header-description">
-      <b>Перед поиском тегов необходимо открыть Html и CSS файлы со страницей</b>
-      <p>Подробнее про каждый раздел можно почитать на <a href="https://developer.mozilla.org/ru/">MDN</a></p>
+      <b>Детальнее понять блок вы сможете открыв DevTools данной страницы. Подробнее про каждый раздел можно почитать на <a href="https://developer.mozilla.org/ru/">MDN</a></b>
     </div>
   </header>
   <div class="content">
@@ -709,14 +709,52 @@
       Тут находится ссылка со свойством <b>visibility: hidden;</b> <span class="attention">---&gt;</span><a href="#" class="b39-visibility">Ссылка</a><span class="attention">&lt;---</span> она занимает необходимый ей размер, но при этом скрыта и на нее нельзя нажать.
     </p>
     <p class="title">
-      <b>40.</b> Псевдокласс <b>hover</b> отвечает за изменение поведения при наведении курсора мыши.
+      <b>40.</b> Псевдоклассы <b>:hover / :focus / :active / :checked / :disabled</b> отвечают за изменение поведения при определенных действиях.
     </p>
     <p>
-      Наведите мышку на текст ниже.
+      Псевдоклассы применяются для селектора, чтобы придать ему особое состояние. Псевдоклассы позволяют дополнительно стилизовать элементы основываясь на внешних факторах
     </p>
-    <p class="b40-hover">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eum ipsa mollitia perferendis illum! Atque eius maxime itaque dignissimos cumque ad similique impedit, voluptatum, quo ullam tenetur harum officiis dolorum!
+    <pre class="code_view">
+      <code>
+Применение псевдокласса на селектор:
+.selector<span class="attention">:pseudoclass</span> {
+  property: value;
+}</code>
+    </pre>
+    <p>
+      <i>Ниже представлен список с кратким пояснением для наиболее популярных псевдоклассов:</i>
     </p>
+    <div class="code_realisation">
+      <p>
+        <b>:hover</b> - Отвечает за наведение курсора мыши на объект. Наведите мышку на квадрат ниже.
+      </p>
+      <div class="b40-hover"></div>
+    </div>
+    <div class="code_realisation">
+      <p>
+        <b>:focus</b> - Отвечает за фокусировку на элементе при помощи tab или клике по фокусируемому элементу.
+      </p>
+      <input class="b40-focus" type="text">
+    </div>
+    <div class="code_realisation">
+      <p>
+        <b>:active</b> - Отвечает за фокусировку на элементе когда мы нажимаем на элемент и удерживаем кнопку зажатой. Состояние <b>:focus</b> и <b>:active</b> суммируются и могут рабоать вместе.
+      </p>
+      <input class="b40-active" type="text">
+    </div>
+    <div class="code_realisation">
+      <p>
+        <b>:checked</b> - Срабатывает когда чекбокс находится в активном состоянии.
+      </p>
+      <input class="b40-checked" type="radio" name="checked">
+      <input class="b40-checked" type="radio" name="checked">
+    </div>
+    <div class="code_realisation">
+      <p>
+        <b>:disabled</b> - Позволяет стилизовать кнопку когда она находится в состоянии <b>disabled</b>, которое указывается в HTML теге кнопки.
+      </p>
+      <button class="b40-disabled" disabled>Button</button>
+    </div>
     <p class="title">
       <b>41.</b> Свойство <b>font-variant: small-caps / normal</b> Капитель - вид строчных букв, размер которых совпадает (или приближен) к размеру заглавных букв.
     </p>
@@ -962,6 +1000,281 @@
         </div>
       </div>
     </article>
+    <p class="title">
+      <b>54.</b> Комбинаторные селекторы. (Подробнее в HTML и CSS файлах).
+    </p>
+    <h3>
+      Блоки до изменений:
+    </h3>
+    <div class="b54-parent b54-parent1">
+      <div class="b54-child b54-child1"></div>
+      <div class="b54-child b54-child2"></div>
+    </div>
+    <h3>
+      Селектор по запятой:
+    </h3>
+    <p>
+      Обращение происходит ко всем селетокторам выписанным через запятую в CSS.
+    </p>
+    <pre class="code_view">
+      <code>
+.b54-child-comma {
+  background-color: red;
+}
+
+.b54-child-comma1<span class="attention"><b>,</b></span> .b54-child-comma2 {
+  background-color: yellow;
+}</code>
+    </pre>
+    <div class="b54-parent-comma b54-parent-comma1">
+      <div class="b54-child-comma b54-child-comma1">b54-child-comma b54-child-comma1</div>
+      <div class="b54-child-comma b54-child-comma2">b54-child-comma b54-child-comma2</div>
+    </div>
+    <h3>
+      Селектор пробел:
+    </h3>
+    <p>
+      Выбирает все элементы находящиеся внутри указанного элемента.
+    </p>
+    <pre class="code_view">
+      <code>
+.b54-child-space {
+  background-color: red;
+}
+
+.b54-parent-space1 .b54-child-space {
+  background-color: tan;
+}</code>
+    </pre>
+    <div class="b54-parent-space b54-parent-space1">
+      <div class="b54-child-space">b54-child-space</div>
+      <div class="b54-child-space">b54-child-space</div>
+    </div>
+    <h3>
+      "&#62;" Дочерний селектор:
+    </h3>
+    <p>
+      Выбирает непосредственно дочерние элементы, не влезая в последующие уровни вложенности.
+    </p>
+    <pre class="code_view">
+      <code>
+.b54-child-daughter {
+  background-color: red;
+}
+
+.b54-parent-daughter1 <span class="attention"><b>&#62;</b></span> .b54-child-daughter {
+  background-color: blue;
+}</code>
+    </pre>
+    <div class="b54-parent-daughter b54-parent-daughter1">
+      <div class="b54-child-daughter">b54-child-daughter</div>
+      <div class="b54-child-daughter">
+          <div class="b54-child-daughter">b54-child-daughter</div>
+      </div>
+    </div>
+    <h3>
+      "~" Все соседние элементы:
+    </h3>
+    <p>
+      Выбирает всех соседей указанного селектора.
+    </p>
+    <pre class="code_view">
+      <code>
+.b54-child-neighboring {
+  background-color: red;
+}
+
+.b54-parent-neighboring1 .b54-child-neighboring <span class="attention"><b>~</b></span> .b54-child-neighboring1 {
+  background-color: aqua;
+}</code>
+    </pre>
+    <div class="b54-parent-neighboring b54-parent-neighboring1">
+      <div class="b54-child-neighboring">b54-child-neighboring</div>
+      <div class="b54-child-neighboring">b54-child-neighboring</div>
+      <div class="b54-child-neighboring b54-child-neighboring1">b54-child-neighboring b54-child-neighboring1</div>
+    </div>
+    <h3>
+      "+" Следующий соседний элемент:
+    </h3>
+    <p>
+      Выбирает только следующий за собой соседний элемент, а не все как предыдущий. Используется для стилизации нестилезуемых инпутов.
+    </p>
+    <pre class="code_view">
+      <code>
+.b54-child-next {
+  background-color: red;
+}
+
+.b54-parent-next1 .b54-child-next <span class="attention"><b>+</b></span> .b54-child-next1 {
+  background-color: green;
+}</code>
+    </pre>
+    <div class="b54-parent-next b54-parent-next1">
+      <div class="b54-child-next">
+        b54-child-next
+      </div>
+      <div class="b54-child-next b54-child-next1">
+        b54-child-next b54-child-next1
+      </div>
+      <div class="b54-child-next">
+        b54-child-next
+      </div>
+    </div>
+    <h3>
+      "селектор[атрибут]" Проверка на наличие атрибута:
+    </h3>
+    <p>
+      Если атрибут есть - добавить стили.
+    </p>
+    <pre class="code_view">
+      <code>
+a<span class="attention">[target]</span> {
+  color: red;
+  font-weight: bold;
+}</code>
+    </pre>
+    <div class="b54-link-wrapper">
+      <a class="b54-link" href="#">
+        Ссылка без target
+      </a>
+      <a class="b54-link" href="#">
+        Ссылка без target
+      </a>
+      <a class="b54-link" href="#" target="_blank">
+        Ссылка с target
+      </a>
+      <a class="b54-link" href="#">
+        Ссылка без target
+      </a>
+    </div>
+    <h3>
+      Можно ссылаться не только на определенный атрибут, но и на четкое значение.
+    </h3>
+    <pre class="code_view">
+      <code>
+a<span class="attention">[href="https://www.google.com"]</span> {
+  color: red;
+  font-weight: bold;
+}</code>
+    </pre>
+    <div class="b54-link-wrapper">
+      <a class="b54-link" href="#">
+        Ссылка с href="#"
+      </a>
+      <a class="b54-link" href="#">
+        Ссылка с href="#"
+      </a>
+      <a class="b54-link" href="https://www.google.com">
+        аполненная ссылка
+      </a>
+      <a class="b54-link" href="#">
+        Ссылка с href="#"
+      </a>
+    </div>
+    <h3>
+      "*" Можно не указывать точное значение, а выделить лишь определенное слово из строки.
+    </h3>
+    <pre class="code_view">
+      <code>
+a<span class="attention">[href*=".com"]</span> {
+  color: red;
+  font-weight: bold;
+}</code>
+    </pre>
+    <div class="b54-link-wrapper">
+      <a class="b54-link" href="https://www.ya.ru">
+        Ссылка доменом .ru
+      </a>
+      <a class="b54-link" href="https://www.google.com">
+        Ссылка доменом .com
+      </a>
+      <a class="b54-link" href="https://www.ya.ru">
+        Ссылка доменом .ru
+      </a>
+      <a class="b54-link" href="https://www.ya.ru">
+        Ссылка доменом .ru
+      </a>
+    </div>
+    <h3>
+      "^" Если атрибут начинается с этой строки - примени стили.
+    </h3>
+    <pre class="code_view">
+      <code>
+a<span class="attention">[href^="a"]</span> {
+  color: green;
+  font-weight: bold;
+}</code>
+    </pre>
+    <div class="b54-link-wrapper">
+      <a class="b54-link b54-link-start" href="bca">
+        Ссылка начинающаяся с 'b'
+      </a>
+      <a class="b54-link b54-link-start" href="bca">
+        Ссылка начинающаяся с 'b'
+      </a>
+      <a class="b54-link b54-link-start" href="abc">
+        Ссылка начинающаяся с 'a'
+      </a>
+      <a class="b54-link b54-link-start" href="bca">
+        Ссылка начинающаяся с 'b'
+      </a>
+    </div>
+    <h3>
+      "$" Если атрибут заканчивается на эту строку - примени стили.
+    </h3>
+    <pre class="code_view">
+      <code>
+a<span class="attention">[href$="c"]</span> {
+  color: navy;
+  font-weight: bold;
+}</code>
+    </pre>
+    <div class="b54-link-wrapper">
+      <a class="b54-link b54-link-end" href="bca">
+        Ссылка заканчивающаяся на 'a'
+      </a>
+      <a class="b54-link b54-link-end" href="bca">
+        Ссылка заканчивающаяся на 'a'
+      </a>
+      <a class="b54-link b54-link-end" href="abc">
+        Ссылка заканчивающаяся на 'c'
+      </a>
+      <a class="b54-link b54-link-end" href="bca">
+        Ссылка заканчивающаяся на 'a'
+      </a>
+    </div>
+    <p class="title">
+      <b>55.</b> Ключевые значения в CSS <b>свойство: initial, inherit, unset, revert</b>.
+    </p>
+    <p>
+      У каждого стиля есть начальные свойства которые никак не связаны с браузером. Ключевые значения позволяют либо сбросить все до начальных значений, либо наследовать стили от родителя.
+    </p>
+    <p>
+      <i>CSS правило состоит из:</i>
+    </p>
+    <pre class="code_view">
+<code>
+.селектор {
+  свойство: значение;
+}</code>
+    </pre>
+    <ul class="b55-list">
+      <li class="b55-item">
+        <b>initial</b> - Возвращает стили к своему самому начальному значению.
+      </li>
+      <li class="b55-item">
+        <b>inherit</b> - Дочерний элемент наследует стили от родительского элемента.
+      </li>
+      <li class="b55-item">
+        <b>unset</b> - Работает в зависимости от типа свойства к которому применяется. В CSS есть два типа свойства, <b><i>наследуемые (например color)</i></b> и <b><i>не наследуемые (например display)</i></b>, если свойство наследуемое, то <b>unset</b> сработает как <b>inherit</b>, а если свойство не наследуется, то <b>unset</b> превращается в <b>initial</b>.
+        <p>
+          Возникает вопрос, а зачем нам свойство которое переопределяется либо в одно, либо в другое? Представим ситуацию что у элемента нужно сбросить все стили до начального значения, для этого мы можем каждому свойству задавать либо <b>inherit</b> либо <b>initial</b>, а можем применить свойство <b>all: unset;</b> которое сбросит все стили присутствующие у элемента до начальных значений.
+        </p>
+      </li>
+      <li class="b55-item">
+        <b>revert</b> - Аналог свойства <b>unset</b>, только оно сбрасывает стили не к начальным значениям, а к браузерным по умолчанию. (Является рекомендуемым, тк сбрасывает стили к привычным, браузерным).
+      </li>
+    </ul>
   </div>
 </body>
 
