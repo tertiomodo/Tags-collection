@@ -1,3 +1,15 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* ---------------------------- */
+
 .list {
   list-style: circle;
 }
@@ -8,7 +20,7 @@
 
 .code_view {
   line-height: 25px;
-  margin: 10px 0 0 50px;
+  margin: 10px 0 10px 10px;
   display: inline-block;
   border-radius: 5px;
   padding: 0 10px;
@@ -16,7 +28,7 @@
 }
 
 .code_realisation {
-  margin: 10px 0 0 50px;
+  margin: 10px 0 10px 10px;
   display: inline-block;
   border-radius: 5px;
   padding: 10px;
@@ -33,26 +45,21 @@
 
 /*Фиксированная шапка*/
 
-.header {
-  width: 100%;
-  padding: 15px 0;
-  background-color: rgb(226, 226, 226);
+.header-description {
   position: fixed;
+  max-width: 1060px;
+  left: 420px;
+  padding: 15px;
+  background-color: rgb(226, 226, 226);
   border-radius: 50px;
   z-index: 10;
-}
-
-/*Описание в шапке сайта*/
-
-.header-description {
-  text-align: center;
 }
 
 /*Блок в котором находится вся страница*/
 
 .content {
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 90px 0;
   width: 100%;
   max-width: 1170px;
 }
@@ -858,7 +865,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   /* background-image: none; */ /*Позволяет очищать блок background-iamge*/
 }
 
@@ -878,7 +885,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: center center;
 }
 
@@ -887,7 +894,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: 0 500px;
 }
 
@@ -896,7 +903,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: 100% 50%;
 }
 
@@ -905,7 +912,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: right top;
 }
 
@@ -926,7 +933,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: 23% 56px;
   /* background-repeat: repeat; */ /*Функция repeat по умолчанию*/
 }
@@ -936,7 +943,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: 23% 56px;
   background-repeat: no-repeat;
 }
@@ -946,7 +953,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: 100px 56%;
   background-repeat: repeat-x;
 }
@@ -956,7 +963,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: 50% 80px;
   background-repeat: repeat-y;
 }
@@ -978,7 +985,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 300px;
   height: 300px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -989,7 +996,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 300px;
   height: 300px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1000,7 +1007,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 300px;
   height: 300px;
-  background-image: url("img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 80% 50%;
@@ -1033,7 +1040,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 300px;
   height: 300px;
-  background: transparent url("img/forest.jpg") no-repeat center center / cover;
+  background: transparent url("../img/forest.jpg") no-repeat center center / cover;
 }
 
 /* 37. Свойство background-color и варианты его использования */
@@ -1054,7 +1061,7 @@ h1, h2 {
   width: 300px;
   height: 300px;
   overflow: hidden;
-  background: transparent url("img/forest.jpg") no-repeat center center / cover;
+  background: transparent url("../img/forest.jpg") no-repeat center center / cover;
 }
 
 .b37-background-color-on {
@@ -1104,18 +1111,66 @@ h1, h2 {
   visibility: hidden;
 }
 
-/* 40. Псевдоклассы Hover, focus, visited */
+/* 40. Псевдоклассы :hover, :focus, :visited */
 
-.b40-hover {
-  margin: 0;
-  display: inline-block;
-  width: 400px;
-  font-size: 15px;
-  padding: 10px;
+.b40-hover { /* :hover */
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: red;
 }
 
 .b40-hover:hover {
-  background-color: crimson;
+  background-color: blue;
+}
+
+.b40-focus { /* :focus */
+  width: 300px;
+  height: 50px;
+  margin: 20px 0;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.b40-focus:focus {
+  outline: 3px solid red;
+}
+
+.b40-active { /* :active */
+  width: 300px;
+  height: 50px;
+  margin: 20px 0;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.b40-active:active {
+  background-color: red;
+}
+
+.b40-checked { /* :checked */
+  width: 100px;
+  height: 50px;
+}
+
+.b40-checked:checked {
+  width: 100px;
+  height: 100px;
+}
+
+.b40-disabled { /* :disabled */
+  width: 200px;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+.b40-disabled:disabled { /* :disabled */
+  opacity: 0.4;
+  background-color: rgb(138, 90, 90);
 }
 
 /* 41. Свойство font-variant: small-caps / normal - капитель */
@@ -1403,4 +1458,241 @@ h1, h2 {
 
 .b52-zoom-in {
   cursor: zoom-in;
+}
+
+/* 53. Блок с контентом поверх фонового изображения. */
+
+.b53-card {
+  width: 573px;
+  height: 258px;
+  overflow: hidden;
+  background: url('../img/b53-img.jpg') no-repeat center center / cover;
+  border-radius: 15px;
+}
+
+.b53-darken {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%);
+}
+
+.b53-content {
+  padding: 14px 0px 0px 32px;
+}
+
+.b53-card-title {
+  font-style: normal;
+  margin: 0;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 40px;
+  padding-bottom: 50px;
+  text-shadow: 0 0 4px rgb(129, 129, 129);
+  color: #FFFFFF;
+}
+
+.b53-card-price {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 20px;
+  margin: 0 0 47px;
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+.b53-card-link {
+  padding-right: 23px;
+  text-decoration: none;
+  background: url('../img/b53-arrow.svg') no-repeat bottom right / contain;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 16px;
+  color: #F0BF5F;
+}
+
+/* 54. Комбинаторные селекторы */
+
+/* Блоки до изменений: */
+
+.b54-parent  {
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #808080;
+}
+
+.b54-child {
+  width: 100px;
+  height: 100px;
+  background-color: #dc143c;
+  border: 1px solid #000000;
+}
+
+/* ---Селектор по запятой--- */
+
+.b54-parent-comma  {
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #808080;
+}
+
+.b54-child-comma {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  font-size: 11px;
+  background-color: red;
+  border: 1px solid #000000;
+}
+
+.b54-child-comma1,
+.b54-child-comma2 {
+  background-color: yellow;
+}
+
+/* ---Селектор пробел--- */
+
+.b54-parent-space  {
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #808080;
+}
+
+.b54-child-space {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  font-size: 11px;
+  background-color: red;
+  border: 1px solid #000000;
+}
+
+.b54-parent-space1 .b54-child-space {
+  background-color: tan;
+}
+
+/* ---Дочерний селектор--- */
+
+.b54-parent-daughter  {
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #808080;
+}
+
+.b54-child-daughter {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  font-size: 11px;
+  background-color: red;
+  border: 1px solid #000000;
+}
+
+.b54-parent-daughter1 > .b54-child-daughter {
+  background-color: blue;
+}
+
+/* ---Все соседние элементы--- */
+
+.b54-parent-neighboring  {
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #808080;
+}
+
+.b54-child-neighboring {
+  display: flex;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  padding: 5px;
+  font-size: 11px;
+  background-color: red;
+  border: 1px solid #000000;
+}
+
+.b54-parent-neighboring1 .b54-child-neighboring ~ .b54-child-neighboring1 {
+  background-color: aqua;
+}
+
+/* ---Следующий соседний элемент--- */
+
+.b54-parent-next  {
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #808080;
+}
+
+.b54-child-next {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  font-size: 11px;
+  background-color: red;
+  border: 1px solid #000000;
+}
+
+.b54-parent-next1 .b54-child-next + .b54-child-next1 {
+  background-color: green;
+}
+
+/* Проверка на наличе атрибута */
+
+.b54-link-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.b54-link:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+a[target],
+a[href="https://www.google.com"],
+a[href*=".com"] {
+  color: red;
+  font-weight: bold;
+}
+
+.b54-link-start[href^="a"] {
+  color: green;
+  font-weight: bold;
+}
+
+.b54-link-end[href$="c"] {
+  color: navy;
+  font-weight: bold;
+}
+
+/* 55. */
+
+.b55-list {
+  list-style: none;
+  padding: 0;
+}
+
+.b55-item:not(:last-child) {
+  margin-bottom: 20px;
 }
