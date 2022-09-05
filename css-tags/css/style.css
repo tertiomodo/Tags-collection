@@ -21,7 +21,8 @@ html {
 .code_view {
   line-height: 25px;
   margin: 10px 0 10px 10px;
-  display: inline-block;
+  display: block;
+  max-width: 580px;
   border-radius: 5px;
   padding: 0 10px;
   border: 1px solid rgb(226, 226, 226);
@@ -29,7 +30,8 @@ html {
 
 .code_realisation {
   margin: 10px 0 10px 10px;
-  display: inline-block;
+  display: block;
+  max-width: 900px;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid rgb(226, 226, 226);
@@ -1158,8 +1160,9 @@ h1, h2 {
   height: 100px;
 }
 
-.b40-disabled { /* :disabled */
+.b40-button { /* :disabled */ 
   width: 200px;
+  display: block;
   padding: 20px;
   font-weight: 600;
   font-size: 20px;
@@ -1170,8 +1173,59 @@ h1, h2 {
 
 .b40-disabled:disabled { /* :disabled */
   opacity: 0.4;
+  font-style: italic;
+  letter-spacing: 20px;
   background-color: rgb(138, 90, 90);
 }
+
+.b40-input-style { /* :valid / :invalid */
+  width: 200px;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.b40-valid-invalid:valid {
+  background-color: lime;
+}
+
+.b40-valid-invalid:invalid {
+  background-color: red;
+}
+
+.b40-parent { /* child */
+  max-width: 600px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.b40-child:first-child {
+  background-color: green;
+}
+
+.b40-child:nth-child(2n) {
+  color: blue;
+}
+
+.b40-child:nth-child(3) {
+  background-color: red;
+}
+
+.b40-child:not(:nth-child(4)) {
+  font-style: italic;
+}
+
+.b40-child:nth-last-child(2) {
+  background-color: violet;
+}
+
+.b40-child:last-child {
+  background-color: yellow;
+}
+
 
 /* 41. Свойство font-variant: small-caps / normal - капитель */
 
@@ -1686,7 +1740,7 @@ a[href*=".com"] {
   font-weight: bold;
 }
 
-/* 55. */
+/* 55. Ключевые значения в CSS свойства: initial, inherit, unset, revert */
 
 .b55-list {
   list-style: none;
@@ -1695,4 +1749,69 @@ a[href*=".com"] {
 
 .b55-item:not(:last-child) {
   margin-bottom: 20px;
+}
+
+/* 56. Псевдоэлементы */
+
+.b56-first-line { /* ::first-line */
+  width: 560px;
+  min-height: 100px;
+  padding: 10px;
+  background-color: tomato;
+}
+
+.b56-first-line::first-line {
+  color: #ffffff;
+}
+
+.b56-first-letter { /* ::first-letter  */
+  width: 560px;
+  min-height: 100px;
+  padding: 10px;
+  background-color: tomato;
+}
+
+.b56-first-letter::first-letter {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.b56-placeholder { /* ::placeholder */ 
+  width: 200px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.b56-placeholder::placeholder {
+  font-style: italic;
+  letter-spacing: 3px;
+  border-radius: 5px;
+  background-color: rgb(135, 228, 158);
+}
+
+.b56-selection::selection { /* ::selection */
+  background-color: tomato;
+}
+
+.b56-before::before { /* ::before */
+  content: "Привет!";
+  display: block;
+  max-width: 85px;
+  padding: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  background-color: tomato;
+}
+
+.b56-after::after { /* ::after */
+  content: "Пока";
+  display: block;
+  max-width: 60px;
+  padding: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  background-color: tomato;
 }
