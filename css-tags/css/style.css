@@ -1864,12 +1864,39 @@ a[href*=".com"] {
   content: "0" counter(section) ": ";
 }
 
-.b56-before-link::before { /* Пример 2 c использованием псевдоэлемента ::before */
+.b56-before-link { /* Пример 2 c использованием псевдоэлемента ::before */
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.b56-before-link::before {
   content: "";
   display: inline-block;
   margin-right: 5px;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   background: url('../img/css.ico') no-repeat center center / cover;
+}
+
+/* 57. Переменные */
+
+:root {
+  --yellow-color: #fcba03;
+  --text-size: 20px;
+}
+
+.b57-element-root {
+  color: var(--yellow-color);
+  font-size: var(--text-size);
+}
+
+.b57-element {
+  --yellow-color: #fcba03;
+}
+
+.b57-element {
+  color: var(--yellow-color);
 }
 

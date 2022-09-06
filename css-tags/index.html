@@ -1258,10 +1258,10 @@ a<span class="attention">[href^="a"]</span> {
     </h3>
     <pre class="code_view">
       <code>
-a<span class="attention">[href$="c"]</span> {
-  color: navy;
-  font-weight: bold;
-}</code>
+  a<span class="attention">[href$="c"]</span> {
+    color: navy;
+    font-weight: bold;
+  }</code>
     </pre>
     <div class="b54-link-wrapper">
       <a class="b54-link b54-link-end" href="bca">
@@ -1287,10 +1287,10 @@ a<span class="attention">[href$="c"]</span> {
       <i>CSS правило состоит из:</i>
     </p>
     <pre class="code_view">
-<code>
-.селектор {
-  свойство: значение;
-}</code>
+  <code>
+  .селектор {
+    свойство: значение;
+  }</code>
     </pre>
     <ul class="b55-list">
       <li class="b55-item">
@@ -1314,11 +1314,11 @@ a<span class="attention">[href$="c"]</span> {
     </p>
     <pre class="code_view">
       <code>
-Синтаксис:
-.selector<span class="attention">::pseudo-element</span> {
-  property: value;
-}</code>
-    </pre>
+  Синтаксис:
+  .selector<span class="attention">::pseudo-element</span> {
+    property: value;
+  }</code>
+   </pre>
     <p>
       <i>Ниже представлен список с кратким пояснением для наиболее популярных псевдоэлементов:</i>
     </p>
@@ -1386,15 +1386,15 @@ a<span class="attention">[href$="c"]</span> {
         </p>
 <pre class="code_view">
 <code>
-ol {
-  counter-reset: section; /* Вместо <b>section</b> можно использовать любое другое слово - это переменная */
-  list-style: none;
-}
+  ol {
+    counter-reset: section; /* Вместо <b>section</b> можно использовать любое другое слово - это переменная */
+    list-style: none;
+  }
 
-li<span class="attention">::before</span> {
-  counter-increment: section;
-  content: "0" counter(section) ": ";
-}
+  li<span class="attention">::before</span> {
+    counter-increment: section;
+    content: "0" counter(section) ": ";
+  }
 </code>
 </pre>
         <ol class="b56-before-list">
@@ -1409,14 +1409,14 @@ li<span class="attention">::before</span> {
         </p>
 <pre class="code_view">
 <code>
-a::before {
-  content: "";
-  display: inline-block;
-  margin-right: 5px;
-  width: 10px;
-  height: 10px;
-  background: url('../img/css.ico') no-repeat center center / cover;
-}
+  a<span class="attention">::before</span> {
+    content: "";
+    display: inline-block;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    background: url('../img/css.ico') no-repeat center center / cover;
+  }
 </code>
 </pre>
         <a class="b56-before-link" href="#">link</a>
@@ -1441,6 +1441,83 @@ a::before {
           </ul>
         </nav>
     </div>
+    <p class="title">
+      <b>57.</b> Переменные - используются для удобного хранения часто используемой информации (цвета, отступы, размеры шрифта, все что повторяется на странице).
+    </p>
+    <p>
+      Приемущество переменных в том, что вы вносите туда значение, которое, если очень нужно, можно с легкостью поменять исправив его в одной переменной. Ниже пример синтаксиса:
+    </p>
+    <p>
+      <i>У переменных есть две области работы <b>глобальная (:root)</b> и <b>локальная (.class-name)</b></i>
+    </p>
+    <p>
+      <b>:root</b> (глобальная) - если вы хотите чтобы переменная была доступна для любого элемента в коде.
+    </p>
+  <pre class="code_view"><code>
+    Объявление глобальной переменной:
+    1. Псевдокласс <b>:root</b>
+    2. Объявление переменной вида <b>--название-переменной: значение;</b>
+
+    :root {
+      --yellow-color: #fcba03;
+      --text-size: 20px;
+    }
+  ------------------------------------------
+    Вызов глобальной переменной:
+
+    .class {
+      color: var(--yellow-color);
+      font-size: var(--text-size);
+    }
+  </code></pre>
+    <p>
+      <i>
+        Результат:
+      </i>
+    </p>
+    <div class="b57-element-root">
+      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+    </div>
+    <p>
+      <b>.class-name</b> (локальная) - переменная будет доступна только внутри этого класса.
+    </p>
+  <pre class="code_view"><code>
+    Объявление локальной переменной:
+    1. Объявляется в классе в котором будет вызываться
+    2. Объявление переменной вида <b>--название-переменной: значение;</b>
+
+    .class-name {
+      --yellow-color: #fcba03;
+    }
+  ------------------------------------------  
+    Вызов локальной переменной:
+
+    .class-name {
+      color: var(--yellow-color);
+    }
+  </code></pre>
+    <p>
+      <i>
+        Результат:
+      </i>
+    </p>
+    <div class="b57-element">
+      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+    </div>
+    <p>
+      Перменные можно использовать, например, для адаптива, выставляя определенный размер шрифта при достижении определенной ширины экрана:
+    </p>
+  <pre class="code_view"><code>
+    :root {
+      --text-size: 20px;
+    }
+  
+    @media (max-width: 600px) {
+      :root {
+        --text-size: 10px;
+      }
+    }
+  </code></pre>
   </div>
 </body>
 
