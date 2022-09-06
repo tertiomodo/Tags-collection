@@ -19,19 +19,20 @@ html {
 }
 
 .code_view {
-  line-height: 25px;
-  margin: 10px 0 10px 10px;
   display: block;
+  margin: 10px 0 10px 10px;
   max-width: 580px;
-  border-radius: 5px;
+  overflow: auto;
   padding: 0 10px;
+  line-height: 25px;
+  border-radius: 5px;
   border: 1px solid rgb(226, 226, 226);
 }
 
 .code_realisation {
-  margin: 10px 0 10px 10px;
   display: block;
   max-width: 900px;
+  margin: 10px 0 10px 10px;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid rgb(226, 226, 226);
@@ -47,10 +48,14 @@ html {
 
 /*Фиксированная шапка*/
 
+.header {
+  display: flex;
+  justify-content: center;
+}
+
 .header-description {
   position: fixed;
   max-width: 1060px;
-  left: 420px;
   padding: 15px;
   background-color: rgb(226, 226, 226);
   border-radius: 50px;
@@ -1815,3 +1820,56 @@ a[href*=".com"] {
   border-radius: 50%;
   background-color: tomato;
 }
+
+.b56-nav-link { /* Пример использования псевдоэлемента ::after */
+  position: relative;
+  text-decoration: none;
+  color: #333;
+}
+
+.b56-nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.b56-nav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.b56-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.b56-nav-link:hover::after {
+  transform: scale(1);
+}
+
+.b56-before-list { /* Пример использования псевдоэлемента ::before */
+  counter-reset: section;
+  padding-bottom: 10px;
+  list-style: none;
+  border-bottom: 1px solid #333;
+}
+
+.b56-before-item::before {
+  counter-increment: section;
+  content: "0" counter(section) ": ";
+}
+
+.b56-before-link::before { /* Пример 2 c использованием псевдоэлемента ::before */
+  content: "";
+  display: inline-block;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  background: url('../img/css.ico') no-repeat center center / cover;
+}
+

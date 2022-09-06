@@ -1363,19 +1363,83 @@ a<span class="attention">[href$="c"]</span> {
     </div>
     <div class="code_realisation">
       <p>
-        <b>::before</b> - Появляется до блока. Может использоваться для вставки фона, информации о странице и позволяет разгрузить верстку.<span class="attention">Важно! у данного псевдоэлемента в CSS обязательно должно присутствовать свойство <b>content: "Текст";</b>, иначе свойство не будет работать.</span>
+        <b>::before</b> - Появляется до блока. Может использоваться для вставки фона, информации о странице и позволяет разгрузить верстку.<span class="attention">Важно! у данного псевдоэлемента в CSS обязательно должно присутствовать свойство <b>content: "Текст";</b> иначе свойство не будет работать.</span>
       </p>
       <div class="b56-before">
         Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ее, путь! Страну ты инициал коварный сих. Имеет даль рукописи, великий, своего ему мир все рекламных, повстречался океана вопрос семь!
       </div>
+        <p>
+          <b>Пример</b> добавления стилизованного счетчика для нумирации списка при помощи псевдоэлемента <b>::before</b>. Счетчик будет нумеровать не с единицы как это делает обычный список &lt;ol&gt;, а с 01 и далее 02, 03...
+        </p>
+        <p>
+          <i>Обычный список &lt;ol&gt; с привычной нумерацией (1, 2, 3...):</i>
+        </p>
+        <ol>
+          <li>text</li>
+          <li>text</li>
+          <li>text</li>
+          <li>text</li>
+          <li>text</li>
+        </ol>
+        <p>
+          <i>Кастомный список &lt;ol&gt; с нумерацией вида (01, 02, 03...), с применением псевдоэлемента <b>::before</b> и таких свойств как <b>counter-reset</b> и <b>counter-increment</b>:</i>
+        </p>
+<pre class="code_view">
+<code>
+ol {
+  counter-reset: section; /* Вместо <b>section</b> можно использовать любое другое слово - это переменная */
+  list-style: none;
+}
+
+li<span class="attention">::before</span> {
+  counter-increment: section;
+  content: "0" counter(section) ": ";
+}
+</code>
+</pre>
+        <ol class="b56-before-list">
+          <li class="b56-before-item">text</li>
+          <li class="b56-before-item">text</li>
+          <li class="b56-before-item">text</li>
+          <li class="b56-before-item">text</li>
+          <li class="b56-before-item">text</li>
+        </ol>
+        <p>
+          <b>Пример 2</b> с использованием бекграуда и псевдоэлемента <b>::before</b>, в этом примере мы вставляем изображение перед ссылкой.
+        </p>
+<pre class="code_view">
+<code>
+a::before {
+  content: "";
+  display: inline-block;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  background: url('../img/css.ico') no-repeat center center / cover;
+}
+</code>
+</pre>
+        <a class="b56-before-link" href="#">link</a>
     </div>
     <div class="code_realisation">
       <p>
-        <b>::after</b> - Появляется после блока. Может использоваться для вставки фона, информации о странице и позволяет разгрузить верстку.<span class="attention">Важно! у данного псевдоэлемента в CSS обязательно должно присутствовать свойство <b>content: "Текст";</b>, иначе свойство не будет работать.</span>
+        <b>::after</b> - Появляется после блока. Может использоваться для вставки фона, информации о странице и позволяет разгрузить верстку.<span class="attention">Важно! у данного псевдоэлемента в CSS обязательно должно присутствовать свойство <b>content: "Текст";</b> иначе свойство не будет работать.</span>
       </p>
       <div class="b56-after">
         Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ее, путь! Страну ты инициал коварный сих. Имеет даль рукописи, великий, своего ему мир все рекламных, повстречался океана вопрос семь!
       </div>
+        <p>
+          <b>Пример</b> добавления анимации подчеркивания ссылок при наведении при помощи псевдоэлемента <b>::after</b> (Подробнее в CSS файле), наведите курсор на text.
+        </p>
+        <nav class="b56-nav">
+          <ul class="b56-nav-list">
+            <li class="b56-nav-item"><a class="b56-nav-link" href="#">text</a></li>
+            <li class="b56-nav-item"><a class="b56-nav-link" href="#">text</a></li>
+            <li class="b56-nav-item"><a class="b56-nav-link" href="#">text</a></li>
+            <li class="b56-nav-item"><a class="b56-nav-link" href="#">text</a></li>
+            <li class="b56-nav-item"><a class="b56-nav-link" href="#">text</a></li>
+          </ul>
+        </nav>
     </div>
   </div>
 </body>
