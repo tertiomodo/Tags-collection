@@ -1728,7 +1728,7 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
-a[target],
+a[download],
 a[href="https://www.google.com"],
 a[href*=".com"] {
   color: red;
@@ -1898,5 +1898,45 @@ a[href*=".com"] {
 
 .b57-element {
   color: var(--yellow-color);
+}
+
+/* 58. Свойство transition */
+
+.b58-item {
+  margin-bottom: 20px;
+}
+
+.b58-element {
+  padding-bottom: 20px;
+  font-size: 25px;
+  border-bottom: 1px solid #333;
+}
+
+.b58-element:hover {
+  color: tomato;
+  /* transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.2s; */
+  transition: color 0.5s ease-in-out 0.2s;
+}
+
+.b58-button { /* Пример 2 */
+  margin-left: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  /* transition-property: color, background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out; */
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.b58-button:hover {
+  background-color: black;
+  color: white;
 }
 

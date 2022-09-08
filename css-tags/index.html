@@ -709,10 +709,15 @@
       Тут находится ссылка со свойством <b>visibility: hidden;</b> <span class="attention">---&gt;</span><a href="#" class="b39-visibility">Ссылка</a><span class="attention">&lt;---</span> она занимает необходимый ей размер, но при этом скрыта и на нее нельзя нажать.
     </p>
     <p class="title">
-      <b>40.</b> Псевдоклассы <b>:hover/:focus/:active/:checked/:disabled...</b> отвечают за изменение поведения при определенных действиях.
+      <b>40.</b> Псевдоклассы <b>:focus/:hover/:active/:checked/:disabled...</b> отвечают за изменение поведения при определенных действиях.
     </p>
     <p>
-      Псевдоклассы применяются для селектора, чтобы придать ему особое состояние. Псевдоклассы позволяют дополнительно стилизовать элементы основываясь на внешних факторах
+      Псевдоклассы применяются для селектора, чтобы придать ему особое состояние. Псевдоклассы позволяют дополнительно стилизовать элементы основываясь на внешних факторах.
+    </p>
+    <p>
+      <span class="attention">
+        Основные псевдоклассы, такие как <b>:focus/:hover/:active</b>, необходимо объявлять в CSS именно в таком порядке для их правильной работы!
+      </span>
     </p>
     <pre class="code_view">
       <code>
@@ -1162,23 +1167,23 @@
     </p>
     <pre class="code_view">
       <code>
-a<span class="attention">[target]</span> {
+a<span class="attention">[download]</span> {
   color: red;
   font-weight: bold;
 }</code>
     </pre>
     <div class="b54-link-wrapper">
-      <a class="b54-link" href="#">
-        Ссылка без target
+      <a class="b54-link">
+        Ссылка без download
       </a>
-      <a class="b54-link" href="#">
-        Ссылка без target
+      <a class="b54-link">
+        Ссылка без download
       </a>
-      <a class="b54-link" href="#" target="_blank">
-        Ссылка с target
+      <a class="b54-link" href="#" download>
+        Ссылка с download
       </a>
-      <a class="b54-link" href="#">
-        Ссылка без target
+      <a class="b54-link">
+        Ссылка без download
       </a>
     </div>
     <h3>
@@ -1518,6 +1523,112 @@ a<span class="attention">[href^="a"]</span> {
       }
     }
   </code></pre>
+    <p class="title">
+      <b>58.</b> Свойство <b>transition</b> - Отвечает за плавность анимации. <a href="https://html5book.ru/css3-transition/" target="_blank">Ссылка с подробным разбором данного свойства</a>
+    </p>
+    <ul class="b58-list">
+      <li class="b58-item">
+        <b>transition-property: color;</b> - В значение вписывается то свойство, которое хотим анимировать. Данное свойство имеет следующие значения:
+        <ul>
+          <li class="b58-item">
+            <b>property name</b> - Выборочно указываем какое свойство мы хотим анимировать
+          </li>
+          <li class="b58-item">
+            <b>all</b> - Для анимации выбираются все свойства объекта, что может затормаживать сайт
+          </li>
+          <li class="b58-item">
+            <b>none</b> - Сброс transition
+          </li>
+        </ul>
+      </li>
+      <li class="b58-item">
+        <b>transition-duration: 0.5s;</b> - В данном свойстве задается длительность анимации в секундах или миллисекундах, например, 2s или 5ms
+      </li>
+      <li class="b58-item">
+        <b>transition-timing-function: ease-in-out;</b> - Является функцией которая управляет скоростью самой анимации. Для того чтобы создать тайминг используются ключевые слова которые подвязаны к кривой Безье, которая и отвечает за темп анимации, этих слов много, подробнее можно прочитать <b><a href="https://html5book.ru/css3-transition/">тут</a></b>, а мы же воспользуемся одним из них
+      </li>
+      <li class="b58-item">
+        <b>transition-delay: 0.2s;</b> - Задержка перед началом анимации, выставляется так же в секундах и миллисекундах
+      </li>
+      <li class="b58-item">
+        <b class="attention">transition: color 0.5s ease-in-out 0.2s;</b> - Все свойства выше в одну строку! Рекомендация к использованию
+      </li>
+    </ul>
+    <p>
+      <i>
+        Действия которые мы совершаем для того, чтобы по наведению на текст, цвет плавно превращался в красный:
+      </i>
+    </p>
+    <pre class="code_view"><code>
+      .text {
+        font-size: 25px;
+      }
+      
+      .text:hover { <b>(1)</b>
+        color: tomato; 
+        transition-property: color; <b>(2)</b>
+        transition-duration: 0.5s; <b>(3)</b>
+        transition-timing-function: ease-in-out; <b>(4)</b>
+        transition-delay: 0.2s; <b>(5)</b>
+        --------------------------------------------------
+        transition: color 0.5s ease-in-out 0.2s; <b>(6)</b>
+      }
+    </code></pre>
+    <ol>
+      <li class="b58-item">
+        К селектору <b>.text</b> применяем псевдокласс <b>:hover</b> для того чтобы цвет менялся при наведении
+      </li>
+      <li class="b58-item">
+        Указываем какое свойство мы хотим анимировать (в нашем случае мы анимируем цвет при наведении), используем для этого свойство <b>transition-property: color;</b> мы сообщаем браузеру <i>"я указал цвет по наведению, теперь примени мне анимацию только к указанному цвету"</i>.
+      </li>
+      <li class="b58-item">
+        Указываем время длительности анимации. Указывать можно в секундах и миллисекундах
+      </li>
+      <li class="b58-item">
+        При помощи ключевого слова выбираем скорость анимации, все ключевые слова подвязаны к кривой Безье, которая представляет из себя график функции по которму движется наша анимация
+      </li>
+      <li class="b58-item">
+        Выставляем задержку перед началом анимации. Указывать можно в секундах и миллисекундах
+      </li>
+      <li class="b58-item">
+        Или можем указать все что мы писали выше, но в одну строку!
+      </li>
+    </ol>
+    <p>
+      <i>
+        Результат:
+      </i>
+    </p>
+    <div class="b58-element">
+      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+    </div>
+    <p>
+      <b>Пример 2</b> - Кнопка в которой нужно анимировать несколько свойств.
+    </p>
+    <pre class="code_view"><code>
+      .button {
+        <b>Развернутые свойства</b>
+        transition-property: color, background-color;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        --------------------------------------------------
+        <b>В одну строку</b>
+        transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+      }
+      
+      .button:hover {
+        background-color: black;
+        color: white;
+      }
+    </code></pre>
+    <p>
+      <i>
+        Результат:
+      </i>
+    </p>
+    <button class="b58-button">
+      Button
+    </button>
   </div>
 </body>
 
