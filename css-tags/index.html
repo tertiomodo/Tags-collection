@@ -1528,30 +1528,30 @@ a<span class="attention">[href^="a"]</span> {
     </p>
     <ul class="b58-list">
       <li class="b58-item">
-        <b>transition-property: color;</b> - В значение вписывается то свойство, которое хотим анимировать. Данное свойство имеет следующие значения:
+        <span class="gray-highlight">transition-property: color;</span> - В значение вписывается то свойство, которое хотим анимировать. Данное свойство имеет следующие значения:
         <ul>
           <li class="b58-item">
-            <b>property name</b> - Выборочно указываем какое свойство мы хотим анимировать
+            <span class="gray-highlight">property name</span> - Выборочно указываем какое свойство мы хотим анимировать
           </li>
           <li class="b58-item">
-            <b>all</b> - Для анимации выбираются все свойства объекта, что может затормаживать сайт
+            <span class="gray-highlight">all</span> - Для анимации выбираются все свойства объекта, что может затормаживать сайт
           </li>
           <li class="b58-item">
-            <b>none</b> - Сброс transition
+            <span class="gray-highlight">none</span> - Сброс transition
           </li>
         </ul>
       </li>
       <li class="b58-item">
-        <b>transition-duration: 0.5s;</b> - В данном свойстве задается длительность анимации в секундах или миллисекундах, например, 2s или 5ms
+        <span class="gray-highlight">transition-duration: 0.5s;</span> - В данном свойстве задается длительность анимации в секундах или миллисекундах, например, 2s или 5ms
       </li>
       <li class="b58-item">
-        <b>transition-timing-function: ease-in-out;</b> - Является функцией которая управляет скоростью самой анимации. Для того чтобы создать тайминг используются ключевые слова которые подвязаны к кривой Безье, которая и отвечает за темп анимации, этих слов много, подробнее можно прочитать <b><a href="https://html5book.ru/css3-transition/">тут</a></b>, а мы же воспользуемся одним из них
+        <span class="gray-highlight">transition-timing-function: ease-in-out;</span> - Является функцией которая управляет скоростью самой анимации. Для того чтобы создать тайминг используются ключевые слова которые подвязаны к кривой Безье, которая и отвечает за темп анимации, этих слов много, подробнее можно прочитать <b><a href="https://html5book.ru/css3-transition/">тут</a></b>, а мы же воспользуемся одним из них
       </li>
       <li class="b58-item">
-        <b>transition-delay: 0.2s;</b> - Задержка перед началом анимации, выставляется так же в секундах и миллисекундах
+        <span class="gray-highlight">transition-delay: 0.2s;</span> - Задержка перед началом анимации, выставляется так же в секундах и миллисекундах
       </li>
       <li class="b58-item">
-        <b class="attention">transition: color 0.5s ease-in-out 0.2s;</b> - Все свойства выше в одну строку! Рекомендация к использованию
+        <span class="gray-highlight"><b class="attention">transition: color 0.5s ease-in-out 0.2s;</b></span> - Все свойства выше в одну строку! Рекомендация к использованию
       </li>
     </ul>
     <p>
@@ -1576,10 +1576,10 @@ a<span class="attention">[href^="a"]</span> {
     </code></pre>
     <ol>
       <li class="b58-item">
-        К селектору <b>.text</b> применяем псевдокласс <b>:hover</b> для того чтобы цвет менялся при наведении
+        К селектору <span class="gray-highlight">.text</span> применяем псевдокласс <span class="gray-highlight">:hover</span> для того чтобы цвет менялся при наведении
       </li>
       <li class="b58-item">
-        Указываем какое свойство мы хотим анимировать (в нашем случае мы анимируем цвет при наведении), используем для этого свойство <b>transition-property: color;</b> мы сообщаем браузеру <i>"я указал цвет по наведению, теперь примени мне анимацию только к указанному цвету"</i>.
+        Указываем какое свойство мы хотим анимировать (в нашем случае мы анимируем цвет при наведении), используем для этого свойство <span class="gray-highlight">transition-property: color;</span> мы сообщаем браузеру <i>"я указал цвет по наведению, теперь примени мне анимацию только к указанному цвету"</i>.
       </li>
       <li class="b58-item">
         Указываем время длительности анимации. Указывать можно в секундах и миллисекундах
@@ -1629,6 +1629,136 @@ a<span class="attention">[href^="a"]</span> {
     <button class="b58-button">
       Button
     </button>
+    <p class="title">
+      <b>59.</b> Свойство <b>transform</b> - Позволяет сдвигать, поворачивать и масштабировать элементы. Трансформации преобразовывают элемент, не затрагивая остальные элементы веб-страницы. <a href="https://html5book.ru/css3-transform/" target="_blank">Ссылка с подробным разбором данного свойства</a>
+    </p>
+    <p>
+      В HTML трансформируемый элемент - это элемент с <span class="gray-highlight">display: block;</span> и <span class="gray-highlight">display: inline-block</span>
+    </p>
+    <p>
+      Ниже предствлены примеры трансформаций блоков, наведите мышку для того чтобы посмотреть как они влияют на объект:
+    </p>
+    <div class="b59-elements">
+      <div class="b59-elem b59-elem-translate">
+        translate(10px, 15px)
+      </div>
+      <div class="b59-elem b59-elem-translateX">
+        translateX(30px)
+      </div>
+      <div class="b59-elem b59-elem-translateY">
+        translateY(15px)
+      </div>
+      <div class="b59-elem b59-elem-scale">
+        scale(0.5, 0.3)
+      </div>
+      <div class="b59-elem b59-elem-scaleX">
+        scaleX(1.2)
+      </div>
+      <div class="b59-elem b59-elem-scaleY">
+        scaleY(1.3)
+      </div>
+      <div class="b59-elem b59-elem-rotate">
+        rotate(180deg)
+      </div>
+      <div class="b59-elem b59-elem-rotate-origin">
+        rotate(720deg)
+      </div>
+      <div class="b59-elem b59-elem-skew">
+        skew(-35deg, 50deg)
+      </div>
+      <div class="b59-elem b59-elem-skewX">
+        skewX(15deg)
+      </div>
+      <div class="b59-elem b59-elem-skewX">
+        skewY(35deg)
+      </div>
+      <div class="b59-elem b59-elem-matrix">
+        matrix(1.2,0,0.5,1.2,50,0)
+      </div>
+    </div>
+      <div class="code_realisation">
+        <span class="gray-highlight">translate(10px, 15px) / translateX(30px) / translateY(15px)</span> - Позволяет сдвигать элемент одновременно или отдельно по осям X и Y.
+        <div class="b59-elem b59-elem-translate">
+          translate(10px, 15px)
+        </div>
+        <div class="b59-elem b59-elem-translateX">
+          translateX(30px)
+        </div>
+        <div class="b59-elem b59-elem-translateY">
+          translateY(15px)
+        </div>
+        <p>
+          Пример с центрированием обводки кнопки
+        </p>
+        <button class="b59-translate-btn">
+          Нажми!
+        </button>
+      </div>
+      <div class="code_realisation">
+        <span class="gray-highlight">scale(0.5, 0.3) / scaleX(1.2) / scaleY(1.3)</span> - Позволяет изменять масштаб объекта одновременно или отдельно по осям X и Y.
+        <div class="b59-elem b59-elem-scale">
+          scale(0.5, 0.3)
+        </div>
+        <div class="b59-elem b59-elem-scaleX">
+          scaleX(1.2)
+        </div>
+        <div class="b59-elem b59-elem-scaleY">
+          scaleY(1.3)
+        </div>
+      </div>
+      <div class="code_realisation">
+        <span class="gray-highlight">rotate(180deg) / rotate(720deg)</span> - Позволяет поворачивать объект на заданный угол.
+        <div class="b59-elem b59-elem-rotate">
+          rotate(180deg)
+        </div>
+        <div class="b59-elem b59-elem-rotate-origin">
+          rotate(720deg)
+        </div>
+      </div>
+      <div class="code_realisation">
+        <span class="gray-highlight">skew(-35deg, 50deg) / skewX(15deg) / skewY(35deg)</span> - Позволяет деформировать стороны объекта.
+        <div class="b59-elem b59-elem-skew">
+          skew(-35deg, 50deg)
+        </div>
+        <div class="b59-elem b59-elem-skewX">
+          skewX(15deg)
+        </div>
+        <div class="b59-elem b59-elem-skewX">
+          skewY(35deg)
+        </div>
+        <p>
+          Пример с изменяющейся кнопкой
+        </p>
+        <button class="b59-skew-btn">
+          <span>Отправить</span>
+        </button>
+      </div>
+      <div class="code_realisation">
+        <span class="gray-highlight">matrix(a, c, b, d, x, y)</span> - Позволяет объединить несколько функций трансформации в одной.
+        <ul class="b59-matrix-list">
+          <li class="b59-matrix-item">
+            <span class="gray-highlight">a</span> - Изменяет масштаб по горизонтали. Значение от 0 до 1 уменьшает элемент, больше 1 — увеличивает.
+          </li>
+          <li class="b59-matrix-item">
+            <span class="gray-highlight">c</span> - Деформирует стороны элемента по оси Y, положительное значение — вверх, отрицательное — вниз.
+          </li>
+          <li class="b59-matrix-item">
+            <span class="gray-highlight">b</span> - Деформирует стороны элемента по оси X, положительное значение — влево, отрицательное — вправо.
+          </li>
+          <li class="b59-matrix-item">
+            <span class="gray-highlight">d</span> - Изменяет масштаб по вертикали. Значение меньше 1 уменьшает элемент, больше 1 — увеличивает.
+          </li>
+          <li class="b59-matrix-item">
+            <span class="gray-highlight">x</span> - Смещает элемент по оси X, положительное — вправо, отрицательное — влево.
+          </li>
+          <li class="b59-matrix-item">
+            <span class="gray-highlight">y</span> - Смещает элемент по оси Y, положительное значение — вниз, отрицательное — вверх.
+          </li>
+        </ul>
+        <div class="b59-elem b59-elem-matrix">
+          matrix(1.2,0,0.5,1.2,50,0)
+        </div>
+      </div>
   </div>
 </body>
 
