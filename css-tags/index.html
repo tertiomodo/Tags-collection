@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="img/css.ico">
+  <link rel="icon" href="assets/img/css.ico">
   <title>CSS tags collection</title>
 </head>
 
@@ -372,7 +372,7 @@
       свойстве и позволяет тексту обтекать его с противоположной стороны, <b>float: none;</b> же, позволяет отменить
       обтекание текстом.
     </p>
-    <img src="img/lososinka river.jpg" alt="Река Лососинка" class="block20-img">
+    <img src="assets/img/lososinka river.jpg" alt="Река Лососинка" class="block20-img">
     <p class="block20-text">
       Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Эта ее знаках букв мир страна
       домах встретил все его вопроса текст переулка он путь lorem за, имеет жаренные, вдали своих снова алфавит!
@@ -583,7 +583,7 @@
       Свойства взаимодействующие с изображением в CSS:
     </p>
     <ul class="b33-list">
-      <li class="b33-item"><b>background-image: url("/img/forest.jpg");</b> - свойство позволяющее добавлять изображение
+      <li class="b33-item"><b>background-image: url("../assets/img/forest.jpg");</b> - свойство позволяющее добавлять изображение
         через CSS.</li>
       <li class="b33-item"><b>background-image: none;</b> - Позволяет очищать блок background-iamge.</li>
     </ul>
@@ -652,7 +652,7 @@
     </div>
     <p>
       Короткая запись всех свойств и функций отвечающих за <b>background-image</b> в одну строчку выглядит так:<br>
-      <b class="attention">background: transparent url("/img/forest.jpg") no-repeat center center / cover;</b>
+      <b class="attention">background: transparent url("../assets/img/forest.jpg") no-repeat center center / cover;</b>
     </p>
     <ul class="b36-list">
       <li class="b36-item">Сначала указывается цвет блока, в нашем случае это <b>transparent</b> - прозрачный.</li>
@@ -719,7 +719,7 @@
         Основные псевдоклассы, такие как <b>:focus/:hover/:active</b>, необходимо объявлять в CSS именно в таком порядке для их правильной работы!
       </span>
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 Синтаксис:
 .selector<span class="attention">:pseudoclass</span> {
@@ -729,32 +729,32 @@
     <p>
       <i>Ниже представлен список с кратким пояснением для наиболее популярных псевдоклассов:</i>
     </p>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>:hover</b> - Отвечает за наведение курсора мыши на объект. Наведите мышку на квадрат ниже.
       </p>
       <div class="b40-hover"></div>
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>:focus</b> - Отвечает за фокусировку на элементе при помощи tab или клике по фокусируемому элементу.
       </p>
       <input class="b40-focus" type="text">
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>:active</b> - Отвечает за фокусировку на элементе когда мы нажимаем на элемент и удерживаем кнопку зажатой. Состояние <b>:focus</b> и <b>:active</b> суммируются и могут рабоать вместе.
       </p>
       <input class="b40-active" type="text">
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>:checked</b> - Срабатывает когда чекбокс находится в активном состоянии.
       </p>
       <input class="b40-checked" type="radio" name="checked">
       <input class="b40-checked" type="radio" name="checked">
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>:disabled</b> - Позволяет стилизовать кнопку когда она находится в состоянии <b>disabled</b>, которое указывается в HTML теге кнопки.
       </p>
@@ -772,7 +772,7 @@
       </span>
       <button class="b40-button b40-disabled" disabled>Button</button>
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>:valid / :invalid</b> - Позволяют задать стили состояния элемента если он прошел валидацию или не прошел её.
       </p>
@@ -781,7 +781,7 @@
       </p>
       <input class="b40-input-style b40-valid-invalid" type="email" placeholder="Введите Email" required>
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>:nth-child(value) / :first-child / :last-child / nth-last-child(value)</b> - Позволяют задавать стили элементам внутри родителя согласно их обработке браузером (сверху вниз).
       </p>
@@ -848,7 +848,7 @@
     <p>
       Например, пусть для портрентной ориентации текст будет белым, а для альбомной чёрным:
     </p>
-    <pre class="code_view"><code>
+    <pre class="code-view"><code>
       @media (orientation: portrait) {
         .text {
           color: #ffffff;
@@ -889,13 +889,13 @@
     <p>
       Переменная создаётся с помощью конструкции <b>--имя-переменной</b>. Имя переменной вы можете выбрать сами. Для примера создадим переменную <b>--main-color</b>, которая будет содержать базовый цвет страниц. Пускай он будет чёрным:
     </p>
-    <code class="code_view">
+    <code class="code-view">
       --main-color: #000000;
     </code>
     <p>
       Для создания глобальной переменной её нужно указать в специальной конструкции <b>:root</b>. Обычно это делается в самом начале CSS файла:
     </p>
-    <pre class="code_view"><code>
+    <pre class="code-view"><code>
     :root {
       --main-color: #000000;
     }  
@@ -903,7 +903,7 @@
     <p>
       Теперь можно использовать переменную в любой части нашего CSS-кода. Это делается с помощью специальной конструкции <b>var(--имя-переменной)</b>.
     </p>
-    <pre class="code_view"><code>
+    <pre class="code-view"><code>
     :root {
       --main-color: #000000;
     }
@@ -929,16 +929,41 @@
     <p class="title">
       <b>47.</b> Обзор фотографий при наведении с использованием свойств <b>position: relative;</b> и <b>transform: scale(1.2)</b>
     </p>
-    <img src="img/i.png" alt="#" class="b47-photo">
-    <img src="img/p.jpg" alt="#" class="b47-photo">
-    <img src="img/sp.jpg" alt="#" class="b47-photo">
+    <img src="assets/img/i.png" alt="#" class="b47-photo">
+    <img src="assets/img/p.jpg" alt="#" class="b47-photo">
+    <img src="assets/img/sp.jpg" alt="#" class="b47-photo">
     <p class="title">
-      <b>48.</b> Создание градиентной границы.
+      <b>48.</b> Градиенты
     </p>
-    <div class="b48-gradient">
-      <div class="b48-text">
+    <p>
+      В CSS существуют два вида граниентов, линейный (<span class="definition-highlight">linear-gradient</span>) и радиальный (<span class="definition-highlight">radial-gradient</span>)
+    </p>
+    <pre class="code-view"><code>
+      <b>Синтаксис, linear-gradient</b>
+      .gradient {
+        width: 200px;
+        height: 200px;
+        <span class="attention">background-image: linear-gradient(wheat, crimson);</span>
+      }
+    </code></pre>
+    <div class="b48-gradient-cube"></div>
+    <p>
+      Точки остановки - позволяют точно определить сколько места в % будет занимать определенный цвет
+    </p>
+    <span class="definition-highlight">background-image: linear-gradient(wheat 25%, crimson 25% 50%, navy 25%);</span>
+    <div class="b48-gradient-cube2"></div>
+    <p>
+      Направление градиента - задается при помощи указания угла наклона линии градиента и измеряется в градусах
+    </p>
+    <span class="definition-highlight">background-image: linear-gradient(45deg, wheat, crimson);</span>
+    <div class="b48-gradient-cube3"></div>
+    <p>
+      Пример линейного градиента в оформлении рамки для текста
+    </p>
+    <div class="b48-gradient-frame">
+      <p class="b48-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, fugiat molestias inventore reiciendis corrupti sed, quos nobis ab ea ut omnis, repudiandae sunt! Sequi ab cupiditate consectetur iusto aperiam similique.
-      </div>
+      </p>
     </div>
     <p class="title">
       <b>49.</b> Макет сайта на флексбоксах.
@@ -994,7 +1019,7 @@
     </div>
     <br>
     <div class="b51-media">
-      <img class="b51-media-photo" src="img/8s.jpg" alt="Bird">
+      <img class="b51-media-photo" src="assets/img/8s.jpg" alt="Bird">
       <div class="b51-media-body">
         <h3 class="b51-media-heading">Organically Synthesized</h3>
         <p>
@@ -1013,14 +1038,14 @@
     <p>
       Наведите курсор и посмотрите как он меняется:
     </p>
-    <p class="code_view b52-pointer">cursor: pointer;</p>
-    <p class="code_view b52-help">cursor: help;</p>
-    <p class="code_view b52-progress">cursor: progress;</p>
-    <p class="code_view b52-wait">cursor: wait;</p>
-    <p class="code_view b52-cell">cursor: cell;</p>
-    <p class="code_view b52-move">cursor: move;</p>
-    <p class="code_view b52-not-allowed">cursor: not-allowed;</p>
-    <p class="code_view b52-zoom-in">cursor: zoom-in;</p>
+    <p class="code-view b52-pointer">cursor: pointer;</p>
+    <p class="code-view b52-help">cursor: help;</p>
+    <p class="code-view b52-progress">cursor: progress;</p>
+    <p class="code-view b52-wait">cursor: wait;</p>
+    <p class="code-view b52-cell">cursor: cell;</p>
+    <p class="code-view b52-move">cursor: move;</p>
+    <p class="code-view b52-not-allowed">cursor: not-allowed;</p>
+    <p class="code-view b52-zoom-in">cursor: zoom-in;</p>
     <p class="title">
       <b>53.</b> Блок с контентом поверх фонового изображения.
     </p>
@@ -1055,7 +1080,7 @@
     <p>
       Обращение происходит ко всем селетокторам выписанным через запятую в CSS.
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 .b54-child-comma {
   background-color: red;
@@ -1075,7 +1100,7 @@
     <p>
       Выбирает все элементы находящиеся внутри указанного элемента.
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 .b54-child-space {
   background-color: red;
@@ -1095,7 +1120,7 @@
     <p>
       Выбирает непосредственно дочерние элементы, не влезая в последующие уровни вложенности.
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 .b54-child-daughter {
   background-color: red;
@@ -1117,7 +1142,7 @@
     <p>
       Выбирает всех соседей указанного селектора.
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 .b54-child-neighboring {
   background-color: red;
@@ -1138,7 +1163,7 @@
     <p>
       Выбирает только следующий за собой соседний элемент, а не все как предыдущий. Используется для стилизации нестилезуемых инпутов.
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 .b54-child-next {
   background-color: red;
@@ -1165,7 +1190,7 @@
     <p>
       Если атрибут есть - добавить стили.
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 a<span class="attention">[download]</span> {
   color: red;
@@ -1189,7 +1214,7 @@ a<span class="attention">[download]</span> {
     <h3>
       Можно ссылаться не только на определенный атрибут, но и на четкое значение.
     </h3>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 a<span class="attention">[href="https://www.google.com"]</span> {
   color: red;
@@ -1213,7 +1238,7 @@ a<span class="attention">[href="https://www.google.com"]</span> {
     <h3>
       "*" Можно не указывать точное значение, а выделить лишь определенное слово из строки.
     </h3>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 a<span class="attention">[href*=".com"]</span> {
   color: red;
@@ -1237,7 +1262,7 @@ a<span class="attention">[href*=".com"]</span> {
     <h3>
       "^" Если атрибут начинается с этой строки - примени стили.
     </h3>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
 a<span class="attention">[href^="a"]</span> {
   color: green;
@@ -1261,7 +1286,7 @@ a<span class="attention">[href^="a"]</span> {
     <h3>
       "$" Если атрибут заканчивается на эту строку - примени стили.
     </h3>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
   a<span class="attention">[href$="c"]</span> {
     color: navy;
@@ -1291,7 +1316,7 @@ a<span class="attention">[href^="a"]</span> {
     <p>
       <i>CSS правило состоит из:</i>
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
   <code>
   .селектор {
     свойство: значение;
@@ -1317,7 +1342,7 @@ a<span class="attention">[href^="a"]</span> {
     <p class="title">
       <b>56.</b> Псевдоэлементы - это ключевые слова, добавляемые к селектору, которое позволяет стилизовать определенную часть выбранного элемента. Важный момент, в отличии от псевдоклассов, в начале псевдоэлемента ставится два двоеточия <span class="attention">::</span>
     </p>
-    <pre class="code_view">
+    <pre class="code-view">
       <code>
   Синтаксис:
   .selector<span class="attention">::pseudo-element</span> {
@@ -1327,7 +1352,7 @@ a<span class="attention">[href^="a"]</span> {
     <p>
       <i>Ниже представлен список с кратким пояснением для наиболее популярных псевдоэлементов:</i>
     </p>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>::first-line</b> - Позволяет стилизовать первую строку в тексте.
       </p>
@@ -1335,7 +1360,7 @@ a<span class="attention">[href^="a"]</span> {
         Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Меня раз рукопись, гор приставка имени агентство своих букв до грамматики знаках запятой это возвращайся, живет первую семантика большого парадигматическая!
       </div>
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>::first-letter</b> - Позволяет стилизовать первую букву в тексте.
       </p>
@@ -1343,13 +1368,13 @@ a<span class="attention">[href^="a"]</span> {
         Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Меня раз рукопись, гор приставка имени агентство своих букв до грамматики знаках запятой это возвращайся, живет первую семантика большого парадигматическая!
       </div>
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>::placeholder</b> - Позволяет стилизовать placeholder у текстового инпута.
       </p>
       <input class="b56-placeholder" type="text" placeholder="Введите текст">
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>::selection</b> - Позволяет стилизовать выделение текста на сайте.
       </p>
@@ -1366,7 +1391,7 @@ a<span class="attention">[href^="a"]</span> {
         Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Подпоясал послушавшись семантика ведущими дорогу она рыбными, снова инициал рукопись вопрос. Текстов своих заглавных подзаголовок сбить взобравшись злых буквенных путь.
       </div>
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>::before</b> - Появляется до блока. Может использоваться для вставки фона, информации о странице и позволяет разгрузить верстку.<span class="attention">Важно! у данного псевдоэлемента в CSS обязательно должно присутствовать свойство <b>content: "Текст";</b> иначе свойство не будет работать.</span>
       </p>
@@ -1389,7 +1414,7 @@ a<span class="attention">[href^="a"]</span> {
         <p>
           <i>Кастомный список &lt;ol&gt; с нумерацией вида (01, 02, 03...), с применением псевдоэлемента <b>::before</b> и таких свойств как <b>counter-reset</b> и <b>counter-increment</b>:</i>
         </p>
-<pre class="code_view">
+<pre class="code-view">
 <code>
   ol {
     counter-reset: section; /* Вместо <b>section</b> можно использовать любое другое слово - это переменная */
@@ -1412,7 +1437,7 @@ a<span class="attention">[href^="a"]</span> {
         <p>
           <b>Пример 2</b> с использованием бекграуда и псевдоэлемента <b>::before</b>, в этом примере мы вставляем изображение перед ссылкой.
         </p>
-<pre class="code_view">
+<pre class="code-view">
 <code>
   a<span class="attention">::before</span> {
     content: "";
@@ -1420,13 +1445,13 @@ a<span class="attention">[href^="a"]</span> {
     margin-right: 5px;
     width: 20px;
     height: 20px;
-    background: url('../img/css.ico') no-repeat center center / cover;
+    background: url('..assets/img/css.ico') no-repeat center center / cover;
   }
 </code>
 </pre>
         <a class="b56-before-link" href="#">link</a>
     </div>
-    <div class="code_realisation">
+    <div class="code-realisation">
       <p>
         <b>::after</b> - Появляется после блока. Может использоваться для вставки фона, информации о странице и позволяет разгрузить верстку.<span class="attention">Важно! у данного псевдоэлемента в CSS обязательно должно присутствовать свойство <b>content: "Текст";</b> иначе свойство не будет работать.</span>
       </p>
@@ -1458,7 +1483,7 @@ a<span class="attention">[href^="a"]</span> {
     <p>
       <b>:root</b> (глобальная) - если вы хотите чтобы переменная была доступна для любого элемента в коде.
     </p>
-  <pre class="code_view"><code>
+  <pre class="code-view"><code>
     Объявление глобальной переменной:
     1. Псевдокласс <b>:root</b>
     2. Объявление переменной вида <b>--название-переменной: значение;</b>
@@ -1486,7 +1511,7 @@ a<span class="attention">[href^="a"]</span> {
     <p>
       <b>.class-name</b> (локальная) - переменная будет доступна только внутри этого класса.
     </p>
-  <pre class="code_view"><code>
+  <pre class="code-view"><code>
     Объявление локальной переменной:
     1. Объявляется в классе в котором будет вызываться
     2. Объявление переменной вида <b>--название-переменной: значение;</b>
@@ -1512,7 +1537,7 @@ a<span class="attention">[href^="a"]</span> {
     <p>
       Перменные можно использовать, например, для адаптива, выставляя определенный размер шрифта при достижении определенной ширины экрана:
     </p>
-  <pre class="code_view"><code>
+  <pre class="code-view"><code>
     :root {
       --text-size: 20px;
     }
@@ -1528,30 +1553,30 @@ a<span class="attention">[href^="a"]</span> {
     </p>
     <ul class="b58-list">
       <li class="b58-item">
-        <span class="gray-highlight">transition-property: color;</span> - В значение вписывается то свойство, которое хотим анимировать. Данное свойство имеет следующие значения:
+        <span class="definition-highlight">transition-property: color;</span> - В значение вписывается то свойство, которое хотим анимировать. Данное свойство имеет следующие значения:
         <ul>
           <li class="b58-item">
-            <span class="gray-highlight">property name</span> - Выборочно указываем какое свойство мы хотим анимировать
+            <span class="definition-highlight">property name</span> - Выборочно указываем какое свойство мы хотим анимировать
           </li>
           <li class="b58-item">
-            <span class="gray-highlight">all</span> - Для анимации выбираются все свойства объекта, что может затормаживать сайт
+            <span class="definition-highlight">all</span> - Для анимации выбираются все свойства объекта, что может затормаживать сайт
           </li>
           <li class="b58-item">
-            <span class="gray-highlight">none</span> - Сброс transition
+            <span class="definition-highlight">none</span> - Сброс transition
           </li>
         </ul>
       </li>
       <li class="b58-item">
-        <span class="gray-highlight">transition-duration: 0.5s;</span> - В данном свойстве задается длительность анимации в секундах или миллисекундах, например, 2s или 5ms
+        <span class="definition-highlight">transition-duration: 0.5s;</span> - В данном свойстве задается длительность анимации в секундах или миллисекундах, например, 2s или 5ms
       </li>
       <li class="b58-item">
-        <span class="gray-highlight">transition-timing-function: ease-in-out;</span> - Является функцией которая управляет скоростью самой анимации. Для того чтобы создать тайминг используются ключевые слова которые подвязаны к кривой Безье, которая и отвечает за темп анимации, этих слов много, подробнее можно прочитать <b><a href="https://html5book.ru/css3-transition/">тут</a></b>, а мы же воспользуемся одним из них
+        <span class="definition-highlight">transition-timing-function: ease-in-out;</span> - Является функцией которая управляет скоростью самой анимации. Для того чтобы создать тайминг используются ключевые слова которые подвязаны к кривой Безье, которая и отвечает за темп анимации, этих слов много, подробнее можно прочитать <b><a href="https://html5book.ru/css3-transition/">тут</a></b>, а мы же воспользуемся одним из них
       </li>
       <li class="b58-item">
-        <span class="gray-highlight">transition-delay: 0.2s;</span> - Задержка перед началом анимации, выставляется так же в секундах и миллисекундах
+        <span class="definition-highlight">transition-delay: 0.2s;</span> - Задержка перед началом анимации, выставляется так же в секундах и миллисекундах
       </li>
       <li class="b58-item">
-        <span class="gray-highlight"><b class="attention">transition: color 0.5s ease-in-out 0.2s;</b></span> - Все свойства выше в одну строку! Рекомендация к использованию
+        <span class="definition-highlight"><b class="attention">transition: color 0.5s ease-in-out 0.2s;</b></span> - Все свойства выше в одну строку! Рекомендация к использованию
       </li>
     </ul>
     <p>
@@ -1559,7 +1584,7 @@ a<span class="attention">[href^="a"]</span> {
         Действия которые мы совершаем для того, чтобы по наведению на текст, цвет плавно превращался в красный:
       </i>
     </p>
-    <pre class="code_view"><code>
+    <pre class="code-view"><code>
       .text {
         font-size: 25px;
       }
@@ -1576,10 +1601,10 @@ a<span class="attention">[href^="a"]</span> {
     </code></pre>
     <ol>
       <li class="b58-item">
-        К селектору <span class="gray-highlight">.text</span> применяем псевдокласс <span class="gray-highlight">:hover</span> для того чтобы цвет менялся при наведении
+        К селектору <span class="definition-highlight">.text</span> применяем псевдокласс <span class="definition-highlight">:hover</span> для того чтобы цвет менялся при наведении
       </li>
       <li class="b58-item">
-        Указываем какое свойство мы хотим анимировать (в нашем случае мы анимируем цвет при наведении), используем для этого свойство <span class="gray-highlight">transition-property: color;</span> мы сообщаем браузеру <i>"я указал цвет по наведению, теперь примени мне анимацию только к указанному цвету"</i>.
+        Указываем какое свойство мы хотим анимировать (в нашем случае мы анимируем цвет при наведении), используем для этого свойство <span class="definition-highlight">transition-property: color;</span> мы сообщаем браузеру <i>"я указал цвет по наведению, теперь примени мне анимацию только к указанному цвету"</i>.
       </li>
       <li class="b58-item">
         Указываем время длительности анимации. Указывать можно в секундах и миллисекундах
@@ -1605,7 +1630,7 @@ a<span class="attention">[href^="a"]</span> {
     <p>
       <b>Пример 2</b> - Кнопка в которой нужно анимировать несколько свойств.
     </p>
-    <pre class="code_view"><code>
+    <pre class="code-view"><code>
       .button {
         <b>Развернутые свойства</b>
         transition-property: color, background-color;
@@ -1633,59 +1658,89 @@ a<span class="attention">[href^="a"]</span> {
       <b>59.</b> Свойство <b>transform</b> - Позволяет сдвигать, поворачивать и масштабировать элементы. Трансформации преобразовывают элемент, не затрагивая остальные элементы веб-страницы. <a href="https://html5book.ru/css3-transform/" target="_blank">Ссылка с подробным разбором данного свойства</a>
     </p>
     <p>
-      В HTML трансформируемый элемент - это элемент с <span class="gray-highlight">display: block;</span> и <span class="gray-highlight">display: inline-block</span>
+      В HTML трансформируемый элемент - это элемент с <span class="definition-highlight">display: block;</span> и <span class="definition-highlight">display: inline-block</span>
     </p>
     <p>
       Ниже предствлены примеры трансформаций блоков, наведите мышку для того чтобы посмотреть как они влияют на объект:
     </p>
-    <div class="b59-elements">
-      <div class="b59-elem b59-elem-translate">
-        translate(10px, 15px)
-      </div>
-      <div class="b59-elem b59-elem-translateX">
-        translateX(30px)
-      </div>
-      <div class="b59-elem b59-elem-translateY">
-        translateY(15px)
-      </div>
-      <div class="b59-elem b59-elem-scale">
-        scale(0.5, 0.3)
-      </div>
-      <div class="b59-elem b59-elem-scaleX">
-        scaleX(1.2)
-      </div>
-      <div class="b59-elem b59-elem-scaleY">
-        scaleY(1.3)
-      </div>
-      <div class="b59-elem b59-elem-rotate">
-        rotate(180deg)
-      </div>
-      <div class="b59-elem b59-elem-rotate-origin">
-        rotate(720deg)
-      </div>
-      <div class="b59-elem b59-elem-skew">
-        skew(-35deg, 50deg)
-      </div>
-      <div class="b59-elem b59-elem-skewX">
-        skewX(15deg)
-      </div>
-      <div class="b59-elem b59-elem-skewX">
-        skewY(35deg)
-      </div>
-      <div class="b59-elem b59-elem-matrix">
-        matrix(1.2,0,0.5,1.2,50,0)
-      </div>
-    </div>
-      <div class="code_realisation">
-        <span class="gray-highlight">translate(10px, 15px) / translateX(30px) / translateY(15px)</span> - Позволяет сдвигать элемент одновременно или отдельно по осям X и Y.
+    <div class="b59-elements-wrapper">
+      <div class="b59-elem-bg">
         <div class="b59-elem b59-elem-translate">
           translate(10px, 15px)
         </div>
+      </div>
+      <div class="b59-elem-bg">
         <div class="b59-elem b59-elem-translateX">
           translateX(30px)
         </div>
+      </div>
+      <div class="b59-elem-bg">
         <div class="b59-elem b59-elem-translateY">
           translateY(15px)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-scale">
+          scale(0.5, 0.3)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-scaleX">
+          scaleX(1.2)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-scaleY">
+          scaleY(1.3)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-rotate">
+          rotate(180deg)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-rotate-origin">
+          rotate(720deg)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-skew">
+          skew(-35deg, 50deg)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-skewX">
+          skewX(15deg)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-skewY">
+          skewY(25deg)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-matrix">
+          matrix(1.2,0,0.5,1.2,50,0)
+        </div>
+      </div> 
+    </div>
+      <div class="code-realisation">
+        <span class="definition-highlight">translate(10px, 15px) / translateX(30px) / translateY(15px)</span> - Позволяет сдвигать элемент одновременно или отдельно по осям X и Y.
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-translate">
+            translate(10px, 15px)
+          </div>
+        </div>
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-translateX">
+            translateX(30px)
+          </div>
+        </div>
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-translateY">
+            translateY(15px)
+          </div>
         </div>
         <p>
           Пример с центрированием обводки кнопки
@@ -1694,37 +1749,53 @@ a<span class="attention">[href^="a"]</span> {
           Нажми!
         </button>
       </div>
-      <div class="code_realisation">
-        <span class="gray-highlight">scale(0.5, 0.3) / scaleX(1.2) / scaleY(1.3)</span> - Позволяет изменять масштаб объекта одновременно или отдельно по осям X и Y.
-        <div class="b59-elem b59-elem-scale">
-          scale(0.5, 0.3)
+      <div class="code-realisation">
+        <span class="definition-highlight">scale(0.5, 0.3) / scaleX(1.2) / scaleY(1.3)</span> - Позволяет изменять масштаб объекта одновременно или отдельно по осям X и Y.
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-scale">
+            scale(0.5, 0.3)
+          </div>
         </div>
-        <div class="b59-elem b59-elem-scaleX">
-          scaleX(1.2)
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-scaleX">
+            scaleX(1.2)
+          </div>
         </div>
-        <div class="b59-elem b59-elem-scaleY">
-          scaleY(1.3)
-        </div>
-      </div>
-      <div class="code_realisation">
-        <span class="gray-highlight">rotate(180deg) / rotate(720deg)</span> - Позволяет поворачивать объект на заданный угол.
-        <div class="b59-elem b59-elem-rotate">
-          rotate(180deg)
-        </div>
-        <div class="b59-elem b59-elem-rotate-origin">
-          rotate(720deg)
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-scaleY">
+            scaleY(1.3)
+          </div>
         </div>
       </div>
-      <div class="code_realisation">
-        <span class="gray-highlight">skew(-35deg, 50deg) / skewX(15deg) / skewY(35deg)</span> - Позволяет деформировать стороны объекта.
-        <div class="b59-elem b59-elem-skew">
-          skew(-35deg, 50deg)
+      <div class="code-realisation">
+        <span class="definition-highlight">rotate(180deg) / rotate(720deg)</span> - Позволяет поворачивать объект на заданный угол.
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-rotate">
+            rotate(180deg)
+          </div>
         </div>
-        <div class="b59-elem b59-elem-skewX">
-          skewX(15deg)
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-rotate-origin">
+            rotate(720deg)
+          </div>
         </div>
-        <div class="b59-elem b59-elem-skewX">
-          skewY(35deg)
+      </div>
+      <div class="code-realisation">
+        <span class="definition-highlight">skew(-35deg, 50deg) / skewX(15deg) / skewY(25deg)</span> - Позволяет деформировать стороны объекта.
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-skew">
+            skew(-35deg, 50deg)
+          </div>
+        </div>
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-skewX">
+            skewX(15deg)
+          </div>
+        </div>
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-skewY">
+            skewY(25deg)
+          </div>
         </div>
         <p>
           Пример с изменяющейся кнопкой
@@ -1733,31 +1804,33 @@ a<span class="attention">[href^="a"]</span> {
           <span>Отправить</span>
         </button>
       </div>
-      <div class="code_realisation">
-        <span class="gray-highlight">matrix(a, c, b, d, x, y)</span> - Позволяет объединить несколько функций трансформации в одной.
+      <div class="code-realisation">
+        <span class="definition-highlight">matrix(a, c, b, d, x, y)</span> - Позволяет объединить несколько функций трансформации в одной.
         <ul class="b59-matrix-list">
           <li class="b59-matrix-item">
-            <span class="gray-highlight">a</span> - Изменяет масштаб по горизонтали. Значение от 0 до 1 уменьшает элемент, больше 1 — увеличивает.
+            <span class="definition-highlight">a</span> - Изменяет масштаб по горизонтали. Значение от 0 до 1 уменьшает элемент, больше 1 — увеличивает.
           </li>
           <li class="b59-matrix-item">
-            <span class="gray-highlight">c</span> - Деформирует стороны элемента по оси Y, положительное значение — вверх, отрицательное — вниз.
+            <span class="definition-highlight">c</span> - Деформирует стороны элемента по оси Y, положительное значение — вверх, отрицательное — вниз.
           </li>
           <li class="b59-matrix-item">
-            <span class="gray-highlight">b</span> - Деформирует стороны элемента по оси X, положительное значение — влево, отрицательное — вправо.
+            <span class="definition-highlight">b</span> - Деформирует стороны элемента по оси X, положительное значение — влево, отрицательное — вправо.
           </li>
           <li class="b59-matrix-item">
-            <span class="gray-highlight">d</span> - Изменяет масштаб по вертикали. Значение меньше 1 уменьшает элемент, больше 1 — увеличивает.
+            <span class="definition-highlight">d</span> - Изменяет масштаб по вертикали. Значение меньше 1 уменьшает элемент, больше 1 — увеличивает.
           </li>
           <li class="b59-matrix-item">
-            <span class="gray-highlight">x</span> - Смещает элемент по оси X, положительное — вправо, отрицательное — влево.
+            <span class="definition-highlight">x</span> - Смещает элемент по оси X, положительное — вправо, отрицательное — влево.
           </li>
           <li class="b59-matrix-item">
-            <span class="gray-highlight">y</span> - Смещает элемент по оси Y, положительное значение — вниз, отрицательное — вверх.
+            <span class="definition-highlight">y</span> - Смещает элемент по оси Y, положительное значение — вниз, отрицательное — вверх.
           </li>
         </ul>
-        <div class="b59-elem b59-elem-matrix">
-          matrix(1.2,0,0.5,1.2,50,0)
-        </div>
+        <div class="b59-elem-bg">
+          <div class="b59-elem b59-elem-matrix">
+            matrix(1.2,0,0.5,1.2,50,0)
+          </div>
+        </div> 
       </div>
   </div>
 </body>

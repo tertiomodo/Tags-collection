@@ -18,7 +18,7 @@ html {
   margin-bottom: 10px;
 }
 
-.code_view {
+.code-view {
   display: block;
   margin: 10px 0 10px 10px;
   max-width: 580px;
@@ -29,7 +29,7 @@ html {
   border: 1px solid rgb(226, 226, 226);
 }
 
-.code_realisation {
+.code-realisation {
   display: block;
   max-width: 900px;
   margin: 10px 0 10px 10px;
@@ -38,14 +38,14 @@ html {
   border: 1px solid rgb(226, 226, 226);
 }
 
-.gray-highlight {
+.definition-highlight {
   padding: 1px 5px;
   font-family: monospace;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-shadow: white 0px 1px;
-  background: rgb(233, 241, 114);
+  background: rgba(233, 241, 114, 0.493);
   border-radius: 3px;
 }
 
@@ -883,7 +883,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   /* background-image: none; */ /*Позволяет очищать блок background-iamge*/
 }
 
@@ -903,7 +903,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: center center;
 }
 
@@ -912,7 +912,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: 0 500px;
 }
 
@@ -921,7 +921,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: 100% 50%;
 }
 
@@ -930,7 +930,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: right top;
 }
 
@@ -951,7 +951,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: 23% 56px;
   /* background-repeat: repeat; */ /*Функция repeat по умолчанию*/
 }
@@ -961,7 +961,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: 23% 56px;
   background-repeat: no-repeat;
 }
@@ -971,7 +971,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: 100px 56%;
   background-repeat: repeat-x;
 }
@@ -981,7 +981,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 200px;
   height: 200px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: 50% 80px;
   background-repeat: repeat-y;
 }
@@ -1003,7 +1003,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 300px;
   height: 300px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1014,7 +1014,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 300px;
   height: 300px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1025,7 +1025,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 300px;
   height: 300px;
-  background-image: url("../img/forest.jpg");
+  background-image: url("../assets/img/forest.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 80% 50%;
@@ -1058,7 +1058,7 @@ h1, h2 {
   border: 1px solid #000;
   width: 300px;
   height: 300px;
-  background: transparent url("../img/forest.jpg") no-repeat center center / cover;
+  background: transparent url("../assets/img/forest.jpg") no-repeat center center / cover;
 }
 
 /* 37. Свойство background-color и варианты его использования */
@@ -1079,7 +1079,7 @@ h1, h2 {
   width: 300px;
   height: 300px;
   overflow: hidden;
-  background: transparent url("../img/forest.jpg") no-repeat center center / cover;
+  background: transparent url("../assets/img/forest.jpg") no-repeat center center / cover;
 }
 
 .b37-background-color-on {
@@ -1351,13 +1351,35 @@ h1, h2 {
 
 /* Создание градиентной границы */
 
-.b48-gradient {
+.b48-gradient-cube {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-image: linear-gradient(wheat, crimson);
+}
+
+.b48-gradient-cube2 {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-image: linear-gradient(wheat 25%, crimson 25% 50%, navy 25%);
+}
+
+.b48-gradient-cube3 {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-image: linear-gradient(45deg, wheat, crimson);
+}
+
+.b48-gradient-frame {
   border-radius: 10px;
   background: linear-gradient(to top, #cfe7fa, #6393c1);
   padding: 10px;
 }
 
 .b48-text {
+  margin: 0;
   border-radius: 10px;
   background: #ffffff;
   padding: 10px;
@@ -1536,7 +1558,7 @@ h1, h2 {
   width: 573px;
   height: 258px;
   overflow: hidden;
-  background: url('../img/b53-img.jpg') no-repeat center center / cover;
+  background: url('../assets/img/b53-img.jpg') no-repeat center center / cover;
   border-radius: 15px;
 }
 
@@ -1575,7 +1597,7 @@ h1, h2 {
 .b53-card-link {
   padding-right: 23px;
   text-decoration: none;
-  background: url('../img/b53-arrow.svg') no-repeat bottom right / contain;
+  background: url('../assets/img/b53-arrow.svg') no-repeat bottom right / contain;
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
@@ -1888,7 +1910,7 @@ a[href*=".com"] {
   margin-right: 5px;
   width: 20px;
   height: 20px;
-  background: url('../img/css.ico') no-repeat center center / cover;
+  background: url('../assets/img/css.ico') no-repeat center center / cover;
 }
 
 /* 57. Переменные */
@@ -1953,9 +1975,17 @@ a[href*=".com"] {
 
 /* 59. Свойство transform - Позволяет сдвигать, поворачивать и масштабировать элементы. */
 
-.b59-elements {
+.b59-elements-wrapper {
   display: flex;
   flex-wrap: wrap;
+}
+
+.b59-elem-bg {
+  display: block;
+  width: 250px;
+  height: 100px;
+  margin: 20px;
+  background-color: #b8b8b8;
 }
 
 .b59-elem {
@@ -1964,11 +1994,16 @@ a[href*=".com"] {
   align-items: center;
   width: 250px;
   height: 100px;
-  margin: 20px;
   font-weight: bold;
-  background-color: #913375;
+  text-shadow: #000 0px 1px;
   color: #fff;
   transition: transform 0.5s;
+}
+
+.b59-elem-translate,
+.b59-elem-translateX,
+.b59-elem-translateY {
+  background-color: rgba(145, 51, 117, 0.473);
 }
 
 .b59-elem-translate:hover {
@@ -1983,6 +2018,12 @@ a[href*=".com"] {
   transform: translateY(15px);
 }
 
+.b59-elem-scale,
+.b59-elem-scaleX,
+.b59-elem-scaleY {
+  background-color: rgba(23, 138, 38, 0.473);
+}
+
 .b59-elem-scale:hover {
   transform: scale(0.5, 0.3);
 }
@@ -1995,12 +2036,23 @@ a[href*=".com"] {
   transform: scaleY(1.3);
 }
 
+.b59-elem-rotate,
+.b59-elem-rotate-origin {
+  background-color: rgba(255, 153, 0, .4);
+}
+
 .b59-elem-rotate:hover {
   transform: rotate(180deg);
 }
 
 .b59-elem-rotate-origin:hover {
   transform: rotate(720deg);
+}
+
+.b59-elem-skew,
+.b59-elem-skewX,
+.b59-elem-skewY {
+  background-color: rgba(58, 39, 226, 0.4);
 }
 
 .b59-elem-skew:hover {
@@ -2012,7 +2064,11 @@ a[href*=".com"] {
 }
 
 .b59-elem-skewY:hover {
-  transform: skewY(35deg);
+  transform: skewY(25deg);
+}
+
+.b59-elem-matrix {
+  background-color: rgba(226, 39, 39, 0.4);
 }
 
 .b59-elem-matrix:hover {
