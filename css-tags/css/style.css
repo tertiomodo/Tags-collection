@@ -45,7 +45,7 @@ html {
   font-weight: 600;
   letter-spacing: 0.5px;
   text-shadow: white 0px 1px;
-  background: rgba(233, 241, 114, 0.493);
+  background: rgba(243, 255, 73, 0.288);
   border-radius: 3px;
 }
 
@@ -1355,14 +1355,14 @@ h1, h2 {
   width: 200px;
   height: 200px;
   margin: 20px;
-  background-image: linear-gradient(wheat, crimson);
+  background-image: linear-gradient(180deg, wheat, crimson);
 }
 
 .b48-gradient-cube2 {
   width: 200px;
   height: 200px;
   margin: 20px;
-  background: linear-gradient(crimson 20%, black 50%, tomato 80%);
+  background: linear-gradient(180deg, crimson 20%, black 50%, tomato 80%);
 }
 
 .b48-gradient-cube3 {
@@ -1379,17 +1379,32 @@ h1, h2 {
   background-image: linear-gradient(45deg, wheat, crimson);
 }
 
-.b48-gradient-cube5 {
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  background-image: radial-gradient(wheat, crimson);
-}
-
 .b48-gradient-frame {
   border-radius: 10px;
   background: linear-gradient(to top, #cfe7fa, #6393c1);
   padding: 10px;
+}
+
+.b48-gradient-cube5 {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-image: radial-gradient(circle at top, wheat, black);
+}
+
+.b48-gradient-cube6 {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-image: radial-gradient(50% 20%, wheat, black);
+}
+
+.b48-gradient-ball {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 65% 15%, aqua, darkblue);
 }
 
 .b48-text {
@@ -2144,6 +2159,66 @@ a[href*=".com"] {
   margin-bottom: 20px;
 }
 
+/* 60. CSS Функции */
+
+.b60-calc-parent { /* Функция calc */
+  display: flex;
+  margin: 10px 0 10px;
+}
+
+.b60-calc-child {
+  width: calc(100% / 3);
+  min-height: 200px;
+  outline: 1px solid tomato;
+}
+
+.b60-calc1-parent {
+  display: flex;
+  margin: 10px 0 10px;
+}
+
+.b60-block1 {
+  min-height: 200px;
+  outline: 1px solid tomato;
+}
+
+.b60-calc1-child1 {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.b60-calc1-child2 {
+  width: calc(100% - 200px);
+}
+
+/* Функция blur */
+
+.b60-blur {
+  width: 300px;
+  filter: blur(5px);
+}
+
+.b60-blur img {
+  width: 100%;
+}
+
+.b60-grayscale {
+  width: 300px;
+  filter: grayscale();
+}
+
+.b60-grayscale img {
+  width: 100%;
+}
+
+.b60-invert {
+  width: 300px;
+  filter: invert();
+}
+
+.b60-invert img {
+  width: 100%;
+}
 
 
 

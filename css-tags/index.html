@@ -933,7 +933,7 @@
     <img src="assets/img/p.jpg" alt="#" class="b47-photo">
     <img src="assets/img/sp.jpg" alt="#" class="b47-photo">
     <p class="title">
-      <b>48.</b> Градиенты
+      <b>48.</b> Градиенты. <a href="https://html5book.ru/css3-gradient/#linear-gradient()">Ссылка с подробным разбором данного свойства</a>
     </p>
     <p>
       В CSS существуют два вида граниентов, линейный (<span class="definition-highlight">linear-gradient</span>) и радиальный (<span class="definition-highlight">radial-gradient</span>)
@@ -942,12 +942,22 @@
       <p>
         Линейные градиенты <span class="definition-highlight">linear-gradient</span>
       </p>
+      <p>
+        Линейный градиент создается с помощью двух и более цветов, для которых задано направление, или линия градиента.
+      </p>
+      <p>
+        <b>
+          Синтаксис
+        </b>
+      </p>
+      <span class="definition-highlight">
+        background: linear-gradient(угол / сторона или угол наклона с помощью ключевого слова (пары ключевых слов), первый цвет, второй цвет и т.д.);
+      </span>
       <pre class="code-view"><code>
-        <b>Синтаксис</b>
         .gradient {
           width: 200px;
           height: 200px;
-          <span class="attention">background-image: linear-gradient(wheat, crimson);</span>
+          <b>background-image: linear-gradient(180deg, wheat, crimson);</b>
         }
       </code></pre>
       <div class="b48-gradient-cube"></div>
@@ -956,7 +966,7 @@
       <p>
         Для неравномерного распределения цветов указывается начальная позиция каждого цвета через точки остановки градиента (color stops). Точки остановки задаются в %, где 0% — начальная точка, 100% — конечная точка, например:
       </p>
-      <span class="definition-highlight">background: linear-gradient(crimson 20%, black 50%, tomato 80%);</span>
+      <span class="definition-highlight">background: linear-gradient(180deg, crimson 20%, black 50%, tomato 80%);</span>
       <div class="b48-gradient-cube2"></div>
     </div>
     <div class="code-realisation">
@@ -990,15 +1000,32 @@
       <p>
         Радиальный градиент отличается от линейного тем, что цвета выходят из одной точки (центра градиента) и равномерно распределяются наружу, рисуя форму круга или эллипса.
       </p>
-      <pre class="code-view"><code>
-        <b>Синтаксис</b>
-        .gradient {
-          width: 200px;
-          height: 200px;
-          <span class="attention">text</span>
-        }
-      </code></pre>
+      <p>
+        <b>
+          Синтаксис:
+        </b>
+      </p>
+      <span class="definition-highlight">
+        background: radial-gradient(форма градиента / размер / позиция центра, первый цвет, второй цвет и т.д.);
+      </span>
+      <p>
+        <i>Форма градиента</i> определяется ключевыми словами <span class="definition-highlight">circle</span> или <span class="definition-highlight">ellipse</span>. Если форма не задана, по умолчанию радиальный градиент принимает форму эллипса. <i>Позиция центра</i> задаётся с помощью ключевых слов <span class="definition-highlight">at top</span>, <span class="definition-highlight">at right</span>, <span class="definition-highlight">at bottom</span>, <span class="definition-highlight">at left</span>, <span class="definition-highlight">at center</span> или <span class="definition-highlight">at Npx/N%/Nem</span>. Если позиция центра не задана, используется значение по умолчанию at center.
+      </p>
+      <p class="code-view">
+        background-image: radial-gradient(circle at top, wheat, black);
+      </p>
       <div class="b48-gradient-cube5"></div>
+      <p>
+        Размером радиального градиента можно управлять используя <span class="definition-highlight">%</span>, <span class="definition-highlight">em</span> или <span class="definition-highlight">px</span>. Первое значение задает ширину эллипса, второе — высоту.
+      </p>
+       <p class="code-view">
+        background-image: radial-gradient(50% 20%, wheat, black);
+      </p>
+      <div class="b48-gradient-cube6"></div>
+      <p>
+        При помощи радиального градиента можно создавать реалистичные 3D фигуры: 
+      </p>
+      <div class="b48-gradient-ball"></div>
     </div>
     <p class="title">
       <b>49.</b> Макет сайта на флексбоксах.
@@ -1635,6 +1662,9 @@
       </li>
     </ul>
     <p>
+      Указывая transition начальному элементу, к примеру у нас есть классы link, link:focus, link:hover и link:active, и если мы пропишем transition элементу link, без псевдоклассов, то анимация будет работать в обе стороны (когда наводим курсор и когда убираем).
+    </p>
+    <p>
       <i>
         Действия которые мы совершаем для того, чтобы по наведению на текст, цвет плавно превращался в красный:
       </i>
@@ -1780,113 +1810,172 @@
         </div>
       </div> 
     </div>
-      <div class="code-realisation">
-        <span class="definition-highlight">translate(10px, 15px) / translateX(30px) / translateY(15px)</span> - Позволяет сдвигать элемент одновременно или отдельно по осям X и Y.
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-translate">
-            translate(10px, 15px)
-          </div>
-        </div>
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-translateX">
-            translateX(30px)
-          </div>
-        </div>
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-translateY">
-            translateY(15px)
-          </div>
-        </div>
-        <p>
-          Пример с центрированием обводки кнопки
-        </p>
-        <button class="b59-translate-btn">
-          Нажми!
-        </button>
-      </div>
-      <div class="code-realisation">
-        <span class="definition-highlight">scale(0.5, 0.3) / scaleX(1.2) / scaleY(1.3)</span> - Позволяет изменять масштаб объекта одновременно или отдельно по осям X и Y.
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-scale">
-            scale(0.5, 0.3)
-          </div>
-        </div>
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-scaleX">
-            scaleX(1.2)
-          </div>
-        </div>
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-scaleY">
-            scaleY(1.3)
-          </div>
+    <div class="code-realisation">
+      <span class="definition-highlight">translate(10px, 15px) / translateX(30px) / translateY(15px)</span> - Позволяет сдвигать элемент одновременно или отдельно по осям X и Y.
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-translate">
+          translate(10px, 15px)
         </div>
       </div>
-      <div class="code-realisation">
-        <span class="definition-highlight">rotate(180deg) / rotate(720deg)</span> - Позволяет поворачивать объект на заданный угол.
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-rotate">
-            rotate(180deg)
-          </div>
-        </div>
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-rotate-origin">
-            rotate(720deg)
-          </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-translateX">
+          translateX(30px)
         </div>
       </div>
-      <div class="code-realisation">
-        <span class="definition-highlight">skew(-35deg, 50deg) / skewX(15deg) / skewY(25deg)</span> - Позволяет деформировать стороны объекта.
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-skew">
-            skew(-35deg, 50deg)
-          </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-translateY">
+          translateY(15px)
         </div>
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-skewX">
-            skewX(15deg)
-          </div>
-        </div>
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-skewY">
-            skewY(25deg)
-          </div>
-        </div>
-        <p>
-          Пример с изменяющейся кнопкой
-        </p>
-        <button class="b59-skew-btn">
-          <span>Отправить</span>
-        </button>
       </div>
-      <div class="code-realisation">
-        <span class="definition-highlight">matrix(a, c, b, d, x, y)</span> - Позволяет объединить несколько функций трансформации в одной.
-        <ul class="b59-matrix-list">
-          <li class="b59-matrix-item">
-            <span class="definition-highlight">a</span> - Изменяет масштаб по горизонтали. Значение от 0 до 1 уменьшает элемент, больше 1 — увеличивает.
-          </li>
-          <li class="b59-matrix-item">
-            <span class="definition-highlight">c</span> - Деформирует стороны элемента по оси Y, положительное значение — вверх, отрицательное — вниз.
-          </li>
-          <li class="b59-matrix-item">
-            <span class="definition-highlight">b</span> - Деформирует стороны элемента по оси X, положительное значение — влево, отрицательное — вправо.
-          </li>
-          <li class="b59-matrix-item">
-            <span class="definition-highlight">d</span> - Изменяет масштаб по вертикали. Значение меньше 1 уменьшает элемент, больше 1 — увеличивает.
-          </li>
-          <li class="b59-matrix-item">
-            <span class="definition-highlight">x</span> - Смещает элемент по оси X, положительное — вправо, отрицательное — влево.
-          </li>
-          <li class="b59-matrix-item">
-            <span class="definition-highlight">y</span> - Смещает элемент по оси Y, положительное значение — вниз, отрицательное — вверх.
-          </li>
-        </ul>
-        <div class="b59-elem-bg">
-          <div class="b59-elem b59-elem-matrix">
-            matrix(1.2,0,0.5,1.2,50,0)
-          </div>
-        </div> 
+      <p>
+        Пример с центрированием обводки кнопки
+      </p>
+      <button class="b59-translate-btn">
+        Нажми!
+      </button>
+    </div>
+    <div class="code-realisation">
+      <span class="definition-highlight">scale(0.5, 0.3) / scaleX(1.2) / scaleY(1.3)</span> - Позволяет изменять масштаб объекта одновременно или отдельно по осям X и Y.
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-scale">
+          scale(0.5, 0.3)
+        </div>
       </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-scaleX">
+          scaleX(1.2)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-scaleY">
+          scaleY(1.3)
+        </div>
+      </div>
+    </div>
+    <div class="code-realisation">
+      <span class="definition-highlight">rotate(180deg) / rotate(720deg)</span> - Позволяет поворачивать объект на заданный угол.
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-rotate">
+          rotate(180deg)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-rotate-origin">
+          rotate(720deg)
+        </div>
+      </div>
+    </div>
+    <div class="code-realisation">
+      <span class="definition-highlight">skew(-35deg, 50deg) / skewX(15deg) / skewY(25deg)</span> - Позволяет деформировать стороны объекта.
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-skew">
+          skew(-35deg, 50deg)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-skewX">
+          skewX(15deg)
+        </div>
+      </div>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-skewY">
+          skewY(25deg)
+        </div>
+      </div>
+      <p>
+        Пример с изменяющейся кнопкой
+      </p>
+      <button class="b59-skew-btn">
+        <span>Отправить</span>
+      </button>
+    </div>
+    <div class="code-realisation">
+      <span class="definition-highlight">matrix(a, c, b, d, x, y)</span> - Позволяет объединить несколько функций трансформации в одной.
+      <ul class="b59-matrix-list">
+        <li class="b59-matrix-item">
+          <span class="definition-highlight">a</span> - Изменяет масштаб по горизонтали. Значение от 0 до 1 уменьшает элемент, больше 1 — увеличивает.
+        </li>
+        <li class="b59-matrix-item">
+          <span class="definition-highlight">c</span> - Деформирует стороны элемента по оси Y, положительное значение — вверх, отрицательное — вниз.
+        </li>
+        <li class="b59-matrix-item">
+          <span class="definition-highlight">b</span> - Деформирует стороны элемента по оси X, положительное значение — влево, отрицательное — вправо.
+        </li>
+        <li class="b59-matrix-item">
+          <span class="definition-highlight">d</span> - Изменяет масштаб по вертикали. Значение меньше 1 уменьшает элемент, больше 1 — увеличивает.
+        </li>
+        <li class="b59-matrix-item">
+          <span class="definition-highlight">x</span> - Смещает элемент по оси X, положительное — вправо, отрицательное — влево.
+        </li>
+        <li class="b59-matrix-item">
+          <span class="definition-highlight">y</span> - Смещает элемент по оси Y, положительное значение — вниз, отрицательное — вверх.
+        </li>
+      </ul>
+      <div class="b59-elem-bg">
+        <div class="b59-elem b59-elem-matrix">
+          matrix(1.2,0,0.5,1.2,50,0)
+        </div>
+      </div> 
+    </div>
+    <p class="title">
+      <b>60.</b> CSS функции.
+    </p>
+    <div class="code-realisation">
+      <p>
+        Функция вычисления <span class="definition-highlight">calc</span>
+      </p>
+      <p>
+        Синтаксис: <span class="definition-highlight">width: calc(100% / 3);</span> В данном примере нам необходимо поделить размеры блоков поровну, чтобы они поместились в одну линию. Мы сообщаем функции <i>"возьми 100% ширины и подели ее поровну на 3 части"</i>, после чего получаем результат:
+      </p>
+      <div class="b60-calc-parent">
+        <div class="b60-calc-child"></div>
+        <div class="b60-calc-child"></div>
+        <div class="b60-calc-child"></div>
+      </div>
+      <p>
+        В <span class="definition-highlight">calc</span> используется все доступные единицы измерения и даже просто числа, так же в этой функции используются все стандартные операции математики.
+      </p>
+      <p>
+        <b>Пример 2</b>. В родителе 2 блока, ширина одного из которых фиксирована, второй мы должны поместить рядом чтобы он занял всё доступное просторанство:
+      </p>
+      <span class="definition-highlight">width: calc(100% - 200px);</span>
+      <div class="b60-calc1-parent">
+        <div class="b60-block1 b60-calc1-child1"></div>
+        <div class="b60-block1 b60-calc1-child2"></div>
+      </div>
+    </div>
+    <div class="code-realisation">
+      <h3>
+        Функции фильтров <span class="definition-highlight">filter: value;</span>
+      </h3>
+      <p>
+        <b>Фильтр блюр</b>
+      </p>
+      <p>
+        Синтаксис: <span class="definition-highlight">filter: blur(5px);</span> - Функция размывает элемент, используются px и %.
+      </p>
+      <div class="b60-blur">
+        <img src="assets/img/forest.jpg" alt="Forest">
+      </div>
+      <p>
+        <b>Оттенки серого</b>
+      </p>
+      <p>
+        Синтаксис: <span class="definition-highlight">filter: grayscale();</span> - Функция превращает контент в ЧБ, по умолчанию в значении 100%. Используется для :hover эффекта, чтобы при наведении картинка становилась цветной.
+      </p>
+      <div class="b60-grayscale">
+        <img src="assets/img/forest.jpg" alt="Forest">
+      </div>
+      <p>
+        <b>Негатив / Инверсия цвета</b>
+      </p>
+      <p>
+        Синтаксис: <span class="definition-highlight">filter: invert();</span> - Функция превращает контент в негатив, по умолчанию в значении 100%. Так же можно использовать для :hover эффекта.
+      </p>
+      <div class="b60-invert">
+        <img src="assets/img/forest.jpg" alt="Forest">
+      </div>
+    </div>
   </div>
 </body>
 
