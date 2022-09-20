@@ -475,6 +475,9 @@
         <p>
           <code class="symbol">type="date"</code>
         </p>
+        <p>
+          <code class="symbol">type="datetime"</code> - В дополнение к дате, позволяет выбираеть еще и время.
+        </p>
         <div>
           <form class="code_realisation different">
             <label>Выберите дату:</label>
@@ -485,10 +488,13 @@
       </li>
       <li class="list_item">
         <p>
-          <code class="symbol">type="file" accept="image/*"</code>
+          <code class="symbol">type="file" accept="image/*" capture</code>
         </p>
         <p>
           Атрибут <code class="symbol">accept="image/*"</code> - Указывает что <code class="symbol">&lt;input type="file"&gt;</code> будет искать только изображения, а остальные файлы будут недоступны для выбора.
+        </p>
+        <p>
+          Атрибут <code class="symbol">capture</code> - Позволяет открывать камеру, например если это приложение для сканирования QR кодов.
         </p>
         <div>
           <form class="code_realisation different">
@@ -661,6 +667,9 @@
     <p>
       Часто первый пункт списка используется для заголовка всего выпадающего списка. В таком случае для него используют атрибут <code class="symbol">disabled</code>, чтобы заблокировать его для выбора.
     </p>
+    <p>
+      Атрибут <code class="symbol">value="property"</code> - Необходим для отправки на сервер выбранного пользователем пункта.
+    </p>
     <form class="code_realisation">
       <select>
         <option disabled> Какой курс вы хотите пройти?</option>
@@ -678,12 +687,12 @@
 &lt;form&gt;
   &lt;select&gt;
     &lt;option disabled&gt;Какой курс вы хотите пройти?&lt;/option&gt;
-    &lt;option&gt;JS&lt;/option&gt;
-    &lt;option&gt;PHP&lt;/option&gt;
-    &lt;option&gt;Java&lt;/option&gt;
-    &lt;option&gt;Racket&lt;/option&gt;
-    &lt;option&gt;HTML&lt;/option&gt;
-    &lt;option&gt;CSS&lt;/option&gt;
+    &lt;option value="JS"&gt;JS&lt;/option&gt;
+    &lt;option value="PHP"&gt;PHP&lt;/option&gt;
+    &lt;option value="Java"&gt;Java&lt;/option&gt;
+    &lt;option value="Racket"&gt;Racket&lt;/option&gt;
+    &lt;option value="HTML"&gt;HTML&lt;/option&gt;
+    &lt;option value="CSS"&gt;CSS&lt;/option&gt;
   &lt;/select&gt;
 &lt;/form&gt; 
 </code>
@@ -711,12 +720,12 @@
   &lt;label&gt;Выберите курсы зажав ctrl+лкм:&lt;/label&gt;
   &lt;select multiple&gt;
     &lt;option disabled&gt;Какие курсы вы хотите пройти?&lt;/option&gt;
-    &lt;option&gt;JS&lt;/option&gt;
-    &lt;option&gt;PHP&lt;/option&gt;
-    &lt;option&gt;Java&lt;/option&gt;
-    &lt;option&gt;Racket&lt;/option&gt;
-    &lt;option&gt;HTML&lt;/option&gt;
-    &lt;option&gt;CSS&lt;/option&gt;
+    &lt;option value="JS"&gt;JS&lt;/option&gt;
+    &lt;option value="PHP"&gt;PHP&lt;/option&gt;
+    &lt;option value="Java"&gt;Java&lt;/option&gt;
+    &lt;option value="Racket&gt;Racket&lt;/option&gt;
+    &lt;option value="HTML"&gt;HTML&lt;/option&gt;
+    &lt;option value="CSS"&gt;CSS&lt;/option&gt;
   &lt;/select&gt;
 &lt;/form&gt;
 </code>
