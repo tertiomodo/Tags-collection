@@ -1285,6 +1285,79 @@ h1, h2 {
   }
 }
 
+/* Медиа запрос @media (prefers-color-scheme: dark) - смена темы сайта */
+
+.b43-theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: gainsboro;
+  border: 1px solid rgb(226, 226, 226);
+}
+
+.b43-theme-text {
+  font: bold small-caps 17px Arial, sans-serif;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .b43-theme {
+    background-color: rgb(22, 22, 22);
+  }
+
+  .b43-theme-text {
+    color: white;
+  }
+}
+
+/* Медиазапрос picture */
+
+.b43-picture {
+  width: 300px;
+  height: 200px;
+}
+
+/* Пример использования медиазапроса, карточки товаров и кнопка "Показать еще" */
+
+.b43-show-more-parent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+
+.b43-show-more-child {
+  width: 30%;
+  min-height: 100px;
+  border: 1px solid #000;
+  margin-bottom: 30px;
+}
+
+.b43-show-more-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .b43-show-more-child {
+    width: 100%;
+  }
+
+  .b43-show-more-child:nth-child(n+4) {
+    display: none;
+  }
+
+  .b43-show-more-btn {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
 /* 44. Анимации в CSS при помощи @keyframes. */
 /*Указываем @keyframes и название анимации*/
 @keyframes color_change {
@@ -1663,6 +1736,7 @@ h1, h2 {
 .b54-child-comma {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100px;
   height: 100px;
   padding: 5px;
@@ -1688,6 +1762,7 @@ h1, h2 {
 .b54-child-space {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100px;
   height: 100px;
   padding: 5px;
@@ -1712,6 +1787,7 @@ h1, h2 {
 .b54-child-daughter {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100px;
   height: 100px;
   padding: 5px;
@@ -1736,6 +1812,7 @@ h1, h2 {
 .b54-child-neighboring {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 130px;
   height: 130px;
   padding: 5px;
@@ -1760,6 +1837,7 @@ h1, h2 {
 .b54-child-next {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100px;
   height: 100px;
   padding: 5px;
