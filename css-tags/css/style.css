@@ -1253,7 +1253,22 @@ h1, h2 {
  font-variant: small-caps;
 }
 
-/* 43. Медиазапросы, правило @media. */
+/* 43. Адаптив и медазапросы */
+
+.b43-adaptive-list {
+  margin: 0;
+  padding: 0;
+}
+
+.b43-adaptive-item {
+  list-style: none;
+}
+
+.b43-adaptive-ordered-item:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+/* Медиазапросы, правило @media. */
 
 .b43-media-block {
   display: inline-block;
