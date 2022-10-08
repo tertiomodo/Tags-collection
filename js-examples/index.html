@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="icon" href="assets/img/js-icon.ico">
+  <title>JavaScript examples</title>
+</head>
+
+<body>
+  <div class="content">
+    <!-- block 1 start -->
+    <div class="b1 block">
+      <p class="title">
+        <span class="title-number">1.</span> DOM Elemets
+      </p>
+      <p class="text">
+        Взаимодействие с DOM деревом - это взаимодействие с HTML тегами при помощи JavaScript.
+      </p>
+      <p class="text">
+        Для того чтобы при помощи JavaScript взаимодействовать с тегами, их необходимо сначала найти. Для этого нам понадобится метод <span class="highlight">document.querySelector('.class-name');</span>, внутрь скобок этого метода мы передаем необходимый селектор, обязательно в кавычках и с точкой в начале.
+      </p>
+      <p class="text">
+        <span class="highlight">document</span> - это объект, который хранит методы для работы со страницей. Это некая точка входа для получения содержимого страницы. Кроме <span class="highlight">querySelector()</span> существует еще множество других методов.
+      </p>
+      <p class="text">
+        Несколько важных моментов, если мы взаимодейсвтуем с HTML элементами, то JS должен быть подключен после того, как прогрузился HTML, если JS файл один, то он подключается перед закрывающим тегом body, если же для каждого блока у вас отдельный JS файл, то он подключается как в примере ниже. Еще стоит упомянуть, что метод <span class="highlight">document.querySelector();</span> умеет находить только один элемент с нужным селектором, к примеру если у вас много элеменов с одинаковыми классами, то этот метод найдет вам только самый первый из них.
+      </p>
+      <div class="code-example">
+        <p class="text">
+          В данном примере мы создаем переменную <span class="text-bg"><span class="property">let</span> <span class="value">text</span></span>, и присваиваем ей метод <span class="text-bg">document.querySelector(<span class="string">'.b1__text'</span>);</span>. Таким образом мы находим селектор <span class="string text-bg">.b1__text</span> в HTML файле.
+        </p>
+        <p class="text">
+          Далее, обращаясь к уже созданной переменной, при помощи свойства <span class="text-bg">style</span>, которое позволяет найти или изменить свойства элемента записав их инлайново в HTML, меняем цвет текста на красный <span class="text-bg"><span class="property">let</span> <span class="value">text</span> = document.querySelector(<span class="string">'.b1__text'</span>).style.color=<span class="string">'red'</span>;</span>. В данном примере мы написали свойство style и задали ему параметры color='red', что перекрасило наш текст после загрузки страницы в красный. Стоит отметить, что использовать JS для изменения стилей таким образом как в примерах ниже, не совсем корректно, тк они указываются инлайново, что противоречит БЭМу и в будущем будет мешать нам перебить эти стили.
+        </p>
+        <div class="code-realisation">
+          <p class="b1__text">
+            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <script src="js/block-1.js"></script>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text"</span>&gt;
+    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+  &lt;/<span class="tag-property">p</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/block-1.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+
+  <span class="tag-property">let</span> <span class="value">text</span> = document.querySelector(<span class="string">'.b1__text'</span>);
+
+  <span class="value">text</span>.style.color = <span class="string">'red'</span>;
+</code>
+</pre>
+        </div>
+      </div>
+      <p class="text">
+        Для того чтобы обойти ограничение предыдущего метода и применять стили к нескольким одинаковым селекторам, нам понадобится метод который ищет массив (набор элементов) - <span class="highlight">document.querySelectorAll('.class-name')</span>, а так же <span class="highlight">forEach</span> - метод массива который по очереди проходит по элементам этого массива и <span class="highlight">function(name) {...}</span> - функция в которую мы будем записывать условия.
+      </p>
+      <div class="code-example">
+        <p class="text">
+          В данном примере мы создаем метод <span class="text-bg">document.querySelectorAll(<span class="string">'.b1__text-second-example'</span>);</span>, который позволяет нам найти массив селекторов <span class="string text-bg">.b1__text-second-example</span> в HTML файле.
+        </p>
+        <p class="text">
+          Добавляем к этому массиву <span class="text-bg">forEach</span> и создаем в нем функцию которую можно назвать как угодно, в нашем примере назовем ее <span class="text-bg cycle-function">element</span> и внутри этой функции, в фигурных скобках обращаясь к созданной функции пропишем <span class="text-bg"><span class="cycle-function">element</span>.style.color = 'red';</span>, пример в коде ниже.
+        </p>
+        <div class="code-realisation">
+          <p class="b1__text-second-example">
+            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <p class="b1__text-second-example">
+            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <p class="b1__text-second-example">
+            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <script src="js/block-1-second-example.js"></script>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-second-example"</span>&gt;
+    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+  &lt;/<span class="tag-property">p</span>&gt;
+  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-second-example"</span>&gt;
+    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+  &lt;/<span class="tag-property">p</span>&gt;
+  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-second-example"</span>&gt;
+    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+  &lt;/<span class="tag-property">p</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/block-1-second-example.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+
+  document.querySelectorAll(<span class="string">'.b1__text-second-example'</span>).forEach(<span class="cycle-function">function</span>(<span class="cycle-function">element</span>) {
+    <span class="cycle-function">element</span>.style.color = 'red';
+  });
+</code>
+</pre>
+        </div>
+      </div>
+      <p class="text">
+        Для того чтобы добавлять классы в HTML разметку, нам необходимо найти нужный селектор при помощи <span class="highlight">document.querySelector('.class-name')</span>, а затем, при помощи метода <span class="highlight">block.classList.add('add-class-name');</span>, добавить необходимый класс в HTML разметку.
+      </p>
+      <div class="code-example">
+        <p class="text">
+          В данном примере нам необходимо сдвинуть блок на 100px вправо при помощи transform: translate и JS. Для этого мы создаем класс <span class="text-bg value">.b1__translate-third-example</span> и наша задача будет добавить этот класс в HTML разметку, чтобы применились нужные стили.
+        </p>
+        <p class="text">
+          В JavaScript файле создаем переменную <span class="text-bg"><span class="property">let</span> <span class="value">block</span></span>, при помощи <span class="text-bg">document.querySelector(<span class="string">'.b1__block-third-example'</span>);</span> находим нужный селектор в HTML файле - <span class="text-bg string">'b1__block-third-example'</span>
+        </p>
+        <p class="text">
+          Далее обращаемся к созданной переменной и применяем новый метод <span class="text-bg">classList</span> и у этого метода есть еще один <span class="text-bg">add('')</span> позволяет что либо добавить, в скобки указываем то что мы хотим добавить, в нашем случае это будет созданный нами класс <span class="text-bg">block.classList.add(<span class="string">'b1__translate-third-example'</span>);</span>, обратите внимание что в этом методе мы не используем точку вначале селектора, тк мы добавляем класс. Есть и обратный метод, который называется <span class="text-bg">classList.remove('class.name')</span>. Данные действия позволили нам добавить стиль в HTML файл, к нужному нам селектору.
+        </p>
+        <div class="code-realisation">
+          <div class="b1__block-third-example"></div>
+          <script src="js/block-1-third-example.js"></script>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">div class=</span><span class="string">"b1__block-third-example"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/block-1-third-example.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-css">CSS</span>
+
+  .<span class="value">b1__block-third-example</span> {
+    <span class="tag-property">width</span>: 200px;
+    <span class="tag-property">height</span>: 200px;
+    <span class="tag-property">background-color</span>: crimson;
+  }
+
+  .<span class="value">b1__translate-third-example</span> {
+    <span class="tag-property">transform</span>: translateX(100px);
+  }
+</code>
+</pre>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+
+  <span class="property">let</span> <span class="value">block</span> = document.querySelector(<span class="string">'.b1__block-third-example'</span>);
+
+  <span class="value">block</span>.classList.add(<span class="string">'b1__translate-third-example'</span>);
+</code>
+</pre>
+        </div>
+      </div>
+    </div>
+    <!-- block 1 end -->
+    <!-- block 2 start -->
+    <div class="b2 block">
+        <p class="title">
+          <span class="title-number">2.</span> Text
+        </p>
+    </div>
+    <!-- block 2 end -->
+    
+    
+  </div>
+</body>
+
+</html>
