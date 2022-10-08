@@ -1,0 +1,18 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #e8e8e8;
+  --title-number: #ff6347;
+  --highlight: rgba(243, 255, 73, 0.288);
+  --console: #1e1e1e;
+  --title-html: #f1522b;
+  --title-css: #71b3ff;
+  --title-js: #d8db2d;
+  --property: #8ecfff;
+  --value: #f5ff82;
+  --cycle-function: #ff50dd;
+  --string: #ef925b;
+  --tag-property: #c4c4ff;
+  --interpolation: #392cff;
+  --console-string: #c09b89;
+}
