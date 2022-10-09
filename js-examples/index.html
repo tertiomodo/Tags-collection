@@ -40,7 +40,7 @@
           <p class="b1__text">
             Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
           </p>
-          <script src="js/block-1.js"></script>
+          <script src="js/block__1.js"></script>
         </div>
         <div class="console">
 <pre>
@@ -50,7 +50,7 @@
   &lt;<span class="tag-property">p class=</span><span class="string">"b1__text"</span>&gt;
     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
   &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/block-1.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/block__1.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
@@ -86,7 +86,7 @@
           <p class="b1__text-second-example">
             Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
           </p>
-          <script src="js/block-1-second-example.js"></script>
+          <script src="js/block__1-second-example.js"></script>
         </div>
         <div class="console">
 <pre>
@@ -102,7 +102,7 @@
   &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-second-example"</span>&gt;
     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
   &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/block-1-second-example.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/block__1-second-example.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
@@ -133,7 +133,7 @@
         </p>
         <div class="code-realisation">
           <div class="b1__block-third-example"></div>
-          <script src="js/block-1-third-example.js"></script>
+          <script src="js/block__1-third-example.js"></script>
         </div>
         <div class="console">
 <pre>
@@ -141,7 +141,7 @@
   <span class="console-title title-html">HTML</span>
 
   &lt;<span class="tag-property">div class=</span><span class="string">"b1__block-third-example"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/block-1-third-example.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/block__1-third-example.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
@@ -178,13 +178,30 @@
     <!-- block 1 end -->
     <!-- block 2 start -->
     <div class="b2 block">
-        <p class="title">
-          <span class="title-number">2.</span> Text
+      <p class="title">
+        <span class="title-number">2.</span> События
+      </p>
+      <p class="text">
+        События в JS - это то что происходит со страницей после какого-либо действия, например вы нажали на кнопку и появился баннер. Обработкой событий в JavaScript занимается метод <span class="highlight">addEventListener</span> - дословно добавить обработчик события.
+      </p>
+      <div class="code-example">
+        <p class="text">
+          В данном примере мы будем отслеживать нажатие на блок и после нажатия будем смещать этот блок вправо на 100px. Для начала мы создаем переменную <span class="text-bg"><span class="tag-property">let</span> <span class="value">block__2</span></span> и присваиваем ей метод  <span class="text-bg">document.querySelector(<span class="string">'.b2__block'</span>);</span>, находим элемент с классом <span class="text-bg string">.b2__block</span>.
         </p>
+        <p class="text">
+          После этого мы присваиваем созданной переменной обработчик собитий и в скобочках указываем встроенную функцию, в нашем случае мы хотим отслеживать клик <span class="text-bg">addEventListener(<span class="string">'click'</span>);</span>, далее, мы должны указать что будет происходить после того как мы отследили клик, для этого, через запятую создается функция <span class="text-bg">addEventListener(<span class="string">'click'</span>, <span class="cycle-function">function</span>() {...});</span>
+          которая что-то сделает, обратите внимание что в данном случае этой функции не обязательно давать имя, тк она активируется сразу после того как мы отследили клик и от этой функции нам нужно только действие.
+        </p>
+        <p class="text">
+          В фигурных скобках мы указываем метод добавления класса <span class="text-bg">block__2.classList.add(<span class="string">'b2__translate'</span>);</span>
+        </p>
+        <div class="code-realisation">
+          <div class="b2__block"></div>
+          <script src="js/block__2.js"></script>
+        </div>
+      </div>
     </div>
     <!-- block 2 end -->
-    
-    
   </div>
 </body>
 

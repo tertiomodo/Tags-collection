@@ -1,0 +1,9 @@
+.b2__block {
+  width: 200px;
+  height: 200px;
+  background-color: crimson;
+}
+
+.b2__translate {
+  transform: translateX(100px);
+}
