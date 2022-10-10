@@ -1,13 +1,13 @@
-.b1__text-second-example:not(:last-of-type) {
+.b1__text-two:not(:last-of-type) {
   margin-bottom: 10px;
 }
 
-.b1__block-third-example {
+.b1__block-three {
   width: 200px;
   height: 200px;
   background-color: crimson;
 }
 
-.b1__translate-third-example {
+.b1__translate-three {
   transform: translateX(100px);
 }
