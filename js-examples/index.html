@@ -40,7 +40,7 @@
           <p class="b1__text">
             Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
           </p>
-          <script src="js/block__1.js"></script>
+          <script src="js/b1.js"></script>
         </div>
         <div class="console">
 <pre>
@@ -50,7 +50,7 @@
   &lt;<span class="tag-property">p class=</span><span class="string">"b1__text"</span>&gt;
     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
   &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/block__1.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/b1.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
@@ -71,38 +71,38 @@
       </p>
       <div class="code-example">
         <p class="text">
-          В данном примере мы создаем метод <span class="text-bg">document.querySelectorAll(<span class="string">'.b1__text-second-example'</span>);</span>, который позволяет нам найти массив селекторов <span class="string text-bg">.b1__text-second-example</span> в HTML файле.
+          В данном примере мы создаем метод <span class="text-bg">document.querySelectorAll(<span class="string">'.b1__text-two'</span>);</span>, который позволяет нам найти массив селекторов <span class="string text-bg">.b1__text-two</span> в HTML файле.
         </p>
         <p class="text">
           Добавляем к этому массиву <span class="text-bg">forEach</span> и создаем в нем функцию которую можно назвать как угодно, в нашем примере назовем ее <span class="text-bg cycle-function">element</span> и внутри этой функции, в фигурных скобках обращаясь к созданной функции пропишем <span class="text-bg"><span class="cycle-function">element</span>.style.color = 'red';</span>, пример в коде ниже.
         </p>
         <div class="code-realisation">
-          <p class="b1__text-second-example">
+          <p class="b1__text-two">
             Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
           </p>
-          <p class="b1__text-second-example">
+          <p class="b1__text-two">
             Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
           </p>
-          <p class="b1__text-second-example">
+          <p class="b1__text-two">
             Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
           </p>
-          <script src="js/block__1-second-example.js"></script>
+          <script src="js/b1__two.js"></script>
         </div>
         <div class="console">
 <pre>
 <code class="code">
   <span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-second-example"</span>&gt;
+  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
   &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-second-example"</span>&gt;
+  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
   &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-second-example"</span>&gt;
+  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
   &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/block__1-second-example.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/b1__two.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
@@ -111,7 +111,7 @@
 <code class="code">
   <span class="console-title title-js">JS</span>
 
-  document.querySelectorAll(<span class="string">'.b1__text-second-example'</span>).forEach(<span class="cycle-function">function</span>(<span class="cycle-function">element</span>) {
+  document.querySelectorAll(<span class="string">'.b1__text-two'</span>).forEach(<span class="cycle-function">function</span>(<span class="cycle-function">element</span>) {
     <span class="cycle-function">element</span>.style.color = 'red';
   });
 </code>
@@ -123,25 +123,25 @@
       </p>
       <div class="code-example">
         <p class="text">
-          В данном примере нам необходимо сдвинуть блок на 100px вправо при помощи transform: translate и JS. Для этого мы создаем класс <span class="text-bg value">.b1__translate-third-example</span> и наша задача будет добавить этот класс в HTML разметку, чтобы применились нужные стили.
+          В данном примере нам необходимо сдвинуть блок на 100px вправо при помощи transform: translate и JS. Для этого мы создаем класс <span class="text-bg selector">.b1__translate-three</span> и наша задача будет добавить этот класс в HTML разметку, чтобы применились нужные стили.
         </p>
         <p class="text">
-          В JavaScript файле создаем переменную <span class="text-bg"><span class="property">let</span> <span class="value">block</span></span>, при помощи <span class="text-bg">document.querySelector(<span class="string">'.b1__block-third-example'</span>);</span> находим нужный селектор в HTML файле - <span class="text-bg string">'b1__block-third-example'</span>
+          В JavaScript файле создаем переменную <span class="text-bg"><span class="property">let</span> <span class="value">block</span></span>, при помощи <span class="text-bg">document.querySelector(<span class="string">'.b1__block-three'</span>);</span> находим нужный селектор в HTML файле - <span class="text-bg string">'b1__block-three'</span>
         </p>
         <p class="text">
-          Далее обращаемся к созданной переменной и применяем новый метод <span class="text-bg">classList</span> и у этого метода есть еще один <span class="text-bg">add('')</span> позволяет что либо добавить, в скобки указываем то что мы хотим добавить, в нашем случае это будет созданный нами класс <span class="text-bg">block.classList.add(<span class="string">'b1__translate-third-example'</span>);</span>, обратите внимание что в этом методе мы не используем точку вначале селектора, тк мы добавляем класс. Есть и обратный метод, который называется <span class="text-bg">classList.remove('class.name')</span>. Данные действия позволили нам добавить стиль в HTML файл, к нужному нам селектору.
+          Далее обращаемся к созданной переменной и применяем новый метод <span class="text-bg">classList</span> и у этого метода есть еще один <span class="text-bg">add('')</span> позволяет что либо добавить, в скобки указываем то что мы хотим добавить, в нашем случае это будет созданный нами класс <span class="text-bg">block.classList.add(<span class="string">'b1__translate-three'</span>);</span>, обратите внимание что в этом методе мы не используем точку вначале селектора, тк мы добавляем класс. Есть и обратный метод, который называется <span class="text-bg">classList.remove('class.name')</span>. Данные действия позволили нам добавить стиль в HTML файл, к нужному нам селектору.
         </p>
         <div class="code-realisation">
-          <div class="b1__block-third-example"></div>
-          <script src="js/block__1-third-example.js"></script>
+          <div class="b1__block-three"></div>
+          <script src="js/b1__three.js"></script>
         </div>
         <div class="console">
 <pre>
 <code class="code">
   <span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">div class=</span><span class="string">"b1__block-third-example"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/block__1-third-example.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b1__block-three"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/b1__three.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
@@ -150,13 +150,13 @@
 <code class="code">
   <span class="console-title title-css">CSS</span>
 
-  .<span class="value">b1__block-third-example</span> {
+  .<span class="selector">b1__block-three</span> {
     <span class="tag-property">width</span>: 200px;
     <span class="tag-property">height</span>: 200px;
     <span class="tag-property">background-color</span>: crimson;
   }
 
-  .<span class="value">b1__translate-third-example</span> {
+  .<span class="selector">b1__translate-three</span> {
     <span class="tag-property">transform</span>: translateX(100px);
   }
 </code>
@@ -167,9 +167,9 @@
 <code class="code">
   <span class="console-title title-js">JS</span>
 
-  <span class="property">let</span> <span class="value">block</span> = document.querySelector(<span class="string">'.b1__block-third-example'</span>);
+  <span class="property">let</span> <span class="value">block</span> = document.querySelector(<span class="string">'.b1__block-three'</span>);
 
-  <span class="value">block</span>.classList.add(<span class="string">'b1__translate-third-example'</span>);
+  <span class="value">block</span>.classList.add(<span class="string">'b1__translate-three'</span>);
 </code>
 </pre>
         </div>
@@ -186,18 +186,169 @@
       </p>
       <div class="code-example">
         <p class="text">
-          В данном примере мы будем отслеживать нажатие на блок и после нажатия будем смещать этот блок вправо на 100px. Для начала мы создаем переменную <span class="text-bg"><span class="tag-property">let</span> <span class="value">block__2</span></span> и присваиваем ей метод  <span class="text-bg">document.querySelector(<span class="string">'.b2__block'</span>);</span>, находим элемент с классом <span class="text-bg string">.b2__block</span>.
+          В данном примере мы будем отслеживать нажатие на блок и после нажатия будем смещать этот блок вправо на 100px. Для начала мы создаем переменную <span class="text-bg"><span class="tag-property">let</span> <span class="value">b2__block</span></span> и присваиваем ей метод  <span class="text-bg">document.querySelector(<span class="string">'.b2__block'</span>);</span>, находим элемент с классом <span class="text-bg string">.b2__block</span>.
         </p>
         <p class="text">
           После этого мы присваиваем созданной переменной обработчик собитий и в скобочках указываем встроенную функцию, в нашем случае мы хотим отслеживать клик <span class="text-bg">addEventListener(<span class="string">'click'</span>);</span>, далее, мы должны указать что будет происходить после того как мы отследили клик, для этого, через запятую создается функция <span class="text-bg">addEventListener(<span class="string">'click'</span>, <span class="cycle-function">function</span>() {...});</span>
           которая что-то сделает, обратите внимание что в данном случае этой функции не обязательно давать имя, тк она активируется сразу после того как мы отследили клик и от этой функции нам нужно только действие.
         </p>
         <p class="text">
-          В фигурных скобках мы указываем метод добавления класса <span class="text-bg">block__2.classList.add(<span class="string">'b2__translate'</span>);</span>
+          В фигурных скобках мы указываем метод переключатель <span class="text-bg"><span class="value">block__2</span>.classList.toggle(<span class="string">'b2__translate'</span>);</span>. Метод <span class="text-bg">toggle</span> - переключатель, можно заменить на две функции <span class="text-bg">add</span> - добавить и <span class="text-bg">remove</span> - удалить, но проще указать один <span class="text-bg">toggle</span>.
         </p>
         <div class="code-realisation">
           <div class="b2__block"></div>
-          <script src="js/block__2.js"></script>
+          <script src="js/b2.js"></script>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">div class=</span><span class="string">"b2__block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/b2.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-css">CSS</span>
+
+  .<span class="selector">b2__block</span> {
+    <span class="tag-property">width</span>: 200px;
+    <span class="tag-property">height</span>: 200px;
+    <span class="tag-property">background-color</span>: crimson;
+  }
+
+  .<span class="selector">b2__translate</span> {
+    <span class="tag-property">transform</span>: translateX(100px);
+  }
+</code>
+</pre>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+
+  <span class="property">let</span> <span class="value">b2__block</span> = document.querySelector(<span class="string">'.b2__block'</span>);
+
+  <span class="value">b2__block</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">function</span>() {
+    <span class="value">b2__block</span>.classList.toggle(<span class="string">'b2__translate'</span>);
+  });
+</code>
+</pre>
+        </div>
+      </div>
+      <div class="code-example">
+        <p class="text">
+          В данном примере будет реализация кнопки "Показать еще", которая используется во множестве интернет магазинов с товарами, когда товары не помещаются на один экран. Для этого мы создадим 4 карточки товара и скроем 2 из них, подставим кнопку, по нажатию на нее, 2 оставшихся блока должны появиться а кнопка исчезнуть.
+        </p>
+        <p class="text">
+          Что происходит в HTML и CSS? Сначала создаются 4 блока, затем 2 из них скрываются при помощи CSS стиля: <span class="text-bg">.<span class="selector">b2__two-block:nth-child(n + 3)</span> {<span class="tag-property">display</span>: none;}</span>, добавляются 2 класса с которыми будет взаимодействовать JS, которые делают блоки видимыми: <span class="text-bg">.<span class="selector">b2__two-block.b2__two-block--visible</span> {<span class="tag-property">display</span>: block;}</span> (удлиннение селектора в данном случае необходимо для того чтобы перебить вес предыдущего), а кнопку невидимой: <span class="text-bg">.<span class="selector">b2__two-button-wrapper--hidden</span> {<span class="tag-property">display</span>: none;}</span>.
+        </p>
+        <p class="text">
+          В JS мы создаем две переменные <span class="text-bg"><span class="value">b2__twoButton</span></span> и <span class="text-bg"><span class="value">b2__twoBlock</span></span>, добавляем обработчик событий на <span class="text-bg"><span class="value">b2__twoButton</span></span> и по клику проходимся по всем элементам <span class="text-bg"><span class="value">b2__twoBlock</span></span> и делаем их видимыми, а так же у нас появляется новый метод <span class="text-bg">closest</span> - близкий, позволяет обратиться к родителю элемента, используя этот метод мы обращаемся к родителю нашей кнопки и скрываем весь блок целиком.
+        </p>
+        <div class="code-realisation">
+          <div class="b2__two-block-wrapper">
+            <div class="b2__two-block"></div>
+            <div class="b2__two-block"></div>
+            <div class="b2__two-block"></div>
+            <div class="b2__two-block"></div>
+          </div>
+          <div class="b2__two-button-wrapper">
+            <button class="b2__two-button">
+              Показать ещё
+            </button>
+          </div>
+          <script src="js/b2__two.js"></script>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block-wrapper"</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-button-wrapper"</span>&gt;
+    &lt;<span class="tag-property">button class=</span><span class="string">"b2__two-button"</span>&gt;
+      Показать ещё
+    &lt;/<span class="tag-property">button</span>&gt;
+  &lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/b2__two.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-css">CSS</span>
+
+  .<span class="selector">b2__two-block-wrapper</span> {
+    <span class="tag-property">width</span>: 100%;
+    <span class="tag-property">height</span>: 200px;
+    <span class="tag-property">background-color</span>: crimson;
+  }
+
+  .<span class="selector">b2__two-block</span> {
+    <span class="tag-property">width</span>: 100%;
+    <span class="tag-property">max-width</span>: 200px;
+    <span class="tag-property">min-height</span>: 100px;
+    <span class="tag-property">outline</span>: 1px solid tomato;
+    <span class="tag-property">border-radius</span>: 10px;
+  }
+  
+  .<span class="selector">b2__two-block:nth-child(n + 3)</span> {
+    <span class="tag-property">display</span>: none;
+  }
+  
+  .<span class="selector">b2__two-block:not(:last-child)</span> {
+    <span class="tag-property">margin-bottom</span>: 5px;
+  }
+  
+  .<span class="selector">b2__two-button-wrapper</span> {
+    <span class="tag-property">display</span>: flex;
+    <span class="tag-property">justify-content</span>: center;
+  }
+  
+  .<span class="selector">b2__two-button</span> {
+    <span class="tag-property">padding</span>: 10px 12px;
+    <span class="tag-property">background-color</span>: var(--gray);
+    <span class="tag-property">border-radius</span>: 10px;
+  }
+  
+  .<span class="selector">b2__two-block.b2__two-block--visible</span> {
+    <span class="tag-property">display</span>: block;
+  }
+  
+  .<span class="selector">b2__two-button-wrapper--hidden</span> {
+    <span class="tag-property">display</span>: none;
+  }
+</code>
+</pre>
+        </div>
+        <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+
+  <span class="property">const</span> <span class="value">b2__twoButton</span> = document.querySelector(<span class="string">'.b2__two-button'</span>);
+  <span class="property">const</span> <span class="value">b2__twoBlock</span> = document.querySelector(<span class="string">'.b2__two-block'</span>);
+
+  <span class="value">b2__twoButton</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+    <span class="value">b2__twoBlock</span>.forEach(elements <span class="cycle-function">() =&gt;</span> {
+      elements.classList.add(<span class="string">'b2__two-block--visible'</span>);
+      <span class="value">b2__twoButton</span>.closest(<span class="string">'.b2__two-button-wrapper'</span>).classList.add(<span class="string">'b2__two-button-wrapper--hidden'</span>);
+    });
+  });
+</code>
+</pre>
         </div>
       </div>
     </div>
