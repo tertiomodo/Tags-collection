@@ -353,6 +353,166 @@
       </div>
     </div>
     <!-- block 2 end -->
+    <!-- block 3 start -->
+    <div class="b3 block">
+      <p class="title">
+        <span class="title-number">3.</span> Табы
+      </p>
+      <p class="text">
+        Таб - это кнопка, которая отвечает за показ определенного контента по нажатию на нее, представим что у нас в хэдере есть несколько кнопок с разными разделами сайта и по их нажатию у нас меняется картинка в блоке ниже.
+      </p>
+      <p class="text">
+        Чтобы сделать табы на сайте, мы напишем собственный JavaScript-код, который будет показывать/скрывать нужные нам блоки по клику.
+      </p>
+      <p class="text">
+        Для начала размечаем HTML, тут у кнопок мы видим дата-атрибуты - они применяются когда необходимо связать разные элементы между собой. Дата атрибут записывается в открывающий тег таким образом: <span class="text-bg">&lt;<span class="tag-property">button class</span>=<span class="string">"b3__tabs-nav-btn b3__tabs-nav-btn--active"</span> <span class="tag-property">data-path</span>=<span class="string">"one"</span>&gt;</span>, вместо path можно написать все что угодно, а в значении задана нумерация от одного до трех. У блоков с классом <span class="text-bg string">tabs-item</span> также есть дата-атрибут - <span class="text-bg tag-property">data-target</span>, со значениями схожими с дата-атрибутами кнопок (нумерация от одного до трех). Так же у первой кнопки и блока заданы дополнительные классы с префиксом <span class="text-bg string">--active</span>, для того чтобы особым образом стилизовать эти элементы, они будут начальными / активными при первом заходе на страницу. Таким образом мы связали кнопки и блоки <span class="text-bg">&lt;<span class="tag-property">div</span>&gt;</span> и дальнейшая логика будет заключаться в переключении контента в блоках при помощи кнопок.
+      </p>
+      <p class="text">
+        Далее мы скрываем элементы которые не должны показываться: <span class="text-bg"><span class="selector">.b3__tabs-item</span> {<span class="tag-property">display</span>: none;}</span>, а элементы с префиксом --active делаем активными: <span class="text-bg"><span class="selector">.b3__tabs-item--active</span> {<span class="tag-property">display</span>: block;}</span>
+      </p>
+      <ul class="list">
+        <li class="item">
+          Краткое разъяснение работы скрипта:
+        </li>
+        <li class="item">
+          - На кнопку навешивается цикл и создается функция <span class="text-bg value">element</span>
+        </li>
+        <li class="item">
+          - Далее на <span class="text-bg value">element</span> навешивается обработчик событий и создается функция <span class="text-bg value">e</span> и по клику отслеживается вся информация о кнопке, включая значение <span class="text-bg tag-property">path</span> в HTML разметке. Вся информация записывается в константу с именем <span class="text-bg value">path</span>
+        </li>
+        <li class="item">
+          - У всех кнопок удаляется класс с префиксом --active
+        </li>
+        <li class="item">
+          - Далее кнопке на которой клик и функция <span class="text-bg value">e</span> с таргетом, присваивается класс с префиксом --active, для того чтобы сделать активной именно ту кнопку на которою мы нажали
+        </li>
+        <li class="item">
+          - У всех контентных элементов удаляется класс с префиксом --active
+        </li>
+        <li class="item">
+          - Последняя строчка проходится по всему документу и ищет в теагах <span class="text-bg string">`[data-target="<span class="interpolation">${path}</span>"]`</span> - data-target = наша кликнутая кнопка, как только находит, присваивает ему класс с префиксом --active
+        </li>
+      </ul>
+      <p class="text">
+        Скрипт ищет все кнопки и все элементы табов в переменных. Мы создаем две переменные <span class="text-bg value">b3__tabsBtn</span> и <span class="text-bg value">b3__tabsItem</span> с методом <span class="text-bg">querySelectorAll</span>, одна ищет все кнопки, другая все блоки. Начинаем программу с того, что вешаем на <span class="text-bg value">b3__tabsBtn</span> цикл <span class="text-bg">forEach</span> с функцией <span class="text-bg value">element</span>, на функцию вешаем обработчик событий с функцией <span class="text-bg value">e</span>, в ней создаем константу, которая будет записывать в себя всю информацио о нажатой кнопке, включая значение атрибута path: <span class="text-bg"><span class="property">const</span> <span class="value">path</span> = e.currentTarget.dataset.path;</span>. Следующим шагом у всех кнопок мы удаляем класс с префиксом --active, и добавляем его той кнопке, на которой клик и функция <span class="text-bg value">e</span>, для того чтобы сделать активной именно ту кнопку на которою мы нажали. У всех контентных элементов удаляем класс с префиксом --active, и присваиваем его при помощи <span class="text-bg">document.querySelector(<span class="string">`[data-target="<span class="interpolation">${path}</span>"]`</span>).classList.add(<span class="string">'b3__tabs-item--active'</span>);</span>, эта строчка проходится по всему документу и ищет в теагах запись <span class="text-bg string">`[data-target="<span class="interpolation">${path}</span>"]`</span> (напомню, что нужный path лежит в переменной <span class="text-bg"><span class="property">const</span> <span class="value">path</span></span> - та переменная которая получила всю информацию о кнопке на которую мы кликнули), как только <span class="text-bg interpolation">${path}</span> совпал, скрипт присваивает элементу класс с префиксом --acrive, наш элемент активен!
+      </p>
+      <div class="code-realisation">
+        <ul class="b3__tabs-nav">
+          <li class="b3__tabs-nav-item">
+            <button class="b3__tabs-nav-btn b3__tabs-nav-btn--active" data-path="one">
+              Первый таб
+            </button>
+          </li>
+          <li class="b3__tabs-nav-item">
+            <button class="b3__tabs-nav-btn" data-path="two">
+              Второй таб
+            </button>
+          </li>
+          <li class="b3__tabs-nav-item">
+            <button class="b3__tabs-nav-btn" data-path="three">
+              Третий таб
+            </button>
+          </li>
+        </ul>
+        <div class="b3__tabs-content">
+          <div class="b3__tabs-item b3__tabs-item--active" data-target="one">
+            Tab 1
+          </div>
+          <div class="b3__tabs-item" data-target="two">
+            Tab 2
+          </div>
+          <div class="b3__tabs-item" data-target="three">
+            Tab 3
+          </div>
+        </div>
+        <script src="js/b3.js"></script>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">ul class=</span><span class="string">"b3__tabs-nav"</span>&gt;
+    &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+      &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn b3__tabs-nav-btn--active"</span> <span class="tag-property">data-path=</span><span class="string">"one"</span>&gt;
+        Первый таб
+      &lt;/<span class="tag-property">button</span>&gt;
+    &lt;/<span class="tag-property">li</span>&gt;
+    &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+      &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"two"</span>&gt;
+        Второй таб
+      &lt;/<span class="tag-property">button</span>&gt;
+    &lt;/<span class="tag-property">li</span>&gt;
+    &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+      &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"three"</span>&gt;
+        Третий таб
+      &lt;/<span class="tag-property">button</span>&gt;
+    &lt;/<span class="tag-property">li</span>&gt;
+  &lt;/<span class="tag-property">ul</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-content"</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item b3__tabs-item--active"</span> <span class="tag-property">data-target=</span><span class="string">"one"</span>&gt;
+      Tab 1
+    &lt;/<span class="tag-property">div</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"two"</span>&gt;
+      Tab 2
+    &lt;/<span class="tag-property">div</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"three"</span>&gt;
+      Tab 3
+    &lt;/<span class="tag-property">div</span>&gt;
+  &lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/b3.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-css">CSS</span>
+
+  <span class="selector">.b3__tabs-nav-btn--active</span> {
+    <span class="tag-property">color</span>: tan;
+  }
+
+  <span class="selector">.b3__tabs-item</span> {
+    <span class="tag-property">display</span>: none;
+  }
+
+  <span class="selector">.b3__tabs-item--active</span> {
+    <span class="tag-property">display</span>: block;
+  }
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+
+  <span class="property">let</span> <span class="value">b3__tabsBtn</span> = document.querySelectorAll(<span class="string">'.b3__tabs-nav-btn'</span>);
+  <span class="property">let</span> <span class="value">b3__tabsItem</span> = document.querySelectorAll(<span class="string">'.b3__tabs-item'</span>);
+
+  <span class="value">b3__tabsBtn</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
+    <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="value">e</span> <span class="cycle-function">=&gt;</span> {
+      <span class="property">const</span> <span class="value">path</span> = <span class="value">e</span>.currentTarget.dataset.path;
+
+      <span class="value">b3__tabsBtn</span>.forEach(<span class="value">btn</span> <span class="cycle-function">=&gt;</span> {
+        <span class="value">btn</span>.classList.remove(<span class="string">'b3__tabs-nav-btn--active'</span>);
+      });
+
+      <span class="value">e</span>.currentTarget.classList.add(<span class="string">'b3__tabs-nav-btn--active'</span>);
+
+      <span class="value">b3__tabsItem</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
+        <span class="value">element</span>.classList.remove(<span class="string">'b3__tabs-item--active'</span>);
+      });
+
+      document.querySelector(<span class="string">`[data-target="<span class="interpolation">${path}</span>"]`</span>).classList.add(<span class="string">'b3__tabs-item--active'</span>);
+    });
+  });
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- block 3 end -->
   </div>
 </body>
 
