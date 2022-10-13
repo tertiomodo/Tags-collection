@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript examples</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"> <!--Swiper link--> 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="icon" href="assets/img/js-icon.ico">
-  <title>JavaScript examples</title>
 </head>
 
 <body>
   <div class="content">
-    <!-- block 1 start -->
+    <!-- Block 1 start -->
     <div class="b1 block">
       <p class="title">
         <span class="title-number">1.</span> DOM Elemets
@@ -175,8 +176,8 @@
         </div>
       </div>
     </div>
-    <!-- block 1 end -->
-    <!-- block 2 start -->
+    <!-- Block 1 end -->
+    <!-- Block 2 start -->
     <div class="b2 block">
       <p class="title">
         <span class="title-number">2.</span> События
@@ -512,8 +513,77 @@
 </pre>
       </div>
     </div>
-    <!-- block 3 end -->
+    <!-- Block 3 end -->
+    <!-- Block 4 start -->
+    <div class="b4 block">
+      <p class="title">
+        <span class="title-number">4.</span> Слайдер и его готовые решения
+      </p>
+      <p class="text">
+        Слайдер - это элемент веб-дизайна, представляющий из себя фотографии и две кнопки для пролистывания этих фотографий по нажатию на кнопки. В данном примере мы будем взаимодействовать с готовой библиотекой под названием  <a class="link" href="https://swiperjs.com/">Swiper</a>.
+      </p>
+      <p class="text">
+        Давайте приступим к ее установке! Для того чтобы установить какую-либо библиотеку к себе, мы в первую очередь смотрим на ее популярность на гитхабе. Переходим на сайт и ищем кнопку get started, у любой хорошей библиотеки должна быть инструкция по ее использованию и установке, в нашем случае мы пойдем по пути через прямое подключение JS и стилей через ссылку CDN.
+      </p>
+      <ul class="list">
+        <li class="item">
+          Как пользоваться библиотекой Swiper?
+        </li>
+        <li class="item">
+          - Подключаем ссылку со стилями в хедере сайта
+        </li>
+        <li class="item">
+          - Подключаем JS
+        </li>
+        <li class="item">
+          - В HTML размечаем свайпер по примеру на сайте
+        </li>
+        <li class="item">
+          - Инициализируем свайпер, на сайте есть пример, его нужно скопировать, создать JS файл, вставить его туда и подключить его к сайту
+        </li>
+        <li class="item">
+          - Классу <span class="text-bg string">swiper</span> необходимо задать ширину
+        </li>
+        <li class="item">
+          - На сайте во вкладке API &gt; Parameters расположены все параметры для настройки слайдера, выборочно мы берем то что нам нужно и вписываем все в наш JS файл, можно удалить все что было после инициализации кроме первой строчки
+        </li>
+        <li class="item">
+          - Настроек огромное множество и все можно делать под себя, через DevTools вы можете посмотреть какие настройки были применены к этому слайдеру
+        </li>
+      </ul>
+      <div class="code-realisation">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="b4__img" src="assets/img/b4__1.jpg" alt="Котенок">
+            </div>
+            <div class="swiper-slide">
+              <img class="b4__img" src="assets/img/b4__2.jpg" alt="Котенок">
+            </div>
+            <div class="swiper-slide">
+              <img class="b4__img" src="assets/img/b4__3.jpg" alt="Котенок">
+            </div>
+            <div class="swiper-slide">
+              <img class="b4__img" src="assets/img/b4__4.jpg" alt="Котенок">
+            </div>
+            <div class="swiper-slide">
+              <img class="b4__img" src="assets/img/b4__5.jpg" alt="Котенок">
+            </div>
+            <div class="swiper-slide">
+              <img class="b4__img" src="assets/img/b4__6.jpg" alt="Котенок">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script src="js/b4.js"></script>
+      </div>
+    </div>
+    <!-- Block 4 end -->
   </div>
+  
 </body>
 
 </html>

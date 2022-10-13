@@ -58,6 +58,11 @@ body {
   border-radius: 3px;
 }
 
+.link {
+  font-weight: 700;
+  color: #725cd6;
+}
+
 .text-bg {
   padding: 1px 5px;
   font-family: monospace;
