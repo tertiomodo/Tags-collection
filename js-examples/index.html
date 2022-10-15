@@ -6,7 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript examples</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"> <!--Swiper link--> 
+  <!--Swiper css--> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <!--Accordion css-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <!--Main css-->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="icon" href="assets/img/js-icon.ico">
 </head>
@@ -19,7 +23,7 @@
         <span class="title-number">1.</span> DOM Elemets
       </p>
       <p class="text">
-        Взаимодействие с DOM деревом - это взаимодействие с HTML тегами при помощи JavaScript.
+        <span class="text-offset">Взаимодействие с DOM деревом</span> - это взаимодействие с HTML тегами при помощи JavaScript.
       </p>
       <p class="text">
         Для того чтобы при помощи JavaScript взаимодействовать с тегами, их необходимо сначала найти. Для этого нам понадобится метод <span class="highlight">document.querySelector('.class-name');</span>, внутрь скобок этого метода мы передаем необходимый селектор, обязательно в кавычках и с точкой в начале.
@@ -183,7 +187,7 @@
         <span class="title-number">2.</span> События
       </p>
       <p class="text">
-        События в JS - это то что происходит со страницей после какого-либо действия, например вы нажали на кнопку и появился баннер. Обработкой событий в JavaScript занимается метод <span class="highlight">addEventListener</span> - дословно добавить обработчик события.
+        <span class="text-offset">События в JS</span> - это то что происходит со страницей после какого-либо действия, например вы нажали на кнопку и появился баннер. Обработкой событий в JavaScript занимается метод <span class="highlight">addEventListener</span> - дословно добавить обработчик события.
       </p>
       <div class="code-example">
         <p class="text">
@@ -360,7 +364,7 @@
         <span class="title-number">3.</span> Табы
       </p>
       <p class="text">
-        Таб - это кнопка, которая отвечает за показ определенного контента по нажатию на нее, представим что у нас в хэдере есть несколько кнопок с разными разделами сайта и по их нажатию у нас меняется картинка в блоке ниже.
+        <span class="text-offset">Таб</span> - это кнопка, которая отвечает за показ определенного контента по нажатию на нее, представим что у нас в хэдере есть несколько кнопок с разными разделами сайта и по их нажатию у нас меняется картинка в блоке ниже.
       </p>
       <p class="text">
         Чтобы сделать табы на сайте, мы напишем собственный JavaScript-код, который будет показывать/скрывать нужные нам блоки по клику.
@@ -373,7 +377,7 @@
       </p>
       <ul class="list">
         <li class="item">
-          Краткое разъяснение работы скрипта:
+          <span class="text-offset">Краткое разъяснение работы скрипта:</span>
         </li>
         <li class="item">
           - На кнопку навешивается цикл и создается функция <span class="text-bg value">element</span>
@@ -520,14 +524,14 @@
         <span class="title-number">4.</span> Слайдер и его готовые решения
       </p>
       <p class="text">
-        Слайдер - это элемент веб-дизайна, представляющий из себя фотографии и две кнопки для пролистывания этих фотографий по нажатию на кнопки. В данном примере мы будем взаимодействовать с готовой библиотекой под названием  <a class="link" href="https://swiperjs.com/">Swiper</a>.
+        <span class="text-offset">Слайдер</span> - это UI элемент, представляющий из себя фотографии и две кнопки для пролистывания этих фотографий по нажатию на кнопки. В данном примере мы будем взаимодействовать с готовой библиотекой под названием <a class="link" href="https://swiperjs.com/" target="_blank">Swiper</a>.
       </p>
       <p class="text">
         Давайте приступим к ее установке! Для того чтобы установить какую-либо библиотеку к себе, мы в первую очередь смотрим на ее популярность на гитхабе. Переходим на сайт и ищем кнопку get started, у любой хорошей библиотеки должна быть инструкция по ее использованию и установке, в нашем случае мы пойдем по пути через прямое подключение JS и стилей через ссылку CDN.
       </p>
       <ul class="list">
         <li class="item">
-          Как пользоваться библиотекой Swiper?
+          <span class="text-offset">Как пользоваться библиотекой Swiper?</span>
         </li>
         <li class="item">
           - Подключаем ссылку со стилями в хедере сайта
@@ -582,6 +586,71 @@
       </div>
     </div>
     <!-- Block 4 end -->
+    <!-- Block 5 start -->
+    <div class="b5 block">
+      <p class="title">
+        <span class="title-number">5.</span> Аккордеон и его готовые решения
+      </p>
+      <p class="text">
+        <span class="highlight">Аккордеон</span> - это UI элемент, представляющий из себя заголовок, нажатие на который раскрывает контент находящийся в нем, такой элемент веб-дизайна еще иногда называют спойлером. В данном примере мы будем взаимодействовать с готовой библиотекой под названием <a class="link" href="https://jqueryui.com/accordion/" target="_blank">jQuery-accordion</a>.
+      </p>
+      <p class="text">
+        Устанавливать библиотеку мы будем через CDN, другими словами, будем вставлять ссылки на ресурсы.
+      </p>
+      <ul class="list">
+        <li class="item">
+          <span class="text-offset">Как пользоваться библиотекой jQuery-accordion?</span>
+        </li>
+        <li class="item">
+          - Размечаем HTML - аккордеон представляет из себя список с классом <span class="text-bg string">accordion</span> (он нам понадобится для инициализации, включения, плагина), в котром находятся элементы списка <span class="text-bg">&lt;<span class="tag-property">li</span>&gt;</span> а в них заголовок и параграф с текстом
+        </li>
+        <li class="item">
+          - Подключаем файл со стилями по инструкции представленной на сайте, в ссылке выше. Подключать необходимо раньше вашего файла со стилями, чтобы всегда была возможность перебить стандартные стили плагина.
+        </li>
+        <li class="item">
+          - Подключаем два JS скрипта через CDN в конец страницы / нашего примера, первый скрипт отвечает за подключение библиотеки jQuery, а второй за библиотеку с аккордеоном.
+        </li>
+        <li class="item">
+          - Третим, сымым последним, подключаем наш JS скрипт в котром мы будем инициализировать (подключать) наш аккордеон, чтобы подключить его достаточно прописать: <span class="text-bg">$(<span class="string">'.accordion'</span>).accordion();</span>. В этом коде мы обратились к элементу с классом <span class="text-bg string">'.accordion'</span> и
+          инициализировали метод <span class="text-bg">accordion()</span>
+        </li>
+        <li class="item">
+          - Далее мы можем стилизовать аккордеон при помощи созданного нами JS скрипта с инициализованным плагином, применяя те настройки, которые предалгает нам jQuery на своем сайте
+        </li>
+      </ul>
+      <div class="code-realisation">
+        <ul class="list accordion">
+          <li class="item">
+            <span class="b5__ac-title">
+              Текст-превью
+            </span>
+            <p class="text">
+              Далеко-далеко за, словесными горами в стране гласных и согласных живут рыбные тексты.
+            </p>
+          </li>
+          <li class="item">
+            <span class="b5__ac-title">
+              Текст-превью
+            </span>
+            <p class="text">
+              Далеко-далеко за, словесными горами в стране гласных и согласных живут рыбные тексты.
+            </p>
+          </li>
+          <li class="item">
+            <span class="b5__ac-title">
+              Текст-превью
+            </span>
+            <p class="text">
+              Далеко-далеко за, словесными горами в стране гласных и согласных живут рыбные тексты.
+            </p>
+          </li>
+        </ul>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="js/b5.js"></script>
+      </div>
+    </div>
+    <!-- Block 5 end -->
   </div>
   
 </body>
