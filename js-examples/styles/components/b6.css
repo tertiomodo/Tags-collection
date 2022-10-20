@@ -1,0 +1,88 @@
+/* Браузерная разметка */
+
+.b6__nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.b6__nav-list {
+  display: flex;
+}
+
+.b6__nav-item {
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+/* Мобильная разметка с @media (max-width: 1024px) */
+
+.b6__nav-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  min-width: 250px;
+  height: 300px;
+  z-index: 1000;
+  flex-direction: column;
+  padding: 50px;
+  box-shadow: 0 0 5px var(--gray);
+  background-color: var(--white);
+  /* Скролл для меню */
+  overflow-y: auto;
+  /* Скрываем меню */
+  visibility: hidden;
+  /* Смещаем меню в левую часть экрана, за его пределы */
+  transform: translateX(-120%);
+  transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.b6__nav-item {
+  margin-right: 0;
+  margin-bottom: 30px;
+}
+
+.b6__nav--active {
+  visibility: visible;
+  transform: none;
+}
+
+.b6__burger--active
+.b6__burger-line:nth-child(2) {
+  display: none;
+}
+
+.b6__burger--active
+.b6__burger-line:first-child {
+  align-items: center;
+  transform: translate(0, 11px) rotate(45deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.b6__burger--active
+.b6__burger-line:last-child {
+  align-items: center;
+  transform: translate(0, -11px) rotate(-45deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.b6__burger {
+  width: 40px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.b6__burger-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--black);
+}
+
+/* Чтобы сайт не скроллился пока мы не закроем меню */
+.stop-scroll {
+  overflow: hidden;
+}
