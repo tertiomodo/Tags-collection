@@ -592,7 +592,7 @@
         <span class="title-number">5.</span> Аккордеон и его готовые решения
       </p>
       <p class="text">
-        <span class="highlight">Аккордеон</span> - это UI элемент, представляющий из себя заголовок, нажатие на который раскрывает контент находящийся в нем, такой элемент веб-дизайна еще иногда называют спойлером. В данном примере мы будем взаимодействовать с готовой библиотекой под названием <a class="link" href="https://jqueryui.com/accordion/" target="_blank">jQuery-accordion</a>.
+        <span class="text-offset">Аккордеон</span> - это UI элемент, представляющий из себя заголовок, нажатие на который раскрывает контент находящийся в нем, такой элемент веб-дизайна еще иногда называют спойлером. В данном примере мы будем взаимодействовать с готовой библиотекой под названием <a class="link" href="https://jqueryui.com/accordion/" target="_blank">jQuery-accordion</a>.
       </p>
       <p class="text">
         Устанавливать библиотеку мы будем через CDN, другими словами, будем вставлять ссылки на ресурсы.
@@ -651,6 +651,215 @@
       </div>
     </div>
     <!-- Block 5 end -->
+    <!-- Block 6 start -->
+    <div class="b6 block">
+      <p class="title">
+        <span class="title-number">6.</span> Бургер меню
+      </p>
+      <p class="text">
+        <span class="text-offset">Бургер меню</span> - это UI элемент, представляющий из себя скрытую область навигации. Бургер меню используется для экономии пространства на планшетных и мобильных устройствах, оно раскрывается по нажатию на него, в формате подстроенном под планшеты и мобильные устройства.
+      </p>
+      <p class="text">
+        Бургер меню создается в блоке header и начинается оно с разметки в HTML, лучше заранее разметить его там, где вы хотите его увидеть, слева или справа от панели навигации.
+      </p>
+      <ul class="list">
+        <li class="item">
+          <span class="text-offset">Как сделать бургер меню?</span>
+        </li>
+        <li class="item">
+          - Создаем разметку - она представляет из себя <span class="text-bg">&lt;<span class="tag-property">div</span>&gt;</span> с классом <span class="text-bg string">burger</span> и тремя <span class="text-bg">&lt;<span class="tag-property">span</span>&gt;</span> внутри с классом <span class="text-bg string">burger-line</span>
+        </li>
+        <li class="item">
+          - Стили пишем в <span class="highlight">media.css</span>, на разрешении в котором у нас будет появляться бургер меню, обычно это 1024px. Задаем стили классу <span class="text-bg selector">.burger</span> и его элементам с классом <span class="text-bg selector">.burger-line</span>
+        </li>
+        <li class="item">
+          - Задаем стили для блока навигации с классом <span class="text-bg selector">.b6__nav-list</span> и его элементам с классом <span class="text-bg selector">.b6__nav-item</span>
+        </li>
+        <li class="item">
+          - Создаем класс <span class="text-bg selector">.b6__nav--active</span> для того чтобы сделать меню видимым и выдвинуть его из левой части экрана.
+        </li>
+        <li class="item">
+          - Создаем класс <span class="text-bg selector">.b6__burger--active</span>, для которого задаются стили для анимирования линий нашего бургера, чтобы они, при открытом меню навигации, превращались в крестик. Этот класс, в дальнейшем, при помощи Js мы будем инлайново встраивать в HTML, поэтому для него можно просто написать вложенность как в примере ниже
+        </li>
+        <li class="item">
+          - Создаем js файл. Его работа будет заключаться в том, чтобы по клику на бургер открывать нам меню, делая классы с префиксом --active активными, активировать анимацию линий бургера, превращая их в крестик и по повторному нажатию закрывать меню
+        </li>
+      </ul>
+      <div class="code-realisation">
+        <div class="b6__nav">
+          <ul class="b6__nav-list">
+            <li class="b6__nav-item">
+              Text
+            </li>
+            <li class="b6__nav-item">
+              Text
+            </li>
+            <li class="b6__nav-item">
+              Text
+            </li>
+            <li class="b6__nav-item">
+              Text
+            </li>
+          </ul>
+          <div class="b6__burger">
+            <span class="b6__burger-line"></span>
+            <span class="b6__burger-line"></span>
+            <span class="b6__burger-line"></span>
+          </div>
+        </div>
+        <script src="js/b6.js"></script>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">div class=</span><span class="string">"b6__nav"</span>&gt;
+    &lt;<span class="tag-property">ul class=</span><span class="string">"b6__nav-list"</span>&gt;
+      &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+        Text
+      &lt;/<span class="tag-property">li</span>&gt;
+      &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+        Text
+      &lt;/<span class="tag-property">li</span>&gt;
+      &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+        Text
+      &lt;/<span class="tag-property">li</span>&gt;
+      &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+        Text
+      &lt;/<span class="tag-property">li</span>&gt;
+    &lt;/<span class="tag-property">ul</span>&gt;
+    &lt;<span class="tag-property">div class=</span><span class="string">"b6__burger"</span>&gt;
+      &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
+      &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
+      &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
+    &lt;/<span class="tag-property">div</span>&gt;
+  &lt;/<span class="tag-property">div</span>&gt;
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-css">CSS</span>
+
+  <span class="comment">/* Браузерная разметка */</span>
+  <span class="selector">.b6__nav</span> {
+    <span class="tag-property">width</span>: 100%;
+    <span class="tag-property">display</span>: flex;
+    <span class="tag-property">justify-content</span>: flex-end;
+  }
+
+  <span class="selector">.b6__nav-list</span> {
+    <span class="tag-property">display</span>: flex;
+  }
+
+  <span class="selector">.b6__nav-item</span> {
+    <span class="tag-property">cursor</span>: pointer;
+    <span class="tag-property">margin-right</span>: 30px;
+  }
+
+  <span class="comment">/* Мобильная разметка с @media (max-width: 1024px) */</span>
+
+  <span class="selector">.b6__nav-list</span> {
+    <span class="tag-property">position</span>: absolute;
+    <span class="tag-property">top</span>: 0;
+    <span class="tag-property">left</span>: 0;
+    <span class="tag-property">width</span>: 50%;
+    <span class="tag-property">min-width</span>: 250px;
+    <span class="tag-property">height</span>: 300px;
+    <span class="tag-property">z-index</span>: 1000;
+    <span class="tag-property">flex-direction</span>: column;
+    <span class="tag-property">padding</span>: 50px;
+    <span class="tag-property">box-shadow</span>: 0 0 5px var(--gray);
+    <span class="tag-property">background-color</span>: var(--white);
+    <span class="comment">/* Скролл для меню */</span>
+    <span class="tag-property">overflow-y</span>: auto;
+    <span class="comment">/* Скрываем меню */</span>
+    <span class="tag-property">visibility</span>: hidden;
+    <span class="comment">/* Смещаем меню в левую часть экрана, за его пределы */</span>
+    <span class="tag-property">transform</span>: translateX(-120%);
+    <span class="tag-property">transition</span>: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  <span class="selector">.b6__nav-item</span> {
+    <span class="tag-property">margin-right</span>: 0;
+    <span class="tag-property">margin-bottom</span>: 30px;
+  }
+
+  <span class="selector">.b6__nav--active</span> {
+    <span class="tag-property">visibility</span>: visible;
+    <span class="tag-property">transform</span>: none;
+  }
+
+  <span class="selector">.b6__burger--active</span>
+  <span class="selector">.b6__burger-line:nth-child(2)</span> {
+    <span class="tag-property">display</span>: none;
+  }
+
+  <span class="selector">.b6__burger--active</span>
+  <span class="selector">.b6__burger-line:first-child</span> {
+    <span class="tag-property">align-items</span>: center;
+    <span class="tag-property">transform</span>: translate(0, 11px) rotate(45deg);
+    <span class="tag-property">transition</span>: transform 0.3s ease-in-out;
+  }
+
+  <span class="selector">.b6__burger--active</span>
+  <span class="selector">.b6__burger-line:last-child</span> {
+    <span class="tag-property">align-items</span>: center;
+    <span class="tag-property">transform</span>: translate(0, -11px) rotate(-45deg);
+    <span class="tag-property">transition</span>: transform 0.3s ease-in-out;
+  }
+
+  <span class="selector">.b6__burger</span> {
+    <span class="tag-property">width</span>: 40px;
+    <span class="tag-property">height</span>: 25px;
+    <span class="tag-property">display</span>: flex;
+    <span class="tag-property">flex-direction</span>: column;
+    <span class="tag-property">justify-content</span>: space-between;
+    <span class="tag-property">cursor</span>: pointer;
+  }
+
+  <span class="selector">.b6__burger-line</span> {
+    <span class="tag-property">width</span>: 100%;
+    <span class="tag-property">height</span>: 3px;
+    <span class="tag-property">background-color</span>: var(--black);
+  }
+
+  <span class="comment">/* Чтобы сайт не скроллился пока мы не закроем меню */</span>
+  <span class="selector">.stop-scroll</span> {
+    <span class="tag-property">overflow</span>: hidden;
+  }
+</code>
+</pre>
+      </div>
+      <div class="console">
+        <pre>
+        <code class="code">
+          <span class="console-title title-css">CSS</span>
+
+          <span class="property">let</span> <span class="value">b6__burger</span> = document.querySelector(<span class="string">'.b6__burger'</span>);
+          <span class="property">let</span> <span class="value">b6__menu</span> = document.querySelector(<span class="string">'.b6__nav-list'</span>);
+          <span class="property">let</span> <span class="value">b6__menuLinks</span> = <span class="value">b6__menu</span>.querySelectorAll(<span class="string">'.b6__nav-item'</span>);
+
+          <span class="value">b6__burger</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+            <span class="value">b6__burger</span>.classList.toggle(<span class="string">'b6__burger--active'</span>);
+            <span class="value">b6__menu</span>.classList.toggle(<span class="string">'b6__nav--active'</span>);
+            document.body.classList.toggle(<span class="string">'stop-scroll'</span>);
+          });
+
+          <span class="value">b6__menuLinks</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
+            <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+              <span class="value">b6__burger</span>.classList.remove(<span class="string">'b6__burger--active'</span>);
+              <span class="value">b6__menu</span>.classList.remove(<span class="string">'b6__nav--active'</span>);
+              document.body.classList.remove(<span class="string">'stop-scroll'</span>);
+            });
+          });
+        </code>
+        </pre>
+      </div>
+    </div>
+    <!-- Block 6 end -->
   </div>
   
 </body>
