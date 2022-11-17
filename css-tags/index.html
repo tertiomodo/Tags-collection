@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="custom-elements/css/choices.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/img/css.ico">
   <title>CSS tags collection</title>
@@ -1423,7 +1425,7 @@
       </h3>
       <pre class="code-view">
         <code>
-  a<span class="attention">[href*=".com"]</span> {
+  a<span class="attention">[href*=".link"]</span> {
     color: red;
     font-weight: bold;
   }</code>
@@ -1432,8 +1434,8 @@
         <a class="b54-link" href="https://www.ya.ru">
           Ссылка доменом .ru
         </a>
-        <a class="b54-link" href="https://www.google.com">
-          Ссылка доменом .com
+        <a class="b54-link" href="https://www.site.link">
+          Ссылка доменом .link
         </a>
         <a class="b54-link" href="https://www.ya.ru">
           Ссылка доменом .ru
@@ -2082,7 +2084,79 @@
         <img src="assets/img/forest.jpg" alt="Forest">
       </div>
     </div>
+    <p class="title">
+      <b>61.</b> Кастомные элементы.
+    </p>
+    <div class="code-realisation">
+      <p>
+        Кастомный checkbox:
+      </p>
+      <label class="b61-label">
+        <input class="b61-checkbox" type="checkbox">
+        Согласен на обработку данных
+        <span class="b61-custom-checkbox"></span>
+      </label>
+    </div>
+    <div class="code-realisation">
+      <p>
+        Кастомизация селекта без плагина:
+      </p>
+      <select class="b61-native-select">
+        <option>
+          Пункт 1
+        </option>
+        <option>
+          Пункт 2
+        </option>
+        <option>
+          Пункт 3
+        </option>
+      </select>
+      <p>
+        Кастомный селект с использованием плагина:
+      </p>
+      <select name="select" id="selectCustom">
+        <option>
+          Пункт 1
+        </option>
+        <option>
+          Пункт 2
+        </option>
+        <option>
+          Пункт 3
+        </option>
+      </select>
+      <script src="custom-elements/js/choices.min.js"></script>
+    </div>
+    <p class="title">
+      <b>62.</b> Работа с Яндекс картами.
+    </p>
+    <p>
+      Документация и шаги подключения карты находятся <a href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html?from=jsapi" target="_blank">тут</a>
+    </p>
+    <div class="b62-map-container" id="map"></div>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <p class="title">
+      <b>63.</b> Тултипы - всплывающие подсказки по наведению.
+    </p>
+    <div class="b63-tooltip">
+      <div class="b63-marker" tabindex="0"></div>
+      <div class="b63-popup">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+    <p class="title">
+      <b>64.</b> Кастомный скролл.
+    </p>
+    <p>
+      Реализуется при помощи библиотеки <a href="https://github.com/Grsmto/simplebar" target="_blank">SimpleBar</a>
+    </p>
+    <div data-simplebar class="b64-scroll-wrapper">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sequi provident doloremque quibusdam atque recusandae, consectetur, ullam facere repudiandae corporis culpa dolorem. Rerum cum ex placeat, enim praesentium beatae nemo? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi maiores sit accusantium molestias facere, quas in ea magnam maxime, rerum sed, at reiciendis deleniti delectus saepe beatae assumenda. Soluta, saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sunt sapiente quidem perspiciatis quod dolore quo porro sequi doloremque amet. Cumque, iste molestiae exercitationem tempora facere ea. Modi, impedit repudiandae.
+    </div>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
   </div>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

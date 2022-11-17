@@ -1878,7 +1878,7 @@ h1, h2 {
 
 a[download],
 a[href="https://www.google.com"],
-a[href*=".com"] {
+a[href*=".link"] {
   color: red;
   font-weight: bold;
 }
@@ -2313,5 +2313,110 @@ a[href*=".com"] {
   width: 100%;
 }
 
+/* 61. Кастомный checkbox. */
 
+.b61-checkbox {
+  display: none;
+}
 
+.b61-label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.b61-checkbox + .b61-custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.b61-checkbox + .b61-custom-checkbox:before {
+  content: '\2713';
+  position: absolute;
+  top: -2px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.b61-checkbox:checked + .b61-custom-checkbox:before {
+  opacity: 1;
+}
+
+.b61-native-select {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  outline: none;
+  border-color: tomato;
+  border-radius: 7px;
+}
+
+.choices__item {
+  font-weight: bold;
+}
+
+/* 62. Работа с Яндекс картами */
+
+.b62-map-container {
+  width: 600px;
+  height: 400px;
+}
+
+[class*='ground-pane'] {
+  filter: grayscale(1);
+}
+
+/* 63. Тултипы - всплывающие подсказки по наведению */
+
+.b63-tooltip {
+  position: relative;
+}
+
+.b63-marker {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.b63-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 210px;
+  padding: 5px; 
+  margin-top: 10px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.b63-marker:focus + .b63-popup,
+.b63-marker:hover + .b63-popup {
+  opacity: 1;
+}
+
+/* 64. Кастомный скролл */
+
+.b64-scroll-wrapper {
+  width: 300px;
+  height: 300px;
+}
+
+.simplebar-content-wrapper {
+  overflow: auto;
+}
