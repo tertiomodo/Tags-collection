@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="custom-elements/css/choices.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/img/css.ico">
   <title>CSS tags collection</title>
@@ -1423,7 +1425,7 @@
       </h3>
       <pre class="code-view">
         <code>
-  a<span class="attention">[href*=".com"]</span> {
+  a<span class="attention">[href*=".link"]</span> {
     color: red;
     font-weight: bold;
   }</code>
@@ -1432,8 +1434,8 @@
         <a class="b54-link" href="https://www.ya.ru">
           Ссылка доменом .ru
         </a>
-        <a class="b54-link" href="https://www.google.com">
-          Ссылка доменом .com
+        <a class="b54-link" href="https://www.site.link">
+          Ссылка доменом .link
         </a>
         <a class="b54-link" href="https://www.ya.ru">
           Ссылка доменом .ru
@@ -2080,6 +2082,28 @@
       </p>
       <div class="b60-invert">
         <img src="assets/img/forest.jpg" alt="Forest">
+      </div>
+    </div>
+    <p class="title">
+      <b>61.</b> Кастомный чекбокс.
+    </p>
+    <div class="code-realisation">
+      <p>
+        Кастомный checkbox:
+      </p>
+      <label class="b61-label">
+        <input class="b61-checkbox" type="checkbox">
+        Согласен на обработку данных
+        <span class="b61-custom-checkbox"></span>
+      </label>
+    </div>
+    <p class="title">
+      <b>62.</b> Тултипы - всплывающие подсказки по наведению.
+    </p>
+    <div class="b62-tooltip">
+      <div class="b62-marker" tabindex="0"></div>
+      <div class="b62-popup">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
       </div>
     </div>
   </div>
