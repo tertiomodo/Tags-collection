@@ -9,7 +9,11 @@
   <!--Swiper css--> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <!--Accordion css-->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <!--Select css-->
+  <link rel="stylesheet" href="libs/css/choices.min.css">
+  <!--Scrollbar css-->
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
   <!--Main css-->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="icon" href="assets/img/js-icon.ico">
@@ -834,32 +838,262 @@
 </pre>
       </div>
       <div class="console">
-        <pre>
-        <code class="code">
-          <span class="console-title title-css">CSS</span>
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
 
-          <span class="property">let</span> <span class="value">b6__burger</span> = document.querySelector(<span class="string">'.b6__burger'</span>);
-          <span class="property">let</span> <span class="value">b6__menu</span> = document.querySelector(<span class="string">'.b6__nav-list'</span>);
-          <span class="property">let</span> <span class="value">b6__menuLinks</span> = <span class="value">b6__menu</span>.querySelectorAll(<span class="string">'.b6__nav-item'</span>);
+  <span class="property">let</span> <span class="value">b6__burger</span> = document.querySelector(<span class="string">'.b6__burger'</span>);
+  <span class="property">let</span> <span class="value">b6__menu</span> = document.querySelector(<span class="string">'.b6__nav-list'</span>);
+  <span class="property">let</span> <span class="value">b6__menuLinks</span> = <span class="value">b6__menu</span>.querySelectorAll(<span class="string">'.b6__nav-item'</span>);
 
-          <span class="value">b6__burger</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
-            <span class="value">b6__burger</span>.classList.toggle(<span class="string">'b6__burger--active'</span>);
-            <span class="value">b6__menu</span>.classList.toggle(<span class="string">'b6__nav--active'</span>);
-            document.body.classList.toggle(<span class="string">'stop-scroll'</span>);
-          });
+  <span class="value">b6__burger</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+    <span class="value">b6__burger</span>.classList.toggle(<span class="string">'b6__burger--active'</span>);
+    <span class="value">b6__menu</span>.classList.toggle(<span class="string">'b6__nav--active'</span>);
+    document.body.classList.toggle(<span class="string">'stop-scroll'</span>);
+  });
 
-          <span class="value">b6__menuLinks</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
-            <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
-              <span class="value">b6__burger</span>.classList.remove(<span class="string">'b6__burger--active'</span>);
-              <span class="value">b6__menu</span>.classList.remove(<span class="string">'b6__nav--active'</span>);
-              document.body.classList.remove(<span class="string">'stop-scroll'</span>);
-            });
-          });
-        </code>
-        </pre>
+  <span class="value">b6__menuLinks</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
+    <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+      <span class="value">b6__burger</span>.classList.remove(<span class="string">'b6__burger--active'</span>);
+      <span class="value">b6__menu</span>.classList.remove(<span class="string">'b6__nav--active'</span>);
+      document.body.classList.remove(<span class="string">'stop-scroll'</span>);
+    });
+  });
+</code>
+</pre>
       </div>
     </div>
     <!-- Block 6 end -->
+    <!-- Block 7 start -->
+    <div class="b7 block">
+      <p class="title">
+        <span class="title-number">7.</span> Кастомный селект
+      </p>
+      <p class="text">
+        <span class="text-offset">Селект</span> - это UI элемент, представляющий из себя раскрывающийся список с множеством элементов.
+      </p>
+      <p class="text">
+        Селект можно сделать и нативным, но он не будет настолько гибким, как селект добавленный при помощи плагина
+      </p>
+      <div class="code-realisation">
+        <p class="text">
+          Нативный селект:
+        </p>
+        <select class="b7__native-select">
+          <option>
+            Пункт 1
+          </option>
+          <option>
+            Пункт 2
+          </option>
+          <option>
+            Пункт 3
+          </option>
+        </select>
+      </div>
+      <p class="text">
+        Плагины позволяют сделать селект более гибким в настройке и кастомизации, в данном примере мы рассмотрим плагин под названием <a class="link" href="https://github.com/Choices-js/Choices" target="_blank">Choices</a>.
+      </p>
+      <p class="text">
+        Инструкция по его подключению, как и почти всех плагинов находящихся на GitHub, находится в файле README, к любой хорошей библиотеке прикладывается понятная инструкция по подключению плагина. Как и все плагины, этот можно подключить тремя способами: скачать через npm, скачать архив с GitHub и установить его себе в проект, либо через CDN, те по прямой ссылке, воспользуется вторым способом и скачаем архив, из которого нам понадобится всего два файла <span class="highlight">choices.min.css</span>, подключаем его в head нашей страницы, и <span class="highlight">choices.min.js</span>, подключаем перед закрывающим тегом body.
+      </p>
+      <p class="text">
+        После того как мы добавили два этих файла в HTML, необходимо базово разметить select, и дать ему название класса, далее инициализировать плагин, сделать это можно создав JS файл под добавленным ранее, и прописать в нем код для инициализации.
+      </p>
+      <p class="text">
+        После инициализации, можем перейти на GitHub данного плагина и перейти к разделу Setp -&gt; passing oprions, тут находятся все нужные настройки для кастомизации вашего селекта.
+      </p>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">select class=</span><span class="string">"b7__custom-select"</span>&gt;
+    &lt;<span class="tag-property">option</span>&gt;
+      Пункт 1
+    &lt;/<span class="tag-property">option</span>&gt;
+    &lt;<span class="tag-property">option</span>&gt;
+      Пункт 2
+    &lt;/<span class="tag-property">option</span>&gt;
+    &lt;<span class="tag-property">option</span>&gt;
+      Пункт 3
+    &lt;/<span class="tag-property">option</span>&gt;
+  &lt;/<span class="tag-property">select</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"libs/js/choices.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src=</span><span class="string">"js/b7.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+  <span class="comment">// Код для инициализации плагина</span>
+  <span class="property">const</span> <span class="value">element</span> = document.querySelector(<span class="string">'.b7__custom-select'</span>);
+  <span class="property">const</span> <span class="value">choices</span> = new Choices(<span class="value">element</span>);
+</code>
+</pre>
+      </div>
+      <div class="code-realisation">
+        <p class="text">
+          Кастомный селект:
+        </p>
+        <select class="b7__custom-select">
+          <option>
+            Пункт 1
+          </option>
+          <option>
+            Пункт 2
+          </option>
+          <option>
+            Пункт 3
+          </option>
+        </select>
+        <script src="libs/js/choices.min.js"></script>
+        <script src="js/b7.js"></script>
+      </div>
+    </div>
+    <!-- Block 7 end -->
+    <!-- Block 8 start -->
+    <div class="b8 block">
+      <p class="title">
+        <span class="title-number">8.</span> Добавление Яндекс карты.
+      </p>
+      <p class="text">
+        Для того чтобы добавить карту на свой сайт, необходимо перейти на сайт <a class="link" href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html?from=jsapi" target="_blank">Яндекса</a> и ознакомиться с документацией, всего в 4 шага можно добавить яндекс карту к себе в проект!
+      </p>
+      <p class="text">
+        Для нашего примера, можно начинать со второго шага, те с добавления API Яндекс карты, в виде JS файла. Далее мы создаем контейнер для карты (в примере все стили для него записаны инлайново, этого лучше избежать и задать div'у класс и стилизовать уже его), далее важный шаг, это добавления id вашему контейнеру для карты, его необходимо назвать как в примере, те <span class="text-bg"><span class="tag-property">id</span> = <span class="string">"map"</span></span>
+      </p>
+      <p class="text">
+        Создаем JS файл, подключаем его под API Яндекс карт в HTML, и инициализируем карту.
+      </p>
+      <p class="text">
+        Карту можно стилизовать, добавлять свои поинты, менять цвет карты, обозначения и тд. все что изменено в этой карте, вы можете увидеть в примерах кода ниже.
+      </p>
+      <div class="code-realisation">
+        <div class="b8__map" id="map"></div>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+        <script src="js/b8.js"></script>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">div class</span>=<span class="string">"b8__map"</span><span class="tag-property"> id</span>=<span class="string">"map"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">script src</span>=<span class="string">"https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"</span><span class="tag-property"> type</span>=<span class="string">"text/javascript"</span>&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src</span>=<span class="string">"js/b7.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-css">CSS</span>
+
+  .<span class="selector">b8__map</span> {
+    <span class="tag-property">width</span>: 600px;
+    <span class="tag-property">height</span>: 400px;
+  }
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+
+  <span class="value">ymaps</span>.ready(init);
+  <span class="cycle-function">function</span> init(){
+    <span class="comment">// Создание карты.</span>
+    <span class="property">var</span> <span class="value">myMap</span> = <span class="property">new</span> <span class="value">ymaps</span>.Map(<span class="string">"map"</span>, {
+      <span class="comment">// Координаты центра карты.</span>
+      <span class="comment">// Порядок по умолчанию: «широта, долгота», определить их можно по этой <a class="link" href="http://dimik.github.io/ymaps/examples/location-tool/" target="_blank">ссылке</a></span>
+      <span class="value">center:</span> [55.76, 37.64],
+      <span class="comment">// Уровень масштабирования. от 0 (весь мир) до 19.</span>
+      <span class="value">zoom:</span> 10
+    });
+    <span class="comment">// Добавление новой, встроенной метки, геообъекта.</span>
+    <span class="property">var</span> <span class="value">myGeoObject</span> = <span class="property">new</span> <span class="value">ymaps</span>.GeoObject({
+      <span class="value">myGeoObject:</span> {
+        <span class="value">type:</span> <span class="string">"Points"</span>
+        <span class="value">coordinates:</span> [55.8, 37.8],
+      }
+    });
+    <span class="comment">// Добавление кастомной метки в виде любой svg картинки.</span>
+    <span class="property">var</span> <span class="value">myPlacemark</span> = <span class="property">new</span> <span class="value">ymaps</span>.Placemark([55.76, 37.56], {}, {
+      <span class="value">iconLayout:</span> <span class="string">'default#image'</span>,
+      <span class="value">iconImageHref:</span> <span class="string">'./assets/svg/eevee.svg'</span>,
+      <span class="value">iconImageSize:</span> [30, 42],
+      <span class="value">iconImageOffset:</span> [-3, -42]
+    });
+    <span class="comment">// Вызов функций и активация заданых настроек.</span>
+    <span class="value">myMap</span>.<span class="value">geoObjects</span>.add(<span class="value">myPlacemark</span>);
+    <span class="value">myMap</span>.<span class="value">geoObjects</span>.add(<span class="value">myGeoObject</span>);
+  }
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- Block 8 end -->
+    <!-- Block 9 start -->
+    <div class="b9 block">
+      <p class="title">
+        <span class="title-number">9.</span> Кастомный скролл.
+      </p>
+      <p class="text">
+        Основная проблема того что мы создаем кастомный скроллбар заключается в том, что во всех браузерах они отображаются по разнному, а стремясь к кроссбраузерности, это является помехой, так же нативные скроллбары являются очень некрасивыми и часто выбиваются из общего дизайна сайта. Реализовывать кастомный скроллбар мы будем при помощи библиотеки <a class="link" href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html?from=jsapi" target="_blank">SimpleBar</a>
+      </p>
+      <p class="text">
+        Библиотека находится на GitHub, как и раньше, в README необходимо найти ключевое слово "Get started" и следовать шагам по подключению библиотеки. Нам предлагают уже знакомые варианты подключения библиотеки, мы выбираем подключение через ссылки, те CDN, не забывая при этом подключить CSS в head сайта. Далее, важный момент, необходимо указать data атрибут как в примере - <span class="text-bg value">data-simplebar</span>
+      </p>
+      <p class="text">
+        Кастомизируем скроллбар через CSS класс <span class="text-bg selector">.simplebar-scrollbar::before {...}</span>
+      </p>
+      <div class="code-realisation">
+        <div class="b9__scroll-wrapper" data-simplebar>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde reprehenderit quasi perferendis, ullam nemo minus dolor alias porro quidem? Nisi doloribus error cupiditate dolorum possimus provident tempore blanditiis enim nostrum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde reprehenderit quasi perferendis, ullam nemo minus dolor alias porro quidem? Nisi doloribus error cupiditate dolorum possimus provident tempore blanditiis enim nostrum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde reprehenderit quasi perferendis, ullam nemo minus dolor alias porro quidem? Nisi doloribus error cupiditate dolorum possimus provident tempore blanditiis enim nostrum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde reprehenderit quasi perferendis, ullam nemo minus dolor alias porro quidem? Nisi doloribus error cupiditate dolorum possimus provident tempore blanditiis enim nostrum.
+          </p>
+        </div>
+        <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">div class</span>=<span class="string">"b9__scroll-wrapper"</span><span class="value"> data-simplebar</span>&gt;
+    &lt;<span class="tag-property">p class</span>=<span class="string">"text"</span>&gt;
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat officia veritatis enim repellat, in natus similique deleniti, vero quam, laboriosam labore voluptates incidunt exercitationem. Quibusdam voluptatum ratione veritatis libero.
+    &lt;/<span class="tag-property">p</span>&gt;
+    &lt;<span class="tag-property">script src</span>=<span class="string">"https://unpkg.com/simplebar@latest/dist/simplebar.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;/<span class="tag-property">div</span>&gt;
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-css">CSS</span>
+
+  .<span class="selector">b9__scroll-wrapper</span> {
+    <span class="tag-property">width</span>: 400px;
+    <span class="tag-property">height</span>: 400px;
+  }
+
+  .<span class="selector">simplebar-scrollbar::before</span> {
+    <span class="tag-property">background-image</span>: linear-gradient(180deg, red, orange, yellow, lime, green, aqua, blue);
+  }
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- Block 9 end -->
   </div>
   
 </body>
