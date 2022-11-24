@@ -1046,7 +1046,7 @@
         Основная проблема того что мы создаем кастомный скроллбар заключается в том, что во всех браузерах они отображаются по разнному, а стремясь к кроссбраузерности, это является помехой, так же нативные скроллбары являются очень некрасивыми и часто выбиваются из общего дизайна сайта. Реализовывать кастомный скроллбар мы будем при помощи библиотеки <a class="link" href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html?from=jsapi" target="_blank">SimpleBar</a>
       </p>
       <p class="text">
-        Библиотека находится на GitHub, как и раньше, в README необходимо найти ключевое слово "Get started" и следовать шагам по подключению библиотеки. Нам предлагают уже знакомые варианты подключения библиотеки, мы выбираем подключение через ссылки, те CDN, не забывая при этом подключить CSS в head сайта. Далее, важный момент, необходимо указать data атрибут как в примере - <span class="text-bg value">data-simplebar</span>
+        Библиотека находится на GitHub, как и раньше, в README необходимо найти ключевое слово <span class="highlight">Get started</span> и следовать шагам по подключению библиотеки. Нам предлагают уже знакомые варианты подключения библиотеки, мы выбираем подключение через ссылки, те CDN, не забывая при этом подключить CSS в head сайта. Далее, важный момент, необходимо указать data атрибут как в примере - <span class="text-bg value">data-simplebar</span>
       </p>
       <p class="text">
         Кастомизируем скроллбар через CSS класс <span class="text-bg selector">.simplebar-scrollbar::before {...}</span>
@@ -1094,6 +1094,124 @@
       </div>
     </div>
     <!-- Block 9 end -->
+    <!-- Block 10 start -->
+    <div class="b10 block">
+      <p class="title">
+        <span class="title-number">10.</span> Валидация формы и ее кастомизация.
+      </p>
+      <p class="text">
+        Для красивой формы и ее валидации, где для ввода номера телефона используется маска, а необходимые поля подсвечиваются, мы будем использовать две библиотеки: <a class="link" href="https://github.com/RobinHerbots/Inputmask" target="_blank">Inputmask</a> - отвечающий за маску поля для ввода номера телефона, и <a class="link" href="https://github.com/horprogs/Just-validate/tree/v1/dist/js" target="_blank">Just-validate</a> - отвечающий за валидацию полей формы
+      </p>
+      <p class="text">
+        Начинаем с разметки HTML, прописываем поля для формы - имя, телефон, email, так же добаляем кнопку для отправки. Важный момент, помимо стандартных атрибутов формы, к ним добавляются еще и data атрибуты, которые будут отбрабатываться плагином валидации, их необходимо добавить.
+      </p>
+      <p class="text">
+        Скачиваем архив с плагином <span class="highlight">Inputmask</span> с GitHub, находим и подключаем единственный нужный нам файл <span class="highlight">inputmask.min.js</span> и инициализируем его при помощи подключенного ниже JS файла.
+      </p>
+      <p class="text">
+        После чего можно перейти к подключению <span class="highlight">Just-validate</span>. Его необходимо скачать и забрать к себе в проект один файл <span class="highlight">just-validate.min.js</span>, подключив его рядом с предыдущим плагином, инициализировать можно в том же файле что мы создали ранее. Главное это задать в инициализации тот класс, которым мы назвали нашу форму.
+      </p>
+      <div class="code-realisation">
+        <form class="b10__form" action="https://jsonplaceholder.typicode.com/posts" method="post" target="_blank">
+          <input class="b10__form-input" name="Имя" type="text" placeholder="Имя" data-validate-field="name">
+          <input class="b10__form-input" name="Телефон" type="tel" placeholder="Телефон" data-validate-field="tel" data-validate-rules="phone">
+          <input class="b10__form-input" name="email" type="email" placeholder="Email" data-validate-field="mail">
+          <button class="b10__form-button">
+            Отправить
+          </button>
+        </form>
+        <script src="libs/js/inputmask.min.js"></script>
+        <script src="libs/js/just-validate.min.js"></script>
+        <script src="js/b10.js"></script>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-html">HTML</span>
+
+  &lt;<span class="tag-property">form class</span>=<span class="string">"b10__form"</span> <span class="value">action</span>=<span class="string">"https://jsonplaceholder.typicode.com/posts"</span> <span class="value">method</span>=<span class="string">"post"</span> <span class="value">target</span>=<span class="string">"_blank"</span>&gt;
+    &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Имя"</span> <span class="value">type</span>=<span class="string">"text"</span> <span class="value">placeholder</span>=<span class="string">"Имя"</span> <span class="value">data-validate-field</span>=<span class="string">"name"</span>&gt;
+    &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Телефон"</span> <span class="value">type</span>=<span class="string">"tel"</span> <span class="value">placeholder</span>=<span class="string">"Телефон"</span> <span class="value">data-validate-field</span>=<span class="string">"tel"</span>&gt;
+    &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"email"</span> <span class="value">type</span>=<span class="string">"email"</span> <span class="value">placeholder</span>=<span class="string">"Email"</span> <span class="value">data-validate-field</span>=<span class="string">"mail"</span>&gt;
+    &lt;<span class="tag-property">button class</span>=<span class="string">"b10__form-button"</span>&gt;
+      Отправить
+    &lt;/<span class="tag-property">button</span>&gt;
+  &lt;/<span class="tag-property">form</span>&gt;
+  &lt;<span class="tag-property">script src</span>=<span class="string">"libs/js/inputmask.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src</span>=<span class="string">"libs/js/just-validate.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">script src</span>=<span class="string">"js/b10.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-css">CSS</span>
+
+  .<span class="selector">b10__form</span> {
+    <span class="tag-property">max-width</span>: 30%;
+    <span class="tag-property">display</span>: flex;
+    <span class="tag-property">flex-direction</span>: column;
+  }
+
+  .<span class="selector">b10__form-input</span> {
+    <span class="tag-property">margin-bottom</span>: 20px;
+  }
+
+  .<span class="selector">b10__form-button</span> {
+    <span class="tag-property">width</span>: fit-content;
+    <span class="tag-property">display</span>: inline-flex;
+    <span class="tag-property">justify-content</span>: flex-start;
+    <span class="tag-property">padding</span>: 10px;
+    <span class="tag-property">background-color</span>: var(--gray);
+    <span class="tag-property">border-radius</span>: 10px;
+  }
+</code>
+</pre>
+      </div>
+      <div class="console">
+<pre>
+<code class="code">
+  <span class="console-title title-js">JS</span>
+
+  <span class="comment">// Инициализация Inputmask</span>
+  <span class="comment">// Скрипт находит на странице все атрибуты с type="tel"</span>
+  <span class="property">var</span> <span class="value">selector</span> = document.querySelector(<span class="string">'input[type="tel"]'</span>);
+  <span class="comment">// Создаем пример того как должна выглядеть маска и номер в ней (9 можно заменить на любую цифру)</span>
+  <span class="property">var</span> <span class="value">im</span> = <span class="property">new</span> Inputmask(<span class="string">'+7 (999)-999-99-99'</span>);
+
+  <span class="value">im</span>.mask(<span class="value">selector</span>);
+
+  <span class="comment">// Инициализация JustValidate</span>
+  <span class="property">new</span> JustValidate(<span class="string">'.b10__form'</span>, {
+  <span class="value">rules</span>: {
+    <span class="comment">// Проверки для имени</span>
+    <span class="value">name</span>: {
+      <span class="value">required</span>: true,
+      <span class="value">minLength</span>: 2,
+      <span class="value">maxLength</span>: 20
+    },
+    <span class="comment">// Проверки для телефона</span>
+    <span class="value">tel</span>: {
+      <span class="value">required</span>: true,
+      <span class="comment">// Собственная функция валидации которая проверяет только цифры, без учета скорок и тире</span>
+      <span class="cycle-function">function</span>: (name, value) <span class="cycle-function">=&gt;</span> {
+        <span class="property">const</span> <span class="value">phone</span> = <span class="value">selector</span>.<span class="value">inputmask</span>.unmaskedvalue()
+        <span class="cycle-function">return</span> <span class="value">Number</span>(<span class="value">phone</span>) && <span class="value">phone</span>.<span class="value">length</span> === 10
+      }
+    },
+    <span class="comment">// Проверки для email</span>
+    <span class="value">mail</span>: {
+      <span class="value">required</span>: true,
+      <span class="value">email</span>: true
+    },
+  },
+});
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- Block 10 end -->
   </div>
   
 </body>
