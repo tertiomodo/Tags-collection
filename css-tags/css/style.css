@@ -15,7 +15,7 @@ html {
 }
 
 .item:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .code-view {
@@ -874,10 +874,6 @@ h1, h2 {
   padding: 0;
 }
 
-.b33-item:not(:last-child) {
-  margin-bottom: 10px;
-}
-
 .b33-background-image {
   display: block;
   border: 1px solid #000;
@@ -1037,10 +1033,6 @@ h1, h2 {
 .b36-list {
   list-style: none;
   padding: 0;
-}
-
-.b36-item:not(:last-child) {
-  margin-bottom: 10px;
 }
 
 .b36-background-short-text {
@@ -1264,10 +1256,6 @@ h1, h2 {
   list-style: none;
 }
 
-.b43-adaptive-ordered-item:not(:last-child) {
-  margin-bottom: 18px;
-}
-
 /* Медиазапросы, правило @media. */
 
 .b43-media-block {
@@ -1390,13 +1378,77 @@ h1, h2 {
   }
 }
 /* Создаем объект для анимации, это может быть любой объект на странице! */
-.b44_animation_block {
+.b44-animation_block {
   display: inline-block;
   width: 100px;
   height: 100px;
   border-radius: 100%;
   box-shadow: 0 0 5px rgb(0, 0, 0);
   animation: color_change 3s infinite;
+}
+
+/* Второй пример */
+
+@keyframes anim {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(500px);
+  }
+}
+
+.b44-button {
+  width: 100px;
+  height: 40px;
+  background-color: #CCB26E;
+  border-radius: 5px;
+  border: 2px solid #666666;
+  cursor: pointer;
+  animation: anim 2s alternate ease-in-out infinite;
+}
+
+.b44-button:hover {
+  animation-play-state: paused;
+}
+
+/* Третий пример */
+
+@keyframes ball {
+  0% {
+    transform: none;
+  }
+  20% {
+    transform: translateX(100px) rotate(72deg);
+  }
+  40% {
+    transform: translateX(200px) rotate(144deg);
+  }
+  60% {
+    transform: translateX(300px) rotate(216deg);
+  }
+  80% {
+    transform: translateX(400px) rotate(288deg);
+  }
+  100% {
+    transform: translateX(500px) rotate(360deg);
+  }
+}
+
+.b44-rolling-ball {
+  background-color: rgb(199, 42, 42);
+  background: linear-gradient(90deg, rgba(199,42,42,0.9556197478991597) 47%, rgba(159,212,138,1) 100%);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  cursor: pointer;
+  animation: ball 2s alternate linear infinite;
+  position: relative; 
+}
+
+.b44-rolling-ball:hover {
+  animation-play-state: paused;
 }
 
 /* 46. Создание 3D кнопки при помощи свойства position: relative; и :hover. */
@@ -1713,7 +1765,7 @@ h1, h2 {
 .b53-card-link {
   padding-right: 23px;
   text-decoration: none;
-  background: url('../assets/img/b53-arrow.svg') no-repeat bottom right / contain;
+  background: url('../assets/svg/b53-arrow.svg') no-repeat bottom right / contain;
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
@@ -1900,10 +1952,6 @@ a[href*=".link"] {
   padding: 0;
 }
 
-.b55-item:not(:last-child) {
-  margin-bottom: 20px;
-}
-
 /* 56. Псевдоэлементы */
 
 .b56-first-line { /* ::first-line */
@@ -2049,10 +2097,6 @@ a[href*=".link"] {
 }
 
 /* 58. Свойство transition */
-
-.b58-item {
-  margin-bottom: 20px;
-}
 
 .b58-element {
   padding-bottom: 20px;
@@ -2248,10 +2292,6 @@ a[href*=".link"] {
   padding: 0;
 }
 
-.b59-matrix-item {
-  margin-bottom: 20px;
-}
-
 /* 60. CSS Функции */
 
 .b60-calc-parent { /* Функция calc */
@@ -2398,3 +2438,93 @@ a[href*=".link"] {
 .b62-marker:hover + .b62-popup {
   opacity: 1;
 }
+
+/* Еще один пример тултипа */
+
+.b62-information {
+  width: 375px;
+  height: 160px;
+  padding: 20px 78px 20px 30px;
+  background-color: #fff;
+}
+
+.b62-information__text {
+  line-height: 24px;
+  color: #333333;
+}
+
+.b62-information__tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.b62-information__tooltip {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.b62-information__tooltip-popup {
+  position: absolute;
+  left: -69.5px;
+  bottom: 31px;
+  width: 163px;
+  min-height: 31px;
+  padding: 7px 15px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+  background-color: #666666;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.b62-information__tooltip-popup::after {
+  content: '';
+  position: absolute;
+  left: 66px;
+  bottom: -10px;
+  border: 8px solid transparent;
+  border-left: 15px solid #666666;
+  transform: rotate(90deg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+ }
+
+.b62-information__tooltip path {
+  fill: #BCBCBC;
+  transition: fill 0.2s ease-in-out;
+}
+
+.b62-information__tooltip-wrapper:hover
+.b62-information__tooltip-popup,
+.b62-information__tooltip-popup::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.b62-information__tooltip-wrapper:hover
+.b62-information__tooltip path {
+  fill: #CCB26E;
+}
+
+/* 63. Готовые CSS библиотеки */
+
+.b63-title {
+  color: #000000;
+}
+
+.b63-button {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  color: rgb(238, 238, 238);
+  background-color: #CCB26E;
+  border-radius: 5px;
+  border: 2px solid #666666;
+  cursor: pointer; 
+}
+
