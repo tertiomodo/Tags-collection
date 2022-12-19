@@ -1,6 +1,6 @@
 .b9__scroll-wrapper {
-  width: 400px;
-  height: 400px;
+  max-width: 400px;
+  min-height: 400px;
 }
 
 .simplebar-scrollbar::before {

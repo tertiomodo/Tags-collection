@@ -1,6 +1,6 @@
 .b2__block {
-  width: 200px;
-  height: 200px;
+  max-width: 200px;
+  min-height: 200px;
   background-color: crimson;
 }
 

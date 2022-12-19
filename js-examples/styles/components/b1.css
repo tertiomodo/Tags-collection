@@ -3,11 +3,11 @@
 }
 
 .b1__block-three {
-  width: 200px;
-  height: 200px;
-  background-color: crimson;
+  max-width: 200px;
+  min-height: 200px;
+  background-color: #ed143d73;
 }
 
 .b1__translate-three {
-  transform: translateX(100px);
+  transform: translateY(-46px);
 }

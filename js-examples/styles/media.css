@@ -1,0 +1,17 @@
+@media (max-width: 576px) {
+  .content {
+    padding: 10px;
+  }
+
+  .body {
+    font-size: 18px;
+  }
+
+  .highlight {
+    font-size: 18px;
+  }
+
+  .text-bg {
+    font-size: 18px;
+  }
+}
