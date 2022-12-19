@@ -1,5 +1,5 @@
-body {
-  min-width: 320px;
+.body {
+  min-width: 300px;
   font-family: 'Montserrat';
   font-size: 20px;
   background-color: var(--white);
@@ -49,7 +49,12 @@ body {
 }
 
 .highlight {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fit-content;
   padding: 1px 5px;
+  word-break: break-all;
   font-family: monospace;
   font-size: 20px;
   font-weight: 700;
@@ -65,7 +70,12 @@ body {
 }
 
 .text-bg {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fit-content;
   padding: 1px 5px;
+  word-break: break-all;
   font-family: monospace;
   font-size: 20px;
   letter-spacing: 0.5px;
