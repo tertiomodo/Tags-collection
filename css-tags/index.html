@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="custom-elements/css/choices.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="css/hover-min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/img/css.ico">
   <title>CSS tags collection</title>
@@ -585,9 +585,9 @@
       Свойства взаимодействующие с изображением в CSS:
     </p>
     <ul class="b33-list">
-      <li class="b33-item"><b>background-image: url("../assets/img/forest.jpg");</b> - свойство позволяющее добавлять изображение
+      <li class="item"><b>background-image: url("../assets/img/forest.jpg");</b> - свойство позволяющее добавлять изображение
         через CSS.</li>
-      <li class="b33-item"><b>background-image: none;</b> - Позволяет очищать блок background-iamge.</li>
+      <li class="item"><b>background-image: none;</b> - Позволяет очищать блок background-iamge.</li>
     </ul>
     <div class="b33-background-image"></div>
     <p class="title">
@@ -657,11 +657,11 @@
       <b class="attention">background: transparent url("../assets/img/forest.jpg") no-repeat center center / cover;</b>
     </p>
     <ul class="b36-list">
-      <li class="b36-item">Сначала указывается цвет блока, в нашем случае это <b>transparent</b> - прозрачный.</li>
-      <li class="b36-item">Далее указываем источник <b>url</b>, это может быть ссылка или путь к файлу на устройстве.</li>
-      <li class="b36-item">Указываем функцию повторения <b>repeat</b> или <b>no-repeat</b>.</li>
-      <li class="b36-item">Указываем background-position <b>center center.</b></li>
-      <li class="b36-item">Далее через "<b>/</b>" задаем размер <b>cover</b> или <b>contain.</b></li>
+      <li class="item">Сначала указывается цвет блока, в нашем случае это <b>transparent</b> - прозрачный.</li>
+      <li class="item">Далее указываем источник <b>url</b>, это может быть ссылка или путь к файлу на устройстве.</li>
+      <li class="item">Указываем функцию повторения <b>repeat</b> или <b>no-repeat</b>.</li>
+      <li class="item">Указываем background-position <b>center center.</b></li>
+      <li class="item">Далее через "<b>/</b>" задаем размер <b>cover</b> или <b>contain.</b></li>
     </ul>
     <div class="b36-background-short">
       <div class="b36-background-short-text">result!</div>
@@ -852,19 +852,19 @@
         Процесс:
       </h4>
       <ol>
-        <li class="b43-adaptive-ordered-item">
+        <li class="item">
           Создаем отдельный CSS файл для медиазапросов, назовем его <span class="definition-highlight">media.css</span> и подключаем его в самом конце, он должен обязательно перебивать стандартные стили.
         </li>
-        <li class="b43-adaptive-ordered-item">
+        <li class="item">
           Начинаем просто сжимать сайт до первых изъянов в адаптиве, можно сразу выставить 1024 и искать дефекты. <span class="attention">Важный момент, разрешение больше 1024 считается десктопным, поэтому если на этом этапе нашлись дефекты, то их необходимо устранять в обычном CSS файле (не в media.css)</span>. Если же мы дошли до 1024px и не нашли дефектов / уже исправили их, то переходим к пункту 3.
         </li>
-        <li class="b43-adaptive-ordered-item">
+        <li class="item">
           Для того чтобы от 1024px до 769px (от горизонтально до вертикально) верстка выглядела одинаково, выставляем в DevTools 769px по ширине, в media.css прописываем @media (max-width: 1024) и пишем все стили исправления туда, обращаясь к классам, перебивая при этом основные стили.
         </li>
-        <li class="b43-adaptive-ordered-item">
+        <li class="item">
           В media.css ставим следующий брейкпоинт 992px, в девтулз – 577, так же исправляем то что плохо выглядит. На этом этапе можно сделать бургер меню (представляет из себя div с 3мя span внутри со стилями для них) и скрыть основную навигацию в header.
         </li>
-        <li class="b43-adaptive-ordered-item">
+        <li class="item">
           В media.css ставим брейкпоинт 576px, в девтулз – 320, обычно для мобильных версий присутствует макет и его необходимо верстать pixelperfect – это конечная, мобильная версия, после ее реализации сайт может считаться адаптивным.
         </li>
       </ol>
@@ -990,7 +990,77 @@
       </li>
     </ul>
     <p>Пример проделанных действий:</p>
-    <div class="b44_animation_block"></div>
+    <div class="b44-animation_block"></div>
+    <p>
+      Ниже приведу несколько примеров использования <span class="definition-highlight">@keyframes</span>
+    </p>
+    <div class="code-realisation">
+      <p>
+        Бесконечно передвигающаяся кнопка:
+      </p>
+      <button class="b44-button">
+        Button
+      </button>
+<pre class="code-view">
+<code>
+  @keyframes anim {
+    0% {
+      transform: translateX(0);
+    }
+  
+    100% {
+      transform: translateX(200px);
+    }
+  }
+  
+  .button {
+    animation: anim 1s alternate ease-in-out infinite;
+  }
+
+  .button:hover {
+    animation-play-state: paused;
+  }
+</code>
+</pre>
+    <p>
+      Разберем подробнее:
+    </p>
+    <ol>
+      <li class="item">
+        Правилу <span class="definition-highlight">@keyframes</span> задаются условия, как будет вести себя объект в заданных промежутках времени.
+      </li>
+      <li class="item">
+        Объекту, который мы хотим анимировать, задается свойство <span class="definition-highlight">animation:</span> имеющее много настроек от которых будут зависеть свойства анимации.
+      </li>
+      <li class="item">
+        <span class="definition-highlight">animation-name: anim;</span> - Название анимации заданное в @keyframes, оно может быть любым
+      </li>
+      <li class="item">
+        <span class="definition-highlight">animation-duration: 1s;</span> - Время анимации, за которое все шаги указанные в @keyframes исполнятся, от 0% до 100%.
+      </li>
+      <li class="item">
+        <span class="definition-highlight">animation-direction: alternate;</span> - нНправление движения анимации, определяющее как анимация будет исполнятся дойдя до конца, конкретно этот параметр отвечает за то, чтобы анимация проигрывалась в обратном порядке, те она дойдет до конца и пойдет от 0% до 100%.
+      </li>
+      <li class="item">
+        <span class="definition-highlight">animation-timing-function: ease-in-out;</span> - easing, плавность анимации, зависящая от кривых Безье.
+      </li>
+      <li class="item">
+        <span class="definition-highlight">animation-iteration-count: infinite;</span> - Количество повторений, в нашем случае - закливание анимации, она будет проигрываться бесконечно. Можно так же выставить счетчик, указать количество раз.
+      </li>
+      <li class="item">
+        <span class="definition-highlight">animation-play-state: paused;</span> - Остановка анимации, в нашем случае, по наведению на объект мышкой.
+      </li>
+      <li class="item">
+        <span class="definition-highlight">animation-delay: 1s;</span> - Задержка начала анимации.
+      </li>
+    </ol>
+    <p>
+      Следующий пример:
+    </p>
+    <div class="code-realisation">
+      <div class="b44-rolling-ball"></div>
+    </div>
+    </div>
     <p class="title">
       <b>45.</b> Переменные - используются если мы заранее знаем стили которые будут использоваться в большом количестве блоков на нашем сайте
     </p>
@@ -1513,19 +1583,19 @@
   }</code>
     </pre>
     <ul class="b55-list">
-      <li class="b55-item">
+      <li class="item">
         <b>initial</b> - Возвращает стили к своему самому начальному значению.
       </li>
-      <li class="b55-item">
+      <li class="item">
         <b>inherit</b> - Дочерний элемент наследует стили от родительского элемента.
       </li>
-      <li class="b55-item">
+      <li class="item">
         <b>unset</b> - Работает в зависимости от типа свойства к которому применяется. В CSS есть два типа свойства, <b><i>наследуемые (например color)</i></b> и <b><i>не наследуемые (например display)</i></b>, если свойство наследуемое, то <b>unset</b> сработает как <b>inherit</b>, а если свойство не наследуется, то <b>unset</b> превращается в <b>initial</b>.
         <p>
           Возникает вопрос, а зачем нам свойство которое переопределяется либо в одно, либо в другое? Представим ситуацию что у элемента нужно сбросить все стили до начального значения, для этого мы можем каждому свойству задавать либо <b>inherit</b> либо <b>initial</b>, а можем применить свойство <b>all: unset;</b> которое сбросит все стили присутствующие у элемента до начальных значений.
         </p>
       </li>
-      <li class="b55-item">
+      <li class="item">
         <b>revert</b> - Аналог свойства <b>unset</b>, только оно сбрасывает стили не к начальным значениям, а к браузерным по умолчанию. (Является рекомендуемым, тк сбрасывает стили к привычным, браузерным).
       </li>
     </ul>
@@ -1742,30 +1812,30 @@
       <b>58.</b> Свойство <b>transition</b> - Отвечает за плавность анимации. <a href="https://html5book.ru/css3-transition/" target="_blank">Ссылка с подробным разбором данного свойства</a>
     </p>
     <ul class="b58-list">
-      <li class="b58-item">
+      <li class="item">
         <span class="definition-highlight">transition-property: color;</span> - В значение вписывается то свойство, которое хотим анимировать. Данное свойство имеет следующие значения:
         <ul>
-          <li class="b58-item">
+          <li class="item">
             <span class="definition-highlight">property name</span> - Выборочно указываем какое свойство мы хотим анимировать
           </li>
-          <li class="b58-item">
+          <li class="item">
             <span class="definition-highlight">all</span> - Для анимации выбираются все свойства объекта, что может затормаживать сайт
           </li>
-          <li class="b58-item">
+          <li class="item">
             <span class="definition-highlight">none</span> - Сброс transition
           </li>
         </ul>
       </li>
-      <li class="b58-item">
+      <li class="item">
         <span class="definition-highlight">transition-duration: 0.5s;</span> - В данном свойстве задается длительность анимации в секундах или миллисекундах, например, 2s или 5ms
       </li>
-      <li class="b58-item">
+      <li class="item">
         <span class="definition-highlight">transition-timing-function: ease-in-out;</span> - Является функцией которая управляет скоростью самой анимации. Для того чтобы создать тайминг используются ключевые слова которые подвязаны к кривой Безье, которая и отвечает за темп анимации, этих слов много, подробнее можно прочитать <b><a href="https://html5book.ru/css3-transition/">тут</a></b>, а мы же воспользуемся одним из них
       </li>
-      <li class="b58-item">
+      <li class="item">
         <span class="definition-highlight">transition-delay: 0.2s;</span> - Задержка перед началом анимации, выставляется так же в секундах и миллисекундах
       </li>
-      <li class="b58-item">
+      <li class="item">
         <span class="definition-highlight"><b class="attention">transition: color 0.5s ease-in-out 0.2s;</b></span> - Все свойства выше в одну строку! Рекомендация к использованию
       </li>
     </ul>
@@ -1793,22 +1863,22 @@
       }
     </code></pre>
     <ol>
-      <li class="b58-item">
+      <li class="item">
         К селектору <span class="definition-highlight">.text</span> применяем псевдокласс <span class="definition-highlight">:hover</span> для того чтобы цвет менялся при наведении
       </li>
-      <li class="b58-item">
+      <li class="item">
         Указываем какое свойство мы хотим анимировать (в нашем случае мы анимируем цвет при наведении), используем для этого свойство <span class="definition-highlight">transition-property: color;</span> мы сообщаем браузеру <i>"я указал цвет по наведению, теперь примени мне анимацию только к указанному цвету"</i>.
       </li>
-      <li class="b58-item">
+      <li class="item">
         Указываем время длительности анимации. Указывать можно в секундах и миллисекундах
       </li>
-      <li class="b58-item">
+      <li class="item">
         При помощи ключевого слова выбираем скорость анимации, все ключевые слова подвязаны к кривой Безье, которая представляет из себя график функции по которму движется наша анимация
       </li>
-      <li class="b58-item">
+      <li class="item">
         Выставляем задержку перед началом анимации. Указывать можно в секундах и миллисекундах
       </li>
-      <li class="b58-item">
+      <li class="item">
         Или можем указать все что мы писали выше, но в одну строку!
       </li>
     </ol>
@@ -1847,6 +1917,22 @@
     <button class="b58-button">
       Button
     </button>
+    <p>
+      <b>
+        Как делать хорошие анимации?
+      </b>
+    </p>
+    <ul>
+      <li class="item">
+        Анимации должны быть плавными, скорость анимации должа быть в диапазоне от 1 до 3 милесекунд, в среднем, на практике применяеся 0.2s/0.3s
+      </li>
+      <li class="item">
+        Анимация должна быть мягкой, за мягкость отвечает easing - кривые Безье, их примеры вы можете найти <a href="https://easings.net/ru">тут</a>. Анимация не должна резко останавливаться и также ускоряться, если это не было заложено в дизайне. В Большинстве случаев используется функция плавности <span class="definition-highlight">ease-in-out</span>, обеспечивающая плавное начало, ускорение к середине и затухание к концу.
+      </li>
+      <li class="item">
+        Если в анимации присутствуют несколько элементов, например как в кнопке, фон и текст, то их изменения должны происходить одновременно.
+      </li>
+    </ul>
     <p class="title">
       <b>59.</b> Свойство <b>transform</b> - Позволяет сдвигать, поворачивать и масштабировать элементы. Трансформации преобразовывают элемент, не затрагивая остальные элементы веб-страницы. <a href="https://html5book.ru/css3-transform/" target="_blank">Ссылка с подробным разбором данного свойства</a>
     </p>
@@ -2000,22 +2086,22 @@
     <div class="code-realisation">
       <span class="definition-highlight">matrix(a, c, b, d, x, y)</span> - Позволяет объединить несколько функций трансформации в одной.
       <ul class="b59-matrix-list">
-        <li class="b59-matrix-item">
+        <li class="item">
           <span class="definition-highlight">a</span> - Изменяет масштаб по горизонтали. Значение от 0 до 1 уменьшает элемент, больше 1 — увеличивает.
         </li>
-        <li class="b59-matrix-item">
+        <li class="item">
           <span class="definition-highlight">c</span> - Деформирует стороны элемента по оси Y, положительное значение — вверх, отрицательное — вниз.
         </li>
-        <li class="b59-matrix-item">
+        <li class="item">
           <span class="definition-highlight">b</span> - Деформирует стороны элемента по оси X, положительное значение — влево, отрицательное — вправо.
         </li>
-        <li class="b59-matrix-item">
+        <li class="item">
           <span class="definition-highlight">d</span> - Изменяет масштаб по вертикали. Значение меньше 1 уменьшает элемент, больше 1 — увеличивает.
         </li>
-        <li class="b59-matrix-item">
+        <li class="item">
           <span class="definition-highlight">x</span> - Смещает элемент по оси X, положительное — вправо, отрицательное — влево.
         </li>
-        <li class="b59-matrix-item">
+        <li class="item">
           <span class="definition-highlight">y</span> - Смещает элемент по оси Y, положительное значение — вниз, отрицательное — вверх.
         </li>
       </ul>
@@ -2105,6 +2191,77 @@
       <div class="b62-popup">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
       </div>
+    </div>
+    <div class="code-realisation">
+      <p>
+        Еще один пример тултипа - это иконка с информацией в конце текста, в данном примере, сообщающая на какой странице находится пользователь:
+      </p>
+      <div class="b62-information">
+        <div class="b62-information__text">
+          Следует отметить, что социально-экономическое развитие способствует повышению качества переосмысления внешнеэкономических политик.
+          <div class="b62-information__tooltip-wrapper">
+            <div class="b62-information__tooltip" aria-describedby="tooltip">
+              <svg class="b62-information__tooltip-img" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8 3C7.33333 3 7 3.31919 7 3.95758C7 4.60026 7.33333 4.92159 8 4.92159C8.33333 4.92159 8.58233 4.83805 8.74699 4.67095C8.91566 4.49957 9 4.26178 9 3.95758C9 3.31919 8.66667 3 8 3ZM7.07831 13H8.91566V5.81491H7.07831V13Z" fill="none"/>
+              </svg>
+            </div>
+            <div class="b62-information__tooltip-popup" id="tooltip" role="tooltip">
+              Глава 2, страница 176
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="title">
+      <b>63.</b> Готовые библиотеки анимаций на CSS.
+    </p>
+    <p>
+      Примером самой популярной CSS библиотеки с анимациями, служит <a href="https://animate.style/">Animate.css</a>
+    </p>
+    <p>
+      Подключить ее можно через CDN, те скопировав путь со стилями указанный на сайте, в разделе Installing, и вставить себе в header.
+    </p>
+    <div class="code-realisation">
+      <p>
+        Попробуем анимировать заголовок при помощи данной библиотеки:
+      </p>
+      <ul>
+        <li class="item">
+          Для начала, как сказано в разделе Basic usage, нам нужно дать анимируемому объекту класс <span class="definition-highlight">animate__animated</span> 
+        </li>
+        <li class="item">
+          Вторым шагом будет присваивание анимируемому объекту еще одного класса с названием анимации, названия берутся из документации, для примера возьмем <span class="definition-highlight">animate__flash</span> и добавим его к нашему заголовку.
+        </li>
+        <li class="item">
+          <span class="definition-highlight">animate__infinite</span> - Отвечает за количество повторяемых действий, в нашем случае анимация будет повторяться бесконечно.
+        </li>
+        <li class="item">
+          <span class="definition-highlight">animate__slow</span> - Скорость анимации, значени slow в данной библиотеке равно 0.2s
+        </li>
+      </ul>
+      <p>
+        Результат:
+      </p>
+      <h2 class="b63-title animate__animated animate__flash animate__infinite animate__slow">
+        Pulse!
+      </h2>
+    </div>
+    <p>
+      Рассмотрим еще одну библиотеку которая отвечает за hover эффекты и называется она <a href="https://ianlunn.github.io/Hover/">Hover.css</a>
+    </p>
+    <p>
+      Библиотека подключается скачиванием архива и встраиванием CSS файла в ваш проект. Из всей библиотеки нам понадобится файл который называется <span class="definition-highlight">hover-min.css</span>, скачиваем и подключаем его в header вашего проекта.
+    </p>
+    <div class="code-realisation">
+      <p>
+        Подключив библиотеку, нам остается только назначить ей классы которые отвечают за определенные эффекты, названия и примеры всех эффектов вы можете посмотреть <a href="http://ianlunn.github.io/Hover/">тут</a>, на этом сайте можно понаводить на любые блоки, посомтреть какие анимации существуют, открыть DevTools и посомтреть название класса интересующей вас анимации и просто добавить этот класс вашему объекту, в нашем случае, анимация называется <span class="definition-highlight">hvr-float-shadow</span>
+      </p>
+      <p>
+        Результат:
+      </p>
+      <button class="b63-button hvr-float-shadow">
+        Наведи на меня!
+      </button>
     </div>
   </div>
 </body>
