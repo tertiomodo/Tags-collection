@@ -49,12 +49,7 @@
 }
 
 .highlight {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: fit-content;
   padding: 1px 5px;
-  word-break: break-all;
   font-family: monospace;
   font-size: 20px;
   font-weight: 700;
@@ -70,12 +65,7 @@
 }
 
 .text-bg {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: fit-content;
   padding: 1px 5px;
-  word-break: break-all;
   font-family: monospace;
   font-size: 20px;
   letter-spacing: 0.5px;
@@ -118,7 +108,6 @@
 .code {
   width: 100%;
   font-size: 18px;
-  white-space: pre-wrap;
   letter-spacing: 0.5px;
   color: var(--gray);
 }
@@ -163,10 +152,10 @@
   color: var(--string);
 }
 
-.interpolation {
-  color: var(--interpolation);
-}
-
 .comment {
   color: var(--comment);
+}
+
+.object {
+  color: var(--object);
 }
