@@ -22,7 +22,7 @@
 <body class="body">
   <div class="content">
     <!-- Block 01 start -->
-    <div class="b1 block">
+    <div class="b01 block">
       <p class="title">
         <span class="title-number">01.</span> Математические функции Math.
       </p>
@@ -32,46 +32,692 @@
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="comment">// Получение абсолютного (положительного) значения числа</span>
-  <span class="value">Math</span>.<span class="selector">abs</span>(-20); <span class="comment">// 20</span>
-  <span class="value">Math</span>.<span class="selector">abs</span>(20); <span class="comment">// 20</span>
+<span class="comment">// Получение абсолютного (положительного) значения числа</span>
+<span class="value">Math</span>.<span class="selector">abs</span>(-20); <span class="comment">// 20</span>
+<span class="value">Math</span>.<span class="selector">abs</span>(20); <span class="comment">// 20</span>
 
-  <span class="comment">// Число PI, sin, cos, tan, atan</span>
-  <span class="value">Math</span>.<span class="selector">sin</span>(<span class="value">Math</span>.<span class="selector">PI</span> / 2); <span class="comment">// 1, синус 90°</span>
-  <span class="value">Math</span>.<span class="selector">cos</span>(<span class="value">Math</span>.<span class="selector">PI</span> * 2); <span class="comment">// 1, косинус 360°</span>
-  <span class="value">Math</span>.<span class="selector">tan</span>(0); <span class="comment">// 0, тангенс 0°</span>
-  <span class="value">Math</span>.<span class="selector">atan</span>(0); <span class="comment">// 0, арктангенс 0°</span>
+<span class="comment">// Число PI, sin, cos, tan, atan</span>
+<span class="value">Math</span>.<span class="selector">sin</span>(<span class="value">Math</span>.<span class="selector">PI</span> / 2); <span class="comment">// 1, синус 90°</span>
+<span class="value">Math</span>.<span class="selector">cos</span>(<span class="value">Math</span>.<span class="selector">PI</span> * 2); <span class="comment">// 1, косинус 360°</span>
+<span class="value">Math</span>.<span class="selector">tan</span>(0); <span class="comment">// 0, тангенс 0°</span>
+<span class="value">Math</span>.<span class="selector">atan</span>(0); <span class="comment">// 0, арктангенс 0°</span>
 
-  <span class="comment">// Натуральный логарифм (ln)</span>
-  <span class="value">Math</span>.<span class="selector">log</span>(<span class="value">Math</span>.<span class="selector">E</span>); <span class="comment">// 1</span>
+<span class="comment">// Натуральный логарифм (ln)</span>
+<span class="value">Math</span>.<span class="selector">log</span>(<span class="value">Math</span>.<span class="selector">E</span>); <span class="comment">// 1</span>
 
-  <span class="comment">// Округление</span>
-  <span class="value">Math</span>.<span class="selector">round</span>(3.8); <span class="comment">// 4, математическое округление</span>
-  <span class="value">Math</span>.<span class="selector">round</span>(3.2); <span class="comment">// 3</span>
-  <span class="value">Math</span>.<span class="selector">round</span>(3.5); <span class="comment">// 4</span>
-  <span class="value">Math</span>.<span class="selector">floor</span>(3.9); <span class="comment">// 3, округление вниз</span>
-  <span class="value">Math</span>.<span class="selector">ceil</span>(3.2); <span class="comment">// 4, округление вверх</span>
-  
-  <span class="comment">// Наибольшее и наименьшее число</span>
-  <span class="value">Math</span>.<span class="selector">max</span>(10, 1, -40, 12, 5); <span class="comment">// 12, наибольшее из переданных чисел</span>
-  <span class="value">Math</span>.<span class="selector">min</span>(10, 1, -40, 12, 5); <span class="comment">// -40, наименьшее из переданных чисел</span>
-  
-  <span class="comment">// Возведение в степень</span>
-  <span class="value">Math</span>.<span class="selector">pow</span>(10, 3); <span class="comment">// 1000, 10^3, аналогичная запись 10 ** 3</span>
-  <span class="value">Math</span>.<span class="selector">sqrt</span>(16); <span class="comment">// 4, квадратный корень числа</span>
-  <span class="value">Math</span>.<span class="selector">pow</span>(16, 0.5); <span class="comment">// 4, тоже квадратный корень</span>
+<span class="comment">// Округление</span>
+<span class="value">Math</span>.<span class="selector">round</span>(3.8); <span class="comment">// 4, математическое округление</span>
+<span class="value">Math</span>.<span class="selector">round</span>(3.2); <span class="comment">// 3</span>
+<span class="value">Math</span>.<span class="selector">round</span>(3.5); <span class="comment">// 4</span>
+<span class="value">Math</span>.<span class="selector">floor</span>(3.9); <span class="comment">// 3, округление вниз</span>
+<span class="value">Math</span>.<span class="selector">ceil</span>(3.2); <span class="comment">// 4, округление вверх</span>
 
-  <span class="comment">// Случайные числа</span>
-  <span class="value">Math</span>.<span class="selector">random</span>(); <span class="comment">// Случайное число от 0 до 1</span>
-  <span class="value">Math</span>.<span class="selector">round</span>(<span class="value">Math</span>.<span class="selector">random</span>() * 100); <span class="comment">// Случайное число от 0 до 100</span>
-  <span class="value">Math</span>.<span class="selector">round</span>(<span class="value">Math</span>.<span class="selector">random</span>() * 70) + 50; <span class="comment">// Случайное число от 50 до 120</span>
+<span class="comment">// Наибольшее и наименьшее число</span>
+<span class="value">Math</span>.<span class="selector">max</span>(10, 1, -40, 12, 5); <span class="comment">// 12, наибольшее из переданных чисел</span>
+<span class="value">Math</span>.<span class="selector">min</span>(10, 1, -40, 12, 5); <span class="comment">// -40, наименьшее из переданных чисел</span>
+
+<span class="comment">// Возведение в степень</span>
+<span class="value">Math</span>.<span class="selector">pow</span>(10, 3); <span class="comment">// 1000, 10^3, аналогичная запись 10 ** 3</span>
+<span class="value">Math</span>.<span class="selector">sqrt</span>(16); <span class="comment">// 4, квадратный корень числа</span>
+<span class="value">Math</span>.<span class="selector">pow</span>(16, 0.5); <span class="comment">// 4, тоже квадратный корень</span>
+
+<span class="comment">// Случайные числа</span>
+<span class="value">Math</span>.<span class="selector">random</span>(); <span class="comment">// Случайное число от 0 до 1</span>
+<span class="value">Math</span>.<span class="selector">round</span>(<span class="value">Math</span>.<span class="selector">random</span>() * 100); <span class="comment">// Случайное число от 0 до 100</span>
+<span class="value">Math</span>.<span class="selector">round</span>(<span class="value">Math</span>.<span class="selector">random</span>() * 70) + 50; <span class="comment">// Случайное число от 50 до 120</span>
 </code>
 </pre>
       </div>
     </div>
     <!-- Block 01 end -->
+    <!-- Block 02 start -->
+    <!-- <div class="b02 block">
+      <p class="title">
+        <span class="title-number">02.</span> Строки и функции для работы с ними.
+      </p>
+      <p class="text">
+        <span class="text-offset">Строки</span> - это ...
+      </p>
+    </div> -->
+    <!-- Block 02 end -->
+    <!-- Block 03 start -->
+    <div class="b03 block">
+      <p class="title">
+        <span class="title-number">03.</span> Массивы (arrays).
+      </p>
+      <p class="text">
+        <span class="text-offset">Массивы</span> - это сложный тип данных который позволяет хранить множество элементов в определеном порядке. Элементы массива заключаются в квадратные скобки и перечисляются через запятую <span class="text-bg">[<span class="string">'element'</span>, <span class="string">'element'</span>, ...];</span>
+      </p>
+      <p class="text">
+        В массиве каждый элемент имеет свой порядковый номер, в JS порядковые номера принято называть индексами, индекс первого элемента всегда будет 0
+      </p>
+      <p class="text">
+        Этот тип данных часто применяется на практике, например, у нас есть интернет магазин и список товаров в нем, товары представляют из себя список элементов которые появляются в определенном порядке, например по возрастанию цены, для подобных ситуаций нам понадобится массив, в котором есть строго упорядоченный список элементов.
+      </p>
+      <p class="text">
+        Ниже, в примерах кода, будут представлены различные виды синтаксиса объявления массива.
+      </p>
+      <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Литеральная запись массива - явная запись в массив того, что мы хотим в нем видеть при его объявлении.</span>
+<span class="property">const</span> <span class="value">fruits</span> = [<span class="string">'Яблоко'</span>, <span class="string">'Апельсин'</span>, <span class="string">'Груша'</span>, <span class="string">'Банан'</span>, <span class="string">'Манго'</span>];
+
+<span class="comment">// Далее мы можем обращаться к нашему массиву при помощи индексов.</span>
+<span class="value">fruits</span>[0]; <span class="comment">// 'Яблоко'</span>
+<span class="value">fruits</span>[4]; <span class="comment">// 'Манго'</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Пустой массив - если мы не знаем какие данные будут в массиве, мы создаем пустой массив и далее заполняем его данными.</span>
+<span class="property">const</span> <span class="value">alphabet</span> = [];
+
+<span class="comment">// Метод push добавляет элемент в конец массива:</span>
+<span class="value">alphabet</span>.<span class="selector">push</span>(<span class="string">'Г'</span>);
+<span class="value">alphabet</span>.<span class="selector">push</span>(<span class="string">'Д'</span>);
+<span class="value">alphabet</span>.<span class="selector">push</span>(<span class="string">'Е'</span>, <span class="string">'Ж'</span>, <span class="string">'З'</span>);
+
+<span class="comment">// Метод pop удаляет элемент из конца массива и возвращает его, работает по принципу arr.at(-1), но при этом еще и удаляет элемент:</span>
+<span class="value">alphabet</span>.<span class="selector">pop</span>(); <span class="comment">// Удалил и вывел букву 'З'</span>
+
+<span class="comment">// Метод unshift добавляет элемент в начало массива:</span>
+<span class="value">alphabet</span>.<span class="selector">unshift</span>(<span class="string">'В'</span>);
+<span class="value">alphabet</span>.<span class="selector">unshift</span>(<span class="string">'А'</span>, <span class="string">'Б'</span>);
+
+<span class="comment">// Метод shift удаляет элемент из начала массива и выводит его:</span>
+<span class="value">alphabet</span>.<span class="selector">unshift</span>(); <span class="comment">// Удалил и вывел букву 'А'</span>
+
+<span class="comment">// Итого наш заполненный массив имеет вид:</span>
+<span class="property">const</span> <span class="value">alphabet</span> = [<span class="string">'Б'</span>, <span class="string">'В'</span>, <span class="string">'Г'</span>, <span class="string">'Д'</span>, <span class="string">'Ж'</span>];
+
+<span class="comment">// После того как мы заполнили массив элементами, мы можем проделать с ним оперции ниже, например, мы можем получить длину массива.</span>
+<span class="value">alphabet</span>.<span class="value">length</span>; <span class="comment">// 5, тк у нас в массиве 5 элементов (букв)</span>
+
+<span class="comment">// Попробуем получить последний элемент массива зная его длину.</span>
+<span class="value">alphabet</span>[<span class="value">alphabet</span>.<span class="value">length</span> - 1]; <span class="comment">// Получили букву 'Ж', мы вычли 1 из-за того что начинаем считать с нуля</span>
+
+<span class="comment">// Еще один способо получения последнего элемента массива с использованием arr.at</span>
+<span class="value">alphabet</span>.<span class="selector">at</span>(-1); <span class="comment">// Так же получаем букву 'Ж'</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// При помощи индекса мы можем не только обращаться к элементу массива но и заменять его на новый.</span>
+<span class="property">const</span> <span class="value">greetings</span> = [<span class="string">'Hello'</span>, <span class="string">'Good morning'</span>, <span class="string">'Good evnng'</span>, <span class="string">'Good afternoon</span>];
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">greetings</span>[2]); <span class="comment">// 'Good evnng' - опечатка</span>
+
+<span class="comment">// Исправим опечатку:</span>
+<span class="value">greetings</span>[2] = <span class="string">'Good evening'</span>;
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">greetings</span>[2]); <span class="comment">// 'Good evening' - исправлено!</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// В массиве могут храниться элементы любого типа</span>
+<span class="property">const</span> <span class="value">arr</span> = [<span class="string">'Яблоко'</span>, {name: <span class="string">'Джон'</span>}, <span class="property">true</span>, <span class="cycle-function">function</span> () {<span class="value">alert</span><span class="string">'Привет!'</span>;}];
+
+<span class="comment">// Получить элемент с индексом 1 (объект) и затем показать его свойство</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>[1].name); <span class="comment">// 'Джон'</span>
+
+<span class="comment">// Получить элемент с индексом 3 (функция) и выполнить её</span>
+<span class="value">arr</span>[3]() <span class="comment">// 'Привет!'</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Массивы могут содержать в себе элементы являющиеся массивами. Это можно использовать для хранения матриц.</span>
+<span class="property">const</span> <span class="value">matrix</span> = [[1, 2, 3], [4, 5, 6]. [7, 8, 9]];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">matrix</span>[1][1]);
+<span class="comment">// 5, центральный элемент</span>
+</code>
+</pre>
+      </div>
+      <p class="text">
+        <span class="text-offset">Деструктуризирующее присваивание</span> - это специальный синтаксис, который позволяет нам "распаковать" массивы или объекты в несколько переменных, так как иногда они более удобны. Деструктуризация применяется тогда, когда нам из массива или объекта необходимо получить один элемент.
+      </p>
+      <p class="text">
+        <span class="text-offset">Деструктуризация массива</span>
+      </p>
+      <p class="text">
+        Ниже пример того, как массив можно деструктуризовать на переменные
+      </p>
+      <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// У нас есть массив в котором присутствует имя и фамилия</span>
+<span class="property">const</span> <span class="value">arr</span> = [<span class="string">'John'</span>, <span class="string">'Smith'</span>];
+
+<span class="comment">// Деструктурирующее присваивание записывает</span>
+<span class="comment">// let firstName = arr[0]; (John)</span>
+<span class="comment">// let surname = arr[1]; (Smith)</span>
+<span class="property">const</span> [<span class="value">firstName</span>, <span class="value">surname</span>] = <span class="value">arr</span>;
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">firstName</span>); <span class="comment">// John</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">surname</span>); <span class="comment">// Smith</span>
+
+<span class="comment">// Мы можем подвергнуть деструктуризации любой перебираемый объект, не только массивы</span>
+<span class="property">const</span> [<span class="value">a</span>, <span class="value">b</span>, <span class="value">c</span>] = <span class="string">'abc'</span>;
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Используя оператор остаточные параметры ( ... ), мы можем деструктуризовать массив строк, распределив их по переменным:</span>
+<span class="comment">// Тут нужно помнить о правиле, что остаточные переменные объявляются последними</span>
+<span class="property">const</span> [<span class="value">value1</span>, <span class="value">value2</span>, ...<span class="value">value3</span>] = [<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'watermelon'</span>, <span class="string">'grapes'</span>];
+
+<span class="comment">// value3 - это массив начиная с третьего</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">value1</span>); <span class="comment">// apple</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">value2</span>); <span class="comment">// orange</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">value3</span>[0]); <span class="comment">// watermelon</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">value3</span>[1]); <span class="comment">// grapes</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Можно указывать значения по умолчанию и функции в присваивании, но стоит отметить что значения по умолчанию и функции активируются только если в массиве справа не будет значения для данных переменных</span>
+<span class="property">const</span> [<span class="value">name</span> = <span class="string">'Anonymous'</span>, <span class="value">surname</span> = <span class="selector">prompt</span>(<span class="string">'Surname?'</span>)] = [<span class="string">'John'</span>];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">name</span>); <span class="comment">// John, тк в массиве спарава для name было значение, иначе было бы знчение по умолчанию - Anonymous</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">surname</span>); <span class="comment">// Результат ввода в prompt</span>
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- Block 03 end -->
+    <!-- Block 04 start -->
+    <div class="b04 block">
+      <p class="title">
+        <span class="title-number">04.</span> Циклы while, do while, for, for of, for in и операторы continue и break.
+      </p>
+      <p class="text">
+        <span class="text-offset">Циклы</span> - это программы, позволяющие выполнять действия определенное количество раз.
+      </p>
+      <p class="text">
+        Ниже будут представлены примеры использования циклов.
+      </p>
+      <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Цикл while - выполняет блок кода до тех пор, пока условие в цикле while = true</span>
+<span class="property">let</span> <span class="value">isFile</span> = 50;
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Началась загрузка файла весом</span> <span class="property">${</span><span class="value">isFile</span><span class="property">}</span> <span class="string">мб`</span>);
+
+<span class="cycle-function">while</span> (<span class="value">isFile</span> &gt; 0) {
+  <span class="value">isFile</span> -= 10;
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Вы загрузили 10 мб, осталось</span> <span class="property">${</span><span class="value">isFile</span><span class="property">}</span> <span class="string">мб`</span>);
+}
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Файл успешно загружен'</span>);
+<span class="comment">// Началась загрузка файла весом 50 мб
+   Вы загрузили 10 мб, осталось 40 мб
+   Вы загрузили 10 мб, осталось 30 мб
+   Вы загрузили 10 мб, осталось 20 мб
+   Вы загрузили 10 мб, осталось 10 мб
+   Вы загрузили 10 мб, осталось 0 мб
+   Файл успешно загружен</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Цикл do while похож на while, отличие в том, что условие проверяется после прохождения каждой итерации, но при этом каждая итерация будет выполнена</span>
+<span class="comment">// В пример приведем игру русская рулетка, 1 патрон 5и зарядный барабан, вероятность выстрела 20%</span>
+<span class="cycle-function">do</span> {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Нажимаем на курок'</span>);
+} <span class="cycle-function">while</span> (<span class="value">Math</span>.<span class="selector">random</span>() &gt; 0.2);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Выстрел'</span>);
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Цикл for для записи чисел Фибоначи в массив.</span>
+<span class="comment">// Числа Фибоначи - это результат сложения следующего числа с предыдущим, 0 + 1 = 1, 1 + 1 = 2 и тд.</span>
+<span class="property">const</span> <span class="value">fibo</span> = [0, 1];
+
+<span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">i</span> = 1; <span class="value">i</span> &lt; 10; ++<span class="value">i</span>) {
+  <span class="value">fibo</span>.<span class="selector">push</span>(<span class="value">fibo</span>[<span class="value">i</span>] + <span class="value">fibo</span>[<span class="value">i</span> - 1]);
+}
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">fibo</span>); <span class="comment">// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Бесконечный цикл который заставит программу зависнуть (не проверяйте!).</span>
+<span class="cycle-function">for</span> (;;) <span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Меня не остановить!'</span>);
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Цикл который завершится на любой итерации с вероятностью 10%.</span>
+<span class="cycle-function">for</span> (;<span class="value">Math</span>.<span class="selector">random</span>() &gt;= 0.1;) <span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Еще раз!'</span>);
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Цикл for of позволяет передавать значение элемента массива, переменной находящейся слева от of (переменная i), те. присваивать ей то же значение что и у элемента массива.</span>
+<span class="comment">// В данном примере у нас есть массив и цикл, который, в каждой итерации выводит один элемент из массива:</span>
+<span class="property">const</span> <span class="value">fruits</span> = [<span class="string">'Яблоко'</span>, <span class="string">'Апельсин'</span>, <span class="string">'Груша'</span>, <span class="string">'Банан'</span>, <span class="string">'Манго'</span>];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Сегодня я съел:'</span>);
+
+<span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">i</span> <span class="property">of</span> <span class="value">fruits</span>) {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">fruit</span>);
+}
+<span class="comment">// 'Сегодня я съел:'
+   'Яблоко'
+   'Апельсин'
+   'Груша'
+   'Банан'
+   'Манго'</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Цикл for in похож на принцип работы цикла for of, отличие лишь в том что переменная, которую мы указываем в цикле слева (i), принимает не значение элемента массива, а значение его индекса, те порядкового номера.</span>
+<span class="comment">// В данном примере у нас есть массив в котором есть список студентов и нам нужно вывести их рейтинг:</span>
+<span class="property">const</span> <span class="value">rating</span> = [<span class="string">'Катя'</span>, <span class="string">'Вася'</span>, <span class="string">'Маша'</span>, <span class="string">'Петя'</span>, <span class="string">'Лена'</span>];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Рейтинг студентов:'</span>);
+
+<span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">i</span> <span class="property">in</span> <span class="value">rating</span>) {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="property">${</span><span class="selector">parseInt</span>(<span class="value">i</span>) + 1<span class="property">}</span> <span class="string">место:</span> <span class="property">${</span><span class="value">rating</span>[<span class="value">i</span>]<span class="property"><span class="string">`</span>}</span>; <span class="comment">// parseInt здесь используется чтобы превратить строку в число, тк переменная указанная перед in принимает строковое значение</span>
+}
+<span class="comment">// 'Рейтинг студентов:'
+   '1 место: Катя'
+   '2 место: Вася'
+   '3 место: Маша'
+   '4 место: Петя'
+   '5 место: Лена'</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Оператор continue - используется когда нам нужно прервать текущую итерацию и переходить к следующей.</span>
+<span class="comment">// В данном примере мы играем в карточную игру, в массиве лежат карты и мы, при помощи цикла решаем какие карты взять и какие положить обратно. Берем мы только королей и тузов.</span>
+<span class="property">const</span> <span class="value">cards</span> = [<span class="string">'2'</span>, <span class="string">'Король'</span>, <span class="string">'Туз'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'Король'</span>, <span class="string">'Дама'</span>];
+
+<span class="property">const</span> <span class="value">hand</span> = [];
+
+<span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">card</span> <span class="property">of</span> <span class="value">cards</span>) {
+  <span class="cycle-function">if</span> (<span class="value">card</span> !== <span class="string">'Король'</span> && <span class="value">card</span> !== <span class="string">'Туз'</span>) <span class="cycle-function">continue</span>; <span class="comment">// Если if = false, то continue не выполняется</span>
+  <span class="value">hand</span>.<span class="selector">push</span>(<span class="value">card</span>);
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Карта</span> <span class="property">${</span><span class="value">card</span><span class="property">}</span> <span class="string">добавлена в руку`</span>;
+}
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Карты в руке:'</span>, <span class="value">hand</span>);
+<span class="comment">// Карта Король добавлена в руку
+   Карта Туз добавлена в руку
+   Карта Король добавлена в руку
+   Карты в руке: [ 'Король', 'Туз', 'Король' ]</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Оператор break - используется когда нам нужно выйти из цикла при выполнении какого-либо условия</span>
+<span class="comment">// Например, у нас есть колода карт, как только мы вытягиваем из нее даму, цикл завершается, либо мы проверяем все карты и там не оказывается дам</span>
+<span class="property">const</span> <span class="value">cards</span> = [<span class="string">'2'</span>, <span class="string">'Король'</span>, <span class="string">'Дама'</span>, <span class="string">'Туз'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'Король'</span>];
+
+<span class="property">let</span> <span class="value">found</span> = <span class="property">false</span>; <span class="comment">// Переменная отвечающая за то, нашлась ли карта, по умолчанию false, как мы видим ниже, после того как дама нашлась, переменная принимает значение true и уже от этого будет зависеть конечное сообщение</span>
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Ищем карту в колоде...'</span>);
+
+<span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">card</span> <span class="property">of</span> <span class="value">cards</span>) {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Из колоды вытянута карта</span> <span class="property">${</span><span class="value">card</span><span class="property">}</span><span class="string">`</span>);
+
+  <span class="cycle-function">if</span> (<span class="value">card</span> === <span class="string">'Дама'</span>) {
+    <span class="property">let</span> <span class="value">found</span> = <span class="property">true</span>;
+    <span class="cycle-function">break</span>;
+  }
+}
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">found</span> ? <span class="string">'Вы нашли даму!'</span> : <span class="string">'В колоде нет дам'</span>); <span class="comment">// Если в колоде не было дам, уловие выдало бы нам второй ответ</span>
+<span class="comment">// Ищем карту в колоде...
+   Из колоды вытянута карта 2
+   Из колоды вытянута карта Король
+   Из колоды вытянута карта Дама
+   Вы нашли даму!</span>
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- Block 04 end -->
+    <!-- Block 05 start -->
+    <div class="b05 block">
+      <p class="title">
+        <span class="title-number">05.</span> Объекты.
+      </p>
+      <p class="text">
+        <span class="text-offset">Объект</span> - это тип данных позволяющий объединить множество объектов в один.
+      </p>
+      <p class="text">
+        Ниже будут представлены примеры взаимодействия с объектами.
+      </p>
+      <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Синтаксис объекта выглядит следующим образом:</span>
+<span class="property">const</span> <span class="value">objectName</span> = {
+  <span class="value">propertyName1:</span> <span class="value">value1</span>,
+  <span class="value">propertyName2:</span> <span class="value">value2</span>,
+  <span class="value">...</span>
+};
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">objectName</span>.<span class="value">propertyName1</span>); <span class="comment">// Вызов нужного нам свойства из объекта</span>
+<span class="comment">// value1</span>
+
+<span class="comment">// Возможности объекта:</span>
+<span class="property">const</span> <span class="value">name</span> = <span class="string">'John'</span>;
+<span class="property">const</span> <span class="value">surname</span> = <span class="string">'Smith'</span>;
+<span class="property">const</span> <span class="value">patronymic</span> = <span class="string">'Johnson'</span>;
+
+<span class="property">const</span> <span class="value">user</span> = {
+  <span class="value">name:</span> <span class="value">name</span>, <span class="comment">// Можно использовать уже объявленные переменные</span>
+  <span class="value">surname</span>, <span class="comment">// Если значения и названия записанных в них переменных совпадают, то значения можно не писать</span>
+  <span class="value">middleName:</span> <span class="value">patronymic</span>,
+  <span class="value">birthDate:</span> { <span class="value">year:</span> 1991, <span class="value">month:</span> 3, <span class="value">day:</span> 3 }, <span class="comment">// Можно использовать другие объекты</span>
+  <span class="value">occupation:</span> <span class="string">'Backend developer'</span>, <span class="comment">// Можно использовать строки в значении</span>
+  <span class="value">married:</span> <span class="property">true</span>, <span class="comment">// Можно использовать boolean операторы</span>
+  <span class="string">'property with spaces'</span><span class="value">:</span> <span class="property">null</span>, <span class="comment">// Если в названии переменной необходимо использовать спец. символы или пробелы, то названия задаются в виде строк, но таких свойств лучше избегать, тк с ними не удобно работать  </span>
+  <span class="string">'property.with.dots'</span><span class="value">:</span> <span class="property">null</span>,
+};
+
+<span class="comment">// Добавление новых свойств:</span>
+<span class="value">user</span>.<span class="value">education</span> = <span class="string">'МГУ'</span>;
+
+<span class="comment">// Изменение текущих свойств:</span>
+<span class="value">user</span>.<span class="value">occupation</span> = <span class="string">'Unemployed'</span>;
+
+<span class="comment">// Изменение текущих строковых свойств:</span>
+<span class="value">user</span>[<span class="string">'property with spaces'</span>] = 33;
+<span class="value">user</span>[<span class="string">'property.with.dots'</span>] = 33;
+
+<span class="comment">// Удаление текущих свойств:</span>
+<span class="property">delete</span> <span class="value">user</span>.<span class="value">education</span>;
+<span class="property">delete</span> <span class="value">user</span>[<span class="string">'property with spaces'</span>];
+
+<span class="comment">// Получение значения свойств:</span>
+<span class="property">const</span> <span class="value">getName</span> = <span class="value">user</span>.<span class="value">name</span>; <span class="comment">// John</span>
+<span class="property">const</span> <span class="value">getBirthYear</span> = <span class="value">user</span>.<span class="value">birthDate</span>.<span class="value">year</span>; <span class="comment">// 1991</span>
+<span class="property">const</span> <span class="value">getEducation</span> = <span class="value">user</span>.<span class="value">education</span>; <span class="comment">// Значения удаленных или несуществующих свойств = undefined</span>
+<span class="property">const</span> <span class="value">getEmptyObj</span> = <span class="value">emptyObj</span>.<span class="value">name</span>;
+<span class="property">const</span> <span class="value">getEmptyProperty</span> = <span class="value">emptyObj</span>.<span class="value">emptyProperty</span>;
+
+<span class="comment">// Пустой объект - нужен тогда, когда набор свойств объекта неизвестен и он наполняется во время работы программы</span>
+<span class="property">const</span> <span class="value">emptyObj</span> = {};
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Объекты можно объединять в один при помощи оператора spread, записывается в виде трех точек '...'</span>
+<span class="comment">// Оператор ... принимает на себя две функции в зависимости от того где он вызывается: оператор расширения - если встретился в вызове функции и оператор остаточных параметров - если он в аргументах функции</span>
+<span class="comment">// Допустим у нас есть объекты в которых содержится информация о детлях компьютера и нам нужно объединить ее в один объект:</span>
+<span class="comment">// Если в объекте присутсвуют свойства с одинаковым названием, то при объединении, добавится то свойство, котороя объявлено последним</span>
+<span class="property">const</span> <span class="value">motherBoard</span> = { Information about mother board };
+<span class="property">const</span> <span class="value">cpu</span> = { Information about cpu };
+<span class="property">const</span> <span class="value">videoCard</span> = { Information about video card };
+<span class="property">const</span> <span class="value">ram</span> = { Information about ram };
+
+<span class="comment">// Создаем объект в котором мы объединим все составляющие:</span>
+<span class="property">const</span> <span class="value">computer</span> = {
+  <span class="value">price:</span> 100000,
+  ...<span class="value">motherBoard</span>,
+  ...<span class="value">cpu</span>,
+  ...<span class="value">videoCard</span>,
+  ...<span class="value">ram</span>,
+};
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Оператор ... так же можно использовать в функциях, когда мы не знаем сколько в ней будет аргументов, в этом случае ... становится оператором остаточных параметров.</span>
+<span class="comment">// Оператор остаточных параметров можно читать как "собери оставшиеся параметры и положи их в массив"</span>
+<span class="comment">// Оператор остаточных параметров (когда он вызывается в аргументах функции), необходимо указывать в самом конце, при наличии, других аргументов, иначе это вызовет ошибку</span>
+<span class="cycle-function">function</span> <span class="selector">sumAll</span>(...<span class="value">arguments</span>) {
+  <span class="property">let</span> <span class="value">sum</span> = 0;
+
+  <span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">argument</span> <span class="property">of</span> <span class="value">arguments</span>) <span class="value">sum</span> += <span class="value">argument</span>;
+  <span class="cycle-function">return</span> <span class="value">sum</span>;
+}
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1)); <span class="comment">// 1</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1, 2)); <span class="comment">// 3</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1, 2, 3)); <span class="comment">// 6</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Оператор ... можно использовать для того, чтобы сделать из массива список параметров (Оператор расширения):</span>
+<span class="property">const</span> <span class="value">arr1</span> = [1, -2, 3, 4];
+<span class="property">const</span> <span class="value">arr2</span> = [8, 3, -8, 1];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">Math</span>.<span class="selector">max</span>(1, ...<span class="value">arr1</span>, 2, ...<span class="value">arr2</span>, 25)); <span class="comment">// 25</span>
+
+<span class="comment">// Или для слияния массивов:</span>
+<span class="property">const</span> <span class="value">arr1</span> = [1, 3, 5];
+<span class="property">const</span> <span class="value">arr2</span> = [2, 4, 6];
+
+<span class="property">const</span> <span class="value">merged</span> = [0, ...<span class="value">arr1</span>, 1, ...<span class="value">arr2</span>];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">merged</span>); <span class="comment">// 0, 1, 3, 5, 1, 2, 4, 6</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Object.keys(computer) - Позволяет получить все свойства (ключи) объекта</span>
+<span class="comment">// Object.values(computer) - Позволяет получить все значения объекта</span>
+<span class="comment">// Object.entries(computer) - Позволяет получить свойства вместе со значениями</span>
+<span class="property">const</span> <span class="value">computer</span> = {
+  <span class="value">price:</span> 100000,
+  <span class="value">chipset:</span> <span class="string">'AMD X570'</span>,
+  <span class="value">videoCardModel:</span> <span class="string">'NVidia GeForce GTX 1060'</span>,
+  <span class="value">videoMemory:</span> 4096,
+  <span class="value">ramType:</span> <span class="string">'DDR4'</span>,
+};
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="object">Object</span>.<span class="selector">keys</span>(<span class="value">computer</span>)); <span class="comment">// [ price, chipset, videoCardModel, videoMemory, ramType ]</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="object">Object</span>.<span class="selector">values</span>(<span class="value">computer</span>)); <span class="comment">// [ 100000, AMD X570, NVidia GeForce GTX 1060, 4096, DDR4 ]</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="object">Object</span>.<span class="selector">entries</span>(<span class="value">computer</span>));
+<span class="comment">// [ price, 100000 ],
+   [ chipset, AMD X570 ],
+   [ videoCardModel, NVidia GeForce GTX 1060 ],
+   [ videoMemory, 4096 ],
+   [ ramType, DDR4 ]</span>
+</code>
+</pre>
+      </div>
+    <p class="text">
+      <span class="text-offset">Методы объекта this</span>
+    </p>
+    <p class="text">
+      <span class="text-offset">Метод this</span> - как и все методы, это функция которая является свойством объекта. Метод this используется для доступа к информации внутри объекта, но при этом он может находится и вне этого объекта.
+    </p>
+    <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// this записывается следующим образом:</span>
+<span class="property">const</span> <span class="value">user</span> = {
+  <span class="value">name:</span> <span class="string">'John'</span>,
+  <span class="value">age:</span> 30,
+  <span class="selector">getName</span>() {
+    <span class="value">console</span>.<span class="selector">log</span>(<span class="property">this</span>.<span class="value">name</span>); <span class="comment">// Можно прочитать как "this - текущий объект.свойство name"</span>
+  }
+};
+
+<span class="value">user</span>.<span class="selector">getName</span>();
+<span class="comment">// John</span>
+<span class="comment">// this - это тоже самое что и user.name, но с одним приемуществом, если мы решим перезаписать объект user, например admin = user, то user.name не приведет нас к нужному свойству, а this будет всегда отсылать нас к текущему объекту, даже если его название сменится</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// this не является фиксированным и может находится вне объекта</span>
+<span class="property">const</span> <span class="value">user</span> = { <span class="value">name:</span> <span class="string">'John'</span> };
+<span class="property">const</span> <span class="value">admin</span> = { <span class="value">name:</span> <span class="string">'Admin'</span> };
+
+<span class="cycle-function">function</span> <span class="selector">getClient</span>() {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="property">this</span>.<span class="value">name</span>);
+}
+
+<span class="comment">// Используем одну и ту же функцию в двух объектах, добавляя её в каждый из объектов под свойством с названием 'f':</span>
+<span class="value">user</span>.<span class="value">f</span> = <span class="selector">getClient</span>;
+<span class="value">admin</span>.<span class="value">f</span> = <span class="selector">getClient</span>;
+
+<span class="comment">// Вызывая эти функции, мы получим разные результаты, тк мы добавили функцию getClient в разные объекты, где свойство с названием name имеет разные значения</span>
+<span class="value">user</span>.<span class="selector">f</span>(); <span class="comment">// John (this == user)</span>
+<span class="value">admin</span>.<span class="selector">f</span>(); <span class="comment">// Admin (this == user)</span>
+<span class="value">admin</span>[<span class="string">'f'</span>](); <span class="comment">// Admin (Для доступа к объекту, нет разницы в использовании точки или квадратных скобок)</span>
+</code>
+</pre>  
+    </div>
+    <p class="text">
+      <span class="text-offset">Деструктуризация объекта</span>
+    </p>
+    <p class="text">
+      Ниже пример того, как объект можно деструктуризовать на переменные
+    </p>
+    <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Синтаксис деструктурирующего присваивания для объекта:</span>
+<span class="comment">// У нас есть существующий объект с правой стороны, который мы хотим разделить на переменные.</span>
+<span class="comment">// Левая сторона содержит "шаблон" для соответствующих свойств. Обычно это список названий переменных в {...}</span>
+<span class="comment">// Так же в левой стороне мы можем указывать только те переменные, которые нам нужны и забирать их из объекта игнорируя остальные, не обязательно присваивать отдельные переменные всем свойствам</span>
+<span class="property">const</span> { <span class="value">var1</span>, <span class="value">var2</span> } = { <span class="value">var1:</span> ..., <span class="value">var2:</span> ... }
+
+<span class="comment">// Например:</span>
+<span class="property">const</span> <span class="value">options</span> = {
+  <span class="value">title:</span> <span class="string">'Menu'</span>,
+  <span class="value">width:</span> 100,
+  <span class="value">height:</span> 200  
+};
+
+<span class="comment">// Свойства options.title, options.width и options.height присваиваются соответствующим переменным</span>
+<span class="property">const</span> {<span class="value">title</span>, <span class="value">width</span>, <span class="value">height</span>} = <span class="value">options</span>;
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">title</span>); <span class="comment">// Menu</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">width</span>); <span class="comment">// 100</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">height</span>); <span class="comment">// 200</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Не важен порядок присваивания, главное соблюдать именование</span>
+<span class="property">const</span> {<span class="value">width</span>, <span class="value">title</span>, <span class="value">height</span>} = {<span class="value">title:</span> <span class="string">'Menu'</span>, <span class="value">height:</span> 200, <span class="value">width:</span> 100};
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Если же мы хотим дать переменной другое название, отличающееся от названия свойства, то мы должны использовать двоеточие</span>
+<span class="property">const</span> {<span class="value">width</span>: <span class="value">w</span>, <span class="value">title</span>: <span class="value">t</span>, <span class="value">height</span>: <span class="value">h</span>} = <span class="value">options</span>;
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">t</span>); <span class="comment">// Menu</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">w</span>); <span class="comment">// 100</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">h</span>); <span class="comment">// 200</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Как и в случае с массивами, для свойств объекта можно устанавливать значения по умлчанию и использовать функции в присваивании:</span>
+<span class="property">const</span> <span class="value">options</span> = {
+  <span class="value">title:</span> <span class="string">'Menu'</span>
+};
+
+<span class="property">const</span> {<span class="value">width</span> = <span class="selector">prompt</span>(<span class="string">'Width?'</span>), <span class="value">height</span> = 200, <span class="value">title</span>} = <span class="value">options</span>;
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">width</span>); <span class="comment">// Результат ввода в prompt</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">height</span>); <span class="comment">// 200 - значение по умолчанию</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">title</span>); <span class="comment">// Присваивается одноименной переменной из массива справа</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Можно использовать переменную три точки ... - остаток объекта, для того, чтобы взять нужную переменную а остальное присвоить в отдельный объект</span>
+<span class="property">const</span> <span class="value">options</span> = {
+  <span class="value">title:</span> <span class="string">'Menu'</span>,
+  <span class="value">width:</span> 100,
+  <span class="value">height:</span> 200  
+};
+
+<span class="property">const</span> {<span class="value">title</span>, ...<span class="value">remainder</span>} = <span class="value">options</span>;
+
+<span class="comment">// сейчас title = 'Menu', remainder = {width: 100, height: 200}</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">remainder</span>.<span class="value">width</span>); <span class="comment">// 100</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">remainder</span>.<span class="value">height</span>); <span class="comment">// 200</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Присваивание при диструктуризации можно совершать напрямую со свойствами объекта:</span>
+<span class="property">const</span> <span class="value">user</span> = {};
+
+<span class="comment">// Метод split(' ') разбивает нашу строку на две части, обрезая ее по указанному в split символу, в нашем случае это пробел</span>
+<span class="comment">// Мы получили две разделенные строки, далее они присваиваются как user.name = 'John'; и user.surname = 'Smith';</span>
+[<span class="value">user</span>.<span class="value">name</span>, <span class="value">user</span>.<span class="value">surname</span>] = <span class="string">'John Smith'</span>.<span class="selector">split</span>(<span class="string">' '</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">user</span>.<span class="value">name</span>); <span class="comment">// John</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">user</span>.<span class="value">surname</span>); <span class="comment">// Smith</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Мы можем использовать деструктуризацию для цикличного перебора свойств объекта:</span>
+<span class="property">const</span> <span class="value">user</span> = {
+  <span class="value">name:</span> <span class="string">'John'</span>,
+  <span class="value">age:</span> 30,
+};
+
+<span class="cycle-function">for</span> (<span class="property">let</span> [<span class="value">key</span>, <span class="value">value</span>] <span class="property">of</span> <span class="object">Object</span>.<span class="selector">entries</span>(<span class="value">user</span>)) {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="property">${</span><span class="value">key</span><span class="property">}</span><span class="string">: </span><span class="property">${</span><span class="value">value</span><span class="property">}</span><span class="string">`</span>);
+}
+<span class="comment">// name: John
+   age: 30</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Вложенная деструктуризация - если в объекте присутствует объект или массив со значениями, то нам необходимо скопировать его в точности соблюдая структуру</span>
+<span class="property">const</span> <span class="value">options</span> = {
+  <span class="value">size:</span> {
+    <span class="value">width:</span> 100,
+    <span class="value">height:</span> 200,
+  },
+  <span class="value">items:</span> [<span class="string">'Cake'</span>, <span class="string">'Donut'</span>],
+  <span class="value">extra:</span> <span class="property">true</span>,
+};
+
+<span class="comment">// Для читаемости, деструктуризацию можно разбивать на несколько строк, но это не обязятельно</span>
+<span class="property">const</span> {
+  <span class="value">size:</span> {
+    <span class="value">width</span>,
+    <span class="value">height</span>,
+  },
+  <span class="value">items:</span> [<span class="value">item1</span>, <span class="value">item2</span>],
+  <span class="value">title</span> = <span class="string">'Menu'</span>, <span class="comment">// Отстутствует в объекте (используется значение по умолчанию)</span>
+} = <span class="value">options</span>;
+
+<span class="comment">// Весь объект options, кроме свойства extra, которое в левой части отсутствует, присваивается в соответствующие переменные</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">title</span>); <span class="comment">// Menu</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">width</span>); <span class="comment">// 100</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">height</span>); <span class="comment">// 200</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">item1</span>); <span class="comment">// Cake</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">item2</span>); <span class="comment">// Donut</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Деструктуризацию можно так же использовать для функций с множеством параметров, передавая их как объект:</span>
+<span class="property">const</span> <span class="value">options</span> = {
+  <span class="value">title:</span> <span class="string">'My menu'</span>,
+  <span class="value">items:</span> [<span class="string">'item1'</span>, <span class="string">'item2'</span>]  
+};
+
+<span class="comment">// Обратите внимание что параметры функции обёрнуты в {} для того чтобы они могли деструктурировать переданный в функцию объект</span>
+<span class="comment">// Параметры так же могут принимать значения по умолчанию, функции и быть переименованы через двоеточие </span>
+<span class="comment">// Для удобства разместим параметры на разных строчках</span>
+<span class="cycle-function">function</span> <span class="selector">showMenu</span>({
+  <span class="value">title</span> = <span class="string">'Untitled'</span>, <span class="comment">// Поменяется на 'My menu'</span>
+  <span class="value">width:</span> <span class="value">w</span> = 100, <span class="comment">// Применится значение по умолчанию, тк в переданном объекте нет свойства width</span>
+  <span class="value">height:</span> <span class="value">h</span> = +<span class="selector">prompt</span>(<span class="string">'Height?'</span>), <span class="comment">// Результат ввода в prompt</span>
+  <span class="value">items:</span> [<span class="value">i1</span>, <span class="value">i2</span>] <span class="comment">// Присвоятся соответствующие индексы массива const li1 = items[0]; и const li2 = items[1];</span>
+}) {
+  <span class="selector">alert</span>(<span class="string">`</span><span class="property">${</span><span class="value">title</span><span class="property">}</span><span class="string">: width:</span> <span class="property">${</span><span class="value">w</span><span class="property">}</span><span class="string">, height:</span> <span class="property">${</span><span class="value">h</span><span class="property">}</span><span class="string">`</span>); <span class="comment">// My menu: width: 100, height: 200</span>
+  <span class="selector">alert</span>(<span class="string">`</span><span class="property">${</span><span class="value">i1</span><span class="property">}</span><span class="string">,</span> <span class="property">${</span><span class="value">i2</span><span class="property">}</span><span class="string">`</span>); <span class="comment">// item1, item2</span>
+}
+
+<span class="selector">showMenu</span>(<span class="value">options</span>);
+
+<span class="comment">// Обратите внимание, что деструктурирование подразумевает, что в showMenu() будет обязательно передан аргумент</span>
+<span class="comment">// Если нам нужно значение по умолчанию, то items: [] необходимо убрать из аргументов, либо назначить каждому элементу значение по умолчанию, тк для него нет свойств.</span>
+<span class="comment">// Так же необходимо поменять : на = у items, потому что двоеточие подразумевает что мы ищем массив в свойстве, а свойства нет, что вызовет ошибку</span>
+
+<span class="selector">showMenu</span>(); <span class="comment">// Такой вызов функции выдаст ошибку</span>
+<span class="selector">showMenu</span>({}); <span class="comment">// Корректный вызов функции (при учете нюанаса с items, применит значения по умолчанию)</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Чтобы не писать в вызове функции {}, мы можем приравнять весь наш объект с аргументами по умолчанию к {}</span>
+<span class="comment">// Это работает как "елси в функцию передали пустой аргумент, то возьми значения по умолчанию"</span>
+<span class="comment">// Так же тут показано как можно исправить items из примера выше, те присвоить ему значения по умолчанию</span>
+<span class="cycle-function">function</span> <span class="selector">showMenu</span>({
+  <span class="value">title</span> = <span class="string">'Untitled'</span>,
+  <span class="value">width:</span> <span class="value">w</span> = 100,
+  <span class="value">height:</span> <span class="value">h</span> = +<span class="selector">prompt</span>(<span class="string">'Height?'</span>),
+  <span class="value">items</span> = [<span class="value">i1</span> = <span class="string">'Some Item'</span>, <span class="value">i2</span> = <span class="string">'Some Item'</span>]
+} = {}) {
+  <span class="selector">alert</span>(<span class="string">`</span><span class="property">${</span><span class="value">title</span><span class="property">}</span><span class="string">: width:</span> <span class="property">${</span><span class="value">w</span><span class="property">}</span><span class="string">, height:</span> <span class="property">${</span><span class="value">h</span><span class="property">}</span><span class="string">`</span>); <span class="comment">// Untitled: width: 100, height: 200</span>
+  <span class="selector">alert</span>(<span class="string">`</span><span class="property">${</span><span class="value">i1</span><span class="property">}</span><span class="string">,</span> <span class="property">${</span><span class="value">i2</span><span class="property">}</span><span class="string">`</span>); <span class="comment">// Some Item, Some Item</span>
+  <span class="selector">alert</span>(<span class="value">items</span>); <span class="comment">// [i1 = 'Some Item', i2 = 'Some Item']</span>
+}
+
+<span class="selector">showMenu</span>(); <span class="comment">// Теперь такой код не вызывает ошибку, благодаря приравниванию объекта с аргументами функции к {}</span>
+</code>
+</pre>
+    </div>
+    </div>
+    <!-- Block 05 end -->
     <!-- Block 1 start -->
     <div class="b1 block">
       <p class="title">
@@ -81,20 +727,20 @@
         <span class="text-offset">Взаимодействие с DOM деревом</span> - это взаимодействие с HTML тегами при помощи JavaScript.
       </p>
       <p class="text">
-        Для того чтобы при помощи JavaScript взаимодействовать с тегами, их необходимо сначала найти. Для этого нам понадобится метод <span class="highlight">document.querySelector('.class-name');</span>, внутрь скобок этого метода мы передаем необходимый селектор, обязательно в кавычках и с точкой в начале.
+        Для того чтобы при помощи JavaScript взаимодействовать с тегами, их необходимо сначала найти. Для этого нам понадобится метод <span class="highlight">document<wbr>.querySelector<wbr>('.<wbr>class-name');</span>, внутрь скобок этого метода мы передаем необходимый селектор, обязательно в кавычках и с точкой в начале.
       </p>
       <p class="text">
         <span class="highlight">document</span> - это объект, который хранит методы для работы со страницей. Это некая точка входа для получения содержимого страницы. Кроме <span class="highlight">querySelector()</span> существует еще множество других методов.
       </p>
       <p class="text">
-        Несколько важных моментов, если мы взаимодейсвтуем с HTML элементами, то JS должен быть подключен после того, как прогрузился HTML, если JS файл один, то он подключается перед закрывающим тегом body, если же для каждого блока у вас отдельный JS файл, то он подключается как в примере ниже. Еще стоит упомянуть, что метод <span class="highlight">document.querySelector();</span> умеет находить только один элемент с нужным селектором, к примеру если у вас много элеменов с одинаковыми классами, то этот метод найдет вам только самый первый из них.
+        Несколько важных моментов, если мы взаимодейсвтуем с HTML элементами, то JS должен быть подключен после того, как прогрузился HTML, если JS файл один, то он подключается перед закрывающим тегом body, если же для каждого блока у вас отдельный JS файл, то он подключается как в примере ниже. Еще стоит упомянуть, что метод <span class="highlight">document<wbr>.querySelector();</span> умеет находить только один элемент с нужным селектором, к примеру если у вас много элеменов с одинаковыми классами, то этот метод найдет вам только самый первый из них.
       </p>
       <div class="code-example">
         <p class="text">
-          В данном примере мы создаем переменную <span class="text-bg"><span class="property">let</span> <span class="value">text</span></span>, и присваиваем ей метод <span class="text-bg">document.querySelector(<span class="string">'.b1__text'</span>);</span>. Таким образом мы находим селектор <span class="string text-bg">.b1__text</span> в HTML файле.
+          В данном примере мы создаем переменную <span class="text-bg"><span class="property">let</span> <span class="value">text</span></span>, и присваиваем ей метод <span class="text-bg">document<wbr>.querySelector<wbr>(<span class="string">'.b1__text'</span>);</span>. Таким образом мы находим селектор <span class="string text-bg">.b1__text</span> в HTML файле.
         </p>
         <p class="text">
-          Далее, обращаясь к уже созданной переменной, при помощи свойства <span class="text-bg">style</span>, которое позволяет найти или изменить свойства элемента записав их инлайново в HTML, меняем цвет текста на красный <span class="text-bg"><span class="property">let</span> <span class="value">text</span> = document.querySelector(<span class="string">'.b1__text'</span>).style.color=<span class="string">'red'</span>;</span>. В данном примере мы написали свойство style и задали ему параметры color='red', что перекрасило наш текст после загрузки страницы в красный. Стоит отметить, что использовать JS для изменения стилей таким образом как в примерах ниже, не совсем корректно, тк они указываются инлайново, что противоречит БЭМу и в будущем будет мешать нам перебить эти стили.
+          Далее, обращаясь к уже созданной переменной, при помощи свойства <span class="text-bg">style</span>, которое позволяет найти или изменить свойства элемента записав их инлайново в HTML, меняем цвет текста на красный <span class="text-bg"><span class="property">let</span> <span class="value">text</span> = document<wbr>.querySelector<wbr>(<span class="string">'.b1__text'</span>)<wbr>.style<wbr>.color=<wbr><span class="string">'red'</span>;</span>. В данном примере мы написали свойство style и задали ему параметры color=<wbr>'red', что перекрасило наш текст после загрузки страницы в красный. Стоит отметить, что использовать JS для изменения стилей таким образом как в примерах ниже, не совсем корректно, тк они указываются инлайново, что противоречит БЭМу и в будущем будет мешать нам перебить эти стили.
         </p>
         <div class="code-realisation">
           <p class="b1__text">
@@ -105,36 +751,36 @@
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text"</span>&gt;
-    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-  &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/b1.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">p class=</span><span class="string">"b1__text"</span>&gt;
+  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+&lt;/<span class="tag-property">p</span>&gt;
+&lt;<span class="tag-property">script src=</span><span class="string">"js/b1.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="tag-property">let</span> <span class="value">text</span> = document.querySelector(<span class="string">'.b1__text'</span>);
+<span class="tag-property">let</span> <span class="value">text</span> = document.querySelector(<span class="string">'.b1__text'</span>);
 
-  <span class="value">text</span>.style.color = <span class="string">'red'</span>;
+<span class="value">text</span>.style.color = <span class="string">'red'</span>;
 </code>
 </pre>
         </div>
       </div>
       <p class="text">
-        Для того чтобы обойти ограничение предыдущего метода и применять стили к нескольким одинаковым селекторам, нам понадобится метод который ищет массив (набор элементов) - <span class="highlight">document.querySelectorAll('.class-name')</span>, а так же <span class="highlight">forEach</span> - метод массива который по очереди проходит по элементам этого массива и <span class="highlight">function(name) {...}</span> - функция в которую мы будем записывать условия.
+        Для того чтобы обойти ограничение предыдущего метода и применять стили к нескольким одинаковым селекторам, нам понадобится метод который ищет массив (набор элементов) - <span class="highlight">document.<wbr>querySelectorAll<wbr>('.class-name')</span>, а так же <span class="highlight">forEach</span> - метод массива который по очереди проходит по элементам этого массива и <span class="highlight">function<wbr>(name) <wbr>{...}</span> - функция в которую мы будем записывать условия.
       </p>
       <div class="code-example">
         <p class="text">
-          В данном примере мы создаем метод <span class="text-bg">document.querySelectorAll(<span class="string">'.b1__text-two'</span>);</span>, который позволяет нам найти массив селекторов <span class="string text-bg">.b1__text-two</span> в HTML файле.
+          В данном примере мы создаем метод <span class="text-bg">document.<wbr>querySelectorAll<wbr>(<span class="string">'.b1__text-two'</span>);</span>, который позволяет нам найти массив селекторов <span class="string text-bg">.b1__text-two</span> в HTML файле.
         </p>
         <p class="text">
-          Добавляем к этому массиву <span class="text-bg">forEach</span> и создаем в нем функцию которую можно назвать как угодно, в нашем примере назовем ее <span class="text-bg cycle-function">element</span> и внутри этой функции, в фигурных скобках обращаясь к созданной функции пропишем <span class="text-bg"><span class="cycle-function">element</span>.style.color = 'red';</span>, пример в коде ниже.
+          Добавляем к этому массиву <span class="text-bg">forEach</span> и создаем в нем функцию которую можно назвать как угодно, в нашем примере назовем ее <span class="text-bg cycle-function">element</span> и внутри этой функции, в фигурных скобках обращаясь к созданной функции пропишем <span class="text-bg"><span class="cycle-function">element</span>.style<wbr>.color = 'red';</span>, пример в коде ниже.
         </p>
         <div class="code-realisation">
           <p class="b1__text-two">
@@ -151,45 +797,45 @@
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
-    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-  &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
-    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-  &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
-    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-  &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/b1__two.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
+  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+&lt;/<span class="tag-property">p</span>&gt;
+&lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
+  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+&lt;/<span class="tag-property">p</span>&gt;
+&lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
+  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+&lt;/<span class="tag-property">p</span>&gt;
+&lt;<span class="tag-property">script src=</span><span class="string">"js/b1__two.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  document.querySelectorAll(<span class="string">'.b1__text-two'</span>).forEach(<span class="cycle-function">function</span>(<span class="cycle-function">element</span>) {
-    <span class="cycle-function">element</span>.style.color = 'red';
-  });
+document.querySelectorAll(<span class="string">'.b1__text-two'</span>).forEach(<span class="cycle-function">function</span>(<span class="cycle-function">element</span>) {
+  <span class="cycle-function">element</span>.style.color = 'red';
+});
 </code>
 </pre>
         </div>
       </div>
       <p class="text">
-        Для того чтобы добавлять классы в HTML разметку, нам необходимо найти нужный селектор при помощи <span class="highlight">document.querySelector('.class-name')</span>, а затем, при помощи метода <span class="highlight">block.classList.add('add-class-name');</span>, добавить необходимый класс в HTML разметку.
+        Для того чтобы добавлять классы в HTML разметку, нам необходимо найти нужный селектор при помощи <span class="highlight">document.<wbr>querySelector<wbr>('.class-name')</span>, а затем, при помощи метода <span class="highlight">block.<wbr>classList.<wbr>add<wbr>('add-class-name');</span>, добавить необходимый класс в HTML разметку.
       </p>
       <div class="code-example">
         <p class="text">
           В данном примере нам необходимо сдвинуть блок на 100px вправо при помощи transform: translate и JS. Для этого мы создаем класс <span class="text-bg selector">.b1__translate-three</span> и наша задача будет добавить этот класс в HTML разметку, чтобы применились нужные стили.
         </p>
         <p class="text">
-          В JavaScript файле создаем переменную <span class="text-bg"><span class="property">let</span> <span class="value">block</span></span>, при помощи <span class="text-bg">document.querySelector(<span class="string">'.b1__block-three'</span>);</span> находим нужный селектор в HTML файле - <span class="text-bg string">'b1__block-three'</span>
+          В JavaScript файле создаем переменную <span class="text-bg"><span class="property">let</span> <span class="value">block</span></span>, при помощи <span class="text-bg">document.<wbr>querySelector<wbr>(<span class="string">'.b1__block-three'</span>);</span> находим нужный селектор в HTML файле - <span class="text-bg string">'b1__block-three'</span>
         </p>
         <p class="text">
-          Далее обращаемся к созданной переменной и применяем новый метод <span class="text-bg">classList</span> и у этого метода есть еще один <span class="text-bg">add('')</span> позволяет что либо добавить, в скобки указываем то что мы хотим добавить, в нашем случае это будет созданный нами класс <span class="text-bg">block.classList.add(<span class="string">'b1__translate-three'</span>);</span>, обратите внимание что в этом методе мы не используем точку вначале селектора, тк мы добавляем класс. Есть и обратный метод, который называется <span class="text-bg">classList.remove('class.name')</span>. Данные действия позволили нам добавить стиль в HTML файл, к нужному нам селектору.
+          Далее обращаемся к созданной переменной и применяем новый метод <span class="text-bg">classList</span> и у этого метода есть еще один <span class="text-bg">add('')</span> позволяет что либо добавить, в скобки указываем то что мы хотим добавить, в нашем случае это будет созданный нами класс <span class="text-bg">block.<wbr>classList.<wbr>add<wbr>(<span class="string">'b1__translate-three'</span>);</span>, обратите внимание что в этом методе мы не используем точку вначале селектора, тк мы добавляем класс. Есть и обратный метод, который называется <span class="text-bg">classList.<wbr>remove<wbr>('class.name')</span>. Данные действия позволили нам добавить стиль в HTML файл, к нужному нам селектору.
         </p>
         <div class="code-realisation">
           <div class="b1__block-three"></div>
@@ -198,38 +844,38 @@
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">div class=</span><span class="string">"b1__block-three"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/b1__three.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">div class=</span><span class="string">"b1__block-three"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">script src=</span><span class="string">"js/b1__three.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-css">CSS</span>
+<span class="console-title title-css">CSS</span>
 
-  .<span class="selector">b1__block-three</span> {
-    <span class="tag-property">width</span>: 200px;
-    <span class="tag-property">height</span>: 200px;
-    <span class="tag-property">background-color</span>: crimson;
-  }
+.<span class="selector">b1__block-three</span> {
+  <span class="tag-property">width</span>: 200px;
+  <span class="tag-property">height</span>: 200px;
+  <span class="tag-property">background-color</span>: crimson;
+}
 
-  .<span class="selector">b1__translate-three</span> {
-    <span class="tag-property">transform</span>: translateY(-46px);
-  }
+.<span class="selector">b1__translate-three</span> {
+  <span class="tag-property">transform</span>: translateY(-46px);
+}
 </code>
 </pre>
         </div>
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="property">let</span> <span class="value">block</span> = document.querySelector(<span class="string">'.b1__block-three'</span>);
+<span class="property">let</span> <span class="value">block</span> = document.querySelector(<span class="string">'.b1__block-three'</span>);
 
-  <span class="value">block</span>.classList.add(<span class="string">'b1__translate-three'</span>);
+<span class="value">block</span>.classList.add(<span class="string">'b1__translate-three'</span>);
 </code>
 </pre>
         </div>
@@ -246,14 +892,14 @@
       </p>
       <div class="code-example">
         <p class="text">
-          В данном примере мы будем отслеживать нажатие на блок и после нажатия будем смещать этот блок вправо на 100px. Для начала мы создаем переменную <span class="text-bg"><span class="tag-property">let</span> <span class="value">b2__block</span></span> и присваиваем ей метод  <span class="text-bg">document.querySelector(<span class="string">'.b2__block'</span>);</span>, находим элемент с классом <span class="text-bg string">.b2__block</span>.
+          В данном примере мы будем отслеживать нажатие на блок и после нажатия будем смещать этот блок вправо на 100px. Для начала мы создаем переменную <span class="text-bg"><span class="tag-property">let</span> <span class="value">b2__block</span></span> и присваиваем ей метод  <span class="text-bg">document.<wbr>querySelector<wbr>(<span class="string">'.b2__block'</span>);</span>, находим элемент с классом <span class="text-bg string">.b2__block</span>.
         </p>
         <p class="text">
-          После этого мы присваиваем созданной переменной обработчик собитий и в скобочках указываем встроенную функцию, в нашем случае мы хотим отслеживать клик <span class="text-bg">addEventListener(<span class="string">'click'</span>);</span>, далее, мы должны указать что будет происходить после того как мы отследили клик, для этого, через запятую создается функция <span class="text-bg">addEventListener(<span class="string">'click'</span>, <span class="cycle-function">function</span>() {...});</span>
+          После этого мы присваиваем созданной переменной обработчик собитий и в скобочках указываем встроенную функцию, в нашем случае мы хотим отслеживать клик <span class="text-bg">addEventListener<wbr>(<span class="string">'click'</span>);</span>, далее, мы должны указать что будет происходить после того как мы отследили клик, для этого, через запятую создается функция <span class="text-bg">addEventListener<wbr>(<span class="string">'click'</span>, <span class="cycle-function">function</span>() <wbr>{...});</span>
           которая что-то сделает, обратите внимание что в данном случае этой функции не обязательно давать имя, тк она активируется сразу после того как мы отследили клик и от этой функции нам нужно только действие.
         </p>
         <p class="text">
-          В фигурных скобках мы указываем метод переключатель <span class="text-bg"><span class="value">block__2</span>.classList.toggle(<span class="string">'b2__translate'</span>);</span>. Метод <span class="text-bg">toggle</span> - переключатель, можно заменить на две функции <span class="text-bg">add</span> - добавить и <span class="text-bg">remove</span> - удалить, но проще указать один <span class="text-bg">toggle</span>.
+          В фигурных скобках мы указываем метод переключатель <span class="text-bg"><span class="value">block__2</span>.classList<wbr>.<wbr>toggle<wbr>(<span class="string">'b2__translate'</span>);</span>. Метод <span class="text-bg">toggle</span> - переключатель, можно заменить на две функции <span class="text-bg">add</span> - добавить и <span class="text-bg">remove</span> - удалить, но проще указать один <span class="text-bg">toggle</span>.
         </p>
         <div class="code-realisation">
           <div class="b2__block"></div>
@@ -262,40 +908,40 @@
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">div class=</span><span class="string">"b2__block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/b2.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">div class=</span><span class="string">"b2__block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">script src=</span><span class="string">"js/b2.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-css">CSS</span>
+<span class="console-title title-css">CSS</span>
 
-  .<span class="selector">b2__block</span> {
-    <span class="tag-property">width</span>: 200px;
-    <span class="tag-property">height</span>: 200px;
-    <span class="tag-property">background-color</span>: crimson;
-  }
+.<span class="selector">b2__block</span> {
+  <span class="tag-property">width</span>: 200px;
+  <span class="tag-property">height</span>: 200px;
+  <span class="tag-property">background-color</span>: crimson;
+}
 
-  .<span class="selector">b2__translate</span> {
-    <span class="tag-property">transform</span>: translateX(100px);
-  }
+.<span class="selector">b2__translate</span> {
+  <span class="tag-property">transform</span>: translateX(100px);
+}
 </code>
 </pre>
         </div>
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="property">let</span> <span class="value">b2__block</span> = document.querySelector(<span class="string">'.b2__block'</span>);
+<span class="property">let</span> <span class="value">b2__block</span> = document.querySelector(<span class="string">'.b2__block'</span>);
 
-  <span class="value">b2__block</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">function</span>() {
-    <span class="value">b2__block</span>.classList.toggle(<span class="string">'b2__translate'</span>);
-  });
+<span class="value">b2__block</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">function</span>() {
+  <span class="value">b2__block</span>.classList.toggle(<span class="string">'b2__translate'</span>);
+});
 </code>
 </pre>
         </div>
@@ -305,7 +951,7 @@
           В данном примере будет реализация кнопки "Показать еще", которая используется во множестве интернет магазинов с товарами, когда товары не помещаются на один экран. Для этого мы создадим 4 карточки товара и скроем 2 из них, подставим кнопку, по нажатию на нее, 2 оставшихся блока должны появиться а кнопка исчезнуть.
         </p>
         <p class="text">
-          Что происходит в HTML и CSS? Сначала создаются 4 блока, затем 2 из них скрываются при помощи CSS стиля: <span class="text-bg">.<span class="selector">b2__two-block:nth-child(n + 3)</span> {<span class="tag-property">display</span>: none;}</span>, добавляются 2 класса с которыми будет взаимодействовать JS, которые делают блоки видимыми: <span class="text-bg">.<span class="selector">b2__two-block.b2__two-block--visible</span> {<span class="tag-property">display</span>: block;}</span> (удлиннение селектора в данном случае необходимо для того чтобы перебить вес предыдущего), а кнопку невидимой: <span class="text-bg">.<span class="selector">b2__two-button-wrapper--hidden</span> {<span class="tag-property">display</span>: none;}</span>.
+          Что происходит в HTML и CSS? Сначала создаются 4 блока, затем 2 из них скрываются при помощи CSS стиля: <span class="text-bg">.<span class="selector">b2__two-block<wbr>:nth-child<wbr>(n + 3)</span> {<span class="tag-property">display</span>: none;}</span>, добавляются 2 класса с которыми будет взаимодействовать JS, которые делают блоки видимыми: <span class="text-bg">.<span class="selector">b2__two-block<wbr>.b2__two-block--visible</span> {<span class="tag-property">display</span>: block;}</span> (удлиннение селектора в данном случае необходимо для того чтобы перебить вес предыдущего), а кнопку невидимой: <span class="text-bg">.<span class="selector">b2__two-button-wrapper--hidden</span> {<span class="tag-property">display</span>: none;}</span>.
         </p>
         <p class="text">
           В JS мы создаем две переменные <span class="text-bg"><span class="value">b2__twoButton</span></span> и <span class="text-bg"><span class="value">b2__twoBlock</span></span>, добавляем обработчик событий на <span class="text-bg"><span class="value">b2__twoButton</span></span> и по клику проходимся по всем элементам <span class="text-bg"><span class="value">b2__twoBlock</span></span> и делаем их видимыми, а так же у нас появляется новый метод <span class="text-bg">closest</span> - близкий, позволяет обратиться к родителю элемента, используя этот метод мы обращаемся к родителю нашей кнопки и скрываем весь блок целиком.
@@ -327,86 +973,86 @@
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block-wrapper"</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-button-wrapper"</span>&gt;
-    &lt;<span class="tag-property">button class=</span><span class="string">"b2__two-button"</span>&gt;
-      Показать ещё
-    &lt;/<span class="tag-property">button</span>&gt;
-  &lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/b2__two.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block-wrapper"</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+&lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">div class=</span><span class="string">"b2__two-button-wrapper"</span>&gt;
+  &lt;<span class="tag-property">button class=</span><span class="string">"b2__two-button"</span>&gt;
+    Показать ещё
+  &lt;/<span class="tag-property">button</span>&gt;
+&lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">script src=</span><span class="string">"js/b2__two.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
         </div>
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-css">CSS</span>
+<span class="console-title title-css">CSS</span>
 
-  .<span class="selector">b2__two-block-wrapper</span> {
-    <span class="tag-property">width</span>: 100%;
-    <span class="tag-property">height</span>: 200px;
-    <span class="tag-property">background-color</span>: crimson;
-  }
+.<span class="selector">b2__two-block-wrapper</span> {
+  <span class="tag-property">width</span>: 100%;
+  <span class="tag-property">height</span>: 200px;
+  <span class="tag-property">background-color</span>: crimson;
+}
 
-  .<span class="selector">b2__two-block</span> {
-    <span class="tag-property">width</span>: 100%;
-    <span class="tag-property">max-width</span>: 200px;
-    <span class="tag-property">min-height</span>: 100px;
-    <span class="tag-property">outline</span>: 1px solid tomato;
-    <span class="tag-property">border-radius</span>: 10px;
-  }
-  
-  .<span class="selector">b2__two-block:nth-child(n + 3)</span> {
-    <span class="tag-property">display</span>: none;
-  }
-  
-  .<span class="selector">b2__two-block:not(:last-child)</span> {
-    <span class="tag-property">margin-bottom</span>: 5px;
-  }
-  
-  .<span class="selector">b2__two-button-wrapper</span> {
-    <span class="tag-property">display</span>: flex;
-    <span class="tag-property">justify-content</span>: center;
-  }
-  
-  .<span class="selector">b2__two-button</span> {
-    <span class="tag-property">padding</span>: 10px 12px;
-    <span class="tag-property">background-color</span>: var(--gray);
-    <span class="tag-property">border-radius</span>: 10px;
-  }
-  
-  .<span class="selector">b2__two-block.b2__two-block--visible</span> {
-    <span class="tag-property">display</span>: block;
-  }
-  
-  .<span class="selector">b2__two-button-wrapper--hidden</span> {
-    <span class="tag-property">display</span>: none;
-  }
+.<span class="selector">b2__two-block</span> {
+  <span class="tag-property">width</span>: 100%;
+  <span class="tag-property">max-width</span>: 200px;
+  <span class="tag-property">min-height</span>: 100px;
+  <span class="tag-property">outline</span>: 1px solid tomato;
+  <span class="tag-property">border-radius</span>: 10px;
+}
+
+.<span class="selector">b2__two-block:nth-child(n + 3)</span> {
+  <span class="tag-property">display</span>: none;
+}
+
+.<span class="selector">b2__two-block:not(:last-child)</span> {
+  <span class="tag-property">margin-bottom</span>: 5px;
+}
+
+.<span class="selector">b2__two-button-wrapper</span> {
+  <span class="tag-property">display</span>: flex;
+  <span class="tag-property">justify-content</span>: center;
+}
+
+.<span class="selector">b2__two-button</span> {
+  <span class="tag-property">padding</span>: 10px 12px;
+  <span class="tag-property">background-color</span>: var(--gray);
+  <span class="tag-property">border-radius</span>: 10px;
+}
+
+.<span class="selector">b2__two-block.b2__two-block--visible</span> {
+  <span class="tag-property">display</span>: block;
+}
+
+.<span class="selector">b2__two-button-wrapper--hidden</span> {
+  <span class="tag-property">display</span>: none;
+}
 </code>
 </pre>
         </div>
         <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="property">const</span> <span class="value">b2__twoButton</span> = document.querySelector(<span class="string">'.b2__two-button'</span>);
-  <span class="property">const</span> <span class="value">b2__twoBlock</span> = document.querySelector(<span class="string">'.b2__two-block'</span>);
+<span class="property">const</span> <span class="value">b2__twoButton</span> = document.querySelector(<span class="string">'.b2__two-button'</span>);
+<span class="property">const</span> <span class="value">b2__twoBlock</span> = document.querySelector(<span class="string">'.b2__two-block'</span>);
 
-  <span class="value">b2__twoButton</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
-    <span class="value">b2__twoBlock</span>.forEach(elements <span class="cycle-function">() =&gt;</span> {
-      elements.classList.add(<span class="string">'b2__two-block--visible'</span>);
-      <span class="value">b2__twoButton</span>.closest(<span class="string">'.b2__two-button-wrapper'</span>).classList.add(<span class="string">'b2__two-button-wrapper--hidden'</span>);
-    });
+<span class="value">b2__twoButton</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+  <span class="value">b2__twoBlock</span>.forEach(elements <span class="cycle-function">() =&gt;</span> {
+    elements.classList.add(<span class="string">'b2__two-block--visible'</span>);
+    <span class="value">b2__twoButton</span>.closest(<span class="string">'.b2__two-button-wrapper'</span>).classList.add(<span class="string">'b2__two-button-wrapper--hidden'</span>);
   });
+});
 </code>
 </pre>
         </div>
@@ -450,11 +1096,11 @@
           - У всех контентных элементов удаляется класс с префиксом --active
         </li>
         <li class="item">
-          - Последняя строчка проходится по всему документу и ищет в теагах <span class="text-bg string">`[data-target="<span class="interpolation">${path}</span>"]`</span> - data-target = наша кликнутая кнопка, как только находит, присваивает ему класс с префиксом --active
+          - Последняя строчка проходится по всему документу и ищет в теагах <span class="text-bg string">`[data-target=<wbr>"<span class="property">${</span><span class="value">path</span><span class="property">}</span>"]`</span> - data-target = наша кликнутая кнопка, как только находит, присваивает ему класс с префиксом --active
         </li>
       </ul>
       <p class="text">
-        Скрипт ищет все кнопки и все элементы табов в переменных. Мы создаем две переменные <span class="text-bg value">b3__tabsBtn</span> и <span class="text-bg value">b3__tabsItem</span> с методом <span class="text-bg">querySelectorAll</span>, одна ищет все кнопки, другая все блоки. Начинаем программу с того, что вешаем на <span class="text-bg value">b3__tabsBtn</span> цикл <span class="text-bg">forEach</span> с функцией <span class="text-bg value">element</span>, на функцию вешаем обработчик событий с функцией <span class="text-bg value">e</span>, в ней создаем константу, которая будет записывать в себя всю информацио о нажатой кнопке, включая значение атрибута path: <span class="text-bg"><span class="property">const</span> <span class="value">path</span> = e.currentTarget.dataset.path;</span> Следующим шагом у всех кнопок мы удаляем класс с префиксом --active, и добавляем его той кнопке, на которой клик и функция <span class="text-bg value">e</span>, для того чтобы сделать активной именно ту кнопку на которою мы нажали. У всех контентных элементов удаляем класс с префиксом --active, и присваиваем его при помощи <span class="text-bg">document.querySelector(<span class="string">`[data-target="<span class="interpolation">${path}</span>"]`</span>).classList.add(<span class="string">'b3__tabs-item--active'</span>);</span>, эта строчка проходится по всему документу и ищет в теагах запись <span class="text-bg string">`[data-target="<span class="interpolation">${path}</span>"]`</span> (напомню, что нужный path лежит в переменной <span class="text-bg"><span class="property">const</span> <span class="value">path</span></span> - та переменная которая получила всю информацию о кнопке на которую мы кликнули), как только <span class="text-bg interpolation">${path}</span> совпал, скрипт присваивает элементу класс с префиксом --acrive, наш элемент активен!
+        Скрипт ищет все кнопки и все элементы табов в переменных. Мы создаем две переменные <span class="text-bg value">b3__tabsBtn</span> и <span class="text-bg value">b3__tabsItem</span> с методом <span class="text-bg">querySelectorAll</span>, одна ищет все кнопки, другая все блоки. Начинаем программу с того, что вешаем на <span class="text-bg value">b3__tabsBtn</span> цикл <span class="text-bg">forEach</span> с функцией <span class="text-bg value">element</span>, на функцию вешаем обработчик событий с функцией <span class="text-bg value">e</span>, в ней создаем константу, которая будет записывать в себя всю информацио о нажатой кнопке, включая значение атрибута path: <span class="text-bg"><span class="property">const</span> <span class="value">path</span> = e.<wbr>currentTarget<wbr>.dataset<wbr>.path;</span> Следующим шагом у всех кнопок мы удаляем класс с префиксом --active, и добавляем его той кнопке, на которой клик и функция <span class="text-bg value">e</span>, для того чтобы сделать активной именно ту кнопку на которою мы нажали. У всех контентных элементов удаляем класс с префиксом --active, и присваиваем его при помощи <span class="text-bg">document.<wbr>querySelector<wbr>(<span class="string">`[data-target=<wbr>"<span class="property">${</span><span class="value">path</span><span class="property">}</span>"]`</span>).classList.<wbr>add<wbr>(<span class="string">'b3__tabs-item--active'</span>);</span>, эта строчка проходится по всему документу и ищет в теагах запись <span class="text-bg string">`[data-target=<wbr>"<span class="property">${</span><span class="value">path</span><span class="property">}</span>"]`</span> (напомню, что нужный path лежит в переменной <span class="text-bg"><span class="property">const</span> <span class="value">path</span></span> - та переменная которая получила всю информацию о кнопке на которую мы кликнули), как только <span class="text-bg"><span class="property">${</span><span class="value">path</span><span class="property">}</span></span> совпал, скрипт присваивает элементу класс с префиксом --acrive, наш элемент активен!
       </p>
       <div class="code-realisation">
         <ul class="b3__tabs-nav">
@@ -490,84 +1136,84 @@
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">ul class=</span><span class="string">"b3__tabs-nav"</span>&gt;
-    &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
-      &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn b3__tabs-nav-btn--active"</span> <span class="tag-property">data-path=</span><span class="string">"one"</span>&gt;
-        Первый таб
-      &lt;/<span class="tag-property">button</span>&gt;
-    &lt;/<span class="tag-property">li</span>&gt;
-    &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
-      &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"two"</span>&gt;
-        Второй таб
-      &lt;/<span class="tag-property">button</span>&gt;
-    &lt;/<span class="tag-property">li</span>&gt;
-    &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
-      &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"three"</span>&gt;
-        Третий таб
-      &lt;/<span class="tag-property">button</span>&gt;
-    &lt;/<span class="tag-property">li</span>&gt;
-  &lt;/<span class="tag-property">ul</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-content"</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item b3__tabs-item--active"</span> <span class="tag-property">data-target=</span><span class="string">"one"</span>&gt;
-      Tab 1
-    &lt;/<span class="tag-property">div</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"two"</span>&gt;
-      Tab 2
-    &lt;/<span class="tag-property">div</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"three"</span>&gt;
-      Tab 3
-    &lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">ul class=</span><span class="string">"b3__tabs-nav"</span>&gt;
+  &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+    &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn b3__tabs-nav-btn--active"</span> <span class="tag-property">data-path=</span><span class="string">"one"</span>&gt;
+      Первый таб
+    &lt;/<span class="tag-property">button</span>&gt;
+  &lt;/<span class="tag-property">li</span>&gt;
+  &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+    &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"two"</span>&gt;
+      Второй таб
+    &lt;/<span class="tag-property">button</span>&gt;
+  &lt;/<span class="tag-property">li</span>&gt;
+  &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+    &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"three"</span>&gt;
+      Третий таб
+    &lt;/<span class="tag-property">button</span>&gt;
+  &lt;/<span class="tag-property">li</span>&gt;
+&lt;/<span class="tag-property">ul</span>&gt;
+&lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-content"</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item b3__tabs-item--active"</span> <span class="tag-property">data-target=</span><span class="string">"one"</span>&gt;
+    Tab 1
   &lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/b3.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"two"</span>&gt;
+    Tab 2
+  &lt;/<span class="tag-property">div</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"three"</span>&gt;
+    Tab 3
+  &lt;/<span class="tag-property">div</span>&gt;
+&lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">script src=</span><span class="string">"js/b3.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-css">CSS</span>
+<span class="console-title title-css">CSS</span>
 
-  <span class="selector">.b3__tabs-nav-btn--active</span> {
-    <span class="tag-property">color</span>: tan;
-  }
+<span class="selector">.b3__tabs-nav-btn--active</span> {
+  <span class="tag-property">color</span>: tan;
+}
 
-  <span class="selector">.b3__tabs-item</span> {
-    <span class="tag-property">display</span>: none;
-  }
+<span class="selector">.b3__tabs-item</span> {
+  <span class="tag-property">display</span>: none;
+}
 
-  <span class="selector">.b3__tabs-item--active</span> {
-    <span class="tag-property">display</span>: block;
-  }
+<span class="selector">.b3__tabs-item--active</span> {
+  <span class="tag-property">display</span>: block;
+}
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="property">let</span> <span class="value">b3__tabsBtn</span> = document.querySelectorAll(<span class="string">'.b3__tabs-nav-btn'</span>);
-  <span class="property">let</span> <span class="value">b3__tabsItem</span> = document.querySelectorAll(<span class="string">'.b3__tabs-item'</span>);
+<span class="property">let</span> <span class="value">b3__tabsBtn</span> = document.querySelectorAll(<span class="string">'.b3__tabs-nav-btn'</span>);
+<span class="property">let</span> <span class="value">b3__tabsItem</span> = document.querySelectorAll(<span class="string">'.b3__tabs-item'</span>);
 
-  <span class="value">b3__tabsBtn</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
-    <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="value">e</span> <span class="cycle-function">=&gt;</span> {
-      <span class="property">const</span> <span class="value">path</span> = <span class="value">e</span>.currentTarget.dataset.path;
+<span class="value">b3__tabsBtn</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
+  <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="value">e</span> <span class="cycle-function">=&gt;</span> {
+    <span class="property">const</span> <span class="value">path</span> = <span class="value">e</span>.currentTarget.dataset.path;
 
-      <span class="value">b3__tabsBtn</span>.forEach(<span class="value">btn</span> <span class="cycle-function">=&gt;</span> {
-        <span class="value">btn</span>.classList.remove(<span class="string">'b3__tabs-nav-btn--active'</span>);
-      });
-
-      <span class="value">e</span>.currentTarget.classList.add(<span class="string">'b3__tabs-nav-btn--active'</span>);
-
-      <span class="value">b3__tabsItem</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
-        <span class="value">element</span>.classList.remove(<span class="string">'b3__tabs-item--active'</span>);
-      });
-
-      document.querySelector(<span class="string">`[data-target="<span class="interpolation">${path}</span>"]`</span>).classList.add(<span class="string">'b3__tabs-item--active'</span>);
+    <span class="value">b3__tabsBtn</span>.forEach(<span class="value">btn</span> <span class="cycle-function">=&gt;</span> {
+      <span class="value">btn</span>.classList.remove(<span class="string">'b3__tabs-nav-btn--active'</span>);
     });
+
+    <span class="value">e</span>.currentTarget.classList.add(<span class="string">'b3__tabs-nav-btn--active'</span>);
+
+    <span class="value">b3__tabsItem</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
+      <span class="value">element</span>.classList.remove(<span class="string">'b3__tabs-item--active'</span>);
+    });
+
+    document.querySelector(<span class="string">`[data-target="<span class="property">${</span><span class="value">path</span><span class="property">}</span>"]`</span>).classList.add(<span class="string">'b3__tabs-item--active'</span>);
   });
+});
 </code>
 </pre>
       </div>
@@ -666,7 +1312,7 @@
           - Подключаем два JS скрипта через CDN в конец страницы / нашего примера, первый скрипт отвечает за подключение библиотеки jQuery, а второй за библиотеку с аккордеоном.
         </li>
         <li class="item">
-          - Третим, сымым последним, подключаем наш JS скрипт в котром мы будем инициализировать (подключать) наш аккордеон, чтобы подключить его достаточно прописать: <span class="text-bg">$(<span class="string">'.accordion'</span>).accordion();</span>. В этом коде мы обратились к элементу с классом <span class="text-bg string">'.accordion'</span> и
+          - Третим, сымым последним, подключаем наш JS скрипт в котром мы будем инициализировать (подключать) наш аккордеон, чтобы подключить его достаточно прописать: <span class="text-bg">$(<span class="string">'.accordion'</span>)<wbr>.accordion();</span>. В этом коде мы обратились к элементу с классом <span class="text-bg string">'.accordion'</span> и
           инициализировали метод <span class="text-bg">accordion()</span>
         </li>
         <li class="item">
@@ -767,149 +1413,149 @@
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">div class=</span><span class="string">"b6__nav"</span>&gt;
-    &lt;<span class="tag-property">ul class=</span><span class="string">"b6__nav-list"</span>&gt;
-      &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
-        Text
-      &lt;/<span class="tag-property">li</span>&gt;
-      &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
-        Text
-      &lt;/<span class="tag-property">li</span>&gt;
-      &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
-        Text
-      &lt;/<span class="tag-property">li</span>&gt;
-      &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
-        Text
-      &lt;/<span class="tag-property">li</span>&gt;
-    &lt;/<span class="tag-property">ul</span>&gt;
-    &lt;<span class="tag-property">div class=</span><span class="string">"b6__burger"</span>&gt;
-      &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
-      &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
-      &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
-    &lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">div class=</span><span class="string">"b6__nav"</span>&gt;
+  &lt;<span class="tag-property">ul class=</span><span class="string">"b6__nav-list"</span>&gt;
+    &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+      Text
+    &lt;/<span class="tag-property">li</span>&gt;
+    &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+      Text
+    &lt;/<span class="tag-property">li</span>&gt;
+    &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+      Text
+    &lt;/<span class="tag-property">li</span>&gt;
+    &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+      Text
+    &lt;/<span class="tag-property">li</span>&gt;
+  &lt;/<span class="tag-property">ul</span>&gt;
+  &lt;<span class="tag-property">div class=</span><span class="string">"b6__burger"</span>&gt;
+    &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
+    &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
+    &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
   &lt;/<span class="tag-property">div</span>&gt;
+&lt;/<span class="tag-property">div</span>&gt;
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-css">CSS</span>
+<span class="console-title title-css">CSS</span>
 
-  <span class="comment">/* Браузерная разметка */</span>
-  <span class="selector">.b6__nav</span> {
-    <span class="tag-property">width</span>: 100%;
-    <span class="tag-property">display</span>: flex;
-    <span class="tag-property">justify-content</span>: flex-end;
-  }
+<span class="comment">/* Браузерная разметка */</span>
+<span class="selector">.b6__nav</span> {
+  <span class="tag-property">width</span>: 100%;
+  <span class="tag-property">display</span>: flex;
+  <span class="tag-property">justify-content</span>: flex-end;
+}
 
-  <span class="selector">.b6__nav-list</span> {
-    <span class="tag-property">display</span>: flex;
-  }
+<span class="selector">.b6__nav-list</span> {
+  <span class="tag-property">display</span>: flex;
+}
 
-  <span class="selector">.b6__nav-item</span> {
-    <span class="tag-property">cursor</span>: pointer;
-    <span class="tag-property">margin-right</span>: 30px;
-  }
+<span class="selector">.b6__nav-item</span> {
+  <span class="tag-property">cursor</span>: pointer;
+  <span class="tag-property">margin-right</span>: 30px;
+}
 
-  <span class="comment">/* Мобильная разметка с @media (max-width: 1024px) */</span>
+<span class="comment">/* Мобильная разметка с @media (max-width: 1024px) */</span>
 
-  <span class="selector">.b6__nav-list</span> {
-    <span class="tag-property">position</span>: absolute;
-    <span class="tag-property">top</span>: 0;
-    <span class="tag-property">left</span>: 0;
-    <span class="tag-property">width</span>: 50%;
-    <span class="tag-property">min-width</span>: 250px;
-    <span class="tag-property">height</span>: 300px;
-    <span class="tag-property">z-index</span>: 1000;
-    <span class="tag-property">flex-direction</span>: column;
-    <span class="tag-property">padding</span>: 50px;
-    <span class="tag-property">box-shadow</span>: 0 0 5px var(--gray);
-    <span class="tag-property">background-color</span>: var(--white);
-    <span class="comment">/* Скролл для меню */</span>
-    <span class="tag-property">overflow-y</span>: auto;
-    <span class="comment">/* Скрываем меню */</span>
-    <span class="tag-property">visibility</span>: hidden;
-    <span class="comment">/* Смещаем меню в левую часть экрана, за его пределы */</span>
-    <span class="tag-property">transform</span>: translateX(-120%);
-    <span class="tag-property">transition</span>: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
+<span class="selector">.b6__nav-list</span> {
+  <span class="tag-property">position</span>: absolute;
+  <span class="tag-property">top</span>: 0;
+  <span class="tag-property">left</span>: 0;
+  <span class="tag-property">width</span>: 50%;
+  <span class="tag-property">min-width</span>: 250px;
+  <span class="tag-property">height</span>: 300px;
+  <span class="tag-property">z-index</span>: 1000;
+  <span class="tag-property">flex-direction</span>: column;
+  <span class="tag-property">padding</span>: 50px;
+  <span class="tag-property">box-shadow</span>: 0 0 5px var(--gray);
+  <span class="tag-property">background-color</span>: var(--white);
+  <span class="comment">/* Скролл для меню */</span>
+  <span class="tag-property">overflow-y</span>: auto;
+  <span class="comment">/* Скрываем меню */</span>
+  <span class="tag-property">visibility</span>: hidden;
+  <span class="comment">/* Смещаем меню в левую часть экрана, за его пределы */</span>
+  <span class="tag-property">transform</span>: translateX(-120%);
+  <span class="tag-property">transition</span>: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
 
-  <span class="selector">.b6__nav-item</span> {
-    <span class="tag-property">margin-right</span>: 0;
-    <span class="tag-property">margin-bottom</span>: 30px;
-  }
+<span class="selector">.b6__nav-item</span> {
+  <span class="tag-property">margin-right</span>: 0;
+  <span class="tag-property">margin-bottom</span>: 30px;
+}
 
-  <span class="selector">.b6__nav--active</span> {
-    <span class="tag-property">visibility</span>: visible;
-    <span class="tag-property">transform</span>: none;
-  }
+<span class="selector">.b6__nav--active</span> {
+  <span class="tag-property">visibility</span>: visible;
+  <span class="tag-property">transform</span>: none;
+}
 
-  <span class="selector">.b6__burger--active</span>
-  <span class="selector">.b6__burger-line:nth-child(2)</span> {
-    <span class="tag-property">display</span>: none;
-  }
+<span class="selector">.b6__burger--active</span>
+<span class="selector">.b6__burger-line:nth-child(2)</span> {
+  <span class="tag-property">display</span>: none;
+}
 
-  <span class="selector">.b6__burger--active</span>
-  <span class="selector">.b6__burger-line:first-child</span> {
-    <span class="tag-property">align-items</span>: center;
-    <span class="tag-property">transform</span>: translate(0, 11px) rotate(45deg);
-    <span class="tag-property">transition</span>: transform 0.3s ease-in-out;
-  }
+<span class="selector">.b6__burger--active</span>
+<span class="selector">.b6__burger-line:first-child</span> {
+  <span class="tag-property">align-items</span>: center;
+  <span class="tag-property">transform</span>: translate(0, 11px) rotate(45deg);
+  <span class="tag-property">transition</span>: transform 0.3s ease-in-out;
+}
 
-  <span class="selector">.b6__burger--active</span>
-  <span class="selector">.b6__burger-line:last-child</span> {
-    <span class="tag-property">align-items</span>: center;
-    <span class="tag-property">transform</span>: translate(0, -11px) rotate(-45deg);
-    <span class="tag-property">transition</span>: transform 0.3s ease-in-out;
-  }
+<span class="selector">.b6__burger--active</span>
+<span class="selector">.b6__burger-line:last-child</span> {
+  <span class="tag-property">align-items</span>: center;
+  <span class="tag-property">transform</span>: translate(0, -11px) rotate(-45deg);
+  <span class="tag-property">transition</span>: transform 0.3s ease-in-out;
+}
 
-  <span class="selector">.b6__burger</span> {
-    <span class="tag-property">width</span>: 40px;
-    <span class="tag-property">height</span>: 25px;
-    <span class="tag-property">display</span>: flex;
-    <span class="tag-property">flex-direction</span>: column;
-    <span class="tag-property">justify-content</span>: space-between;
-    <span class="tag-property">cursor</span>: pointer;
-  }
+<span class="selector">.b6__burger</span> {
+  <span class="tag-property">width</span>: 40px;
+  <span class="tag-property">height</span>: 25px;
+  <span class="tag-property">display</span>: flex;
+  <span class="tag-property">flex-direction</span>: column;
+  <span class="tag-property">justify-content</span>: space-between;
+  <span class="tag-property">cursor</span>: pointer;
+}
 
-  <span class="selector">.b6__burger-line</span> {
-    <span class="tag-property">width</span>: 100%;
-    <span class="tag-property">height</span>: 3px;
-    <span class="tag-property">background-color</span>: var(--black);
-  }
+<span class="selector">.b6__burger-line</span> {
+  <span class="tag-property">width</span>: 100%;
+  <span class="tag-property">height</span>: 3px;
+  <span class="tag-property">background-color</span>: var(--black);
+}
 
-  <span class="comment">/* Чтобы сайт не скроллился пока мы не закроем меню */</span>
-  <span class="selector">.stop-scroll</span> {
-    <span class="tag-property">overflow</span>: hidden;
-  }
+<span class="comment">/* Чтобы сайт не скроллился пока мы не закроем меню */</span>
+<span class="selector">.stop-scroll</span> {
+  <span class="tag-property">overflow</span>: hidden;
+}
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="property">let</span> <span class="value">b6__burger</span> = document.querySelector(<span class="string">'.b6__burger'</span>);
-  <span class="property">let</span> <span class="value">b6__menu</span> = document.querySelector(<span class="string">'.b6__nav-list'</span>);
-  <span class="property">let</span> <span class="value">b6__menuLinks</span> = <span class="value">b6__menu</span>.querySelectorAll(<span class="string">'.b6__nav-item'</span>);
+<span class="property">let</span> <span class="value">b6__burger</span> = document.querySelector(<span class="string">'.b6__burger'</span>);
+<span class="property">let</span> <span class="value">b6__menu</span> = document.querySelector(<span class="string">'.b6__nav-list'</span>);
+<span class="property">let</span> <span class="value">b6__menuLinks</span> = <span class="value">b6__menu</span>.querySelectorAll(<span class="string">'.b6__nav-item'</span>);
 
-  <span class="value">b6__burger</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
-    <span class="value">b6__burger</span>.classList.toggle(<span class="string">'b6__burger--active'</span>);
-    <span class="value">b6__menu</span>.classList.toggle(<span class="string">'b6__nav--active'</span>);
-    document.body.classList.toggle(<span class="string">'stop-scroll'</span>);
+<span class="value">b6__burger</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+  <span class="value">b6__burger</span>.classList.toggle(<span class="string">'b6__burger--active'</span>);
+  <span class="value">b6__menu</span>.classList.toggle(<span class="string">'b6__nav--active'</span>);
+  document.body.classList.toggle(<span class="string">'stop-scroll'</span>);
+});
+
+<span class="value">b6__menuLinks</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
+  <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+    <span class="value">b6__burger</span>.classList.remove(<span class="string">'b6__burger--active'</span>);
+    <span class="value">b6__menu</span>.classList.remove(<span class="string">'b6__nav--active'</span>);
+    document.body.classList.remove(<span class="string">'stop-scroll'</span>);
   });
-
-  <span class="value">b6__menuLinks</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
-    <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
-      <span class="value">b6__burger</span>.classList.remove(<span class="string">'b6__burger--active'</span>);
-      <span class="value">b6__menu</span>.classList.remove(<span class="string">'b6__nav--active'</span>);
-      document.body.classList.remove(<span class="string">'stop-scroll'</span>);
-    });
-  });
+});
 </code>
 </pre>
       </div>
@@ -957,31 +1603,31 @@
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">select class=</span><span class="string">"b7__custom-select"</span>&gt;
-    &lt;<span class="tag-property">option</span>&gt;
-      Пункт 1
-    &lt;/<span class="tag-property">option</span>&gt;
-    &lt;<span class="tag-property">option</span>&gt;
-      Пункт 2
-    &lt;/<span class="tag-property">option</span>&gt;
-    &lt;<span class="tag-property">option</span>&gt;
-      Пункт 3
-    &lt;/<span class="tag-property">option</span>&gt;
-  &lt;/<span class="tag-property">select</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"libs/js/choices.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
-  &lt;<span class="tag-property">script src=</span><span class="string">"js/b7.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">select class=</span><span class="string">"b7__custom-select"</span>&gt;
+  &lt;<span class="tag-property">option</span>&gt;
+    Пункт 1
+  &lt;/<span class="tag-property">option</span>&gt;
+  &lt;<span class="tag-property">option</span>&gt;
+    Пункт 2
+  &lt;/<span class="tag-property">option</span>&gt;
+  &lt;<span class="tag-property">option</span>&gt;
+    Пункт 3
+  &lt;/<span class="tag-property">option</span>&gt;
+&lt;/<span class="tag-property">select</span>&gt;
+&lt;<span class="tag-property">script src=</span><span class="string">"libs/js/choices.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">script src=</span><span class="string">"js/b7.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
-  <span class="comment">// Код для инициализации плагина</span>
-  <span class="property">const</span> <span class="value">element</span> = document.querySelector(<span class="string">'.b7__custom-select'</span>);
-  <span class="property">const</span> <span class="value">choices</span> = new Choices(<span class="value">element</span>);
+<span class="console-title title-js">JS</span>
+<span class="comment">// Код для инициализации плагина</span>
+<span class="property">const</span> <span class="value">element</span> = document.querySelector(<span class="string">'.b7__custom-select'</span>);
+<span class="property">const</span> <span class="value">choices</span> = new Choices(<span class="value">element</span>);
 </code>
 </pre>
       </div>
@@ -1030,59 +1676,59 @@
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">div class</span>=<span class="string">"b8__map"</span><span class="tag-property"> id</span>=<span class="string">"map"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">script src</span>=<span class="string">"https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"</span><span class="tag-property"> type</span>=<span class="string">"text/javascript"</span>&lt;/<span class="tag-property">script</span>&gt;
-  &lt;<span class="tag-property">script src</span>=<span class="string">"js/b7.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">div class</span>=<span class="string">"b8__map"</span><span class="tag-property"> id</span>=<span class="string">"map"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">script src</span>=<span class="string">"https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"</span><span class="tag-property"> type</span>=<span class="string">"text/javascript"</span>&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">script src</span>=<span class="string">"js/b7.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-css">CSS</span>
+<span class="console-title title-css">CSS</span>
 
-  .<span class="selector">b8__map</span> {
-    <span class="tag-property">width</span>: 600px;
-    <span class="tag-property">height</span>: 400px;
-  }
+.<span class="selector">b8__map</span> {
+  <span class="tag-property">width</span>: 600px;
+  <span class="tag-property">height</span>: 400px;
+}
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="value">ymaps</span>.ready(init);
-  <span class="cycle-function">function</span> init(){
-    <span class="comment">// Создание карты.</span>
-    <span class="property">var</span> <span class="value">myMap</span> = <span class="property">new</span> <span class="value">ymaps</span>.Map(<span class="string">"map"</span>, {
-      <span class="comment">// Координаты центра карты.</span>
-      <span class="comment">// Порядок по умолчанию: «широта, долгота», определить их можно по этой <a class="link" href="http://dimik.github.io/ymaps/examples/location-tool/" target="_blank">ссылке</a></span>
-      <span class="value">center:</span> [55.76, 37.64],
-      <span class="comment">// Уровень масштабирования. от 0 (весь мир) до 19.</span>
-      <span class="value">zoom:</span> 10
-    });
-    <span class="comment">// Добавление новой, встроенной метки, геообъекта.</span>
-    <span class="property">var</span> <span class="value">myGeoObject</span> = <span class="property">new</span> <span class="value">ymaps</span>.GeoObject({
-      <span class="value">myGeoObject:</span> {
-        <span class="value">type:</span> <span class="string">"Points"</span>
-        <span class="value">coordinates:</span> [55.8, 37.8],
-      }
-    });
-    <span class="comment">// Добавление кастомной метки в виде любой svg картинки.</span>
-    <span class="property">var</span> <span class="value">myPlacemark</span> = <span class="property">new</span> <span class="value">ymaps</span>.Placemark([55.76, 37.56], {}, {
-      <span class="value">iconLayout:</span> <span class="string">'default#image'</span>,
-      <span class="value">iconImageHref:</span> <span class="string">'./assets/svg/eevee.svg'</span>,
-      <span class="value">iconImageSize:</span> [30, 42],
-      <span class="value">iconImageOffset:</span> [-3, -42]
-    });
-    <span class="comment">// Вызов функций и активация заданых настроек.</span>
-    <span class="value">myMap</span>.<span class="value">geoObjects</span>.add(<span class="value">myPlacemark</span>);
-    <span class="value">myMap</span>.<span class="value">geoObjects</span>.add(<span class="value">myGeoObject</span>);
-  }
+<span class="value">ymaps</span>.ready(init);
+<span class="cycle-function">function</span> init(){
+  <span class="comment">// Создание карты.</span>
+  <span class="property">var</span> <span class="value">myMap</span> = <span class="property">new</span> <span class="value">ymaps</span>.Map(<span class="string">"map"</span>, {
+    <span class="comment">// Координаты центра карты.</span>
+    <span class="comment">// Порядок по умолчанию: «широта, долгота», определить их можно по этой <a class="link" href="http://dimik.github.io/ymaps/examples/location-tool/" target="_blank">ссылке</a></span>
+    <span class="value">center:</span> [55.76, 37.64],
+    <span class="comment">// Уровень масштабирования. от 0 (весь мир) до 19.</span>
+    <span class="value">zoom:</span> 10
+  });
+  <span class="comment">// Добавление новой, встроенной метки, геообъекта.</span>
+  <span class="property">var</span> <span class="value">myGeoObject</span> = <span class="property">new</span> <span class="value">ymaps</span>.GeoObject({
+    <span class="value">myGeoObject:</span> {
+      <span class="value">type:</span> <span class="string">"Points"</span>
+      <span class="value">coordinates:</span> [55.8, 37.8],
+    }
+  });
+  <span class="comment">// Добавление кастомной метки в виде любой svg картинки.</span>
+  <span class="property">var</span> <span class="value">myPlacemark</span> = <span class="property">new</span> <span class="value">ymaps</span>.Placemark([55.76, 37.56], {}, {
+    <span class="value">iconLayout:</span> <span class="string">'default#image'</span>,
+    <span class="value">iconImageHref:</span> <span class="string">'./assets/svg/eevee.svg'</span>,
+    <span class="value">iconImageSize:</span> [30, 42],
+    <span class="value">iconImageOffset:</span> [-3, -42]
+  });
+  <span class="comment">// Вызов функций и активация заданых настроек.</span>
+  <span class="value">myMap</span>.<span class="value">geoObjects</span>.add(<span class="value">myPlacemark</span>);
+  <span class="value">myMap</span>.<span class="value">geoObjects</span>.add(<span class="value">myGeoObject</span>);
+}
 </code>
 </pre>
       </div>
@@ -1094,7 +1740,7 @@
         <span class="title-number">9.</span> Кастомный скролл.
       </p>
       <p class="text">
-        Основная проблема того что мы создаем кастомный скроллбар заключается в том, что во всех браузерах они отображаются по разнному, а стремясь к кроссбраузерности, это является помехой, так же нативные скроллбары являются очень некрасивыми и часто выбиваются из общего дизайна сайта. Реализовывать кастомный скроллбар мы будем при помощи библиотеки <a class="link" href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html?from=jsapi" target="_blank">SimpleBar</a>
+        Основная проблема того что мы создаем кастомный скроллбар заключается в том, что во всех браузерах они отображаются по разнному, а стремясь к кроссбраузерности, это является помехой, так же нативные скроллбары являются очень некрасивыми и часто выбиваются из общего дизайна сайта. Реализовывать кастомный скроллбар мы будем при помощи библиотеки <a class="link" href="https://github.com/Grsmto/simplebar/tree/master/packages/simplebar" target="_blank">SimpleBar</a>
       </p>
       <p class="text">
         Библиотека находится на GitHub, как и раньше, в README необходимо найти ключевое слово <span class="highlight">Get started</span> и следовать шагам по подключению библиотеки. Нам предлагают уже знакомые варианты подключения библиотеки, мы выбираем подключение через ссылки, те CDN, не забывая при этом подключить CSS в head сайта. Далее, важный момент, необходимо указать data атрибут как в примере - <span class="text-bg value">data-simplebar</span>
@@ -1116,30 +1762,30 @@
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">div class</span>=<span class="string">"b9__scroll-wrapper"</span><span class="value"> data-simplebar</span>&gt;
-    &lt;<span class="tag-property">p class</span>=<span class="string">"text"</span>&gt;
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat officia veritatis enim repellat, in natus similique deleniti, vero quam, laboriosam labore voluptates incidunt exercitationem. Quibusdam voluptatum ratione veritatis libero.
-    &lt;/<span class="tag-property">p</span>&gt;
-    &lt;<span class="tag-property">script src</span>=<span class="string">"https://unpkg.com/simplebar@latest/dist/simplebar.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
-  &lt;/<span class="tag-property">div</span>&gt;
+&lt;<span class="tag-property">div class</span>=<span class="string">"b9__scroll-wrapper"</span><span class="value"> data-simplebar</span>&gt;
+  &lt;<span class="tag-property">p class</span>=<span class="string">"text"</span>&gt;
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat officia veritatis enim repellat, in natus similique deleniti, vero quam, laboriosam labore voluptates incidunt exercitationem. Quibusdam voluptatum ratione veritatis libero.
+  &lt;/<span class="tag-property">p</span>&gt;
+  &lt;<span class="tag-property">script src</span>=<span class="string">"https://unpkg.com/simplebar@latest/dist/simplebar.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;/<span class="tag-property">div</span>&gt;
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-css">CSS</span>
+<span class="console-title title-css">CSS</span>
 
-  .<span class="selector">b9__scroll-wrapper</span> {
-    <span class="tag-property">width</span>: 400px;
-    <span class="tag-property">height</span>: 400px;
-  }
+.<span class="selector">b9__scroll-wrapper</span> {
+  <span class="tag-property">width</span>: 400px;
+  <span class="tag-property">height</span>: 400px;
+}
 
-  .<span class="selector">simplebar-scrollbar::before</span> {
-    <span class="tag-property">background-image</span>: linear-gradient(180deg, red, orange, yellow, lime, green, aqua, blue);
-  }
+.<span class="selector">simplebar-scrollbar::before</span> {
+  <span class="tag-property">background-image</span>: linear-gradient(180deg, red, orange, yellow, lime, green, aqua, blue);
+}
 </code>
 </pre>
       </div>
@@ -1178,85 +1824,85 @@
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-html">HTML</span>
+<span class="console-title title-html">HTML</span>
 
-  &lt;<span class="tag-property">form class</span>=<span class="string">"b10__form"</span> <span class="value">action</span>=<span class="string">"https://jsonplaceholder.typicode.com/posts"</span> <span class="value">method</span>=<span class="string">"post"</span> <span class="value">target</span>=<span class="string">"_blank"</span>&gt;
-    &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Имя"</span> <span class="value">type</span>=<span class="string">"text"</span> <span class="value">placeholder</span>=<span class="string">"Имя"</span> <span class="value">data-validate-field</span>=<span class="string">"name"</span>&gt;
-    &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Телефон"</span> <span class="value">type</span>=<span class="string">"tel"</span> <span class="value">placeholder</span>=<span class="string">"Телефон"</span> <span class="value">data-validate-field</span>=<span class="string">"tel"</span>&gt;
-    &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"email"</span> <span class="value">type</span>=<span class="string">"email"</span> <span class="value">placeholder</span>=<span class="string">"Email"</span> <span class="value">data-validate-field</span>=<span class="string">"mail"</span>&gt;
-    &lt;<span class="tag-property">button class</span>=<span class="string">"b10__form-button"</span>&gt;
-      Отправить
-    &lt;/<span class="tag-property">button</span>&gt;
-  &lt;/<span class="tag-property">form</span>&gt;
-  &lt;<span class="tag-property">script src</span>=<span class="string">"libs/js/inputmask.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
-  &lt;<span class="tag-property">script src</span>=<span class="string">"libs/js/just-validate.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
-  &lt;<span class="tag-property">script src</span>=<span class="string">"js/b10.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">form class</span>=<span class="string">"b10__form"</span> <span class="value">action</span>=<span class="string">"https://jsonplaceholder.typicode.com/posts"</span> <span class="value">method</span>=<span class="string">"post"</span> <span class="value">target</span>=<span class="string">"_blank"</span>&gt;
+  &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Имя"</span> <span class="value">type</span>=<span class="string">"text"</span> <span class="value">placeholder</span>=<span class="string">"Имя"</span> <span class="value">data-validate-field</span>=<span class="string">"name"</span>&gt;
+  &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Телефон"</span> <span class="value">type</span>=<span class="string">"tel"</span> <span class="value">placeholder</span>=<span class="string">"Телефон"</span> <span class="value">data-validate-field</span>=<span class="string">"tel"</span>&gt;
+  &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"email"</span> <span class="value">type</span>=<span class="string">"email"</span> <span class="value">placeholder</span>=<span class="string">"Email"</span> <span class="value">data-validate-field</span>=<span class="string">"mail"</span>&gt;
+  &lt;<span class="tag-property">button class</span>=<span class="string">"b10__form-button"</span>&gt;
+    Отправить
+  &lt;/<span class="tag-property">button</span>&gt;
+&lt;/<span class="tag-property">form</span>&gt;
+&lt;<span class="tag-property">script src</span>=<span class="string">"libs/js/inputmask.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">script src</span>=<span class="string">"libs/js/just-validate.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+&lt;<span class="tag-property">script src</span>=<span class="string">"js/b10.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-css">CSS</span>
+<span class="console-title title-css">CSS</span>
 
-  .<span class="selector">b10__form</span> {
-    <span class="tag-property">max-width</span>: 30%;
-    <span class="tag-property">display</span>: flex;
-    <span class="tag-property">flex-direction</span>: column;
-  }
+.<span class="selector">b10__form</span> {
+  <span class="tag-property">max-width</span>: 30%;
+  <span class="tag-property">display</span>: flex;
+  <span class="tag-property">flex-direction</span>: column;
+}
 
-  .<span class="selector">b10__form-input</span> {
-    <span class="tag-property">margin-bottom</span>: 20px;
-  }
+.<span class="selector">b10__form-input</span> {
+  <span class="tag-property">margin-bottom</span>: 20px;
+}
 
-  .<span class="selector">b10__form-button</span> {
-    <span class="tag-property">width</span>: fit-content;
-    <span class="tag-property">display</span>: inline-flex;
-    <span class="tag-property">justify-content</span>: flex-start;
-    <span class="tag-property">padding</span>: 10px;
-    <span class="tag-property">background-color</span>: var(--gray);
-    <span class="tag-property">border-radius</span>: 10px;
-  }
+.<span class="selector">b10__form-button</span> {
+  <span class="tag-property">width</span>: fit-content;
+  <span class="tag-property">display</span>: inline-flex;
+  <span class="tag-property">justify-content</span>: flex-start;
+  <span class="tag-property">padding</span>: 10px;
+  <span class="tag-property">background-color</span>: var(--gray);
+  <span class="tag-property">border-radius</span>: 10px;
+}
 </code>
 </pre>
       </div>
       <div class="console">
 <pre>
 <code class="code">
-  <span class="console-title title-js">JS</span>
+<span class="console-title title-js">JS</span>
 
-  <span class="comment">// Инициализация Inputmask</span>
-  <span class="comment">// Скрипт находит на странице все атрибуты с type="tel"</span>
-  <span class="property">var</span> <span class="value">selector</span> = document.querySelector(<span class="string">'input[type="tel"]'</span>);
-  <span class="comment">// Создаем пример того как должна выглядеть маска и номер в ней (9 можно заменить на любую цифру)</span>
-  <span class="property">var</span> <span class="value">im</span> = <span class="property">new</span> Inputmask(<span class="string">'+7 (999)-999-99-99'</span>);
+<span class="comment">// Инициализация Inputmask</span>
+<span class="comment">// Скрипт находит на странице все атрибуты с type="tel"</span>
+<span class="property">var</span> <span class="value">selector</span> = document.querySelector(<span class="string">'input[type="tel"]'</span>);
+<span class="comment">// Создаем пример того как должна выглядеть маска и номер в ней (9 можно заменить на любую цифру)</span>
+<span class="property">var</span> <span class="value">im</span> = <span class="property">new</span> Inputmask(<span class="string">'+7 (999)-999-99-99'</span>);
 
-  <span class="value">im</span>.mask(<span class="value">selector</span>);
+<span class="value">im</span>.mask(<span class="value">selector</span>);
 
-  <span class="comment">// Инициализация JustValidate</span>
-  <span class="property">new</span> JustValidate(<span class="string">'.b10__form'</span>, {
-  <span class="value">rules</span>: {
-    <span class="comment">// Проверки для имени</span>
-    <span class="value">name</span>: {
-      <span class="value">required</span>: true,
-      <span class="value">minLength</span>: 2,
-      <span class="value">maxLength</span>: 20
-    },
-    <span class="comment">// Проверки для телефона</span>
-    <span class="value">tel</span>: {
-      <span class="value">required</span>: true,
-      <span class="comment">// Собственная функция валидации которая проверяет только цифры, без учета скорок и тире</span>
-      <span class="cycle-function">function</span>: (name, value) <span class="cycle-function">=&gt;</span> {
-        <span class="property">const</span> <span class="value">phone</span> = <span class="value">selector</span>.<span class="value">inputmask</span>.unmaskedvalue()
-        <span class="cycle-function">return</span> <span class="value">Number</span>(<span class="value">phone</span>) && <span class="value">phone</span>.<span class="value">length</span> === 10
-      }
-    },
-    <span class="comment">// Проверки для email</span>
-    <span class="value">mail</span>: {
-      <span class="value">required</span>: true,
-      <span class="value">email</span>: true
-    },
+<span class="comment">// Инициализация JustValidate</span>
+<span class="property">new</span> JustValidate(<span class="string">'.b10__form'</span>, {
+<span class="value">rules</span>: {
+  <span class="comment">// Проверки для имени</span>
+  <span class="value">name</span>: {
+    <span class="value">required</span>: <span class="property">true</span>,
+    <span class="value">minLength</span>: 2,
+    <span class="value">maxLength</span>: 20
   },
+  <span class="comment">// Проверки для телефона</span>
+  <span class="value">tel</span>: {
+    <span class="value">required</span>: <span class="property">true</span>,
+    <span class="comment">// Собственная функция валидации которая проверяет только цифры, без учета строк и тире</span>
+    <span class="cycle-function">function</span>: (name, value) <span class="cycle-function">=&gt;</span> {
+      <span class="property">const</span> <span class="value">phone</span> = <span class="value">selector</span>.<span class="value">inputmask</span>.unmaskedvalue()
+      <span class="cycle-function">return</span> <span class="value">Number</span>(<span class="value">phone</span>) && <span class="value">phone</span>.<span class="value">length</span> === 10
+    }
+  },
+  <span class="comment">// Проверки для email</span>
+  <span class="value">mail</span>: {
+    <span class="value">required</span>: <span class="property">true</span>,
+    <span class="value">email</span>: <span class="property">true</span>
+  },
+},
 });
 </code>
 </pre>
