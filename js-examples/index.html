@@ -85,7 +85,166 @@
     <!-- Block 03 start -->
     <div class="b03 block">
       <p class="title">
-        <span class="title-number">03.</span> Массивы (arrays).
+        <span class="title-number">03.</span> Функции.
+      </p>
+      <p class="text">
+        <span class="text-offset">Функции</span> - это основные строительные блоки программы, предназначенные для того чтобы выполнять одинаковый код в различных местах, путём вызова созданной функции.
+      </p>
+      <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Варианты синтаксиса функций:</span>
+<span class="comment">// Function declaration - Объявление функции. Стандартный вид записи функции.</span>
+<span class="cycle-function">function</span> <span class="selector">sayHello</span>(<span class="value">arguments</span>) {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Hello'</span>);
+}
+
+<span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
+<span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Function expression - Функциональное выражение. Позволяет создавать функцию сразу присваивая результат ее работы переменной.</span>
+<span class="property">const</span> <span class="value">sayHello</span> = <span class="cycle-function">function</span>(<span class="value">arguments</span>) {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Hello'</span>);
+}
+
+<span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
+<span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Arrow function - Стрелочная функция. Основным приемуществом является укороченный синтаксис записи.</span>
+<span class="property">const</span> <span class="value">sayHello</span> = (<span class="value">arguments</span>) <span class="cycle-function">=&gt;</span> {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Hello'</span>);
+}
+
+<span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
+<span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Стрелочные функции позволяют писать простые вычисления в одну строчку</span>
+<span class="property">const</span> <span class="value">sum</span> = (<span class="value">a</span>, <span class="value">b</span>) <span class="cycle-function">=&gt;</span> <span class="value">a</span> + <span class="value">b</span>;
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">sum</span>(1, 2)); <span class="comment">// 3</span>
+
+<span class="comment">// Эта стрелочная функция представляет собой более короткую форму:</span>
+<span class="comment">   const sum = function(a, b) {
+    return a + b;
+   };</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Если у нас один аргумент, то круглые скобки можно не писать</span>
+<span class="property">const</span> <span class="value">double</span> = <span class="value">a</span> <span class="cycle-function">=&gt;</span> <span class="value">a</span> * 2;
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">double</span>(3)); <span class="comment">// 6</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// В каких ситуациях использовать Function Declaration/Expression?</span>
+<span class="comment">// 1. Когда нам нужен метод объекта this (у стрелочных функций нет доступа к this).</span>
+<span class="property">const</span> <span class="value">obj</span> {
+  <span class="value">name:</span> <span class="string">'John'</span>,
+  <span class="selector">printName</span>() {
+    <span class="value">console</span>.<span class="selector">log</span>(<span class="property">this</span>.<span class="value">name</span>);
+  }
+}
+
+<span class="comment">// 2. В обработчиках событий, когда нам нужен метод объекта this.</span>
+<span class="value">input</span>.<span class="selector">addEventListener</span>(<span class="string">'input'</span>, <span class="cycle-function">function</span>() {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="property">this</span>.<span class="value">value</span>);
+});
+
+<span class="comment">// 3. Простые именованные функции, используемые в коде, лучше так же объявлять как function с именем.</span>
+<span class="cycle-function">function</span> <span class="selector">sayHello</span>() {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">'Hello'</span>);
+}
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// В каких ситуациях использовать Arrow Function?</span>
+<span class="comment">// 1. В обработчиках событий если нам не нужен доступ к this.</span>
+<span class="value">button</span>.<span class="selector">addEventListener</span>(<span class="string">'click'</span>, () <span class="cycle-function">=&gt;</span> {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">'User clicked!'</span>);
+});
+
+<span class="comment">// 2. Когда мы передаем функцию в качестве параметра в другую функцию.</span>
+<span class="selector">setInterval</span>(() <span class="cycle-function">=&gt;</span> {<span class="value">console</span>.<span class="selector">log</span>(<span class="string">'tick'</span>);}, 1000);
+
+<span class="comment">// 3. IIFE - Немедленный вызов функции после ее объявления.</span>
+(() <span class="cycle-function">=&gt;</span> {})() <span class="comment">// vs (function() {})()</span>
+</code>
+</pre>
+      </div>
+      <p class="text">
+        <span class="text-offset">Замыкания</span> - это дочерняя функция, которая находится внутри родительской функции и которая запоминает свои внешние переменные и может получить к ним доступ, даже когда родительская функция прекратила свою работу.
+      </p>
+      <p class="text">
+        Замыкание представляет из себя функцию которая находится в другой (вызываемой) функции, при вызове родительской функии, нам возвращается функция которая находится внутри (дочерняя). Суть работы программы заключается в замыкании лексического окружения возвращаемой функции на переменные объявленные в родительской функции.
+      </p>
+      <p class="text">
+        Ниже, в примерах кода, будут представлены различные способы использования замыкания и синтаксис.
+      </p>
+      <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// В этом примере, вызов функции createCalcFunction(1) вернет нам дочернюю функцию, чтобы ей воспользоваться, мы должны присвоить ее переменной и вызвать.</span>
+<span class="cycle-function">function</span> <span class="selector">createCalcFunction</span>(<span class="value">n</span>) {
+  <span class="cycle-function">return</span> <span class="cycle-function">function</span>() {
+    <span class="value">console</span>.<span class="selector">log</span>(<span class="value">n</span> + 1);
+  }
+}
+
+<span class="comment">// Не даст результатов, потому что нам вернулась дочерняя функция которая не вызвалась</span>
+<span class="comment">// Работа функции createCalcFunction закончилась когда встретила return - те на том чтобы вернуть функцию не вызывая ее при этом</span>
+<span class="selector">createCalcFunction</span>(1);
+
+<span class="comment">// Присвоим ее переменной calc и вызовем в качестве функции.</span>
+<span class="property">const</span> <span class="value">calc</span> = <span class="selector">createCalcFunction</span>(1);
+<span class="selector">calc</span>();
+<span class="comment">// 2 - Сработало, вызвалась дочерняя присвоенная в переменную функция, при этом она замкнулась на родительскую переменную n</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="cycle-function">function</span> <span class="selector">createIncrementor</span>(<span class="value">n</span>) {
+  <span class="cycle-function">return</span> <span class="cycle-function">function</span>(<span class="value">num</span>) {
+    <span class="cycle-function">return</span> <span class="value">n</span> + <span class="value">num</span>;
+  }
+}
+
+<span class="property">const</span> <span class="value">plusOne</span> = <span class="selector">createIncrementor</span>(1); <span class="comment">// Замкнули функцию createIncrementor на единице (n).</span>
+<span class="property">const</span> <span class="value">plusTen</span> = <span class="selector">createIncrementor</span>(10); <span class="comment">// Замкнули функцию createIncrementor на десяти (n).</span>
+
+<span class="comment">// Передаем число в параметр num, функции plusOne(num), помним что plusOne мы замкнули на 1</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">plusOne</span>(1)); <span class="comment">// 2</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">plusOne</span>(50)); <span class="comment">// 51</span>
+
+<span class="comment">// Передаем число в параметр num, функции plusTen(num), помним что plusTen мы замкнули на 10</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">plusTen</span>(1)); <span class="comment">// 11</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">plusTen</span>(50)); <span class="comment">// 60</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Создадим функцию генерирующую URL адрес.</span>
+<span class="cycle-function">function</span> <span class="selector">urlGenerator</span>(<span class="value">domain</span>) {
+  <span class="cycle-function">return</span> <span class="cycle-function">function</span>(<span class="value">url</span>) {
+    <span class="cycle-function">return</span> <span class="string">`https://</span><span class="property">{$</span><span class="value">url</span><span class="property">}</span><span class="string">.</span><span class="property">{$</span><span class="value">domain</span><span class="property">}</span><span class="string">`</span>;
+  }
+}
+
+<span class="property">const</span> <span class="value">comUrl</span> = <span class="selector">urlGenerator</span>(<span class="string">'com'</span>); <span class="comment">// Замкнули domain на 'com' - urlGenerator('com')</span>
+<span class="property">const</span> <span class="value">ruUrl</span> = <span class="selector">urlGenerator</span>(<span class="string">'ru'</span>); <span class="comment">// Замкнули domain на 'ru' - urlGenerator('ru')</span>
+
+<span class="comment">// Передаем строки в параметр url</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">comUrl</span>(<span class="string">'google'</span>)); <span class="comment">// https://google.com</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">ruUrl</span>(<span class="string">'yandex'</span>)); <span class="comment">// https://yandex.com</span>
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- Block 03 end -->
+    <!-- Block 04 start -->
+    <div class="b04 block">
+      <p class="title">
+        <span class="title-number">04.</span> Массивы (arrays).
       </p>
       <p class="text">
         <span class="text-offset">Массивы</span> - это сложный тип данных который позволяет хранить множество элементов в определеном порядке. Элементы массива заключаются в квадратные скобки и перечисляются через запятую <span class="text-bg">[<span class="string">'element'</span>, <span class="string">'element'</span>, ...];</span>
@@ -219,11 +378,11 @@
 </pre>
       </div>
     </div>
-    <!-- Block 03 end -->
-    <!-- Block 04 start -->
-    <div class="b04 block">
+    <!-- Block 04 end -->
+    <!-- Block 05 start -->
+    <div class="b05 block">
       <p class="title">
-        <span class="title-number">04.</span> Циклы while, do while, for, for of, for in и операторы continue и break.
+        <span class="title-number">05.</span> Циклы while, do while, for, for of, for in и операторы continue и break.
       </p>
       <p class="text">
         <span class="text-offset">Циклы</span> - это программы, позволяющие выполнять действия определенное количество раз.
@@ -364,11 +523,11 @@
 </pre>
       </div>
     </div>
-    <!-- Block 04 end -->
-    <!-- Block 05 start -->
-    <div class="b05 block">
+    <!-- Block 05 end -->
+    <!-- Block 06 start -->
+    <div class="b06 block">
       <p class="title">
-        <span class="title-number">05.</span> Объекты.
+        <span class="title-number">06.</span> Объекты.
       </p>
       <p class="text">
         <span class="text-offset">Объект</span> - это тип данных позволяющий объединить множество объектов в один.
@@ -717,7 +876,7 @@
 </pre>
     </div>
     </div>
-    <!-- Block 05 end -->
+    <!-- Block 06 end -->
     <!-- Block 1 start -->
     <div class="b1 block">
       <p class="title">
@@ -895,7 +1054,7 @@ document.querySelectorAll(<span class="string">'.b1__text-two'</span>).forEach(<
           В данном примере мы будем отслеживать нажатие на блок и после нажатия будем смещать этот блок вправо на 100px. Для начала мы создаем переменную <span class="text-bg"><span class="tag-property">let</span> <span class="value">b2__block</span></span> и присваиваем ей метод  <span class="text-bg">document.<wbr>querySelector<wbr>(<span class="string">'.b2__block'</span>);</span>, находим элемент с классом <span class="text-bg string">.b2__block</span>.
         </p>
         <p class="text">
-          После этого мы присваиваем созданной переменной обработчик собитий и в скобочках указываем встроенную функцию, в нашем случае мы хотим отслеживать клик <span class="text-bg">addEventListener<wbr>(<span class="string">'click'</span>);</span>, далее, мы должны указать что будет происходить после того как мы отследили клик, для этого, через запятую создается функция <span class="text-bg">addEventListener<wbr>(<span class="string">'click'</span>, <span class="cycle-function">function</span>() <wbr>{...});</span>
+          После этого мы присваиваем созданной переменной обработчик собитий и в скобочках указываем встроенную функцию, в нашем случае мы хотим отслеживать клик <span class="text-bg"><span class="selector">addEventListener</span><wbr>(<span class="string">'click'</span>);</span>, далее, мы должны указать что будет происходить после того как мы отследили клик, для этого, через запятую создается функция <span class="text-bg"><span class="selector">addEventListener</span><wbr>(<span class="string">'click'</span>, <span class="cycle-function">function</span>() <wbr>{...});</span>
           которая что-то сделает, обратите внимание что в данном случае этой функции не обязательно давать имя, тк она активируется сразу после того как мы отследили клик и от этой функции нам нужно только действие.
         </p>
         <p class="text">
@@ -939,7 +1098,7 @@ document.querySelectorAll(<span class="string">'.b1__text-two'</span>).forEach(<
 
 <span class="property">let</span> <span class="value">b2__block</span> = document.querySelector(<span class="string">'.b2__block'</span>);
 
-<span class="value">b2__block</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">function</span>() {
+<span class="value">b2__block</span>.<span class="selector">addEventListener</span>(<span class="string">'click'</span>, <span class="cycle-function">function</span>() {
   <span class="value">b2__block</span>.classList.toggle(<span class="string">'b2__translate'</span>);
 });
 </code>
@@ -1047,7 +1206,7 @@ document.querySelectorAll(<span class="string">'.b1__text-two'</span>).forEach(<
 <span class="property">const</span> <span class="value">b2__twoButton</span> = document.querySelector(<span class="string">'.b2__two-button'</span>);
 <span class="property">const</span> <span class="value">b2__twoBlock</span> = document.querySelector(<span class="string">'.b2__two-block'</span>);
 
-<span class="value">b2__twoButton</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+<span class="value">b2__twoButton</span>.<span class="selector">addEventListener</span>(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
   <span class="value">b2__twoBlock</span>.forEach(elements <span class="cycle-function">() =&gt;</span> {
     elements.classList.add(<span class="string">'b2__two-block--visible'</span>);
     <span class="value">b2__twoButton</span>.closest(<span class="string">'.b2__two-button-wrapper'</span>).classList.add(<span class="string">'b2__two-button-wrapper--hidden'</span>);
@@ -1198,7 +1357,7 @@ document.querySelectorAll(<span class="string">'.b1__text-two'</span>).forEach(<
 <span class="property">let</span> <span class="value">b3__tabsItem</span> = document.querySelectorAll(<span class="string">'.b3__tabs-item'</span>);
 
 <span class="value">b3__tabsBtn</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
-  <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="value">e</span> <span class="cycle-function">=&gt;</span> {
+  <span class="value">element</span>.<span class="selector">addEventListener</span>(<span class="string">'click'</span>, <span class="value">e</span> <span class="cycle-function">=&gt;</span> {
     <span class="property">const</span> <span class="value">path</span> = <span class="value">e</span>.currentTarget.dataset.path;
 
     <span class="value">b3__tabsBtn</span>.forEach(<span class="value">btn</span> <span class="cycle-function">=&gt;</span> {
@@ -1543,14 +1702,14 @@ document.querySelectorAll(<span class="string">'.b1__text-two'</span>).forEach(<
 <span class="property">let</span> <span class="value">b6__menu</span> = document.querySelector(<span class="string">'.b6__nav-list'</span>);
 <span class="property">let</span> <span class="value">b6__menuLinks</span> = <span class="value">b6__menu</span>.querySelectorAll(<span class="string">'.b6__nav-item'</span>);
 
-<span class="value">b6__burger</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+<span class="value">b6__burger</span>.<span class="selector">addEventListener</span>(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
   <span class="value">b6__burger</span>.classList.toggle(<span class="string">'b6__burger--active'</span>);
   <span class="value">b6__menu</span>.classList.toggle(<span class="string">'b6__nav--active'</span>);
   document.body.classList.toggle(<span class="string">'stop-scroll'</span>);
 });
 
 <span class="value">b6__menuLinks</span>.forEach(<span class="value">element</span> <span class="cycle-function">=&gt;</span> {
-  <span class="value">element</span>.addEventListener(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
+  <span class="value">element</span>.<span class="selector">addEventListener</span>(<span class="string">'click'</span>, <span class="cycle-function">() =&gt;</span> {
     <span class="value">b6__burger</span>.classList.remove(<span class="string">'b6__burger--active'</span>);
     <span class="value">b6__menu</span>.classList.remove(<span class="string">'b6__nav--active'</span>);
     document.body.classList.remove(<span class="string">'stop-scroll'</span>);
