@@ -530,7 +530,7 @@
         <span class="title-number">06.</span> Объекты.
       </p>
       <p class="text">
-        <span class="text-offset">Объект</span> - это тип данных позволяющий объединить множество объектов в один.
+        <span class="text-offset">Объект</span> - это тип данных позволяющий объединить множество элементов в один.
       </p>
       <p class="text">
         Ниже будут представлены примеры взаимодействия с объектами.
@@ -572,7 +572,7 @@
 <span class="comment">// Изменение текущих свойств:</span>
 <span class="value">user</span>.<span class="value">occupation</span> = <span class="string">'Unemployed'</span>;
 
-<span class="comment">// Изменение текущих строковых свойств:</span>
+<span class="comment">// Изменение текущих строковых свойств и обращение к ним, происходит путем заключения их в квадратные скобки:</span>
 <span class="value">user</span>[<span class="string">'property with spaces'</span>] = 33;
 <span class="value">user</span>[<span class="string">'property.with.dots'</span>] = 33;
 
@@ -588,7 +588,9 @@
 <span class="property">const</span> <span class="value">getEmptyProperty</span> = <span class="value">emptyObj</span>.<span class="value">emptyProperty</span>;
 
 <span class="comment">// Пустой объект - нужен тогда, когда набор свойств объекта неизвестен и он наполняется во время работы программы</span>
-<span class="property">const</span> <span class="value">emptyObj</span> = {};
+<span class="comment">// Существует два вида синтаксиса объявления пустых массивов:</span>
+<span class="property">const</span> <span class="value">emptyObj</span> = <span class="property">new</span> <span class="object">Object</span>(); <span class="comment">// Конструктор оъекта</span>
+<span class="property">const</span> <span class="value">emptyObj</span> = {}; <span class="comment">// Литерал объекта</span>
 
 ------------------------------------------------------------------------------------------------------------
 <span class="comment">// Объекты можно объединять в один при помощи оператора spread, записывается в виде трех точек '...'</span>
