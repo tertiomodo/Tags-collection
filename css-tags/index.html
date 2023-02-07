@@ -2263,6 +2263,539 @@
         Наведи на меня!
       </button>
     </div>
+    <p class="title">
+      <b>64.</b> Grid сетка.
+    </p>
+    <p>
+      Grid представляет из себя сетку из горизонтальных и вертикальных линий, которые мы можем гибко настраивать.
+    </p>
+    <div class="code-realisation">
+      <p>
+        Здесь будут представлены освные свойства управления grid layout
+      </p>
+      <p>Разметка grid сетки:</p>
+      <ul class="list-none">
+        <li class="item">
+          <span class="definition-highlight">display: grid;</span> - Активация grid сетки, по аналогии с display: flex;
+        </li>
+        <li class="item">
+          <span class="definition-highlight">grid-template-columns: 20% 20% 20% 20% 20%;</span> - Разделяет нашу сетку на 5 колонок по 20% в ширину каждая.
+        </li>
+        <li class="item">
+          <span class="definition-highlight">grid-template-rows: 20% 20% 20% 20% 20%;</span> - Разделяет нашу сетку на 5 строк по 20% в высоту каждая.
+        </li>
+      </ul>
+      <div class="b64-grid-wrapper">
+        <div class="b64-grid-layout">
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+          <div class="b64-grid-block"></div>
+        </div>
+      </div>
+      <p>Использование grid сетки:</p>
+      <ul class="list-none">
+        <li class="item">
+          <span class="definition-highlight">grid-column-start: 3;</span> - Размещает наш объект в 3ей колонке первой строке (отсчет слева направо).По умолчанию, это свойство захватывает 1 столбец, но если нам нужно растянуть наш элемент в ширину на несколько столбцов, тогда нам пригодится свойство ниже.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-column-start: 1;</span>
+          <span class="definition-highlight">grid-column-end: 4;</span> - Растягивает наш объект на 3 колонки. Почему не grid-column-end: 3; ? Потому что grid layout - это именно граница а не сама ячейка, и при взаимодействии со свойствами grid, мы работаем именно с границами, получается, что у нас в данной сетке 6 границ, а промежутки - это ячейки занимающие 20% от всего блока.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-column-start: 5;</span>
+          <span class="definition-highlight">grid-column-end: 2;</span> - Конец не всегда обязан быть больше начала и наоборот.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-column-start: 1;</span>
+          <span class="definition-highlight">grid-column-end: -2;</span> - Можно задавать отрицательные значения. Если считать по границам, то все становится понятно, правый край - это 6, либо -1 в отрицательном значении, -2, соответственно идет за ним.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-column-start: 2;</span>
+          <span class="definition-highlight">grid-column-end: span 2;</span> - При помощи span можно задавать ширину элемента. Прописывая span мы объявляем "наш элемент занимает 2 колонки".
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-column: 2 / 4;</span> - Сокращенная запись свойств grid-column-start / grid-column-end. Запись представленная в примере скажет grid-элементу начаться на второй вертикальной grid-линии и закончиться на четвёртой. Для этой записи так же работает span, для того чтобы задавать ширину.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-row-start: 3;</span> - Позволяет позиционировать элемент по вертикали. Работает так же как column, изменяется лишь ось позиционирования.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-row: 3 / 6;</span> - Сокращенная запись, работает так же как и свойства для column. Запись представленная в примере скажет grid-элементу начаться на третей горизонтальной grid-линии и закончиться на шестой. Для этой записи так же работает span, для того чтобы задавать ширину.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-column: 2;</span> <span class="definition-highlight">grid-row: 5;</span> - Совокупность двух направлений, позволяет позиционировать элемент где угодно на grid сетке.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-column: 2 / 6;</span> <span class="definition-highlight">grid-row: 1 / 6;</span> - Совокупность двух направлений, позволяет охватывать более крупные зоны grid сетки.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-area: 1 / 2 / 4 / 6;</span> - Сокращенное свойство для покрытия объектом территории grid сетки. Принимает 4 значения разделенные слэшем. grid-row-start / grid-column-start / grid-row-end / grid-column-end.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item">
+          <span class="definition-highlight">grid-area: 1 / 4 / 6 / 5;</span> <span class="definition-highlight">grid-area: 2 / 3 / 5 / 6;</span> - Накладывая элементы друг на друга, можно покрывать зону, состоящую из сложной фигуры.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item"><span class="definition-highlight">.green { order: 6; }</span> <span class="definition-highlight">.red { order: 0; }</span> - Изначально все grid элементы имеют order = 0, и без свойств расположения, отрисовываются согласно порядку написания в коде, свойство odrer может изменить расположение. В данном примере блок .green был написан в коде раньше, но при помощи order: 6; мы изменили его положение. Значение order может быть и отрицательным.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active-another"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item"><span class="definition-highlight">grid-template-columns: repeat(5, 20%)</span> - Эта запись позволяет сократить описание занимаемой ширины каждым столбцом, мы просто даем команду "повтори 5 столбцов, по 20% каждый". Значения можно задавать не только в процентах, но и в px и em.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout">
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item"><span class="definition-highlight">grid-template-columns: 1fr 5fr</span> - В grid layout существует своя единица измерения, называемая fr (fraction - дробный). В данном примере, fr делит поле на 2 колонки, одна занимает 1/6, вторая 5/6.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout-fraction">
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+        <li class="item"><span class="definition-highlight">grid-template: 50% 50% / 100px</span> - Сокращенный вариант записи grid-template-rows / grid-template-columns. Запись приведенная в примере, создаст две строки шириной в 50% и один столбец шириной 100px.
+        </li>
+        <div class="b64-grid-wrapper">
+          <div class="b64-grid-layout-template">
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block b64-grid-active"></div>
+            <div class="b64-grid-block"></div>
+            <div class="b64-grid-block"></div>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+
   </div>
 </body>
 
