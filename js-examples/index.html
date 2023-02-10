@@ -865,6 +865,62 @@
 </pre>
     </div>
     <p class="text">
+      <span class="text-offset">Опциональная цепочка ?.</span>
+    </p>
+    <p class="text">
+      Опциональная цепочка - это безопасный способ доступа к вложенным объектам, даже если какое-либо из промежуточных свойств не существует. Опциональная цепочка - это не оператор в специальная синтаксическая конструкция, которая также работает с функциями и квадратными скобками.
+    </p>
+    <ol class="list">
+      <li class="item">
+        <span class="highlight">obj?.prop</span> - возвращает obj.prop если obj существует, иначе undefined.
+      </li>
+      <li class="item">
+        <span class="highlight">obj?.[prop]</span> - возвращает obj[prop] если obj существует, иначе undefined.
+      </li>
+      <li class="item">
+        <span class="highlight">obj.method?.()</span> - вызывает obj.method если obj.method существует, иначе undefined.
+      </li>
+    </ol>
+    <p class="text">
+      У нас есть объекты <span class="highlight">user</span>, в которых содержится вся информация о пользователях, внутри есть опциональный объект с данными адреса <span class="highlight">user.address.street</span>, если мы попытаемся обратиться к пользователю который не указывал улицу user.address.street, то получим ошибку, тк данного объекта внутри user нет.
+    </p>
+    <p class="text">
+      В таком случае нам необходимо проверить существует ли нужное свойство в объекте, для этого нам понадобится проверка при помощи опциональной цепочки <span class="highlight">user.address?.street</span> - которая в случае, если в объекте user не окажется adress, просто выдаст undefined, что означало бы "улицы нет" и программа не упадет с ошибкой.
+    </p>
+    <p class="text">
+      Опциональная цепочка <span class="highlight">?.</span> останавливает вычисление и возвращает undefined, если значение перед ?. равно undefined или null.
+    </p>
+    <p class="text">
+      Опциональную цепочку следует использовать исходя из ее названия, там где свойство является опциональным и не обязательным, как в нашем примере свойство address. Эта мысль исходит из того, что если мы будем использовать такую запись user?.address?.street, но при этом мы подразумеваем что пользователь должен существовать, то получим undefined вместо ошибки, если пользователя не будет, что затруднит отладку. При этом user должна быть объявлена как const или let, тк опциональная цепочка работает только с объявленными переменными.
+    </p>
+    <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Пример использования опциональной цепочки:</span>
+
+<span class="property">const</span> <span class="value">userJohn</span> = {
+  <span class="value">name:</span> <span class="string">'John'</span>,
+  <span class="value">surname:</span> <span class="string">'Smith'</span>,
+  <span class="value">address:</span> {
+    <span class="value">street:</span> <span class="string">'Fulton Street'</span>,
+    <span class="value">building:</span> 11,
+    <span class="value">apartment:</span> 22,
+  },
+};
+
+<span class="property">const</span> <span class="value">userJulia</span> = {
+  <span class="value">name:</span> <span class="string">'Julia'</span>,
+  <span class="value">surname:</span> <span class="string">'Smith'</span>,
+};
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">userJohn</span>.<span class="value">address</span>?.<span class="value">street</span>); <span class="comment">// Fulton Street, eсли указан адрес, то выдай мне улицу, если нет undefined</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">userJulia</span>.<span class="value">address</span>?.<span class="value">street</span>); <span class="comment">// undefined, тк Julia не ввела свой адрес</span>
+</code>
+</pre>
+    </div>
+    <p class="text">
       <span class="text-offset">Деструктуризация объекта</span>
     </p>
     <p class="text">
