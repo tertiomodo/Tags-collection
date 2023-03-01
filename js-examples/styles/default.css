@@ -101,8 +101,15 @@
   border-radius: 10px;
 }
 
-.console::-webkit-scrollbar {
-  display: none;
+.console-chapter {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--console-chapter);
+}
+
+.console-line {
+  font-weight: 900;
+  color: var(--title-number);
 }
 
 .code {

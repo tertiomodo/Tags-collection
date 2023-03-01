@@ -54,6 +54,11 @@
 <span class="value">Math</span>.<span class="selector">floor</span>(3.9); <span class="comment">// 3, округление вниз</span>
 <span class="value">Math</span>.<span class="selector">ceil</span>(3.2); <span class="comment">// 4, округление вверх</span>
 
+<span class="comment">// Метод округляющий число до n знаков после запятой. Данный метод возвращает строку, поэтому нужно использовать унарный +</span>
+<span class="comment">// Данный метод рекомендуется использовать при сложении чисел с плавающей точкой, во избежание неточных вычислений</span>
+<span class="property">const</span> <span class="value">number</span> = 1.23456789;
++<span class="value">number</span>.<span class="selector">toFixed</span>(n);
+
 <span class="comment">// Наибольшее и наименьшее число</span>
 <span class="value">Math</span>.<span class="selector">max</span>(10, 1, -40, 12, 5); <span class="comment">// 12, наибольшее из переданных чисел</span>
 <span class="value">Math</span>.<span class="selector">min</span>(10, 1, -40, 12, 5); <span class="comment">// -40, наименьшее из переданных чисел</span>
@@ -263,6 +268,7 @@
 <code class="code">
 <span class="console-title title-js">JS</span>
 
+<a class="link" href="https://learn.javascript.ru/array-methods" target="_blank">Подробнее о методе массивов</a>
 <span class="comment">// Литеральная запись массива - явная запись в массив того, что мы хотим в нем видеть при его объявлении.</span>
 <span class="property">const</span> <span class="value">fruits</span> = [<span class="string">'Яблоко'</span>, <span class="string">'Апельсин'</span>, <span class="string">'Груша'</span>, <span class="string">'Банан'</span>, <span class="string">'Манго'</span>];
 
@@ -326,6 +332,295 @@
 
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">matrix</span>[1][1]);
 <span class="comment">// 5, центральный элемент</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// Метод массива splice</span>
+<span class="comment">// Изменяет arr начиная с индекса start, удаляет deleteCount элементов и вставляет elem1, ..., elemN на их место</span>
+
+<span class="value">arr</span>.<span class="selector">splice</span>(start, deleteCount, elem1, ..., elemN);
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Примеры использования:</span>
+<span class="property">const</span> <span class="value">arr</span> = [<span class="string">'Я'</span>, <span class="string">'Изучаю'</span>, <span class="string">'JavaScript'</span>, <span class="string">'прямо'</span>, <span class="string">'сейчас'</span>];
+
+<span class="comment">// Здесь мы указываем что хотим начиная с 0 индекса, удалить 3 элемента и заменить их на две строки</span>
+<span class="value">arr</span>.<span class="selector">splice</span>(0, 3, <span class="string">'Давай'</span>, <span class="string">'танцевать'</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>); <span class="comment">// Давай танцевать прямо сейчас</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Метод splice может вставлять элементы без удаления, для этого достаточно установить deleteCount в 0:</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [<span class="string">'Я'</span>, <span class="string">'Изучаю'</span>, <span class="string">'JavaScript'</span>];
+
+<span class="comment">// С индекса 2, удалить 0 элементов и вставить две строки</span>
+<span class="value">arr</span>.<span class="selector">splice</span>(2, 0, <span class="string">'сложный'</span>, <span class="string">'язык'</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>); <span class="comment">// Я изучаю сложный язык JavaScript</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Можно использовать отрицательные индексы</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [1, 2, 5];
+
+<span class="comment">// С индекса -1 (перед последним элементом), удалить 0 элементов и вставить две цифры</span>
+<span class="value">arr</span>.<span class="selector">splice</span>(-1, 0, 3, 4);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>); <span class="comment">// 1, 2, 3, 4, 5</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// Метод arr.slice [start, end] - возвращает новый массив в который копирует все элементы с индекса start до end не включая end</span>
+<span class="comment">// start и end могут быть отрицательные, в этом случае отсчет будет вестись с конца массива</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [<span class="string">'t'</span>, <span class="string">'e'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>.<span class="selector">slice</span>(1, 3)); <span class="comment">// e, s (копирует элементы с 1 до 3)</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>.<span class="selector">slice</span>(-2)); <span class="comment">// s, t (копирует элементы с -2 до конца)</span>
+
+<span class="comment">// Можно вызывать arr.slice() без аргументов, что позволит создать копию массива arr для дальнейших преобразований не влияя на оригинальный массив.</span>
+<span class="property">const</span> <span class="value">arrCopy</span> = <span class="value">arr</span>.<span class="selector">slice</span>();
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// Метод arr.concat(args1, ..., argsN); - Создает новый массив, в котоырй копирует данные из других массивов и дополнительные значения.</span>
+<span class="comment">// Он принимает любое количество аргументов, которые могут быть массивами или простыми значениями</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [1, 2];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>.<span class="selector">concat</span>(3, 4)); <span class="comment">// Создается новый массив: 1, 2, 3, 4</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>.<span class="selector">concat</span>([3, 4], [5], 6)); <span class="comment">// Создается новый массив: 1, 2, 3, 4, 5, 6</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// Поиск в массиве при помощи: </span>
+<span class="comment">// indexOf(item, from) - Возвращает индекс найденного элемента, если его нет вернет -1, item - искомый элемент массива, from - индекс начала поиска</span>
+<span class="comment">// includes(item, from) - Возвращает true или false в зависимости есть ли элемент в массиве, item - искомый элемент массива, from - индекс начала поиска</span>
+<span class="comment">// По умолчанию поиск ведется с начала, поэтому можно указывать только необходимый аргумент</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [1, 0, false];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>.<span class="selector">indexOf</span>(1)); <span class="comment">// 0 - вернул индекс цифры 1 в массиве</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>.<span class="selector">indexOf</span>(0)); <span class="comment">// 1 - вернул индекс цифры 0 в массиве</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>.<span class="selector">indexOf</span>(null)); <span class="comment">// -1 - элемента 'null' нет в массиве</span>
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>.<span class="selector">includes</span>(false)); <span class="comment">// true - элемент 'false' присутствует в массиве</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// find и findIndex/findLastIndex - Поиск в массиве с объектами по поределенным условиям</span>
+<span class="comment">// Синтаксис:</span>
+
+<span class="property">const</span> <span class="value">result</span> = <span class="value">arr</span>.<span class="selector">find</span>(<span class="cycle-function">function</span>(item, index, array) {
+  <span class="comment">// Если true, возвращается текущий item и перебор прекращается</span>
+  <span class="comment">// Если все итерации оказались ложными возвращается undefined</span>
+  <span class="comment">// item - очередной элемент</span>
+  <span class="comment">// index - его индекс</span>
+  <span class="comment">// array - сам массив</span>
+});
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Например, у нас есть массив пользователей, каждый из которых имеет поля id и name. Найдем пользователя с id === 1:</span>
+
+<span class="property">const</span> <span class="value">users</span> = [
+  {<span class="value">id:</span> 1, <span class="value">name:</span> <span class="string">'Вася'</span>},
+  {<span class="value">id:</span> 2, <span class="value">name:</span> <span class="string">'Петя'</span>},
+  {<span class="value">id:</span> 3, <span class="value">name:</span> <span class="string">'Маша'</span>},
+];
+
+<span class="comment">// На практике аргументы кроме item используются редко</span>
+<span class="property">const</span> <span class="value">user</span> = <span class="value">users</span>.<span class="selector">find</span>(<span class="value">item</span> <span class="cycle-function">=&gt;</span> <span class="value">item</span>.<span class="value">id</span> === 1);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">user</span>.<span class="value">name</span>); <span class="comment">// Вася</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// arr.findIndex - возвращает индекс на котором был найден элемент, если элемента нет, возвращается -1</span>
+<span class="comment">// arr.findLstIndex - похож на findIndex но ищет справа наево, подходит для поиска последних пользователей</span>
+
+<span class="property">const</span> <span class="value">users</span> = [
+  {<span class="value">id:</span> 1, <span class="value">name:</span> <span class="string">'Вася'</span>},
+  {<span class="value">id:</span> 2, <span class="value">name:</span> <span class="string">'Петя'</span>},
+  {<span class="value">id:</span> 3, <span class="value">name:</span> <span class="string">'Маша'</span>},
+  {<span class="value">id:</span> 4, <span class="value">name:</span> <span class="string">'Вася'</span>},
+];
+
+<span class="comment">// Найти индекс первого Васи:</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">users</span>.<span class="selector">findIndex</span>(<span class="value">item</span> <span class="cycle-function">=&gt;</span> <span class="value">item</span>.<span class="value">name</span> === <span class="string">'Вася'</span>)); <span class="comment">// 0</span>
+
+<span class="comment">// Найти индекс последнего Васи:</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">users</span>.<span class="selector">findLastIndex</span>(<span class="value">item</span> <span class="cycle-function">=&gt;</span> <span class="value">item</span>.<span class="value">name</span> === <span class="string">'Вася'</span>)); <span class="comment">// 3</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// arr.filter(function) - похож на arr.find, но он возвращает не 1 элемент, а массив из всех подходящих элементов.</span>
+<span class="comment">// Синтаксис:</span>
+
+<span class="property">const</span> <span class="value">results</span> = <span class="value">arr</span>.<span class="selector">filter</span>(<span class="cycle-function">function</span>(item, index, array) {
+  <span class="comment">// Если true - элемент добавляется к results и перебор продолжается</span>
+  <span class="comment">// Если ничего не найдено, возвращается пустой массив</span>
+  <span class="comment">// item - очередной элемент</span>
+  <span class="comment">// index - его индекс</span>
+  <span class="comment">// array - сам массив</span>
+});
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Пример использования:</span>
+
+<span class="property">const</span> <span class="value">users</span> = [
+  {<span class="value">id:</span> 1, <span class="value">name:</span> <span class="string">'Вася'</span>},
+  {<span class="value">id:</span> 2, <span class="value">name:</span> <span class="string">'Петя'</span>},
+  {<span class="value">id:</span> 3, <span class="value">name:</span> <span class="string">'Маша'</span>},
+];
+
+<span class="comment">// Возвращает массив состоящий из 2х первых пользователей</span>
+<span class="property">const</span> <span class="value">someUsers</span> = <span class="value">users</span>.<span class="selector">filter</span>(<span class="value">item</span> <span class="cycle-function">=&gt;</span> <span class="value">item</span>.<span class="value">id</span> &lt; 3);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">someUsers</span>); <span class="comment">// [ { id: 1, name: 'Вася' }, { id: 2, name: 'Петя' } ]</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// arr.map(function) - Вызывает функцию для каждого элемента массива и возвращает массив результатов выполнения этой функции</span>
+<span class="comment">// Синтаксис:</span>
+
+<span class="property">const</span> <span class="value">result</span> = <span class="value">arr</span>.<span class="selector">map</span>(<span class="cycle-function">function</span>(item, index, array) {
+  <span class="comment">// Возвращается новое значение вместо элемента</span>
+  <span class="comment">// item - очередной элемент</span>
+  <span class="comment">// index - его индекс</span>
+  <span class="comment">// array - сам массив</span>
+});
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Например здесь мы преобразуем каждый элемент в его длину:</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [<span class="string">'Hello'</span>, <span class="string">'my'</span>, <span class="string">'dear'</span>, <span class="string">'friend'</span>];
+
+<span class="property">const</span> <span class="value">lengths</span> = <span class="value">arr</span>.<span class="selector">map</span>(<span class="value">item</span> <span class="cycle-function">=&gt;</span> <span class="value">item</span>.<span class="property">length</span>));
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">lengths</span>); <span class="comment">// [ 5, 2, 4, 7 ]</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// arr.sort(fn) - Сортирует массив на месте, меняя в нем порядок элементов.</span>
+<span class="comment">// По умолчанию элементы в массиве сортируются как строки, для того чтобы изменить способ сортировки, нужно передать в sort функцию (fn)</span>
+<span class="comment">// Для функции сравнения чисел требуется вернуть любое положительное число чтобы сказать "больше" или любое отрицательное чтобы сказать "меньше"</span>
+<span class="comment">// Поэтому мы можем использовать такой универсальный код для сравнения чисел:</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [1, 15, 2, 4];
+
+<span class="value">arr</span>.<span class="selector">sort</span>((<span class="value">a</span>, <span class="value">b</span>) <span class="cycle-function">=&gt;</span> <span class="value">a</span> - <span class="value">b</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>); <span class="comment">// [ 1, 2, 4, 15 ]</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Для правильной сортировки стран в названиях которых есть подобные буквы Ö, нужно использовать метод localCompare:</span>
+
+<span class="property">const</span> <span class="value">countries</span> = [<span class="string">'Österreich'</span>, <span class="string">'Andorra'</span>, <span class="string">'Vietnam'</span>];
+
+<span class="value">countries</span>.<span class="selector">sort</span>((<span class="value">a</span>, <span class="value">b</span>) <span class="cycle-function">=&gt;</span> <span class="value">a</span>.<span class="selector">localeCompare</span>(<span class="value">b</span>));
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">countries</span>); <span class="comment">// [ 'Andorra', 'Österreich', 'Vietnam' ]</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// arr.reverse() - Меняет порядок элементов в arr на обратный:</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [1, 2, 3, 4, 5];
+
+<span class="value">arr</span>.<span class="selector">reverse</span>();
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>); <span class="comment">// [ 5, 4, 3, 2, 1 ]</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// str.split(delim) - Разбивает строку на массив по указанному разделителю delim</span>
+
+<span class="property">const</span> <span class="value">names</span> = <span class="string">'Вася, Петя, Маша'</span>;
+
+<span class="property">const</span> <span class="value">arr</span> = <span class="value">names</span>.<span class="selector">split</span>(<span class="string">', '</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>); <span class="comment">// [ 'Вася', 'Петя', 'Маша' ]</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// str.split('') - Если в качестве аргумента использовать пустую строку, тогда метод разобьет строку на символы</span>
+
+<span class="property">const</span> <span class="value">str</span> = <span class="string">'test'</span>;
+
+<span class="property">const</span> <span class="value">arr</span> = <span class="value">str</span>.<span class="selector">split</span>(<span class="string">''</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">arr</span>); <span class="comment">// [ 't', 'e', 's', 't' ]</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// arr.join(glue) - Создает строку из элементов arr вставляя между элементами glue</span>
+<span class="comment">// *Конструкцию из данных методов arr.split('').reverse().join('') можно использовать для переворачивания строки</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [<span class="string">'Вася'</span>, <span class="string">'Петя'</span>, <span class="string">'Маша'</span>];
+
+<span class="property">const</span> <span class="value">stringWithGlue</span> = <span class="value">arr</span>.<span class="selector">join</span>(<span class="string">'; '</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">stringWithGlue</span>); <span class="comment">// 'Вася; Петя; Маша'</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// glue не обязательно использовать, можно оставить пустую строку, в таком случае join просто склеит элементы массива между собой</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [<span class="string">'t'</span>, <span class="string">'e'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>];
+
+<span class="property">const</span> <span class="value">stringWithoutGlue</span> = <span class="value">arr</span>.<span class="selector">join</span>(<span class="string">''</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">stringWithoutGlue</span>); <span class="comment">// 'test'</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="console-chapter">arr.reduce() / arr.reduceRight()</span>
+<span class="comment">// <span class="console-chapter">arr.reduce()</span> - При вызове функции, результат ее предыдущего вызова передается на следующий вызов в качестве первого аргумента (accumulator)</span>
+<span class="comment">// Синтаксис:</span>
+
+<span class="property">const</span> <span class="value">value</span> = <span class="value">arr</span>.<span class="selector">reduce</span>(<span class="cycle-function">function</span>(accumulator, item, index, array) {
+  <span class="comment">// accumulator - результат предыдущего вызова этой функции, равен initial при первом вызове </span>
+  <span class="comment">// item - очередной элемент</span>
+  <span class="comment">// index - его индекс</span>
+  <span class="comment">// array - сам массив</span>
+}, [<span class="value">initial</span>]);
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// В функцию reduce передано 2 аргумента, этого обычно достаточно</span>
+<span class="comment">// Пример с получением всех элементов массива, разберем подробнее что тут происходит:</span>
+<span class="comment">// 1. При первом запуске sum равен initial (0), current - первый элемент массива (1). Результат функции равен 1</span>
+<span class="comment">// 2. При втором запуске sum = 1, к нему мы добавляем второй элемент массива (2) и возвращаем сумму (3).</span>
+<span class="comment">// 3. При третьем запуске sum = 3, к которому мы добавляем следующий элемент и так до конца массива.</span>
+
+<span class="property">const</span> <span class="value">arr</span> = [1, 2, 3, 4, 5];
+
+<span class="property">const</span> <span class="value">value</span> = <span class="value">arr</span>.<span class="selector">reduce</span>((<span class="value">sum</span>, <span class="value">current</span>) <span class="cycle-function">=&gt;</span> <span class="value">sum</span> + <span class="value">current</span>, 0);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">value</span>); <span class="comment">// 15</span>
+
+<span class="comment">// <span class="console-chapter">arr.reduceRight()</span> - Работает аналогично но проходит по массиву справа налево</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// <span class="console-chapter">thisArg</span> - Это this для передаваемой function</span>
+<span class="comment">// Почти все методы массива, которые вызывают функции find, filter, map, за исключением метода sort, принимают необязательный параметр thisArg</span>
+<span class="comment">// Полный синтаксис этих методов:</span>
+
+<span class="value">arr</span>.<span class="selector">find</span>(<span class="value">func</span>, <span class="value">thisArg</span>);
+<span class="value">arr</span>.<span class="selector">filter</span>(<span class="value">func</span>, <span class="value">thisArg</span>);
+<span class="value">arr</span>.<span class="selector">map</span>(<span class="value">func</span>, <span class="value">thisArg</span>);
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Например, тут мы используем метод объекта army как фильтр, и thisArg передаёт ему контекст:</span>
+
+<span class="property">const</span> <span class="value">army</span> = {
+  <span class="value">minAge</span>: 18,
+  <span class="value">maxAge</span>: 27,
+  <span class="selector">canJoin</span>(<span class="value">user</span>) {
+    <span class="cycle-function">return</span> <span class="value">user</span>.<span class="value">age</span> &gt;= <span class="property">this</span>.<span class="value">minAge</span> && <span class="value">user</span>.<span class="value">age</span> &lt; <span class="property">this</span>.<span class="value">maxAge</span>;
+  }
+};
+
+<span class="property">const</span> <span class="value">users</span> = [
+  {<span class="value">age:</span> 16},
+  {<span class="value">age:</span> 20},
+  {<span class="value">age:</span> 23},
+  {<span class="value">age:</span> 27},
+];
+
+<span class="property">const</span> <span class="value">soldiers</span> = <span class="value">users</span>.<span class="selector">filter</span>(<span class="value">army</span>.<span class="selector">canJoin</span>, <span class="value">army</span>);
+<span class="comment">//Можно добиться такого же эффекта если использовать стрелочную функцию, которая является более читаемой</span>
+<span class="property">const</span> <span class="value">soldiers</span> = <span class="value">users</span>.<span class="selector">filter</span>(<span class="value">user</span> <span class="cycle-function">=&gt;</span> <span class="value">army</span>.<span class="selector">canJoin</span>(<span class="value">user</span>));
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">soldiers</span>.<span class="value">length</span>); <span class="comment">// 2</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">soldiers</span>); <span class="comment">// { age: 20 } { age: 23 }</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">soldiers</span>[0].<span class="value">age</span>); <span class="comment">// 20</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">soldiers</span>[1].<span class="value">age</span>); <span class="comment">// 23</span>
 </code>
 </pre>
       </div>
@@ -460,6 +755,7 @@
    'Манго'</span>
 
 ------------------------------------------------------------------------------------------------------------
+<span class="comment">// Не рекомендуется к использованию для массивов, тк работает медленнее чем цикл for of!!!</span>
 <span class="comment">// Цикл for in похож на принцип работы цикла for of, отличие лишь в том что переменная, которую мы указываем в цикле слева (i), принимает не значение элемента массива, а значение его индекса, те порядкового номера.</span>
 <span class="comment">// В данном примере у нас есть массив в котором есть список студентов и нам нужно вывести их рейтинг:</span>
 <span class="property">const</span> <span class="value">rating</span> = [<span class="string">'Катя'</span>, <span class="string">'Вася'</span>, <span class="string">'Маша'</span>, <span class="string">'Петя'</span>, <span class="string">'Лена'</span>];
@@ -739,7 +1035,7 @@
   <span class="value">age:</span> 30
 };
 
-<span class="property">const</span> <span class="value">clone</span> = <span class="value">user</span> <span class="comment">// Скопировали ссылку на объект хранившуюся в пеерменной user</span>
+<span class="property">const</span> <span class="value">clone</span> = <span class="value">user</span> <span class="comment">// Скопировали ссылку на объект хранившуюся в переменной user</span>
 
 <span class="value">clone</span>.<span class="value">name</span> = <span class="string">'Pete'</span>
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">user</span>.<span class="value">name</span>); <span class="comment">// Pete, изменения по скопированной ссылке затронули сам объект</span>
@@ -865,6 +1161,62 @@
 </pre>
     </div>
     <p class="text">
+      <span class="text-offset">Классы</span>
+    </p>
+    <p class="text">
+      Класс - это конструкция позволяющая создавать много объектов одного вида, она похожа на <span class="highlight">new Function</span> (выше), но в современном JavaScript есть более продвинутая конструкция, которая называется классы, и которая предоставляет новые возможности для объектно ориентированного программирования (ООП). К тому же, классы работают не совсем так же как new Function, потому что класс создает не объект, а функцию, ее код берется из constructor() {}, если же его нет, то функция будет пустой.
+    </p>
+    <p class="text">
+      Класс является разновидностью функции
+    </p>
+    <p class="text">
+      Особенности которые присущи классам:
+    </p>
+    <ul class="list">
+      <li class="item">Наличие функции constructor() - которая является обязательной и позволяет инициализировать объект</li>
+      <li class="item">Отсутствие запятых между методами</li>
+    </ul>
+    <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Синтаксис class:</span>
+
+<span class="property">class</span> <span class="object">MyClass</span> {
+  <span class="comment">// Методы класса</span>
+  <span class="property">constructor</span>() { ... }
+  <span class="selector">method1</span>() { ... }
+  <span class="selector">method2</span>() { ... }
+  <span class="selector">method3</span>() { ... }
+};
+
+<span class="comment">// Данный вызов создаст новый объект со всеми перечисленными методами</span>
+<span class="property">const</span> <span class="value">createObject</span> = <span class="property">new</span> <span class="object">MyClass</span>();
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Подробнее о constructor() {...}</span>
+<span class="comment">// Когда вызывается new User('John')</span>
+<span class="comment">// 1. Создается новый объект</span>
+<span class="comment">// 2. constructor запускается с заданным аргументом и сохраняет его в this.name</span>
+<span class="comment">// 3. На данном этапе мы можем взаимодействовать с объектом, например вызывать метод user.sayHi()</span>
+
+<span class="property">class</span> <span class="object">User</span> {
+  <span class="property">constructor</span>(<span class="value">name</span>) {
+    <span class="property">this</span>.<span class="value">name</span> = <span class="value">name</span>;
+  }
+
+  <span class="selector">sayHi</span>() {
+    <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="string">Hello! My name is </span><span class="property">${</span><span class="property">this</span>.<span class="value">name</span><span class="property">}</span><span class="string">!`</span>);
+  }
+};
+
+<span class="property">const</span> <span class="value">user</span> = <span class="property">new</span> <span class="object">User</span>(<span class="string">'John'</span>);
+<span class="value">user</span>.<span class="selector">sayHi</span>(); <span class="comment">// Hello! My name is John!</span>
+</code>
+</pre>
+    </div>
+    <p class="text">
       <span class="text-offset">Опциональная цепочка ?.</span>
     </p>
     <p class="text">
@@ -917,6 +1269,126 @@
 
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">userJohn</span>.<span class="value">address</span>?.<span class="value">street</span>); <span class="comment">// Fulton Street, eсли указан адрес, то выдай мне улицу, если нет undefined</span>
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">userJulia</span>.<span class="value">address</span>?.<span class="value">street</span>); <span class="comment">// undefined, тк Julia не ввела свой адрес</span>
+</code>
+</pre>
+    </div>
+    <p class="text">
+      <span class="text-offset">Map</span>
+    </p>
+    <p class="text">
+      Map - это коллекция ключ/значение, как и Object. Но основное отличие в том, что Map позволяет использовать ключи любого типа не приводя его к строке, в качестве ключа допускается использование других объектов. 
+    </p>
+    <p class="text">
+      Использование объекта в качестве ключа - является одной из главных особенностей Map.
+    </p>
+    <p class="text">
+      Взаимодействовать с Map необходимо через его свойства и методы, отклонение от этого правила, превратит Map в обычный объект с его ограничениями в виде превращения ключей в строки.
+    </p>
+    <p class="text">Методы и свойства Map:</p>
+    <ol class="list">
+      <li class="item">
+        <span class="highlight">new.Map()</span> - создаёт коллекцию
+      </li>
+      <li class="item">
+        <span class="highlight">map.set(key, value)</span> - записывает по ключу key значение value.
+      </li>
+      <li class="item">
+        <span class="highlight">map.get(key)</span> - возвращает значение по ключу или undefined, если ключ key отсутствует.
+      </li>
+      <li class="item">
+        <span class="highlight">map.has(key)</span> - возвращает true, если ключ key присутствует в коллекции, иначе false.
+      </li>
+      <li class="item">
+        <span class="highlight">map.delete(key)</span> - удаляет элемент (пару "ключ/значение") по ключу key.
+      </li>
+      <li class="item">
+        <span class="highlight">map.clear()</span> - очищает коллекцию от всех элементов.
+      </li>
+      <li class="item">
+        <span class="highlight">map.size</span> - возвращает текущее количество элементов.
+      </li>
+    </ol>
+    <p class="text">Перебор Map:</p>
+    <ol class="list">
+      <li class="item">
+        <span class="highlight">map.keys()</span> - возвращает итерируемый объект по ключам.
+      </li>
+      <li class="item">
+        <span class="highlight">map.values()</span> - возвращает итерируемый объект по значениям.
+      </li>
+      <li class="item">
+        <span class="highlight">map.entries()</span> - возвращает итерируемый объект по парам вида [ключ, значение], этот вариант используется по умолчанию в for of.
+      </li>
+    </ol>
+    <div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Пример работы Map:</span>
+
+<span class="property">const</span> <span class="value">map</span> = <span class="property">new</span> <span class="object">Map</span>();
+
+<span class="value">map</span>.<span class="selector">set</span>(<span class="string">'1'</span>, <span class="string">'str 1'</span>); <span class="comment">// Строка в качестве ключа</span>
+<span class="value">map</span>.<span class="selector">set</span>(1, <span class="string">'num 1'</span>); <span class="comment">// Цифра в качестве ключа</span>
+<span class="value">map</span>.<span class="selector">set</span>(<span class="property">true</span>, <span class="string">'bool 1'</span>); <span class="comment">// Булево значение в качестве ключа</span>
+
+<span class="comment">// Map сохраняет тип ключей, поэтому в нем это два разных значения:</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">map</span>.<span class="selector">get</span>(<span class="string">'1'</span>)); <span class="comment">// 'str 1'</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">map</span>.<span class="selector">get</span>(1)); <span class="comment">// 'num 1'</span>
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">map</span>.<span class="selector">size</span>(1)); <span class="comment">// 3</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="console-chapter">Использование объектов в качестве ключей</span>
+<span class="comment">// В этом примере мы будем сохранять количество посещений для каждого пользователя</span>
+
+<span class="property">const</span> <span class="value">john</span> = { <span class="value">name:</span> <span class="string">'John'</span> };
+<span class="property">const</span> <span class="value">visitCountMap</span> = <span class="property">new</span> <span class="object">Map</span>();
+
+<span class="value">visitCountMap</span>.<span class="selector">set</span>(<span class="value">john</span>, 123); <span class="comment">// Использовали объект в качестве ключа</span>
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">visitCountMap</span>.<span class="selector">get</span>(<span class="value">john</span>)); <span class="comment">// 123</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">visitCountMap</span>); <span class="comment">// Map(1) { { name: 'John' } =&gt; 123 }</span>
+
+<span class="comment">// Если бы мы вместо Map использовали объект {} то при записи ключа, он записался бы как "[object Object]"</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="console-chapter">Цепочка вызовов</span>
+<span class="comment">// Каждый вызов map.set возвращает объект map, поэтому можем объединить вызовы в цепочку:</span>
+
+<span class="value">map</span>.<span class="selector">set</span>(<span class="string">'1'</span>, <span class="string">'str 1'</span>)
+   .<span class="selector">set</span>(1, <span class="string">'num 1'</span>)
+   .<span class="selector">set</span>(<span class="property">true</span>, <span class="string">'bool 1'</span>);
+
+------------------------------------------------------------------------------------------------------------
+<span class="console-chapter">Перебор Map</span>
+<span class="comment">// Для перебора коллекций Map используется 3 метода:</span>
+<span class="comment">// map.keys() - возвращает итерируемый объект по ключам.</span>
+<span class="comment">// map.values() - возвращает итерируемый объект по значениям.</span>
+<span class="comment">// map.entries() - возвращает итерируемый объект по парам вида [ключ, значение], этот вариант используется по умолчанию в for of.</span>
+<span class="comment">// Перебор в Map, в отличие от Object, происходит в том же порядке в каком происходило добавление элементов</span>
+
+<span class="property">const</span> <span class="value">recipeMap</span> = <span class="property">new</span> <span class="object">Map</span>([
+  [<span class="string">'Помидор'</span>, 500],
+  [<span class="string">'Огурец'</span>, 250],
+  [<span class="string">'Лук'</span>, 125],
+]);
+
+<span class="comment">// Перебор по ключам:</span>
+<span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">key</span> <span class="property">of</span> <span class="value">recipeMap</span>.<span class="selector">keys</span>()) {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">key</span>); <span class="comment">// Помидор, Огурец, Лук</span>
+}
+
+<span class="comment">// Перебор по значениям:</span>
+<span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">value</span> <span class="property">of</span> <span class="value">recipeMap</span>.<span class="selector">values</span>()) {
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">value</span>); <span class="comment">// 500, 250, 125</span>
+}
+
+<span class="comment">// Перебор вида [ключ, значение]:</span>
+<span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">entry</span> <span class="property">of</span> <span class="value">recipeMap</span>) { <span class="comment">// Тоже самое что и recipeMap.entries()</span>
+  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">value</span>); <span class="comment">// Помидор, 500 и тд.</span>
+}
 </code>
 </pre>
     </div>

@@ -6,15 +6,16 @@
   --highlight: rgba(243, 255, 73, 0.288);
   --console: #1e1e1e;
   --title-html: #f1522b;
-  --title-css: #71b3ff;
+  --title-css: rgb(113, 179, 255);
   --title-js: #d8db2d;
   --property: #838bff;
-  --selector: #f5ff82;
-  --value: #63f0ff;
+  --selector: #e3ed74;
+  --value: #66e0ed;
   --cycle-function: #ff50dd;
   --string: #ef925b;
   --tag-property: #c4c4ff;
   --console-string: #c09b89;
-  --comment: #2fa85b;
-  --object: #63d7ab;
+  --comment: #808080;
+  --object: #63d792;
+  --console-chapter: #dbdbdb;
 }
