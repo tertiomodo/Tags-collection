@@ -1,0 +1,13 @@
+.b1__text-two:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.b1__block-three {
+  max-width: 200px;
+  min-height: 200px;
+  background-color: #ed143d73;
+}
+
+.b1__translate-three {
+  transform: translateY(-46px);
+}

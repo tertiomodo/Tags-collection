@@ -1,0 +1,11 @@
+.b3__tabs-nav-btn--active {
+  color: tan;
+}
+
+.b3__tabs-item {
+  display: none;
+}
+
+.b3__tabs-item--active {
+  display: block;
+}

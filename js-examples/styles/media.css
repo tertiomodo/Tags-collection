@@ -1,0 +1,40 @@
+@media (max-width: 1024px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .b4__img {
+    min-height: 200px;
+  }
+
+  :root {
+    --swiper-navigation-size: 30px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    padding: 10px;
+  }
+
+  .body {
+    font-size: 18px;
+  }
+
+  .highlight {
+    font-size: 18px;
+  }
+
+  .text-bg {
+    font-size: 18px;
+  }
+
+  .code-example {
+    padding: 10px;
+  }
+}

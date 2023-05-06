@@ -1,0 +1,8 @@
+.b9__scroll-wrapper {
+  max-width: 400px;
+  min-height: 400px;
+}
+
+.simplebar-scrollbar::before {
+  background-image: linear-gradient(180deg, red, orange, yellow, lime, green, aqua, blue); 
+}
