@@ -126,7 +126,7 @@
 <span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
 <span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
 
-------------------------------------------------------------------------------------------------------------
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
 <span class="comment">// Function expression - Функциональное выражение. Позволяет создавать функцию сразу присваивая результат ее работы переменной.</span>
 <span class="property">const</span> <span class="value">sayHello</span> = <span class="cycle-function">function</span>(<span class="value">arguments</span>) {
   <span class="value">console</span>.<span class="selector">log</span>(<span class="string">"Hello"</span>);
@@ -135,7 +135,7 @@
 <span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
 <span class="selector">sayHello</span>(); <span class="comment">// Hello</span>
 
-------------------------------------------------------------------------------------------------------------
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
 <span class="comment">// Arrow function - Стрелочная функция. Основным приемуществом является укороченный синтаксис записи.</span>
 <span class="property">const</span> <span class="value">sayHello</span> = (<span class="value">arguments</span>) <span class="cycle-function">=&gt;</span> {
   <span class="value">console</span>.<span class="selector">log</span>(<span class="string">"Hello"</span>);
@@ -152,8 +152,8 @@
 
 <span class="comment">// Эта стрелочная функция представляет собой более короткую форму:</span>
 <span class="comment">   const sum = function(a, b) {
-    return a + b;
-   };</span>
+		return a + b;
+	 };</span>
 
 ------------------------------------------------------------------------------------------------------------
 <span class="comment">// Если у нас один аргумент, то круглые скобки можно не писать</span>
@@ -161,7 +161,7 @@
 
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">double</span>(3)); <span class="comment">// 6</span>
 
-------------------------------------------------------------------------------------------------------------
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
 <span class="comment">// В каких ситуациях использовать Function Declaration/Expression?</span>
 <span class="comment">// 1. Когда нам нужен метод объекта this (у стрелочных функций нет доступа к this).</span>
 <span class="property">const</span> <span class="value">obj</span> {
@@ -181,7 +181,7 @@
   <span class="value">console</span>.<span class="selector">log</span>(<span class="string">"Hello"</span>);
 }
 
-------------------------------------------------------------------------------------------------------------
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
 <span class="comment">// В каких ситуациях использовать Arrow Function?</span>
 <span class="comment">// 1. В обработчиках событий если нам не нужен доступ к this.</span>
 <span class="value">button</span>.<span class="selector">addEventListener</span>(<span class="string">"click"</span>, () <span class="cycle-function">=&gt;</span> {
@@ -193,6 +193,87 @@
 
 <span class="comment">// 3. IIFE - Немедленный вызов функции после ее объявления.</span>
 (() <span class="cycle-function">=&gt;</span> {})() <span class="comment">// vs (function() {})()</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="console-chapter">Рекурсия</span>
+<span class="comment">// Рекурсией называется вызов функцией самой себя</span>
+<span class="comment">// Рекурсию используют когда вычисление функции можно свести к её более простому вызову, пока значение не станет очевидно.</span>
+<span class="comment">// Реализуем рекурсию на примере функции возведения в степень pow(x, n), где x - число, n - степень</span>
+
+<span class="cycle-function">function</span> <span class="selector">pow</span>(<span class="value">x</span>, <span class="value">n</span>) {
+  <span class="cycle-function">if</span> (<span class="value">n</span> === 1) {
+    <span class="cycle-function">return</span> <span class="value">x</span>;
+  } <span class="cycle-function">else</span> {
+    <span class="cycle-function">return</span> <span class="value">x</span> * <span class="selector">pow</span>(<span class="value">x</span>, <span class="value">n</span> - 1);
+  }
+}
+<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">pow</span>(2, 4)); <span class="comment">// 16</span>
+
+<span class="comment">// Когда вызывается рекурсивная функция, исполнение делится на две ветви:</span>
+<span class="comment">// 1. if (n === 1) return x - База рекурсии, тк эта ветвь сразу приводит к очевидному результату pow(x, 1) = x</span>
+<span class="comment">// 2. x * (x, n - 1) - Шаг рекурсии, мы сводим задачу к более простому действию. Последующие шаги упрощают задачу пока n не достигнет 1. Другими словами, функция pow рекурсивно вызывает саму себя до n === 1.</span>
+
+<span class="comment">// Полный цикл функции pow(2, 4) выглядит следующим образом:</span>
+<span class="comment">// 1. pow(2, 4) = 2 * pow(2, 3)</span>
+<span class="comment">// 2. pow(2, 3) = 2 * pow(2, 2)</span>
+<span class="comment">// 3. pow(2, 2) = 2 * pow(2, 1)</span>
+<span class="comment">// 3. pow(2, 1) = 2</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Функцию выше можно написать короче, используя оператор ?</span>
+<span class="cycle-function">function</span> <span class="selector">pow</span>(<span class="value">x</span>, <span class="value">n</span>) {
+  <span class="cycle-function">return</span> (<span class="value">n</span> === 1) ? <span class="value">x</span> : <span class="value">x</span> * <span class="selector">pow</span>(<span class="value">x</span>, <span class="value">n</span> - 1);
+}
+
+<span class="comment">// Общее количество вызовов называют глубиной рекурсии, в нашем случае она равна n</span>
+<span class="comment">// Любая рекурсия может быть переделана в цикл, и как правило цикл будет работать эффективнее, но может быть сложнее для понимания и анализа, нежели рекурсивная функция.</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// Рассмотрим следующий пример, в нем представлен объект company в котором есть массивы представляющие отделы компании, с сотрудниками в виде объектов в них.</span>
+<span class="comment">// Также в компании есть подотделы, которые представлены в виде вложенных объектов, в которых так же есть массивы с объектами в виде сотрудников.</span>
+<span class="comment">// Задача: необходимо подсчитать зарплату всех сотрудников и вывести общую сумму. Реализуем это при помощи рекурсии.</span>
+
+<span class="property">const</span> <span class="value">company</span> = {
+  <span class="value">sales:</span> [{<span class="value">name:</span> <span class="string">'John'</span>, <span class="value">salary:</span> 1000}, {<span class="value">name:</span> <span class="string">'Alice'</span>, <span class="value">salary:</span> 600}],
+  <span class="value">development:</span> {
+    <span class="value">sites:</span> [{<span class="value">name:</span> <span class="string">'Peter'</span>, <span class="value">salary:</span> 2000}, {<span class="value">name:</span> <span class="string">'Alex'</span>, <span class="value">salary:</span> 1800}],
+    <span class="value">internals:</span> [{<span class="value">name:</span> <span class="string">'Jack'</span>, <span class="value">salary:</span> 1300}],
+  },
+};
+
+<span class="cycle-function">function</span> <span class="selector">sumSalaries</span>(<span class="value">department</span>) {
+  <span class="comment">// База рекурсии. Берем массив, из объектов внутри достаём зарплаты и складываем их</span>
+  <span class="cycle-function">if</span> (<span class="object">Array</span>.<span class="selector">isArray</span>(<span class="value">department</span>)) {
+    <span class="cycle-function">return</span> <span class="value">department</span>.<span class="selector">reduce</span>((<span class="value">sum</span>, <span class="value">current</span>) <span class="cycle-function">=&gt;</span> <span class="value">sum</span> + <span class="value">current</span>.<span class="value">salary</span>);
+  } <span class="cycle-function">else</span> {
+    <span class="property">let</span> <span class="value">sum</span> = 0;
+		
+    <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">prop</span> <span class="property">of</span> <span class="object">Object</span>.<span class="selector">values</span>(<span class="value">department</span>)) {
+    <span class="comment">// Шаг рекурсии. Для каждого массива вызывается таже самая функция в рекурсии, чтобы в конечном итоге попасть в базу рекурсии и сложить всю сумму</span>
+    <span class="value">sum</span> += <span class="selector">sumSalaries</span>(<span class="value">prop</span>);
+    }
+
+  <span class="cycle-function">return</span> <span class="value">sum</span>;
+  }
+}
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumSalaries</span>(<span class="value">company</span>)); <span class="comment">// 6700</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="console-chapter">Остаточные параметры. Оператор три точки ...</span>
+<span class="comment">// Оператор ... можно использовать, когда мы не знаем сколько аргументов будет в функции, в этом случае ... становится оператором остаточных параметров.</span>
+<span class="comment">// Оператор остаточных параметров можно читать как "собери оставшиеся параметры и положи их в массив"</span>
+<span class="comment">// Оператор остаточных параметров (когда он вызывается в аргументах функции), необходимо указывать в самом конце, при наличии, других аргументов, иначе это вызовет ошибку</span>
+<span class="cycle-function">function</span> <span class="selector">sumAll</span>(...<span class="value">arguments</span>) {
+	<span class="property">let</span> <span class="value">sum</span> = 0;
+
+	<span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">argument</span> <span class="property">of</span> <span class="value">arguments</span>) <span class="value">sum</span> += <span class="value">argument</span>;
+	<span class="cycle-function">return</span> <span class="value">sum</span>;
+}
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1)); <span class="comment">// 1</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1, 2)); <span class="comment">// 3</span>
+<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1, 2, 3)); <span class="comment">// 6</span>
 </code>
 </pre>
         </div>
@@ -220,9 +301,9 @@
 
 <span class="comment">// В этом примере, вызов функции createCalcFunction(1) вернет нам дочернюю функцию, чтобы ей воспользоваться, мы должны присвоить ее переменной и вызвать.</span>
 <span class="cycle-function">function</span> <span class="selector">createCalcFunction</span>(<span class="value">n</span>) {
-  <span class="cycle-function">return</span> <span class="cycle-function">function</span>() {
-    <span class="value">console</span>.<span class="selector">log</span>(<span class="value">n</span> + 1);
-  }
+	<span class="cycle-function">return</span> <span class="cycle-function">function</span>() {
+		<span class="value">console</span>.<span class="selector">log</span>(<span class="value">n</span> + 1);
+	}
 }
 
 <span class="comment">// Не даст результатов, потому что нам вернулась дочерняя функция которая не вызвалась</span>
@@ -236,9 +317,9 @@
 
 ------------------------------------------------------------------------------------------------------------
 <span class="cycle-function">function</span> <span class="selector">createIncrementor</span>(<span class="value">n</span>) {
-  <span class="cycle-function">return</span> <span class="cycle-function">function</span>(<span class="value">num</span>) {
-    <span class="cycle-function">return</span> <span class="value">n</span> + <span class="value">num</span>;
-  }
+	<span class="cycle-function">return</span> <span class="cycle-function">function</span>(<span class="value">num</span>) {
+		<span class="cycle-function">return</span> <span class="value">n</span> + <span class="value">num</span>;
+	}
 }
 
 <span class="property">const</span> <span class="value">plusOne</span> = <span class="selector">createIncrementor</span>(1); <span class="comment">// Замкнули функцию createIncrementor на единице (n).</span>
@@ -255,9 +336,9 @@
 ------------------------------------------------------------------------------------------------------------
 <span class="comment">// Создадим функцию генерирующую URL адрес.</span>
 <span class="cycle-function">function</span> <span class="selector">urlGenerator</span>(<span class="value">domain</span>) {
-  <span class="cycle-function">return</span> <span class="cycle-function">function</span>(<span class="value">url</span>) {
-    <span class="cycle-function">return</span> <span class="string">`https://</span><span class="property">{$</span><span class="value">url</span><span class="property">}</span><span class="string">.</span><span class="property">{$</span><span class="value">domain</span><span class="property">}</span><span class="string">`</span>;
-  }
+	<span class="cycle-function">return</span> <span class="cycle-function">function</span>(<span class="value">url</span>) {
+		<span class="cycle-function">return</span> <span class="string">`https://</span><span class="property">{$</span><span class="value">url</span><span class="property">}</span><span class="string">.</span><span class="property">{$</span><span class="value">domain</span><span class="property">}</span><span class="string">`</span>;
+	}
 }
 
 <span class="property">const</span> <span class="value">comUrl</span> = <span class="selector">urlGenerator</span>(<span class="string">"com"</span>); <span class="comment">// Замкнули domain на "com" - urlGenerator("com")</span>
@@ -447,11 +528,11 @@
 <span class="comment">// Синтаксис:</span>
 
 <span class="property">const</span> <span class="value">result</span> = <span class="value">arr</span>.<span class="selector">find</span>(<span class="cycle-function">function</span>(item, index, array) {
-  <span class="comment">// Если true, возвращается текущий item и перебор прекращается</span>
-  <span class="comment">// Если все итерации оказались ложными возвращается undefined</span>
-  <span class="comment">// item - очередной элемент</span>
-  <span class="comment">// index - его индекс</span>
-  <span class="comment">// array - сам массив</span>
+	<span class="comment">// Если true, возвращается текущий item и перебор прекращается</span>
+	<span class="comment">// Если все итерации оказались ложными возвращается undefined</span>
+	<span class="comment">// item - очередной элемент</span>
+	<span class="comment">// index - его индекс</span>
+	<span class="comment">// array - сам массив</span>
 });
 
 ------------------------------------------------------------------------------------------------------------
@@ -490,11 +571,11 @@
 <span class="comment">// Синтаксис:</span>
 
 <span class="property">const</span> <span class="value">results</span> = <span class="value">arr</span>.<span class="selector">filter</span>(<span class="cycle-function">function</span>(item, index, array) {
-  <span class="comment">// Если true - элемент добавляется к results и перебор продолжается</span>
-  <span class="comment">// Если ничего не найдено, возвращается пустой массив</span>
-  <span class="comment">// item - очередной элемент</span>
-  <span class="comment">// index - его индекс</span>
-  <span class="comment">// array - сам массив</span>
+	<span class="comment">// Если true - элемент добавляется к results и перебор продолжается</span>
+	<span class="comment">// Если ничего не найдено, возвращается пустой массив</span>
+	<span class="comment">// item - очередной элемент</span>
+	<span class="comment">// index - его индекс</span>
+	<span class="comment">// array - сам массив</span>
 });
 
 ------------------------------------------------------------------------------------------------------------
@@ -516,10 +597,10 @@
 <span class="comment">// Синтаксис:</span>
 
 <span class="property">const</span> <span class="value">result</span> = <span class="value">arr</span>.<span class="selector">map</span>(<span class="cycle-function">function</span>(item, index, array) {
-  <span class="comment">// Возвращается новое значение вместо элемента</span>
-  <span class="comment">// item - очередной элемент</span>
-  <span class="comment">// index - его индекс</span>
-  <span class="comment">// array - сам массив</span>
+	<span class="comment">// Возвращается новое значение вместо элемента</span>
+	<span class="comment">// item - очередной элемент</span>
+	<span class="comment">// index - его индекс</span>
+	<span class="comment">// array - сам массив</span>
 });
 
 ------------------------------------------------------------------------------------------------------------
@@ -604,10 +685,10 @@
 <span class="comment">// Синтаксис:</span>
 
 <span class="property">const</span> <span class="value">value</span> = <span class="value">arr</span>.<span class="selector">reduce</span>(<span class="cycle-function">function</span>(accumulator, item, index, array) {
-  <span class="comment">// accumulator - результат предыдущего вызова этой функции, равен initial при первом вызове </span>
-  <span class="comment">// item - очередной элемент</span>
-  <span class="comment">// index - его индекс</span>
-  <span class="comment">// array - сам массив</span>
+	<span class="comment">// accumulator - результат предыдущего вызова этой функции, равен initial при первом вызове </span>
+	<span class="comment">// item - очередной элемент</span>
+	<span class="comment">// index - его индекс</span>
+	<span class="comment">// array - сам массив</span>
 }, [<span class="value">initial</span>]);
 
 ------------------------------------------------------------------------------------------------------------
@@ -638,18 +719,18 @@
 <span class="comment">// Например, тут мы используем метод объекта army как фильтр, и thisArg передаёт ему контекст:</span>
 
 <span class="property">const</span> <span class="value">army</span> = {
-  <span class="value">minAge</span>: 18,
-  <span class="value">maxAge</span>: 27,
-  <span class="selector">canJoin</span>(<span class="value">user</span>) {
-    <span class="cycle-function">return</span> <span class="value">user</span>.<span class="value">age</span> &gt;= <span class="property">this</span>.<span class="value">minAge</span> && <span class="value">user</span>.<span class="value">age</span> &lt; <span class="property">this</span>.<span class="value">maxAge</span>;
-  }
+	<span class="value">minAge</span>: 18,
+	<span class="value">maxAge</span>: 27,
+	<span class="selector">canJoin</span>(<span class="value">user</span>) {
+		<span class="cycle-function">return</span> <span class="value">user</span>.<span class="value">age</span> &gt;= <span class="property">this</span>.<span class="value">minAge</span> && <span class="value">user</span>.<span class="value">age</span> &lt; <span class="property">this</span>.<span class="value">maxAge</span>;
+	}
 };
 
 <span class="property">const</span> <span class="value">users</span> = [
-  {<span class="value">age:</span> 16},
-  {<span class="value">age:</span> 20},
-  {<span class="value">age:</span> 23},
-  {<span class="value">age:</span> 27},
+	{<span class="value">age:</span> 16},
+	{<span class="value">age:</span> 20},
+	{<span class="value">age:</span> 23},
+	{<span class="value">age:</span> 27},
 ];
 
 <span class="property">const</span> <span class="value">soldiers</span> = <span class="value">users</span>.<span class="selector">filter</span>(<span class="value">army</span>.<span class="selector">canJoin</span>, <span class="value">army</span>);
@@ -660,6 +741,30 @@
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">soldiers</span>); <span class="comment">// { age: 20 } { age: 23 }</span>
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">soldiers</span>[0].<span class="value">age</span>); <span class="comment">// 20</span>
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">soldiers</span>[1].<span class="value">age</span>); <span class="comment">// 23</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="console-chapter">Оператор расширения (...)</span>
+<span class="comment">// Оператор ... можно использовать для того, чтобы сделать из массива список параметров:</span>
+<span class="property">const</span> <span class="value">arr1</span> = [1, -2, 3, 4];
+<span class="property">const</span> <span class="value">arr2</span> = [8, 3, -8, 1];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">Math</span>.<span class="selector">max</span>(1, ...<span class="value">arr1</span>, 2, ...<span class="value">arr2</span>, 25)); <span class="comment">// 25</span>
+
+<span class="comment">// Или для слияния массивов:</span>
+<span class="property">const</span> <span class="value">arr1</span> = [1, 3, 5];
+<span class="property">const</span> <span class="value">arr2</span> = [2, 4, 6];
+
+<span class="property">const</span> <span class="value">merged</span> = [0, ...<span class="value">arr1</span>, 1, ...<span class="value">arr2</span>];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">merged</span>); <span class="comment">// 0, 1, 3, 5, 1, 2, 4, 6</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// При помощи оператора расширения можно превратить строку в массив:</span>
+<span class="comment">// Это происходит потому что оператор расширения под капотом использует цикл for of</span>
+
+<span class="property">const</span> <span class="value">str</span> = <span class="string">'Привет'</span>;
+
+<span class="value">console</span>.<span class="selector">log</span>([...<span class="value">str</span>]); <span class="comment">// ['П', 'р', 'и', 'в', 'е', 'т',]</span>
 
 <span class="console-line">------------------------------------------------------------------------------------------------------------</span>
 <span class="console-chapter">Array.from()</span>
@@ -705,7 +810,33 @@
 <span class="comment">// Мы можем подвергнуть деструктуризации любой перебираемый объект, не только массивы</span>
 <span class="property">const</span> [<span class="value">a</span>, <span class="value">b</span>, <span class="value">c</span>] = <span class="string">"abc"</span>;
 
-------------------------------------------------------------------------------------------------------------
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// Деструктурирующее присваивание отлично работает в связке с методами массива возвращающими массив</span>
+
+<span class="property">const</span> <span class="value">str</span> = <span class="string">'John Smith'</span>;
+<span class="property">const</span> [<span class="value">firstName</span>, <span class="value">surname</span>] = <span class="value">str</span>.<span class="selector">split</span>(<span class="string">' '</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">firstName</span>, <span class="value">surname</span>); <span class="comment">// John Smith</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// Нежелательные элементы, при деструктуризации, могут быть отброшены с помощью дополнительной запятой</span>
+
+<span class="property">const</span> [<span class="value">firstName</span>, , <span class="value">title</span>] = [<span class="string">'Julius'</span>, <span class="string">'Caesar'</span>, <span class="string">'Consul'</span>, <span class="string">'of the Roman Republic'</span>]
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">firstName</span>, <span class="value">title</span>); <span class="comment">// Julius Consul</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// При помощи деструктурирующего присваивания можно быстро поменять значения двух переменных друг с другом</span>
+
+<span class="property">let</span> <span class="value">admin</span> = <span class="string">'John'</span>;
+<span class="property">let</span> <span class="value">guest</span> = <span class="string">'Pete'</span>;
+
+<span class="comment">// Давайте поменяем местами значения:</span>
+[<span class="value">admin</span>, <span class="value">guest</span>] = [<span class="value">guest</span>, <span class="value">admin</span>];
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">admin</span>, <span class="value">guest</span>); <span class="comment">// </span> Pete John - Успешно изменено!
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
 <span class="comment">// Используя оператор остаточные параметры ( ... ), мы можем деструктуризовать массив строк, распределив их по переменным:</span>
 <span class="comment">// Тут нужно помнить о правиле, что остаточные переменные объявляются последними</span>
 <span class="property">const</span> [<span class="value">value1</span>, <span class="value">value2</span>, ...<span class="value">value3</span>] = [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"watermelon"</span>, <span class="string">"grapes"</span>];
@@ -751,18 +882,18 @@
 <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Началась загрузка файла весом</span> <span class="property">${</span><span class="value">isFile</span><span class="property">}</span> <span class="string">мб`</span>);
 
 <span class="cycle-function">while</span> (<span class="value">isFile</span> &gt; 0) {
-  <span class="value">isFile</span> -= 10;
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Вы загрузили 10 мб, осталось</span> <span class="property">${</span><span class="value">isFile</span><span class="property">}</span> <span class="string">мб`</span>);
+	<span class="value">isFile</span> -= 10;
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Вы загрузили 10 мб, осталось</span> <span class="property">${</span><span class="value">isFile</span><span class="property">}</span> <span class="string">мб`</span>);
 }
 
 <span class="value">console</span>.<span class="selector">log</span>(<span class="string">"Файл успешно загружен"</span>);
 <span class="comment">// Началась загрузка файла весом 50 мб
-   Вы загрузили 10 мб, осталось 40 мб
-   Вы загрузили 10 мб, осталось 30 мб
-   Вы загрузили 10 мб, осталось 20 мб
-   Вы загрузили 10 мб, осталось 10 мб
-   Вы загрузили 10 мб, осталось 0 мб
-   Файл успешно загружен</span>
+	 Вы загрузили 10 мб, осталось 40 мб
+	 Вы загрузили 10 мб, осталось 30 мб
+	 Вы загрузили 10 мб, осталось 20 мб
+	 Вы загрузили 10 мб, осталось 10 мб
+	 Вы загрузили 10 мб, осталось 0 мб
+	 Файл успешно загружен</span>
 
 ------------------------------------------------------------------------------------------------------------
 <span class="comment">// Цикл do while похож на while, отличие в том, что условие проверяется после прохождения каждой итерации, но при этом каждая итерация будет выполнена</span>
@@ -779,7 +910,7 @@
 <span class="property">const</span> <span class="value">fibo</span> = [0, 1];
 
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">i</span> = 1; <span class="value">i</span> &lt; 10; ++<span class="value">i</span>) {
-  <span class="value">fibo</span>.<span class="selector">push</span>(<span class="value">fibo</span>[<span class="value">i</span>] + <span class="value">fibo</span>[<span class="value">i</span> - 1]);
+	<span class="value">fibo</span>.<span class="selector">push</span>(<span class="value">fibo</span>[<span class="value">i</span>] + <span class="value">fibo</span>[<span class="value">i</span> - 1]);
 }
 
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">fibo</span>); <span class="comment">// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55</span>
@@ -800,7 +931,7 @@
 <span class="value">console</span>.<span class="selector">log</span>(<span class="string">"Сегодня я съел:"</span>);
 
 <span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">i</span> <span class="property">of</span> <span class="value">fruits</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">fruit</span>);
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">fruit</span>);
 }
 <span class="comment">// "Сегодня я съел:"
    "Яблоко"
@@ -818,7 +949,7 @@
 <span class="value">console</span>.<span class="selector">log</span>(<span class="string">"Рейтинг студентов:"</span>);
 
 <span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">i</span> <span class="property">in</span> <span class="value">rating</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="property">${</span><span class="selector">parseInt</span>(<span class="value">i</span>) + 1<span class="property">}</span> <span class="string">место:</span> <span class="property">${</span><span class="value">rating</span>[<span class="value">i</span>]<span class="property"><span class="string">`</span>}</span>; <span class="comment">// parseInt здесь используется чтобы превратить строку в число, тк переменная указанная перед in принимает строковое значение</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="property">${</span><span class="selector">parseInt</span>(<span class="value">i</span>) + 1<span class="property">}</span> <span class="string">место:</span> <span class="property">${</span><span class="value">rating</span>[<span class="value">i</span>]<span class="property"><span class="string">`</span>}</span>; <span class="comment">// parseInt здесь используется чтобы превратить строку в число, тк переменная указанная перед in принимает строковое значение</span>
 }
 <span class="comment">// "Рейтинг студентов:"
    "1 место: Катя"
@@ -856,7 +987,7 @@
 <span class="value">console</span>.<span class="selector">log</span>(<span class="string">"Ищем карту в колоде..."</span>);
 
 <span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">card</span> <span class="property">of</span> <span class="value">cards</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Из колоды вытянута карта</span> <span class="property">${</span><span class="value">card</span><span class="property">}</span><span class="string">`</span>);
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="string">`Из колоды вытянута карта</span> <span class="property">${</span><span class="value">card</span><span class="property">}</span><span class="string">`</span>);
 
   <span class="cycle-function">if</span> (<span class="value">card</span> === <span class="string">"Дама"</span>) {
     <span class="property">let</span> <span class="value">found</span> = <span class="property">true</span>;
@@ -866,10 +997,10 @@
 
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">found</span> ? <span class="string">"Вы нашли даму!"</span> : <span class="string">"В колоде нет дам"</span>); <span class="comment">// Если в колоде не было дам, уловие выдало бы нам второй ответ</span>
 <span class="comment">// Ищем карту в колоде...
-   Из колоды вытянута карта 2
-   Из колоды вытянута карта Король
-   Из колоды вытянута карта Дама
-   Вы нашли даму!</span>
+	 Из колоды вытянута карта 2
+	 Из колоды вытянута карта Король
+	 Из колоды вытянута карта Дама
+	 Вы нашли даму!</span>
 </code>
 </pre>
         </div>
@@ -902,9 +1033,9 @@
 
 <span class="comment">// Синтаксис объекта выглядит следующим образом:</span>
 <span class="property">const</span> <span class="value">objectName</span> = {
-  <span class="value">propertyName1:</span> <span class="value">value1</span>,
-  <span class="value">propertyName2:</span> <span class="value">value2</span>,
-  <span class="value">...</span>
+	<span class="value">propertyName1:</span> <span class="value">value1</span>,
+	<span class="value">propertyName2:</span> <span class="value">value2</span>,
+	<span class="value">...</span>
 };
 
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">objectName</span>.<span class="value">propertyName1</span>); <span class="comment">// Вызов нужного нам свойства из объекта</span>
@@ -966,55 +1097,26 @@
 
 <span class="comment">// Создаем объект в котором мы объединим все составляющие:</span>
 <span class="property">const</span> <span class="value">computer</span> = {
-  <span class="value">price:</span> 100000,
-  ...<span class="value">motherBoard</span>,
-  ...<span class="value">cpu</span>,
-  ...<span class="value">videoCard</span>,
-  ...<span class="value">ram</span>,
+	<span class="value">price:</span> 100000,
+	...<span class="value">motherBoard</span>,
+	...<span class="value">cpu</span>,
+	...<span class="value">videoCard</span>,
+	...<span class="value">ram</span>,
 };
 
 <span class="comment">// Аналогичным образом работает метод Object.assign(currentObj, src1, src2, ... srcN);</span>
 <span class="comment">// Где currentObj - Объект в который мы хотим объединить все src</span>
 <span class="property">const</span> <span class="value">computer</span> = {
-  <span class="value">price:</span> 100000
+	<span class="value">price:</span> 100000
 };
 
 <span class="object">Object</span>.<span class="selector">assign</span>(<span class="value">computer</span>, <span class="value">motherBoard</span>, <span class="value">cpu</span>, <span class="value">videoCard</span>, <span class="value">ram</span>);
 
-------------------------------------------------------------------------------------------------------------
-<span class="comment">// Оператор ... так же можно использовать в функциях, когда мы не знаем сколько в ней будет аргументов, в этом случае ... становится оператором остаточных параметров.</span>
-<span class="comment">// Оператор остаточных параметров можно читать как "собери оставшиеся параметры и положи их в массив"</span>
-<span class="comment">// Оператор остаточных параметров (когда он вызывается в аргументах функции), необходимо указывать в самом конце, при наличии, других аргументов, иначе это вызовет ошибку</span>
-<span class="cycle-function">function</span> <span class="selector">sumAll</span>(...<span class="value">arguments</span>) {
-  <span class="property">let</span> <span class="value">sum</span> = 0;
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// <span class="console-chapter">Object.keys(obj)</span> - Позволяет получить все свойства (ключи) объекта</span>
+<span class="comment">// <span class="console-chapter">Object.values(obj)</span> - Позволяет получить все значения объекта</span>
+<span class="comment">// <span class="console-chapter">Object.entries(obj)</span> - Позволяет получить свойства вместе со значениями</span>
 
-  <span class="cycle-function">for</span> (<span class="property">let</span> <span class="value">argument</span> <span class="property">of</span> <span class="value">arguments</span>) <span class="value">sum</span> += <span class="value">argument</span>;
-  <span class="cycle-function">return</span> <span class="value">sum</span>;
-}
-
-<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1)); <span class="comment">// 1</span>
-<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1, 2)); <span class="comment">// 3</span>
-<span class="value">console</span>.<span class="selector">log</span>(<span class="selector">sumAll</span>(1, 2, 3)); <span class="comment">// 6</span>
-
-------------------------------------------------------------------------------------------------------------
-<span class="comment">// Оператор ... можно использовать для того, чтобы сделать из массива список параметров (Оператор расширения):</span>
-<span class="property">const</span> <span class="value">arr1</span> = [1, -2, 3, 4];
-<span class="property">const</span> <span class="value">arr2</span> = [8, 3, -8, 1];
-
-<span class="value">console</span>.<span class="selector">log</span>(<span class="value">Math</span>.<span class="selector">max</span>(1, ...<span class="value">arr1</span>, 2, ...<span class="value">arr2</span>, 25)); <span class="comment">// 25</span>
-
-<span class="comment">// Или для слияния массивов:</span>
-<span class="property">const</span> <span class="value">arr1</span> = [1, 3, 5];
-<span class="property">const</span> <span class="value">arr2</span> = [2, 4, 6];
-
-<span class="property">const</span> <span class="value">merged</span> = [0, ...<span class="value">arr1</span>, 1, ...<span class="value">arr2</span>];
-
-<span class="value">console</span>.<span class="selector">log</span>(<span class="value">merged</span>); <span class="comment">// 0, 1, 3, 5, 1, 2, 4, 6</span>
-
-------------------------------------------------------------------------------------------------------------
-<span class="comment">// Object.keys(computer) - Позволяет получить все свойства (ключи) объекта</span>
-<span class="comment">// Object.values(computer) - Позволяет получить все значения объекта</span>
-<span class="comment">// Object.entries(computer) - Позволяет получить свойства вместе со значениями</span>
 <span class="property">const</span> <span class="value">computer</span> = {
   <span class="value">price:</span> 100000,
   <span class="value">chipset:</span> <span class="string">"AMD X570"</span>,
@@ -1027,13 +1129,32 @@
 <span class="value">console</span>.<span class="selector">log</span>(<span class="object">Object</span>.<span class="selector">values</span>(<span class="value">computer</span>)); <span class="comment">// [ 100000, AMD X570, NVidia GeForce GTX 1060, 4096, DDR4 ]</span>
 <span class="value">console</span>.<span class="selector">log</span>(<span class="object">Object</span>.<span class="selector">entries</span>(<span class="value">computer</span>));
 <span class="comment">// [ price, 100000 ],
-   [ chipset, AMD X570 ],
-   [ videoCardModel, NVidia GeForce GTX 1060 ],
-   [ videoMemory, 4096 ],
-   [ ramType, DDR4 ]</span>
+	 [ chipset, AMD X570 ],
+	 [ videoCardModel, NVidia GeForce GTX 1060 ],
+	 [ videoMemory, 4096 ],
+	 [ ramType, DDR4 ]</span>
 
-------------------------------------------------------------------------------------------------------------
-<span class="comment">// Проверка существования свойства, оператор in</span>
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="console-chapter">Трансформация объектов</span>
+<span class="comment">// У объектов нет встроенных методов, таких как map или filter</span>
+<span class="comment">// но если мы хотим их использовать, необходимо применить к объекту Object.entries с последующим вызовом Object.fromEntries</span>
+<span class="comment">// Например, у нас есть объект с ценами которые мы хотим удвоить</span>
+
+<span class="property">const</span> <span class="value">prices</span> = {
+	<span class="value">Apple:</span> 1,
+	<span class="value">Orange:</span> 2,
+	<span class="value">Banana:</span> 3,
+};
+
+<span class="property">const</span> <span class="value">doublePrices</span> = <span class="object">Object</span>.<span class="selector">fromEnties</span>(
+	<span class="comment">// Преобразовываем в массив, затем map, затем fromEntries обратно объект</span>
+	<span class="object">Object</span>.<span class="selector">enties</span>(<span class="value">prices</span>).<span class="selector">map</span>(([<span class="value">key</span>, <span class="value">value</span>]) =&gt; [<span class="value">key</span>, <span class="value">value</span> * 2]);
+);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">doublePrices</span>.<span class="value">Banana</span>); <span class="comment">// 6</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment">// <span class="console-chapter">Оператор in</span> - Проверка существования свойства</span>
 <span class="comment">// Оперотор in используется для проверки существования свойства в объекте:</span>
 <span class="property">const</span> <span class="value">user</span> = {
   <span class="value">name:</span> <span class="string">"John"</span>,
@@ -1042,7 +1163,7 @@
 
 <span class="value">console</span>.<span class="selector">log</span>(<span class="string">"name"</span> <span class="property">in</span> <span class="value">user</span>); <span class="comment">// true, обратите внимание что ключ записывается в кавычках</span>
 
-------------------------------------------------------------------------------------------------------------
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
 <span class="comment">// Цикл for in - используется для перебора всех свойств объекта</span>
 <span class="property">const</span> <span class="value">user</span> = {
   <span class="value">name:</span> <span class="string">"John"</span>,
@@ -1050,11 +1171,11 @@
 };
 
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">prop</span> <span class="property">in</span> <span class="value">user</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">prop</span>); <span class="comment">// name age - выводятся ключи объекта</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">prop</span>); <span class="comment">// name age - выводятся ключи объекта</span>
 }
 
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">prop</span> <span class="property">in</span> <span class="value">user</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">user</span>[<span class="value">prop</span>]); <span class="comment">// John 30 - выводятся значения объекта</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">user</span>[<span class="value">prop</span>]); <span class="comment">// John 30 - выводятся значения объекта</span>
 }
 
 ------------------------------------------------------------------------------------------------------------
@@ -1070,30 +1191,30 @@
 <span class="comment">// Мы предполагаем, что номера будут выводиться сверху вниз, но это происходит не так</span>
 <span class="comment">// При сортировке, ключи, если их имена являются цифры, при переборе выводятся в порядке возрастания, от большего к меньшему, пример:</span>
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">prop</span> <span class="property">in</span> <span class="value">user</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">prop</span>); <span class="comment">// 1 41 44 49</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">prop</span>); <span class="comment">// 1 41 44 49</span>
 }
 <span class="comment">// Это происходит потому что свойства с целочисленными ключами, сортируются по возрастанию</span>
 <span class="comment">// Целочисленное свойство - это строка, которая может быть преобразована в целое число и обратно без изменений</span>
 <span class="comment">// Это можно решить добавив + перед каждой цифрой</span>
 <span class="comment">// "49" после преобразования в число и обратно = "49", а "+49" после преобразования в число и обратно будет = "49", соответственно +49 не целочисленное свойство</span>
 <span class="property">const</span> <span class="value">number</span> = {
-  <span class="string">"+49"</span>: <span class="string">"Германия"</span>,
-  <span class="string">"+41"</span>: <span class="string">"Швейцария"</span>,
-  <span class="string">"+44"</span>: <span class="string">"Великобритания"</span>,
-  <span class="string">"+1"</span>: <span class="string">"США"</span>,
+	<span class="string">"+49"</span>: <span class="string">"Германия"</span>,
+	<span class="string">"+41"</span>: <span class="string">"Швейцария"</span>,
+	<span class="string">"+44"</span>: <span class="string">"Великобритания"</span>,
+	<span class="string">"+1"</span>: <span class="string">"США"</span>,
 };
 
 <span class="comment">// Номера выводятся сверху вниз, как мы и предполагаем!</span>
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">prop</span> <span class="property">in</span> <span class="value">user</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(+<span class="value">prop</span>); <span class="comment">// 49 41 44 1, обратите внимание, что мы поставили + перед вызовом, для того чтобы в вызове избавиться от плюсов в ключах</span>
+	<span class="value">console</span>.<span class="selector">log</span>(+<span class="value">prop</span>); <span class="comment">// 49 41 44 1, обратите внимание, что мы поставили + перед вызовом, для того чтобы в вызове избавиться от плюсов в ключах</span>
 }
 
 ------------------------------------------------------------------------------------------------------------
 <span class="comment">// Как мы знаем, переменные хранят в себе только ссылку на объект, и при копировании, дублируется ссылка, но не сам объект</span>
 <span class="comment">// Из-за этого мы можем получать вот такие неприятные моменты, когда объект был изменен по скопированной ссылке:</span>
 <span class="property">const</span> <span class="value">user</span> = {
-  <span class="value">name:</span> <span class="string">"John"</span>,
-  <span class="value">age:</span> 30
+	<span class="value">name:</span> <span class="string">"John"</span>,
+	<span class="value">age:</span> 30
 };
 
 <span class="property">const</span> <span class="value">clone</span> = <span class="value">user</span> <span class="comment">// Скопировали ссылку на объект хранившуюся в переменной user</span>
@@ -1107,6 +1228,117 @@
 <span class="value">clone</span>.<span class="value">name</span> = <span class="string">"Pete"</span>
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">clone</span>.<span class="value">name</span>); <span class="comment">// Pete</span>
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">user</span>.<span class="value">name</span>); <span class="comment">// John, изменения не затронули объект находящийся по ссылке в переменной user</span>
+</code>
+</pre>
+			</div>
+			<p class="text">
+				<span class="text-offset">Флаги и дескрипторы свойств</span>
+			</p>
+			<p class="text">
+				<span class="text-offset">Флаги свойства</span> - Это долнительные атрибуты, позволяющие настраивать определённое свойство. Они нужны для того, чтобы заблокировать наш объект не позволяя изменять или редактировать его свойства. 
+			</p>
+			<p class="text">
+				Флаги бывают трёх типов:
+			</p>
+			<ul class="list">
+				<li class="item">
+					<span class="highlight">writable</span> - если true, свойство можно изменить, иначе оно только для чтения.
+				</li>
+				<li class="item">
+					<span class="highlight">enumerable</span> - если true, свойство перечисляется в циклах, в противном случае циклы его игнорируют.
+				</li>
+				<li class="item">
+					<span class="highlight">configurable</span> - если true, свойство можно удалить, а эти атрибуты можно изменять, иначе этого делать нельзя.
+				</li>
+			</ul>
+			<p class="text">
+				Эти атрибуты обычно скрыты. Когда мы создаём свойство "обычным способом", все они имеют значение true. Но мы можем изменить их в любое время.
+			</p>
+			<div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Синтаксис для получения текущего значения свойства объекта:</span>
+
+<span class="property">const</span> <span class="value">descriptor</span> = <span class="object">Object</span>.<span class="selector">getOwnProppertyDescriptor</span>(<span class="value">obj</span>, <span class="string">'propertyName'</span>);
+
+<span class="comment">// obj - Объект, из которого мы получаем информацию.</span>
+<span class="comment">// propertyName - Имя свойства.</span>
+<span class="comment">// Возвращаемое значение - это объект, так называемый "дескриптор свойства": он содержит значение свойства и все его флаги.</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Например, получим значение свойства name и все его флаги:</span>
+
+<span class="property">const</span> <span class="value">user</span> = {
+	<span class="value">name:</span> <span class="string">'John'</span>,
+};
+
+<span class="property">const</span> <span class="value">descriptor</span> = <span class="object">Object</span>.<span class="selector">getOwnProppertyDescriptor</span>(<span class="value">user</span>, <span class="string">'name'</span>);
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">descriptor</span>);
+<span class="comment">{
+	"name": 'John',
+	"writable": true,
+	"enumerable": true,
+	"configurable": true
+}</span>
+
+<span class="console-line">------------------------------------------------------------------------------------------------------------</span>
+<span class="comment"><span class="console-chapter">Object.defineProperty(obj, 'propertyName', descriptor)</span> - Позволяет изменить флаги.</span>
+
+<span class="comment">// obj, propertyName - Объект и его свойство, для которого нужно применить дескриптор.</span>
+<span class="comment">// descriptor - Применяемый дескриптор.</span>
+<span class="comment">// Если свойство существует, defineProperty обновит его флаги.</span>
+<span class="comment">// В противном случае метод создаёт новое свойство с указанным значением и флагами; если какой-либо флаг не указан явно, ему присваивается значение false.</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// В данном примере мы сделаем свойство user.name только для чтения:</span>
+
+<span class="property">const</span> <span class="value">user</span> = {
+	<span class="value">name:</span> <span class="string">'John'</span>,
+};
+
+<span class="object">Object</span>.<span class="selector">defineProperty</span>(<span class="value">user</span>, <span class="string">'name'</span>, {
+	<span class="value">writable:</span> <span class="property">false</span>,
+});
+
+<span class="value">user</span>.<span class="value">name</span> = <span class="string">'Pete'</span>; <span class="comment">// Невозможно изменить свойсвтво, тк writable: false</span>
+<span class="comment">// В режиме 'use strict', подобная попытка вызвала бы ошибку, без него, действие просто игнорируется</span>
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">user.name</span>); <span class="comment">// John</span>
+
+<span class="comment">// Но мы всё ещё можем изменить имя пользователя, если обновим флаг writable новым вызовом defineProperty.</span>
+<span class="object">Object</span>.<span class="selector">defineProperty</span>(<span class="value">user</span>, <span class="string">'name'</span>, {
+	<span class="value">writable:</span> <span class="property">true</span>,
+});
+
+<span class="value">user</span>.<span class="value">name</span> = <span class="string">'Pete'</span>;
+
+<span class="value">console</span>.<span class="selector">log</span>(<span class="value">user.name</span>); <span class="comment">// Pete - имя изменилось</span>
+
+------------------------------------------------------------------------------------------------------------
+<span class="comment">// Неконфигурируемые свойства, configurable: false</span>
+<span class="comment">// Неконфигурируемое свойство не может быть удалено, его атрибуты не могут быть изменены.</span>
+<span class="comment">// Определение свойства как неконфигурируемого и добавление к нему writable: false - полностью блокирует его изменение из вне даже при помощи defineProperty.</span>
+
+<span class="property">const</span> <span class="value">user</span> = {
+	<span class="value">name:</span> <span class="string">'John'</span>,
+};
+
+<span class="object">Object</span>.<span class="selector">defineProperty</span>(<span class="value">user</span>, <span class="string">'name'</span>, {
+	<span class="value">writable:</span> <span class="property">false</span>,
+	<span class="value">configurable:</span> <span class="property">false</span>,
+});
+
+<span class="value">user</span>.<span class="value">name</span> = <span class="string">'Pete'</span>; <span class="comment">// Невозможно - writable: false</span>
+
+<span class="object">Object</span>.<span class="selector">defineProperty</span>(<span class="value">user</span>, <span class="string">'name'</span>, {
+	<span class="value">writable:</span> <span class="property">true</span>,
+	<span class="value">configurable:</span> <span class="property">true</span>,
+}); <span class="comment">// Ошибка - невозможно переопределить свойство</span>
+
+<span class="property">delete</span> <span class="value">user</span>.<span class="value">name</span>; <span class="comment">// Невозможно - configurable: false</span>
 </code>
 </pre>
         </div>
@@ -1133,11 +1365,11 @@
 
 <span class="comment">// this записывается следующим образом:</span>
 <span class="property">const</span> <span class="value">user</span> = {
-  <span class="value">name:</span> <span class="string">"John"</span>,
-  <span class="value">age:</span> 30,
-  <span class="selector">getName</span>() {
-    <span class="value">console</span>.<span class="selector">log</span>(<span class="property">this</span>.<span class="value">name</span>); <span class="comment">// Можно прочитать как "this - текущий объект.свойство name"</span>
-  }
+	<span class="value">name:</span> <span class="string">"John"</span>,
+	<span class="value">age:</span> 30,
+	<span class="selector">getName</span>() {
+		<span class="value">console</span>.<span class="selector">log</span>(<span class="property">this</span>.<span class="value">name</span>); <span class="comment">// Можно прочитать как "this - текущий объект.свойство name"</span>
+	}
 };
 
 <span class="value">user</span>.<span class="selector">getName</span>();
@@ -1150,7 +1382,7 @@
 <span class="property">const</span> <span class="value">admin</span> = { <span class="value">name:</span> <span class="string">"Admin"</span> };
 
 <span class="cycle-function">function</span> <span class="selector">getClient</span>() {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="property">this</span>.<span class="value">name</span>);
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="property">this</span>.<span class="value">name</span>);
 }
 
 <span class="comment">// Используем одну и ту же функцию в двух объектах, добавляя её в каждый из объектов под свойством с названием "f":</span>
@@ -1280,13 +1512,13 @@
 <span class="comment">// 3. Возвращается значение this</span>
 
 <span class="cycle-function">function</span> <span class="object">User</span>(<span class="value">name</span>) {
-  <span class="comment">// 1. this = {}; (неявно)</span>
+	<span class="comment">// 1. this = {}; (неявно)</span>
 
-  <span class="comment">// 2. Добавляет свойства к this</span>
-  <span class="property">this</span>.<span class="value">name</span> = <span class="value">name</span>;
-  <span class="property">this</span>.<span class="value">isAdmin</span> = false;
+	<span class="comment">// 2. Добавляет свойства к this</span>
+	<span class="property">this</span>.<span class="value">name</span> = <span class="value">name</span>;
+	<span class="property">this</span>.<span class="value">isAdmin</span> = false;
 
-  <span class="comment">// 3. return this; (неявно)</span>
+	<span class="comment">// 3. return this; (неявно)</span>
 }
 
 <span class="property">const</span> <span class="value">user</span> = <span class="property">new</span> <span class="object">User</span>(<span class="string">"John"</span>);
@@ -1300,11 +1532,11 @@
 
 <span class="cycle-function">function</span> <span class="object">User</span>(<span class="value">name</span>) {
 
-  <span class="property">this</span>.<span class="value">name</span> = <span class="value">name</span>;
+	<span class="property">this</span>.<span class="value">name</span> = <span class="value">name</span>;
 
-  <span class="property">this</span>.<span class="value">sayHi</span> = <span class="cycle-function">function</span>() {
-    <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="string">Hello! My name is </span><span class="property">${</span><span class="property">this</span>.<span class="value">name</span><span class="property">}</span><span class="string">!`</span>);
-  }
+	<span class="property">this</span>.<span class="value">sayHi</span> = <span class="cycle-function">function</span>() {
+		<span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="string">Hello! My name is </span><span class="property">${</span><span class="property">this</span>.<span class="value">name</span><span class="property">}</span><span class="string">!`</span>);
+	}
 }
 
 <span class="property">const</span> <span class="value">user</span> = <span class="property">new</span> <span class="object">User</span>(<span class="string">"John"</span>);
@@ -1344,11 +1576,11 @@
 <span class="comment">// Синтаксис class:</span>
 
 <span class="property">class</span> <span class="object">MyClass</span> {
-  <span class="comment">// Методы класса</span>
-  <span class="property">constructor</span>() { ... }
-  <span class="selector">method1</span>() { ... }
-  <span class="selector">method2</span>() { ... }
-  <span class="selector">method3</span>() { ... }
+	<span class="comment">// Методы класса</span>
+	<span class="property">constructor</span>() { ... }
+	<span class="selector">method1</span>() { ... }
+	<span class="selector">method2</span>() { ... }
+	<span class="selector">method3</span>() { ... }
 };
 
 <span class="comment">// Данный вызов создаст новый объект со всеми перечисленными методами</span>
@@ -1362,17 +1594,42 @@
 <span class="comment">// 3. На данном этапе мы можем взаимодействовать с объектом, например вызывать метод user.sayHi()</span>
 
 <span class="property">class</span> <span class="object">User</span> {
-  <span class="property">constructor</span>(<span class="value">name</span>) {
-    <span class="property">this</span>.<span class="value">name</span> = <span class="value">name</span>;
-  }
+	<span class="property">constructor</span>(<span class="value">name</span>) {
+		<span class="property">this</span>.<span class="value">name</span> = <span class="value">name</span>;
+	}
 
-  <span class="selector">sayHi</span>() {
-    <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="string">Hello! My name is </span><span class="property">${</span><span class="property">this</span>.<span class="value">name</span><span class="property">}</span><span class="string">!`</span>);
-  }
+	<span class="selector">sayHi</span>() {
+		<span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="string">Hello! My name is </span><span class="property">${</span><span class="property">this</span>.<span class="value">name</span><span class="property">}</span><span class="string">!`</span>);
+	}
 };
 
 <span class="property">const</span> <span class="value">user</span> = <span class="property">new</span> <span class="object">User</span>(<span class="string">"John"</span>);
 <span class="value">user</span>.<span class="selector">sayHi</span>(); <span class="comment">// Hello! My name is John!</span>
+</code>
+</pre>
+		</div>
+		<p class="text">
+			<span class="text-offset">Свойства - геттеры и сеттеры</span>
+		</p>
+		<p class="text">
+			Есть два типа свойств объекта:
+		</p>
+		<ul class="list">
+			<li class="item">
+				<span class="highlight">Свойства-данные (data properties)</span> - Все свойства, которые мы использовали до текущего момента, были свойствами-данными. Это такие свойства, в которых записано статичное значение и мы можем получить к ним доступ обратившись таким образом <span class="highlight">user.name</span>
+			</li>
+			<li class="item">
+				<span class="highlight">Cвойства-аксессоры (accessor properties)</span> - Это функции, которые используются для присвоения и получения значения, но во внешнем коде они выглядят как обычные свойства объекта.
+			</li>
+		</ul>
+		<div class="console">
+<pre>
+<code class="code">
+<span class="console-title title-js">JS</span>
+
+<span class="comment">// Геттеры и Сеттеры:</span>
+
+<span class="property">const</span> <span class="value">userJohn</span>
 </code>
 </pre>
         </div>
@@ -1579,17 +1836,17 @@
 
 <span class="comment">// Перебор по ключам:</span>
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">key</span> <span class="property">of</span> <span class="value">recipeMap</span>.<span class="selector">keys</span>()) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">key</span>); <span class="comment">// Помидор, Огурец, Лук</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">key</span>); <span class="comment">// Помидор, Огурец, Лук</span>
 }
 
 <span class="comment">// Перебор по значениям:</span>
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">value</span> <span class="property">of</span> <span class="value">recipeMap</span>.<span class="selector">values</span>()) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">value</span>); <span class="comment">// 500, 250, 125</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">value</span>); <span class="comment">// 500, 250, 125</span>
 }
 
 <span class="comment">// Перебор вида [ключ, значение]:</span>
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">entry</span> <span class="property">of</span> <span class="value">recipeMap</span>) { <span class="comment">// Тоже самое что и recipeMap.entries()</span>
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">value</span>); <span class="comment">// Помидор, 500 и тд.</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">value</span>); <span class="comment">// Помидор, 500 и тд.</span>
 }
 
 ------------------------------------------------------------------------------------------------------------
@@ -1728,7 +1985,7 @@
 <span class="value">console</span>.<span class="selector">log</span>(<span class="value">set</span>.<span class="value">size</span>); <span class="comment">// 3 - тех кого мы хотели добавить в конце, не добавились</span>
 
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">prop</span> <span class="property">of</span> <span class="value">set</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">prop</span>.<span class="value">name</span>); <span class="comment">// John Pete Mary</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">prop</span>.<span class="value">name</span>); <span class="comment">// John Pete Mary</span>
 }
 
 <span class="console-line">------------------------------------------------------------------------------------------------------------</span>
@@ -1738,7 +1995,7 @@
 <span class="property">const</span> <span class="value">set</span> = <span class="property">new</span> <span class="object">Set</span>([<span class="string">"Apple"</span>, <span class="string">"Orange"</span>, <span class="string">"Banana"</span>]);
 
 <span class="cycle-function">for</span> (<span class="property">const</span> <span class="value">prop</span> <span class="property">of</span> <span class="value">set</span>) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="value">prop</span>); <span class="comment">// Apple Orange Banana</span>
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="value">prop</span>); <span class="comment">// Apple Orange Banana</span>
 }
 
 <span class="value">set</span>.<span class="selector">forEach</span>((<span class="value">item</span>, <span class="value">itemAgain</span>, <span class="value">set</span>) <span class="cycle-function">=&gt;</span> {
@@ -1838,10 +2095,10 @@
 };
 
 <span class="cycle-function">for</span> (<span class="property">let</span> [<span class="value">key</span>, <span class="value">value</span>] <span class="property">of</span> <span class="object">Object</span>.<span class="selector">entries</span>(<span class="value">user</span>)) {
-  <span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="property">${</span><span class="value">key</span><span class="property">}</span><span class="string">: </span><span class="property">${</span><span class="value">value</span><span class="property">}</span><span class="string">`</span>);
+	<span class="value">console</span>.<span class="selector">log</span>(<span class="string">`</span><span class="property">${</span><span class="value">key</span><span class="property">}</span><span class="string">: </span><span class="property">${</span><span class="value">value</span><span class="property">}</span><span class="string">`</span>);
 }
 <span class="comment">// name: John
-   age: 30</span>
+	 age: 30</span>
 
 ------------------------------------------------------------------------------------------------------------
 <span class="comment">// Вложенная деструктуризация - если в объекте присутствует объект или массив со значениями, то нам необходимо скопировать его в точности соблюдая структуру</span>
@@ -1887,8 +2144,8 @@
   <span class="value">height:</span> <span class="value">h</span> = +<span class="selector">prompt</span>(<span class="string">"Height?"</span>), <span class="comment">// Результат ввода в prompt</span>
   <span class="value">items:</span> [<span class="value">i1</span>, <span class="value">i2</span>] <span class="comment">// Присвоятся соответствующие индексы массива const li1 = items[0]; и const li2 = items[1];</span>
 }) {
-  <span class="selector">alert</span>(<span class="string">`</span><span class="property">${</span><span class="value">title</span><span class="property">}</span><span class="string">: width:</span> <span class="property">${</span><span class="value">w</span><span class="property">}</span><span class="string">, height:</span> <span class="property">${</span><span class="value">h</span><span class="property">}</span><span class="string">`</span>); <span class="comment">// My menu: width: 100, height: 200</span>
-  <span class="selector">alert</span>(<span class="string">`</span><span class="property">${</span><span class="value">i1</span><span class="property">}</span><span class="string">,</span> <span class="property">${</span><span class="value">i2</span><span class="property">}</span><span class="string">`</span>); <span class="comment">// item1, item2</span>
+	<span class="selector">alert</span>(<span class="string">`</span><span class="property">${</span><span class="value">title</span><span class="property">}</span><span class="string">: width:</span> <span class="property">${</span><span class="value">w</span><span class="property">}</span><span class="string">, height:</span> <span class="property">${</span><span class="value">h</span><span class="property">}</span><span class="string">`</span>); <span class="comment">// My menu: width: 100, height: 200</span>
+	<span class="selector">alert</span>(<span class="string">`</span><span class="property">${</span><span class="value">i1</span><span class="property">}</span><span class="string">,</span> <span class="property">${</span><span class="value">i2</span><span class="property">}</span><span class="string">`</span>); <span class="comment">// item1, item2</span>
 }
 
 <span class="selector">showMenu</span>(<span class="value">options</span>);
@@ -1902,7 +2159,7 @@
 
 ------------------------------------------------------------------------------------------------------------
 <span class="comment">// Чтобы не писать в вызове функции {}, мы можем приравнять весь наш объект с аргументами по умолчанию к {}</span>
-<span class="comment">// Это работает как "елси в функцию передали пустой аргумент, то возьми значения по умолчанию"</span>
+<span class="comment">// Это работает как "если в функцию передали пустой аргумент, то возьми значения по умолчанию"</span>
 <span class="comment">// Так же тут показано как можно исправить items из примера выше, те присвоить ему значения по умолчанию</span>
 <span class="cycle-function">function</span> <span class="selector">showMenu</span>({
   <span class="value">title</span> = <span class="string">"Untitled"</span>,
@@ -2001,7 +2258,7 @@
 <span class="console-title title-html">HTML</span>
 
 &lt;<span class="tag-property">p class=</span><span class="string">"b1__text"</span>&gt;
-  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
 &lt;/<span class="tag-property">p</span>&gt;
 &lt;<span class="tag-property">script src=</span><span class="string">"js/b1.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
@@ -2072,13 +2329,13 @@
 <span class="console-title title-html">HTML</span>
 
 &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
-  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
 &lt;/<span class="tag-property">p</span>&gt;
 &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
-  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
 &lt;/<span class="tag-property">p</span>&gt;
 &lt;<span class="tag-property">p class=</span><span class="string">"b1__text-two"</span>&gt;
-  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
 &lt;/<span class="tag-property">p</span>&gt;
 &lt;<span class="tag-property">script src=</span><span class="string">"js/b1__two.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
@@ -2166,13 +2423,13 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-css">CSS</span>
 
 .<span class="selector">b1__block-three</span> {
-  <span class="tag-property">width</span>: 200px;
-  <span class="tag-property">height</span>: 200px;
-  <span class="tag-property">background-color</span>: crimson;
+	<span class="tag-property">width</span>: 200px;
+	<span class="tag-property">height</span>: 200px;
+	<span class="tag-property">background-color</span>: crimson;
 }
 
 .<span class="selector">b1__translate-three</span> {
-  <span class="tag-property">transform</span>: translateY(-46px);
+	<span class="tag-property">transform</span>: translateY(-46px);
 }
 </code>
 </pre>
@@ -2273,13 +2530,13 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-css">CSS</span>
 
 .<span class="selector">b2__block</span> {
-  <span class="tag-property">width</span>: 200px;
-  <span class="tag-property">height</span>: 200px;
-  <span class="tag-property">background-color</span>: crimson;
+	<span class="tag-property">width</span>: 200px;
+	<span class="tag-property">height</span>: 200px;
+	<span class="tag-property">background-color</span>: crimson;
 }
 
 .<span class="selector">b2__translate</span> {
-  <span class="tag-property">transform</span>: translateX(100px);
+	<span class="tag-property">transform</span>: translateX(100px);
 }
 </code>
 </pre>
@@ -2365,16 +2622,16 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-html">HTML</span>
 
 &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block-wrapper"</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b2__two-block"</span>&gt;&lt;/<span class="tag-property">div</span>&gt;
 &lt;/<span class="tag-property">div</span>&gt;
 &lt;<span class="tag-property">div class=</span><span class="string">"b2__two-button-wrapper"</span>&gt;
-  &lt;<span class="tag-property">button class=</span><span class="string">"b2__two-button"</span>&gt;
-    Показать ещё
-  &lt;/<span class="tag-property">button</span>&gt;
+	&lt;<span class="tag-property">button class=</span><span class="string">"b2__two-button"</span>&gt;
+		Показать ещё
+	&lt;/<span class="tag-property">button</span>&gt;
 &lt;/<span class="tag-property">div</span>&gt;
 &lt;<span class="tag-property">script src=</span><span class="string">"js/b2__two.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
@@ -2386,44 +2643,44 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-css">CSS</span>
 
 .<span class="selector">b2__two-block-wrapper</span> {
-  <span class="tag-property">width</span>: 100%;
-  <span class="tag-property">height</span>: 200px;
-  <span class="tag-property">background-color</span>: crimson;
+	<span class="tag-property">width</span>: 100%;
+	<span class="tag-property">height</span>: 200px;
+	<span class="tag-property">background-color</span>: crimson;
 }
 
 .<span class="selector">b2__two-block</span> {
-  <span class="tag-property">width</span>: 100%;
-  <span class="tag-property">max-width</span>: 200px;
-  <span class="tag-property">min-height</span>: 100px;
-  <span class="tag-property">outline</span>: 1px solid tomato;
-  <span class="tag-property">border-radius</span>: 10px;
+	<span class="tag-property">width</span>: 100%;
+	<span class="tag-property">max-width</span>: 200px;
+	<span class="tag-property">min-height</span>: 100px;
+	<span class="tag-property">outline</span>: 1px solid tomato;
+	<span class="tag-property">border-radius</span>: 10px;
 }
 
 .<span class="selector">b2__two-block:nth-child(n + 3)</span> {
-  <span class="tag-property">display</span>: none;
+	<span class="tag-property">display</span>: none;
 }
 
 .<span class="selector">b2__two-block:not(:last-child)</span> {
-  <span class="tag-property">margin-bottom</span>: 5px;
+	<span class="tag-property">margin-bottom</span>: 5px;
 }
 
 .<span class="selector">b2__two-button-wrapper</span> {
-  <span class="tag-property">display</span>: flex;
-  <span class="tag-property">justify-content</span>: center;
+	<span class="tag-property">display</span>: flex;
+	<span class="tag-property">justify-content</span>: center;
 }
 
 .<span class="selector">b2__two-button</span> {
-  <span class="tag-property">padding</span>: 10px 12px;
-  <span class="tag-property">background-color</span>: var(--gray);
-  <span class="tag-property">border-radius</span>: 10px;
+	<span class="tag-property">padding</span>: 10px 12px;
+	<span class="tag-property">background-color</span>: var(--gray);
+	<span class="tag-property">border-radius</span>: 10px;
 }
 
 .<span class="selector">b2__two-block.b2__two-block--visible</span> {
-  <span class="tag-property">display</span>: block;
+	<span class="tag-property">display</span>: block;
 }
 
 .<span class="selector">b2__two-button-wrapper--hidden</span> {
-  <span class="tag-property">display</span>: none;
+	<span class="tag-property">display</span>: none;
 }
 </code>
 </pre>
@@ -2628,32 +2885,32 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-html">HTML</span>
 
 &lt;<span class="tag-property">ul class=</span><span class="string">"b3__tabs-nav"</span>&gt;
-  &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
-    &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn b3__tabs-nav-btn--active"</span> <span class="tag-property">data-path=</span><span class="string">"one"</span>&gt;
-      Первый таб
-    &lt;/<span class="tag-property">button</span>&gt;
-  &lt;/<span class="tag-property">li</span>&gt;
-  &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
-    &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"two"</span>&gt;
-      Второй таб
-    &lt;/<span class="tag-property">button</span>&gt;
-  &lt;/<span class="tag-property">li</span>&gt;
-  &lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
-    &lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"three"</span>&gt;
-      Третий таб
-    &lt;/<span class="tag-property">button</span>&gt;
-  &lt;/<span class="tag-property">li</span>&gt;
+	&lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+		&lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn b3__tabs-nav-btn--active"</span> <span class="tag-property">data-path=</span><span class="string">"one"</span>&gt;
+			Первый таб
+		&lt;/<span class="tag-property">button</span>&gt;
+	&lt;/<span class="tag-property">li</span>&gt;
+	&lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+		&lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"two"</span>&gt;
+			Второй таб
+		&lt;/<span class="tag-property">button</span>&gt;
+	&lt;/<span class="tag-property">li</span>&gt;
+	&lt;<span class="tag-property">li class=</span><span class="string">"b3__tabs-nav-item"</span>&gt;
+		&lt;<span class="tag-property">button class=</span><span class="string">"b3__tabs-nav-btn"</span> <span class="tag-property">data-path=</span><span class="string">"three"</span>&gt;
+			Третий таб
+		&lt;/<span class="tag-property">button</span>&gt;
+	&lt;/<span class="tag-property">li</span>&gt;
 &lt;/<span class="tag-property">ul</span>&gt;
 &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-content"</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item b3__tabs-item--active"</span> <span class="tag-property">data-target=</span><span class="string">"one"</span>&gt;
-    Tab 1
-  &lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"two"</span>&gt;
-    Tab 2
-  &lt;/<span class="tag-property">div</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"three"</span>&gt;
-    Tab 3
-  &lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item b3__tabs-item--active"</span> <span class="tag-property">data-target=</span><span class="string">"one"</span>&gt;
+		Tab 1
+	&lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"two"</span>&gt;
+		Tab 2
+	&lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b3__tabs-item"</span> <span class="tag-property">data-target=</span><span class="string">"three"</span>&gt;
+		Tab 3
+	&lt;/<span class="tag-property">div</span>&gt;
 &lt;/<span class="tag-property">div</span>&gt;
 &lt;<span class="tag-property">script src=</span><span class="string">"js/b3.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 </code>
@@ -2665,15 +2922,15 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-css">CSS</span>
 
 <span class="selector">.b3__tabs-nav-btn--active</span> {
-  <span class="tag-property">color</span>: tan;
+	<span class="tag-property">color</span>: tan;
 }
 
 <span class="selector">.b3__tabs-item</span> {
-  <span class="tag-property">display</span>: none;
+	<span class="tag-property">display</span>: none;
 }
 
 <span class="selector">.b3__tabs-item--active</span> {
-  <span class="tag-property">display</span>: block;
+	<span class="tag-property">display</span>: block;
 }
 </code>
 </pre>
@@ -2967,25 +3224,25 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-html">HTML</span>
 
 &lt;<span class="tag-property">div class=</span><span class="string">"b6__nav"</span>&gt;
-  &lt;<span class="tag-property">ul class=</span><span class="string">"b6__nav-list"</span>&gt;
-    &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
-      Text
-    &lt;/<span class="tag-property">li</span>&gt;
-    &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
-      Text
-    &lt;/<span class="tag-property">li</span>&gt;
-    &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
-      Text
-    &lt;/<span class="tag-property">li</span>&gt;
-    &lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
-      Text
-    &lt;/<span class="tag-property">li</span>&gt;
-  &lt;/<span class="tag-property">ul</span>&gt;
-  &lt;<span class="tag-property">div class=</span><span class="string">"b6__burger"</span>&gt;
-    &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
-    &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
-    &lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
-  &lt;/<span class="tag-property">div</span>&gt;
+	&lt;<span class="tag-property">ul class=</span><span class="string">"b6__nav-list"</span>&gt;
+		&lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+			Text
+		&lt;/<span class="tag-property">li</span>&gt;
+		&lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+			Text
+		&lt;/<span class="tag-property">li</span>&gt;
+		&lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+			Text
+		&lt;/<span class="tag-property">li</span>&gt;
+		&lt;<span class="tag-property">li class=</span><span class="string">"b6__nav-item"</span>&gt;
+			Text
+		&lt;/<span class="tag-property">li</span>&gt;
+	&lt;/<span class="tag-property">ul</span>&gt;
+	&lt;<span class="tag-property">div class=</span><span class="string">"b6__burger"</span>&gt;
+		&lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
+		&lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
+		&lt;<span class="tag-property">span class=</span><span class="string">"b6__burger-line"</span>&gt;&lt;/<span class="tag-property">span</span>&gt;
+	&lt;/<span class="tag-property">div</span>&gt;
 &lt;/<span class="tag-property">div</span>&gt;
 </code>
 </pre>
@@ -2997,90 +3254,90 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 
 <span class="comment">/* Браузерная разметка */</span>
 <span class="selector">.b6__nav</span> {
-  <span class="tag-property">width</span>: 100%;
-  <span class="tag-property">display</span>: flex;
-  <span class="tag-property">justify-content</span>: flex-end;
+	<span class="tag-property">width</span>: 100%;
+	<span class="tag-property">display</span>: flex;
+	<span class="tag-property">justify-content</span>: flex-end;
 }
 
 <span class="selector">.b6__nav-list</span> {
-  <span class="tag-property">display</span>: flex;
+	<span class="tag-property">display</span>: flex;
 }
 
 <span class="selector">.b6__nav-item</span> {
-  <span class="tag-property">cursor</span>: pointer;
-  <span class="tag-property">margin-right</span>: 30px;
+	<span class="tag-property">cursor</span>: pointer;
+	<span class="tag-property">margin-right</span>: 30px;
 }
 
 <span class="comment">/* Мобильная разметка с @media (max-width: 1024px) */</span>
 
 <span class="selector">.b6__nav-list</span> {
-  <span class="tag-property">position</span>: absolute;
-  <span class="tag-property">top</span>: 0;
-  <span class="tag-property">left</span>: 0;
-  <span class="tag-property">width</span>: 50%;
-  <span class="tag-property">min-width</span>: 250px;
-  <span class="tag-property">height</span>: 300px;
-  <span class="tag-property">z-index</span>: 1000;
-  <span class="tag-property">flex-direction</span>: column;
-  <span class="tag-property">padding</span>: 50px;
-  <span class="tag-property">box-shadow</span>: 0 0 5px var(--gray);
-  <span class="tag-property">background-color</span>: var(--white);
-  <span class="comment">/* Скролл для меню */</span>
-  <span class="tag-property">overflow-y</span>: auto;
-  <span class="comment">/* Скрываем меню */</span>
-  <span class="tag-property">visibility</span>: hidden;
-  <span class="comment">/* Смещаем меню в левую часть экрана, за его пределы */</span>
-  <span class="tag-property">transform</span>: translateX(-120%);
-  <span class="tag-property">transition</span>: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+	<span class="tag-property">position</span>: absolute;
+	<span class="tag-property">top</span>: 0;
+	<span class="tag-property">left</span>: 0;
+	<span class="tag-property">width</span>: 50%;
+	<span class="tag-property">min-width</span>: 250px;
+	<span class="tag-property">height</span>: 300px;
+	<span class="tag-property">z-index</span>: 1000;
+	<span class="tag-property">flex-direction</span>: column;
+	<span class="tag-property">padding</span>: 50px;
+	<span class="tag-property">box-shadow</span>: 0 0 5px var(--gray);
+	<span class="tag-property">background-color</span>: var(--white);
+	<span class="comment">/* Скролл для меню */</span>
+	<span class="tag-property">overflow-y</span>: auto;
+	<span class="comment">/* Скрываем меню */</span>
+	<span class="tag-property">visibility</span>: hidden;
+	<span class="comment">/* Смещаем меню в левую часть экрана, за его пределы */</span>
+	<span class="tag-property">transform</span>: translateX(-120%);
+	<span class="tag-property">transition</span>: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 <span class="selector">.b6__nav-item</span> {
-  <span class="tag-property">margin-right</span>: 0;
-  <span class="tag-property">margin-bottom</span>: 30px;
+	<span class="tag-property">margin-right</span>: 0;
+	<span class="tag-property">margin-bottom</span>: 30px;
 }
 
 <span class="selector">.b6__nav--active</span> {
-  <span class="tag-property">visibility</span>: visible;
-  <span class="tag-property">transform</span>: none;
+	<span class="tag-property">visibility</span>: visible;
+	<span class="tag-property">transform</span>: none;
 }
 
 <span class="selector">.b6__burger--active</span>
 <span class="selector">.b6__burger-line:nth-child(2)</span> {
-  <span class="tag-property">display</span>: none;
+	<span class="tag-property">display</span>: none;
 }
 
 <span class="selector">.b6__burger--active</span>
 <span class="selector">.b6__burger-line:first-child</span> {
-  <span class="tag-property">align-items</span>: center;
-  <span class="tag-property">transform</span>: translate(0, 11px) rotate(45deg);
-  <span class="tag-property">transition</span>: transform 0.3s ease-in-out;
+	<span class="tag-property">align-items</span>: center;
+	<span class="tag-property">transform</span>: translate(0, 11px) rotate(45deg);
+	<span class="tag-property">transition</span>: transform 0.3s ease-in-out;
 }
 
 <span class="selector">.b6__burger--active</span>
 <span class="selector">.b6__burger-line:last-child</span> {
-  <span class="tag-property">align-items</span>: center;
-  <span class="tag-property">transform</span>: translate(0, -11px) rotate(-45deg);
-  <span class="tag-property">transition</span>: transform 0.3s ease-in-out;
+	<span class="tag-property">align-items</span>: center;
+	<span class="tag-property">transform</span>: translate(0, -11px) rotate(-45deg);
+	<span class="tag-property">transition</span>: transform 0.3s ease-in-out;
 }
 
 <span class="selector">.b6__burger</span> {
-  <span class="tag-property">width</span>: 40px;
-  <span class="tag-property">height</span>: 25px;
-  <span class="tag-property">display</span>: flex;
-  <span class="tag-property">flex-direction</span>: column;
-  <span class="tag-property">justify-content</span>: space-between;
-  <span class="tag-property">cursor</span>: pointer;
+	<span class="tag-property">width</span>: 40px;
+	<span class="tag-property">height</span>: 25px;
+	<span class="tag-property">display</span>: flex;
+	<span class="tag-property">flex-direction</span>: column;
+	<span class="tag-property">justify-content</span>: space-between;
+	<span class="tag-property">cursor</span>: pointer;
 }
 
 <span class="selector">.b6__burger-line</span> {
-  <span class="tag-property">width</span>: 100%;
-  <span class="tag-property">height</span>: 3px;
-  <span class="tag-property">background-color</span>: var(--black);
+	<span class="tag-property">width</span>: 100%;
+	<span class="tag-property">height</span>: 3px;
+	<span class="tag-property">background-color</span>: var(--black);
 }
 
 <span class="comment">/* Чтобы сайт не скроллился пока мы не закроем меню */</span>
 <span class="selector">.stop-scroll</span> {
-  <span class="tag-property">overflow</span>: hidden;
+	<span class="tag-property">overflow</span>: hidden;
 }
 </code>
 </pre>
@@ -3172,15 +3429,15 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-html">HTML</span>
 
 &lt;<span class="tag-property">select class=</span><span class="string">"b7__custom-select"</span>&gt;
-  &lt;<span class="tag-property">option</span>&gt;
-    Пункт 1
-  &lt;/<span class="tag-property">option</span>&gt;
-  &lt;<span class="tag-property">option</span>&gt;
-    Пункт 2
-  &lt;/<span class="tag-property">option</span>&gt;
-  &lt;<span class="tag-property">option</span>&gt;
-    Пункт 3
-  &lt;/<span class="tag-property">option</span>&gt;
+	&lt;<span class="tag-property">option</span>&gt;
+		Пункт 1
+	&lt;/<span class="tag-property">option</span>&gt;
+	&lt;<span class="tag-property">option</span>&gt;
+		Пункт 2
+	&lt;/<span class="tag-property">option</span>&gt;
+	&lt;<span class="tag-property">option</span>&gt;
+		Пункт 3
+	&lt;/<span class="tag-property">option</span>&gt;
 &lt;/<span class="tag-property">select</span>&gt;
 &lt;<span class="tag-property">script src=</span><span class="string">"libs/js/choices.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 &lt;<span class="tag-property">script src=</span><span class="string">"js/b7.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
@@ -3271,8 +3528,8 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-css">CSS</span>
 
 .<span class="selector">b8__map</span> {
-  <span class="tag-property">width</span>: 600px;
-  <span class="tag-property">height</span>: 400px;
+	<span class="tag-property">width</span>: 600px;
+	<span class="tag-property">height</span>: 400px;
 }
 </code>
 </pre>
@@ -3376,10 +3633,10 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-html">HTML</span>
 
 &lt;<span class="tag-property">div class</span>=<span class="string">"b9__scroll-wrapper"</span><span class="value"> data-simplebar</span>&gt;
-  &lt;<span class="tag-property">p class</span>=<span class="string">"text"</span>&gt;
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat officia veritatis enim repellat, in natus similique deleniti, vero quam, laboriosam labore voluptates incidunt exercitationem. Quibusdam voluptatum ratione veritatis libero.
-  &lt;/<span class="tag-property">p</span>&gt;
-  &lt;<span class="tag-property">script src</span>=<span class="string">"https://unpkg.com/simplebar@latest/dist/simplebar.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
+	&lt;<span class="tag-property">p class</span>=<span class="string">"text"</span>&gt;
+	Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat officia veritatis enim repellat, in natus similique deleniti, vero quam, laboriosam labore voluptates incidunt exercitationem. Quibusdam voluptatum ratione veritatis libero.
+	&lt;/<span class="tag-property">p</span>&gt;
+	&lt;<span class="tag-property">script src</span>=<span class="string">"https://unpkg.com/simplebar@latest/dist/simplebar.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 &lt;/<span class="tag-property">div</span>&gt;
 </code>
 </pre>
@@ -3390,12 +3647,12 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-css">CSS</span>
 
 .<span class="selector">b9__scroll-wrapper</span> {
-  <span class="tag-property">width</span>: 400px;
-  <span class="tag-property">height</span>: 400px;
+	<span class="tag-property">width</span>: 400px;
+	<span class="tag-property">height</span>: 400px;
 }
 
 .<span class="selector">simplebar-scrollbar::before</span> {
-  <span class="tag-property">background-image</span>: linear-gradient(180deg, red, orange, yellow, lime, green, aqua, blue);
+	<span class="tag-property">background-image</span>: linear-gradient(180deg, red, orange, yellow, lime, green, aqua, blue);
 }
 </code>
 </pre>
@@ -3490,12 +3747,12 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-html">HTML</span>
 
 &lt;<span class="tag-property">form class</span>=<span class="string">"b10__form"</span> <span class="value">action</span>=<span class="string">"https://jsonplaceholder.typicode.com/posts"</span> <span class="value">method</span>=<span class="string">"post"</span> <span class="value">target</span>=<span class="string">"_blank"</span>&gt;
-  &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Имя"</span> <span class="value">type</span>=<span class="string">"text"</span> <span class="value">placeholder</span>=<span class="string">"Имя"</span> <span class="value">data-validate-field</span>=<span class="string">"name"</span>&gt;
-  &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Телефон"</span> <span class="value">type</span>=<span class="string">"tel"</span> <span class="value">placeholder</span>=<span class="string">"Телефон"</span> <span class="value">data-validate-field</span>=<span class="string">"tel"</span>&gt;
-  &lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"email"</span> <span class="value">type</span>=<span class="string">"email"</span> <span class="value">placeholder</span>=<span class="string">"Email"</span> <span class="value">data-validate-field</span>=<span class="string">"mail"</span>&gt;
-  &lt;<span class="tag-property">button class</span>=<span class="string">"b10__form-button"</span>&gt;
-    Отправить
-  &lt;/<span class="tag-property">button</span>&gt;
+	&lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Имя"</span> <span class="value">type</span>=<span class="string">"text"</span> <span class="value">placeholder</span>=<span class="string">"Имя"</span> <span class="value">data-validate-field</span>=<span class="string">"name"</span>&gt;
+	&lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"Телефон"</span> <span class="value">type</span>=<span class="string">"tel"</span> <span class="value">placeholder</span>=<span class="string">"Телефон"</span> <span class="value">data-validate-field</span>=<span class="string">"tel"</span>&gt;
+	&lt;<span class="tag-property">input class</span>=<span class="string">"b10__form-input"</span> <span class="value">name</span>=<span class="string">"email"</span> <span class="value">type</span>=<span class="string">"email"</span> <span class="value">placeholder</span>=<span class="string">"Email"</span> <span class="value">data-validate-field</span>=<span class="string">"mail"</span>&gt;
+	&lt;<span class="tag-property">button class</span>=<span class="string">"b10__form-button"</span>&gt;
+		Отправить
+	&lt;/<span class="tag-property">button</span>&gt;
 &lt;/<span class="tag-property">form</span>&gt;
 &lt;<span class="tag-property">script src</span>=<span class="string">"libs/js/inputmask.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
 &lt;<span class="tag-property">script src</span>=<span class="string">"libs/js/just-validate.min.js"</span>&gt;&lt;/<span class="tag-property">script</span>&gt;
@@ -3509,22 +3766,22 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="console-title title-css">CSS</span>
 
 .<span class="selector">b10__form</span> {
-  <span class="tag-property">max-width</span>: 30%;
-  <span class="tag-property">display</span>: flex;
-  <span class="tag-property">flex-direction</span>: column;
+	<span class="tag-property">max-width</span>: 30%;
+	<span class="tag-property">display</span>: flex;
+	<span class="tag-property">flex-direction</span>: column;
 }
 
 .<span class="selector">b10__form-input</span> {
-  <span class="tag-property">margin-bottom</span>: 20px;
+	<span class="tag-property">margin-bottom</span>: 20px;
 }
 
 .<span class="selector">b10__form-button</span> {
-  <span class="tag-property">width</span>: fit-content;
-  <span class="tag-property">display</span>: inline-flex;
-  <span class="tag-property">justify-content</span>: flex-start;
-  <span class="tag-property">padding</span>: 10px;
-  <span class="tag-property">background-color</span>: var(--gray);
-  <span class="tag-property">border-radius</span>: 10px;
+	<span class="tag-property">width</span>: fit-content;
+	<span class="tag-property">display</span>: inline-flex;
+	<span class="tag-property">justify-content</span>: flex-start;
+	<span class="tag-property">padding</span>: 10px;
+	<span class="tag-property">background-color</span>: var(--gray);
+	<span class="tag-property">border-radius</span>: 10px;
 }
 </code>
 </pre>
@@ -3545,26 +3802,26 @@ document.querySelectorAll(<span class="string">".b1__text-two"</span>).forEach(<
 <span class="comment">// Инициализация JustValidate</span>
 <span class="property">new</span> JustValidate(<span class="string">".b10__form"</span>, {
 <span class="value">rules</span>: {
-  <span class="comment">// Проверки для имени</span>
-  <span class="value">name</span>: {
-    <span class="value">required</span>: <span class="property">true</span>,
-    <span class="value">minLength</span>: 2,
-    <span class="value">maxLength</span>: 20
-  },
-  <span class="comment">// Проверки для телефона</span>
-  <span class="value">tel</span>: {
-    <span class="value">required</span>: <span class="property">true</span>,
-    <span class="comment">// Собственная функция валидации которая проверяет только цифры, без учета строк и тире</span>
-    <span class="cycle-function">function</span>: (name, value) <span class="cycle-function">=&gt;</span> {
-      <span class="property">const</span> <span class="value">phone</span> = <span class="value">selector</span>.<span class="value">inputmask</span>.unmaskedvalue()
-      <span class="cycle-function">return</span> <span class="value">Number</span>(<span class="value">phone</span>) && <span class="value">phone</span>.<span class="value">length</span> === 10
-    }
-  },
-  <span class="comment">// Проверки для email</span>
-  <span class="value">mail</span>: {
-    <span class="value">required</span>: <span class="property">true</span>,
-    <span class="value">email</span>: <span class="property">true</span>
-  },
+	<span class="comment">// Проверки для имени</span>
+	<span class="value">name</span>: {
+		<span class="value">required</span>: <span class="property">true</span>,
+		<span class="value">minLength</span>: 2,
+		<span class="value">maxLength</span>: 20
+	},
+	<span class="comment">// Проверки для телефона</span>
+	<span class="value">tel</span>: {
+		<span class="value">required</span>: <span class="property">true</span>,
+		<span class="comment">// Собственная функция валидации которая проверяет только цифры, без учета строк и тире</span>
+		<span class="cycle-function">function</span>: (name, value) <span class="cycle-function">=&gt;</span> {
+			<span class="property">const</span> <span class="value">phone</span> = <span class="value">selector</span>.<span class="value">inputmask</span>.unmaskedvalue()
+			<span class="cycle-function">return</span> <span class="value">Number</span>(<span class="value">phone</span>) && <span class="value">phone</span>.<span class="value">length</span> === 10
+		}
+	},
+	<span class="comment">// Проверки для email</span>
+	<span class="value">mail</span>: {
+		<span class="value">required</span>: <span class="property">true</span>,
+		<span class="value">email</span>: <span class="property">true</span>
+	},
 },
 });
 </code>
